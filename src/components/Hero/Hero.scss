@@ -1,0 +1,98 @@
+.root {
+  align-items: center;
+  background-attachment: fixed;
+  background-image: url('../../assets/chicago.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.hero {
+  max-width: 80%;
+  text-align: center;
+
+  h1 {
+    color: rgb(255, 255, 255);
+    font-size: 9vh;
+    margin-bottom: 0;
+  }
+
+  h1,
+  em,
+  a {
+    color: rgb(255, 255, 255);
+  }
+
+  h2 {
+    color: rgba(255, 255, 255, .7);
+    font-family: var(--secondary-font);
+    font-size: 2.5vh;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: var(--active-color);
+    }
+  }
+}
+
+.social {
+  border-top: 1px solid rgba(255, 255, 255, .25);
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 2rem;
+
+  a {
+    margin: .5rem;
+  }
+}
+
+.scroll {
+  align-items: center;
+  bottom: 2rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-size: .7rem;
+  letter-spacing: .25rem;
+  position: absolute;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .3s ease-in-out;
+
+  svg {
+    margin-right: .5rem;
+  }
+
+  span {
+    overflow: hidden;
+    padding: 5px 0 5px 1px;
+    position: relative;
+
+    &::after {
+      border-bottom: 1px solid var(--active-color);
+      bottom: 0;
+      content: '';
+      left: -250px;
+      position: absolute;
+      transition: left .5s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    span {
+      &::after {
+        left: 0;
+      }
+    }
+  }
+}

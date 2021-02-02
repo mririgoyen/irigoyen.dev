@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-css-modules"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "color-named": "never",
+    "color-no-hex": true,
+    "declaration-no-important": [ true, { "severity": "warning" } ],
+    "no-descending-specificity": null,
+    "number-leading-zero": "never",
+    "order/properties-alphabetical-order": true,
+    "selector-max-id": [ 0, { "severity": "warning" } ],
+    "shorthand-property-no-redundant-values": true
+  }
+}

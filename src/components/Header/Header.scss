@@ -1,0 +1,37 @@
+.header {
+  background-color: rgba(0, 0, 0, .2);
+  font-size: .9rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  nav {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  a {
+    color: rgba(255, 255, 255, .5);
+    display: block;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    &.current {
+      color: var(--active-color);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    visibility: hidden;
+  }
+}
