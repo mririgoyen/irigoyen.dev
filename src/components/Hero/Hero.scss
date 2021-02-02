@@ -1,22 +1,43 @@
 .root {
-  align-items: center;
-  background-attachment: fixed;
-  background-image: url('../../assets/chicago.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
   height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.background,
+.container {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.background {
+  background-image: url('../../assets/chicago.jpg');
+  background-position: right;
+  background-size: cover;
+  left: -5px;
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+}
+
+.container {
+  align-items: center;
+  display: flex;
   justify-content: center;
 }
 
 .hero {
   max-width: 80%;
   text-align: center;
+  transform: translateZ(0);
+  z-index: 4;
 
   h1 {
     color: rgb(255, 255, 255);
     font-size: 9vh;
+    font-weight: 600;
     margin-bottom: 0;
   }
 
@@ -30,6 +51,7 @@
     color: rgba(255, 255, 255, .7);
     font-family: var(--secondary-font);
     font-size: 2.5vh;
+    font-weight: 500;
   }
 
   em {
@@ -67,6 +89,7 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: color .3s ease-in-out;
+  will-change: color;
 
   svg {
     margin-right: .5rem;
@@ -85,6 +108,7 @@
       position: absolute;
       transition: left .5s ease-in-out;
       width: 100%;
+      will-change: left;
     }
   }
 

@@ -1,4 +1,11 @@
-.home {
-  min-height: 100%;
-  width: 100%;
+.root {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
+}
+
+.container {
+  position: relative;
+  z-index: 5;
 }

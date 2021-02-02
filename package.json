@@ -15,9 +15,11 @@
     "@fontsource/inter": "^4.1.1",
     "@mdi/js": "^5.9.55",
     "@mdi/react": "^1.4.0",
+    "classnames": "^2.2.6",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "react-intersection-observer": "^8.31.0"
   },
   "devDependencies": {
     "enzyme": "^3.10.0",

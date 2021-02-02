@@ -1,5 +1,123 @@
 .root {
   background-color: rgb(40, 40, 40);
   color: rgb(255, 255, 255);
-  padding: 3rem;
+}
+
+.avatar {
+  margin: 2rem 5rem 0 0;
+
+  img {
+    animation: pulsate 5s ease-in-out 0s infinite alternate;
+    border: 3px solid var(--active-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2rem rgb(60, 60, 60);
+    height: auto;
+    max-width: 200px;
+  }
+}
+
+.about {
+  h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  p {
+    color: rgba(255, 255, 255, .8);
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+}
+
+.contact {
+  border-top: 1px solid rgba(255, 255, 255, .05);
+  display: flex;
+  margin-top: 4rem;
+  padding-top: 4rem;
+}
+
+.details {
+  width: 50%;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  a {
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--active-color);
+    }
+  }
+}
+
+.actions {
+  a {
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1.25rem 2.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+
+    svg {
+      margin: -1px .5rem 0 0;
+    }
+
+    &:hover {
+      background-color: var(--active-color);
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .avatar {
+    margin: 0 auto 3rem;
+  }
+
+  .about {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+
+  .details {
+    text-align: center;
+    width: 100%;
+  }
+
+  .actions {
+    margin-top: 2rem;
+  }
+}
+
+@keyframes pulsate {
+  from {
+    box-shadow: 0 0 0 1rem rgb(60, 60, 60);
+  }
+
+  to {
+    box-shadow: 0 0 0 2rem rgb(60, 60, 60);
+  }
 }

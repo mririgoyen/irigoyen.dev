@@ -1,37 +1,126 @@
 .header {
-  background-color: rgba(0, 0, 0, .2);
-  font-size: .9rem;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-
   nav {
     align-items: center;
+    background-color: rgba(0, 0, 0, .6);
     display: flex;
+    font-size: .9rem;
     justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
+    z-index: 10;
   }
 
   a {
-    color: rgba(255, 255, 255, .5);
-    display: block;
-    padding: 1.25rem 1rem;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+    color: rgba(255, 255, 255, .8);
+    display: flex;
+    margin-top: 3px;
+    min-height: 62px;
+    padding: 1rem;
     text-align: center;
     text-decoration: none;
+    text-transform: capitalize;
+    transition: border-color .3s, color .3s;
+
+    svg {
+      margin: 0;
+      padding: 0;
+    }
 
     &:hover {
+      border-color: rgba(255, 255, 255, .25);
       color: rgb(255, 255, 255);
     }
 
     &.current {
+      border-color: var(--active-color);
       color: var(--active-color);
     }
   }
 }
 
+.mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
+  .mobile {
+    align-items: center;
+    background-color: rgb(10, 10, 10);
+    color: rgb(255, 255, 255);
+    display: flex;
+    font-size: .9rem;
+    font-weight: 600;
+    justify-content: space-between;
+    min-height: 56px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    p {
+      align-items: center;
+      display: flex;
+      margin-left: 1rem;
+      text-transform: capitalize;
+
+      em {
+        font-style: normal;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+
+    .chevron {
+      margin: 0 .25rem;
+      opacity: .6;
+    }
+
+    button {
+      background-color: var(--active-color);
+      border: 0;
+      color: rgb(255, 255, 255);
+      outline: 0;
+      padding: 1rem;
+    }
+  }
+
   .header {
-    visibility: hidden;
+    background-color: transparent;
+
+    nav {
+      background-color: transparent;
+      flex-direction: column;
+      height: 100%;
+      justify-content: start;
+      transform: translate3d(0, -100vh, 0);
+      transition: transform .5s;
+      will-change: transform;
+
+      &.active {
+        transform: translate3d(0, 0, 0);
+      }
+
+      a {
+        background-color: rgb(10, 10, 10);
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid rgb(255, 255, 255, .1);
+        }
+
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
   }
 }

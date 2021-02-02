@@ -3,4 +3,5 @@
   --secondary-font: 'IBM Plex Serif', serif;
   --text-color: rgb(40, 40, 40);
   --active-color: rgb(0, 132, 255);
+  --width-max: 1080px;
 }

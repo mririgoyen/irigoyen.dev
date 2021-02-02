@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  justify-content: center;
+  padding: 8rem 3rem;
+}
+
+.container {
+  display: flex;
+  max-width: var(--width-max);
+  width: 100%;
+}
+
+.animate {
+  .container {
+    opacity: 0;
+    transform: translate3d(0, 150px, 0);
+    transition: opacity 2s, transform 2s;
+    transition-delay: .1s;
+    will-change: opacity, transform;
+
+    &.in {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
