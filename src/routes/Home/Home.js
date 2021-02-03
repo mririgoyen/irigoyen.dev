@@ -24,8 +24,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    console.log({ visibilities });
-
     const current = Object.keys(visibilities).filter((v) => visibilities[v]).pop();
     setActive(current);
   }, [ visibilities ]);
