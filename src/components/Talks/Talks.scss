@@ -90,8 +90,12 @@
     border-radius: 4px;
     color: rgb(0, 0, 0);
     display: inline-flex;
+    font-size: .9rem;
+    font-weight: 600px;
+    letter-spacing: 1px;
     padding: .5rem 1rem .5rem .75rem;
     text-decoration: none;
+    text-transform: uppercase;
 
     svg {
       margin-right: .25rem;

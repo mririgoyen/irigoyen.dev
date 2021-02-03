@@ -20,6 +20,15 @@
     font-size: 1.1rem;
     line-height: 1.75;
   }
+
+  a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--active-color);
+    }
+  }
 }
 
 .contact {
