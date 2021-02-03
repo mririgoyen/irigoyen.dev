@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 const useDisplayed = ({ id, reportVisibility }) => {
   const [ displayed, setDisplayed ] = useState(false);
-  const { inView, ref } = useInView({ threshold: .2 });
+  const { inView, ref } = useInView({ threshold: .1 });
 
   useEffect(() => {
     reportVisibility(id, inView);
