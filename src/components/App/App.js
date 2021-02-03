@@ -13,6 +13,11 @@ const App = () => {
         <Home path='/' />
 
         <Download
+          name='Michael Irigoyen.pdf'
+          path='/resume'
+          file='/Michael%20Irigoyen.pdf'
+        />
+        <Download
           name='1UP: Empowering Communities with APIs.pptx'
           path='/presentations/1up-empowering-communities-with-apis'
           file='https://github.com/goyney/presentations/blob/main/1UP_%20Empowering%20Communities%20with%20APIs.pptx?raw=true'

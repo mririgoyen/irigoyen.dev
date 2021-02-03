@@ -9,7 +9,7 @@ import classes from './Download.scss';
 
 const Download = ({ file, name }) => {
   useEffect(() => {
-    window.location = file;
+    window.location.replace(file);
   }, [ file ]);
 
   return (

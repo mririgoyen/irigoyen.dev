@@ -10,7 +10,9 @@ const Talks = ({ reportVisibility }) => {
       id='talks'
       reportVisibility={reportVisibility}
     >
-      <h1>Talks</h1>
+      <div className={classes.container}>
+        <h1>Talks</h1>
+      </div>
     </SectionContainer>
   );
 };

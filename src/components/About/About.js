@@ -25,7 +25,7 @@ const About = ({ reportVisibility }) => {
             <p><a href='mailto:michael@irigoyen.dev'>michael@irigoyen.dev</a></p>
           </div>
           <div className={classes.actions}>
-            <a href='/Michael%20Irigoyen.pdf'>
+            <a href='/resume'>
               <Icon path={mdiFileDownloadOutline} size={1} />
               Download Resume
             </a>
