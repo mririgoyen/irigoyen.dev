@@ -1,5 +1,5 @@
 import { Fragment } from 'preact';
-import { useCallback, useState } from 'preact/hooks';
+import { useState } from 'preact/hooks';
 
 import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
@@ -11,18 +11,18 @@ import classes from './Home.scss';
 
 const Home = () => {
   const { config } = useConfig();
+  const initialVisibility = config.reduce((output, { id }) => {
+    output[id] = id === 'home';
+    return output;
+  }, {});
 
-  const [ active, setActive ] = useState();
-
-  const reportVisibility = useCallback((section, inView) => {
-    if (inView) {
-      setActive(section);
-    }
-  }, [ setActive ]);
+  const [ active, setActive ] = useState(initialVisibility);
+  const reportVisibility = (section, inView) => setActive({ ...active, [section]: inView });
+  const getLastestActive = () => Object.keys(active).filter((a) => active[a]).pop();
 
   return (
     <Fragment>
-      <Header active={active} />
+      <Header active={getLastestActive()} />
       <div className={classes.root}>
         <Hero reportVisibility={reportVisibility} />
         <div className={classes.container}>

@@ -13,7 +13,7 @@ const useDisplayed = ({ id, reportVisibility }) => {
     }
 
     setDisplayed(true);
-  }, [ displayed, id, inView, reportVisibility ]);
+  }, [ displayed, inView ]);
 
   return { displayed, inView, ref };
 };
