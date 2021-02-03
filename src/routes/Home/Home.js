@@ -1,5 +1,5 @@
 import { Fragment } from 'preact';
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 
 import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
@@ -16,13 +16,23 @@ const Home = () => {
     return output;
   }, {});
 
-  const [ active, setActive ] = useState(initialVisibility);
-  const reportVisibility = (section, inView) => setActive({ ...active, [section]: inView });
-  const getLastestActive = () => Object.keys(active).filter((a) => active[a]).pop();
+  const [ active, setActive ] = useState('home');
+  const [ visibilities, setVisibilities ] = useState(initialVisibility);
+
+  const reportVisibility = (section, inView) => {
+    setVisibilities({ ...visibilities, [section]: inView });
+  };
+
+  useEffect(() => {
+    console.log({ visibilities });
+
+    const current = Object.keys(visibilities).filter((v) => visibilities[v]).pop();
+    setActive(current);
+  }, [ visibilities ]);
 
   return (
     <Fragment>
-      <Header active={getLastestActive()} />
+      <Header active={active} />
       <div className={classes.root}>
         <Hero reportVisibility={reportVisibility} />
         <div className={classes.container}>
