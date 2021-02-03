@@ -7,6 +7,7 @@
   width: 100%;
 
   header {
+    margin-bottom: 3rem;
     text-align: center;
   }
 
@@ -19,5 +20,119 @@
     padding: .5rem .2rem;
     text-align: center;
     text-transform: uppercase;
+  }
+}
+
+.item {
+  display: flex;
+  padding: 1rem 0 3rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 3rem;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+
+    figure {
+      img {
+        transform: rotate3d(1, 1, 1, 5deg);
+      }
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 .5rem;
+  }
+
+  h3 {
+    font-weight: 400;
+    margin: 0;
+
+    em {
+      font-family: var(--secondary-font);
+      font-size: 1.2rem;
+    }
+
+    span {
+      color: rgba(0, 0, 0, .5);
+      font-size: .9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .bullet {
+      color: rgb(0, 0, 0);
+      padding: 0 .5rem;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  figure {
+    img {
+      box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+      outline: 1px solid rgb(0, 0, 0, .2);
+      padding: 7px;
+      transform: rotate3d(1, 1, 1, -5deg);
+    }
+  }
+
+  a {
+    align-items: center;
+    background-color: rgb(0, 0, 0, .1);
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    display: inline-flex;
+    padding: .5rem 1rem .5rem .75rem;
+    text-decoration: none;
+
+    svg {
+      margin-right: .25rem;
+    }
+
+    &:hover {
+      background-color: rgb(0, 0, 0, .2);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .item {
+    flex-direction: column;
+
+    &.reverse {
+      flex-direction: column;
+
+      figure {
+        display: none;
+      }
+    }
+
+    h3 {
+      em {
+        display: block;
+      }
+    }
+
+    figure {
+      margin: 0;
+
+      img {
+        margin-bottom: 1rem;
+        max-width: 100%;
+        transform: rotate3d(1, 1, 1, 0);
+      }
+    }
+  }
+
+  .bullet {
+    display: none;
   }
 }
