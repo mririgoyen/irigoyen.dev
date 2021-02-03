@@ -3,12 +3,13 @@ import cx from 'classnames';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiHome, mdiMenu } from '@mdi/js';
 
+import useConfig from '../../hooks/useConfig';
+
 import classes from './Header.scss';
 
 const Header = ({ active }) => {
   const [ menuOpen, setMenuOpen ] = useState(false);
-
-  const sections = [ 'home', 'about', 'projects', 'talks', 'resume', 'philanthropy', 'contact' ];
+  const { config } = useConfig();
 
   return (
     <header className={classes.header}>
@@ -24,12 +25,12 @@ const Header = ({ active }) => {
         })}
         onClick={() => setMenuOpen(false)}
       >
-        {sections.map((section) => (
+        {config.map((section) => (
           <a
-            className={cx({ [classes.current]: active === section })}
-            href={`#${section}`}
+            className={cx({ [classes.current]: active === section.id })}
+            href={`#${section.id}`}
           >
-            {section === 'home' ? <Icon path={mdiHome} size={1} /> : section}
+            {section.icon ? <Icon path={section.icon} size={1} /> : section.name}
           </a>
         ))}
       </nav>

@@ -1,25 +1,20 @@
 import Hero from '../../components/Hero/Hero';
-import About from '../../components/About/About';
-import Projects from '../../components/Projects/Projects';
-import Talks from '../../components/Talks/Talks';
-import Resume from '../../components/Resume/Resume';
-import Philanthropy from '../../components/Philanthropy/Philanthropy';
-import Contact from '../../components/Contact/Contact';
 import Footer from '../../components/Footer/Footer';
+
+import useConfig from '../../hooks/useConfig';
 
 import classes from './Home.scss';
 
-const Home = ({ setActive }) => {
+const Home = ({ reportVisibility }) => {
+  const { config } = useConfig();
+
   return (
     <div className={classes.root}>
-      <Hero setActive={setActive} />
+      <Hero reportVisibility={reportVisibility} />
       <div className={classes.container}>
-        <About setActive={setActive} />
-        <Projects setActive={setActive} />
-        <Talks setActive={setActive} />
-        <Resume setActive={setActive} />
-        <Philanthropy setActive={setActive} />
-        <Contact setActive={setActive} />
+        {config.filter((s) => s.id !== 'home').map((section) => {
+          return <section.component reportVisibility={reportVisibility} />;
+        })}
       </div>
       <Footer />
     </div>

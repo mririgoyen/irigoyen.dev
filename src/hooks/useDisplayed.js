@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'preact/hooks';
 import { useInView } from 'react-intersection-observer';
 
-const useDisplayed = ({ id, setActive }) => {
+const useDisplayed = ({ id, reportVisibility }) => {
   const [ displayed, setDisplayed ] = useState(false);
   const { inView, ref } = useInView({ threshold: .2 });
 
   useEffect(() => {
-    if (inView) {
-      setActive(id);
+    reportVisibility(id, inView);
 
-      if (displayed) {
-        return;
-      }
-
-      setDisplayed(true);
+    if (!inView || displayed) {
+      return;
     }
-  }, [ displayed, id, inView, setActive ]);
+
+    setDisplayed(true);
+  }, [ displayed, id, inView, reportVisibility ]);
 
   return { displayed, inView, ref };
 };

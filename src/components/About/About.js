@@ -7,20 +7,20 @@ import mirigoyenImage from '../../assets/mirigoyen.jpg';
 
 import classes from './About.scss';
 
-const About = ({ setActive }) => {
+const About = ({ reportVisibility }) => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='about'
-      setActive={setActive}
+      reportVisibility={reportVisibility}
     >
       <div className={classes.avatar}>
         <img alt='Michael Irigoyen' src={mirigoyenImage} />
       </div>
       <div className={classes.about}>
         <h1>About Me</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis ipsum ac porta consequat. Aliquam ac urna in massa auctor lobortis ut sit amet ante. Pellentesque laoreet ac lorem in aliquam. Nulla vitae nunc in nisl imperdiet faucibus eu sit amet tortor. Duis ac lacinia quam. Aenean interdum augue in vestibulum ultrices. Pellentesque convallis fringilla ipsum nec posuere. Vivamus ac porta tortor. Ut eu ultrices leo. Nunc id nunc nisi. Donec aliquam diam eu orci commodo ultricies. Nullam nisl leo, lacinia in porttitor quis, malesuada et ipsum. Phasellus diam velit, facilisis vel metus ut, dictum convallis lectus.</p>
+        <p>I'm a software engineer who has been working in the industry for over fifteen years. I enjoy music, gaming, iconography, and home improvement projects. I love to continuously learn new things and I find expanding my knowledge base often comes while helping others do the same. One of my passions is the Extra Life fundraiser, which raises money for kids in Children's Miracle Network Hospitals.</p>
         <div className={classes.contact}>
           <div className={classes.details}>
             <h2>Contact Details</h2>

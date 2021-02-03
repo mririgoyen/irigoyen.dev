@@ -5,8 +5,8 @@ import useDisplayed from '../../hooks/useDisplayed';
 
 import classes from './Hero.scss';
 
-const Hero = ({ setActive }) => {
-  const { ref } = useDisplayed({ id: 'home', setActive });
+const Hero = ({ reportVisibility }) => {
+  const { ref } = useDisplayed({ id: 'home', reportVisibility });
 
   return (
     <section

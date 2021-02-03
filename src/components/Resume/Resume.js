@@ -2,13 +2,13 @@ import SectionContainer from '../SectionContainer/SectionContainer';
 
 import classes from './Resume.scss';
 
-const Resume = ({ setActive }) => {
+const Resume = ({ reportVisibility }) => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='resume'
-      setActive={setActive}
+      reportVisibility={reportVisibility}
     >
       <div className={classes.container}>
         <div className={classes.category}>
