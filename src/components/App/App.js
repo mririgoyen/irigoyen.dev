@@ -2,6 +2,7 @@ import { Router } from 'preact-router';
 
 import Download from '../../routes/Download/Download';
 import Home from '../../routes/Home/Home';
+import ErrorPage from '../../routes/ErrorPage/ErrorPage';
 
 import classes from './App.scss';
 
@@ -36,6 +37,8 @@ const App = () => {
           path='/presentations/nobody-cares-about-your-ui'
           file='https://github.com/goyney/presentations/blob/main/FED%20UP%20-%20Nobody%20Cares%20About%20Your%20UI.pptx?raw=true'
         />
+
+        <ErrorPage default />
       </Router>
     </div>
   );
