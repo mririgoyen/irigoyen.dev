@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'preact/hooks';
 import { Router } from 'preact-router';
 
-import base from '../../base';
 import Header from '../Header/Header';
 import Home from '../../routes/Home/Home';
 import Blog from '../../routes/Blog/Blog';
@@ -21,8 +20,8 @@ const App = () => {
     <div className={classes.root}>
       <Header active={active} />
       <Router>
-        <Home path={`${base}/`} reportVisibility={reportVisibility} />
-        <Blog path={`${base}/blog/`} />
+        <Home path='/' reportVisibility={reportVisibility} />
+        <Blog path='/blog' />
       </Router>
     </div>
   );
