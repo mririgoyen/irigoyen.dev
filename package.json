@@ -23,6 +23,7 @@
     "react-intersection-observer": "^8.31.0"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^6.4.1",
     "dot-json": "^1.2.1",
     "eslint": "^6.0.1",
     "eslint-config-preact": "^1.1.0",

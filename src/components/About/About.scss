@@ -5,15 +5,6 @@
 
 .avatar {
   margin: 2rem 5rem 0 0;
-
-  img {
-    animation: pulsate 5s ease-in-out 0s infinite alternate;
-    border: 3px solid var(--active-color);
-    border-radius: 50%;
-    box-shadow: 0 0 0 2rem rgb(60, 60, 60);
-    height: auto;
-    max-width: 200px;
-  }
 }
 
 .about {
@@ -109,15 +100,5 @@
 
   .actions {
     margin-top: 2rem;
-  }
-}
-
-@keyframes pulsate {
-  from {
-    box-shadow: 0 0 0 1rem rgb(60, 60, 60);
-  }
-
-  to {
-    box-shadow: 0 0 0 2rem rgb(60, 60, 60);
   }
 }

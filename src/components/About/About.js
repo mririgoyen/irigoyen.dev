@@ -2,8 +2,7 @@ import Icon from '@mdi/react';
 import { mdiFileDownloadOutline } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
-
-import mirigoyenImage from '../../assets/mirigoyen.jpg';
+import Avatar from '../Avatar/Avatar';
 
 import classes from './About.scss';
 
@@ -15,9 +14,7 @@ const About = ({ reportVisibility }) => {
       id='about'
       reportVisibility={reportVisibility}
     >
-      <div className={classes.avatar}>
-        <img alt='Michael Irigoyen' src={mirigoyenImage} />
-      </div>
+      <Avatar className={classes.avatar} />
       <div className={classes.about}>
         <h1>About Me</h1>
         <p>I'm a software engineer who has been working in the industry for over fifteen years. I enjoy music, gaming, iconography, and home improvement projects. I love to continuously learn new things and I find expanding my knowledge base often comes while helping others do the same. One of my passions is the Extra Life fundraiser, which raises money for kids in Children's Miracle Network Hospitals.</p>
@@ -28,7 +25,7 @@ const About = ({ reportVisibility }) => {
             <p><a href='mailto:michael@irigoyen.dev'>michael@irigoyen.dev</a></p>
           </div>
           <div className={classes.actions}>
-            <a href='#'>
+            <a href='/Michael%20Irigoyen.pdf'>
               <Icon path={mdiFileDownloadOutline} size={1} />
               Download Resume
             </a>
