@@ -31,7 +31,7 @@ const Resume = ({ reportVisibility }) => {
             <div className={classes.item}>
               <h3>Intervest Construction, Inc.</h3>
               <h4>
-                <em>Web Administrator/Developer</em>
+                <em>Web Administrator / Developer</em>
                 <span className={classes.bullet}>&bull;</span>
                 <span>April 2013 - September 2015</span>
               </h4>
@@ -89,7 +89,7 @@ const Resume = ({ reportVisibility }) => {
               <h4>
                 <em>US 16/359,739</em>
                 <span className={classes.bullet}>&bull;</span>
-                <span>Pending</span>
+                <span>Patent Pending</span>
               </h4>
               <p>Patent relates to document storage, display and/or editing and, more particularly, to methods and apparatus which allow a device to display and edit a document using a Web browser, without having to support direct OOXML format document rendering and editing.</p>
             </div>
