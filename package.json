@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "preact build",
-    "build:gh": "GITHUB_PAGES=goyney.github.io preact build && dot-json ./build/manifest.json start_url \"/goyney.github.io/\"",
+    "build:gh": "GITHUB_PAGES=\"goyney.github.io\" preact build && dot-json ./build/manifest.json start_url \"/goyney.github.io/\"",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint src",
