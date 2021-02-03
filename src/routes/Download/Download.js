@@ -1,16 +1,14 @@
-import { useEffect } from 'preact/hooks';
 import { Link } from 'preact-router/match';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline } from '@mdi/js';
 
+import useInterval from '../../hooks/useInterval';
 import Avatar from '../../components/Avatar/Avatar';
 
 import classes from './Download.scss';
 
 const Download = ({ file, name }) => {
-  useEffect(() => {
-    window.location.replace(file);
-  }, [ file ]);
+  useInterval(() => window.location.replace(file), 3000);
 
   return (
     <div className={classes.root}>

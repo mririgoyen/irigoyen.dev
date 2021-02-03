@@ -11,7 +11,9 @@ const Talks = ({ reportVisibility }) => {
       reportVisibility={reportVisibility}
     >
       <div className={classes.container}>
-        <h1>Talks</h1>
+        <header>
+          <h1>Talks & Presentations</h1>
+        </header>
       </div>
     </SectionContainer>
   );

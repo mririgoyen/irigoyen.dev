@@ -5,4 +5,19 @@
 
 .container {
   width: 100%;
+
+  header {
+    text-align: center;
+  }
+
+  h1 {
+    border-bottom: 2px solid var(--active-color);
+    display: inline-block;
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    margin: 0 auto;
+    padding: .5rem .2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
