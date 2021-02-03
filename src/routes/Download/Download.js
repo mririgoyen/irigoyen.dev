@@ -1,3 +1,4 @@
+import { useState } from 'preact/hooks';
 import { Link } from 'preact-router/match';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline } from '@mdi/js';
@@ -8,7 +9,12 @@ import Avatar from '../../components/Avatar/Avatar';
 import classes from './Download.scss';
 
 const Download = ({ file, name }) => {
-  useInterval(() => window.location.replace(file), 3000);
+  const [ downloaded, setDownloaded ] = useState(false);
+
+  useInterval(() => {
+    setDownloaded(true);
+    window.location.replace(file);
+  }, !downloaded ? 3000 : null);
 
   return (
     <div className={classes.root}>
