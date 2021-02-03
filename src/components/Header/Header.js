@@ -15,7 +15,7 @@ const Header = ({ active }) => {
     <header className={classes.header}>
       <div className={classes.mobile}>
         <p><em>irigoyen.dev</em> <Icon className={classes.chevron} path={mdiChevronRight} size={1} /> {active === 'home' ? <Icon path={mdiHome} size={1} /> : active}</p>
-        <button onClick={() => setMenuOpen(true)}>
+        <button aria-label='Menu' onClick={() => setMenuOpen(true)}>
           <Icon path={mdiMenu} size={1} />
         </button>
       </div>
@@ -27,6 +27,7 @@ const Header = ({ active }) => {
       >
         {config.map((section) => (
           <a
+            aria-label={section.name}
             className={cx({ [classes.current]: active === section.id })}
             href={`#${section.id}`}
           >
