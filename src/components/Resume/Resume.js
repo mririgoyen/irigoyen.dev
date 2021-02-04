@@ -73,7 +73,7 @@ const Resume = ({ reportVisibility }) => {
                 <span className={classes.bullet}>&bull;</span>
                 <span>Graduated 2007</span>
               </h4>
-              <p>I studied Technology at Illinois State University, because I enjoyed learning about a wide variety of topics. The technology program offerred opportunities to explore computer operating systems and hardware, networking, electronics, and programming, instead of focusing on just one specific area. This allowed me to focus on the topics I found the most interesting as I moved into my professional career, while also having a well-rounded background to critically attack any problem I encountered.</p>
+              <p>I studied Technology at Illinois State University, because I enjoyed learning about a wide variety of topics. The technology program offered opportunities to explore computer operating systems and hardware, networking, electronics, and programming, instead of focusing on just one specific area. This allowed me to focus on the topics I found the most interesting as I moved into my professional career, while also having a well-rounded background to critically attack any problem I encountered.</p>
               <p>I participated in several activities and societies while at Illinois State. I am an alumnus of Phi Mu Alpha Sinfonia, and I was a member of the drumline in the Big Red Marching Machine.</p>
             </div>
           </div>
