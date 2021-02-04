@@ -3,7 +3,8 @@ import { mdiHandHeart } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 
-import ELTeamImage from '../../assets/elteam.jpg';
+import ELTeamWebp from '../../assets/elteam.webp';
+import ELTeamJpeg from '../../assets/elteam.jpg';
 
 import classes from './Philanthropy.scss';
 
@@ -21,10 +22,11 @@ const Philanthropy = ({ reportVisibility }) => {
         </header>
         <div className={classes.intro}>
           <figure>
-            <img
-              alt='Accusoft Extra Life Team - 2019'
-              src={ELTeamImage}
-            />
+            <picture>
+              <source srcset={ELTeamWebp} type='image/webp' />
+              <source srcset={ELTeamJpeg} type='image/jpeg' />
+              <img alt='Accusoft Extra Life Team - 2019' height={268} src={ELTeamJpeg} width={574} />
+            </picture>
             <figcaption>Accusoft Extra Life Team 2019</figcaption>
           </figure>
           <div>

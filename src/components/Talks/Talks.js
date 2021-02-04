@@ -4,11 +4,16 @@ import { mdiArrowDown } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 
-import OneUpImage from '../../assets/1up.jpg';
-import HumansImage from '../../assets/humans.jpg';
-import ApiUxImage from '../../assets/apiux.jpg';
-import DevOpsImage from '../../assets/devops.jpg';
-import UiImage from '../../assets/ui.jpg';
+import OneUpWebp from '../../assets/1up.webp';
+import OneUpJpeg from '../../assets/1up.jpg';
+import HumansWebp from '../../assets/humans.webp';
+import HumansJpeg from '../../assets/humans.jpg';
+import ApiUxWebp from '../../assets/apiux.webp';
+import ApiUxJpeg from '../../assets/apiux.jpg';
+import DevOpsWebp from '../../assets/devops.webp';
+import DevOpsJpeg from '../../assets/devops.jpg';
+import UiWebp from '../../assets/ui.webp';
+import UiJpeg from '../../assets/ui.jpg';
 
 import classes from './Talks.scss';
 
@@ -27,10 +32,11 @@ const Talks = ({ reportVisibility }) => {
         <div className={classes.items}>
           <div className={classes.item}>
             <figure>
-              <img
-                alt='Michael presenting 1UP: Empowering Communities with APIS'
-                src={OneUpImage}
-              />
+              <picture>
+                <source srcset={OneUpWebp} type='image/webp' />
+                <source srcset={OneUpJpeg} type='image/jpeg' />
+                <img alt='Michael presenting 1UP: Empowering Communities with APIs' height={194} src={OneUpJpeg} width={275} />
+              </picture>
             </figure>
             <div className={classes.info}>
               <h2>1UP: Empowering Communities with APIs</h2>
@@ -49,10 +55,11 @@ const Talks = ({ reportVisibility }) => {
 
           <div className={cx(classes.item, classes.reverse)}>
             <figure>
-              <img
-                alt='Michael presenting Design Your API for Humans'
-                src={HumansImage}
-              />
+              <picture>
+                <source srcset={HumansWebp} type='image/webp' />
+                <source srcset={HumansJpeg} type='image/jpeg' />
+                <img alt='Michael presenting Design Your API for Humans' height={194} src={HumansJpeg} width={275} />
+              </picture>
             </figure>
             <div className={classes.info}>
               <h2>Design Your API for Humans</h2>
@@ -71,10 +78,11 @@ const Talks = ({ reportVisibility }) => {
 
           <div className={classes.item}>
             <figure>
-              <img
-                alt='Michael presenting The API User Experience'
-                src={ApiUxImage}
-              />
+              <picture>
+                <source srcset={ApiUxWebp} type='image/webp' />
+                <source srcset={ApiUxJpeg} type='image/jpeg' />
+                <img alt='Michael presenting The API User Experience' height={194} src={ApiUxJpeg} width={275} />
+              </picture>
             </figure>
             <div className={classes.info}>
               <h2>The API User Experience</h2>
@@ -93,10 +101,11 @@ const Talks = ({ reportVisibility }) => {
 
           <div className={cx(classes.item, classes.reverse)}>
             <figure>
-              <img
-                alt='Michael before presenting Continuous DevOps'
-                src={DevOpsImage}
-              />
+              <picture>
+                <source srcset={DevOpsWebp} type='image/webp' />
+                <source srcset={DevOpsJpeg} type='image/jpeg' />
+                <img alt='Michael before presenting Continuous DevOps' height={194} src={DevOpsJpeg} width={275} />
+              </picture>
             </figure>
             <div className={classes.info}>
               <h2>Continuous DevOps</h2>
@@ -115,10 +124,11 @@ const Talks = ({ reportVisibility }) => {
 
           <div className={classes.item}>
             <figure>
-              <img
-                alt='Michael presenting Nobody Cares About Your UI'
-                src={UiImage}
-              />
+              <picture>
+                <source srcset={UiWebp} type='image/webp' />
+                <source srcset={UiJpeg} type='image/jpeg' />
+                <img alt='Michael presenting Nobody Cares About Your UI' height={194} src={UiJpeg} width={275} />
+              </picture>
             </figure>
             <div className={classes.info}>
               <h2>Nobody Cares About Your UI</h2>
