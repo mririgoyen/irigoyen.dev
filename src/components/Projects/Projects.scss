@@ -1,4 +1,112 @@
 .root {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 255);
   color: var(--text-color);
+}
+
+.container {
+  width: 100%;
+
+  header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  h1 {
+    border-bottom: 2px solid var(--active-color);
+    display: inline-block;
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    margin: 0 auto;
+    padding: .5rem .2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.item {
+  display: flex;
+  padding: 1rem 0 3rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 .5rem;
+  }
+
+  h3 {
+    font-weight: 400;
+    margin: 0;
+
+    em {
+      font-family: var(--secondary-font);
+      font-size: 1.2rem;
+    }
+
+    span {
+      color: rgba(0, 0, 0, .5);
+      font-size: .9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .bullet {
+      color: rgb(0, 0, 0);
+      padding: 0 .5rem;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  a {
+    color: var(--active-color);
+    text-decoration: none;
+
+    &:hover {
+      color: darken(rgb(0, 132, 255), 20%);
+    }
+  }
+
+  .pictogrammers {
+    margin-top: -1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .item {
+    flex-direction: column;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      em {
+        display: block;
+      }
+    }
+
+    figure {
+      margin: 0;
+      text-align: center;
+
+      img {
+        height: auto;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        transform: rotate3d(1, 1, 1, 0);
+      }
+    }
+  }
+
+  .bullet {
+    display: none;
+  }
 }
