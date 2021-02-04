@@ -74,8 +74,22 @@
     }
   }
 
+  figure {
+    img {
+      box-shadow: 0 3px 10px 10px rgba(0, 0, 0, .2);
+      outline: 7px solid rgba(255, 255, 255);
+      transform: rotate3d(1, 1, 1, -5deg);
+    }
+  }
+
   .pictogrammers {
     margin-top: -1rem;
+
+    img {
+      box-shadow: none;
+      outline: 0;
+      transform: none;
+    }
   }
 }
 
