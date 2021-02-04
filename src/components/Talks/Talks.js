@@ -51,7 +51,7 @@ const Talks = ({ reportVisibility }) => {
                 <span className={classes.bullet}>&bull;</span>
                 <span>October 9, 2019</span>
               </h3>
-              <p>Good APIs can level-up the dev life. But great APIs can bring an "Extra Life" to kids in need. In this talk, we discuss building a JavaScript API that can be used in 3 different ways from the same source code with the goal of making it easier to help raise money for sick kids in our communities via the Extra-Life charity.</p>
+              <p>Good APIs can level-up the dev life, but great APIs can bring an "Extra Life" to kids in need. In this talk, we discuss building a JavaScript API that can be used in 3 different ways from the same source code with the goal of making it easier to help raise money for sick kids in our communities via the Extra-Life charity.</p>
               <a href='/presentations/1up-empowering-communities-with-apis'>
                 <Icon path={mdiArrowDown} size={.9} />
                 Download Slide Deck
@@ -138,7 +138,7 @@ const Talks = ({ reportVisibility }) => {
                 <span className={classes.bullet}>&bull;</span>
                 <span>February 14, 2017</span>
               </h3>
-              <p>DevOps emphasizes Quality of Life improvements at all stages of the software delivery process, not just through Continuous Integration/Deployment. Learn more about our approach into implementing Continuous DevOps.</p>
+              <p>DevOps emphasizes quality-of-life improvements at all stages of the software delivery process, not just through continuous integration/deployment. Learn more about Accusoft's approach into implementing Continuous DevOps.</p>
               <a href='/presentations/continuous-devops'>
                 <Icon path={mdiArrowDown} size={.9} />
                 Download Slide Deck

@@ -17,7 +17,7 @@ const Hero = ({ reportVisibility }) => {
       <div className={classes.container}>
         <div className={classes.hero}>
           <h1>I'm Michael Irigoyen.</h1>
-          <h2>I'm a Chicago based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about'>Start scrolling</a> to learn more <a href='#about'>about me</a>.</h2>
+          <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about'>Start scrolling</a> to learn more.</h2>
           <div className={classes.social}>
             <a aria-label='GitHub Profile' href='https://github.com/goyney'>
               <Icon path={mdiGithub} size={1.5} />
