@@ -24,7 +24,7 @@ const Resume = ({ reportVisibility }) => {
                 <span>September 2015 - Current</span>
               </h4>
               <p>As a senior software engineer, I work daily in a continuously delivered Node.js microservice environment. Regularly, I take the lead on designing or implementing new functionality for our SaaS-based applications. I continuously work to improve the quality of my code through extensive unit and integration testing, as well as employing functional programming techniques and good coding patterns. Additionally, I explore DevOps related tasks that can help improve the quality of life for the engineering team.</p>
-              <p>As a scrum master, I facilitate and create opportunities each sprint for the team to succeed. I consistently research, analyze, and experimente to ensure our Scrum process runs smoothly and without interruption so the team can focus on reaching their goals.</p>
+              <p>As a scrum master, I facilitate and create opportunities each sprint for the team to succeed. I consistently research, analyze, and experiment to ensure our Scrum process runs smoothly and without interruption so the team can focus on reaching their goals.</p>
               <p>As a UX engineer, it was my responsibility to promote easy and intuitive user interfaces for our products, including design work, research (market, technical, audience), usability studies, AB testing, and more to validate our user experience strategies.</p>
             </div>
 
