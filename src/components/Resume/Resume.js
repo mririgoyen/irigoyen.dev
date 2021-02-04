@@ -118,7 +118,7 @@ const Resume = ({ reportVisibility }) => {
                 <span className={classes.bullet}>&bull;</span>
                 <span>April 7, 2006</span>
               </h4>
-              <p>Network+ ensures an IT professional has the knowledge and skills to design and implement functional networks, configure, manage, and maintain essential network devices, Implement network security, standards, and protocols, and troubleshoot network problems.</p>
+              <p>Network+ ensures an IT professional has the knowledge and skills to design and implement functional networks, configure, manage, and maintain essential network devices, implement network security, standards, and protocols, and troubleshoot network problems.</p>
             </div>
 
             <div className={classes.item}>
