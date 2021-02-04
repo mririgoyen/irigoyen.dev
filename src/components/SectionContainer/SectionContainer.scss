@@ -26,6 +26,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .root {
+    padding: 6rem 2rem;
+  }
+
   .container {
     flex-direction: column;
   }

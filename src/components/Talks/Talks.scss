@@ -89,10 +89,10 @@
     border-radius: 4px;
     color: rgb(0, 0, 0);
     display: inline-flex;
-    font-size: .9rem;
-    font-weight: 600px;
-    letter-spacing: 1px;
-    padding: 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1.25rem 2.5rem;
     text-decoration: none;
     text-transform: uppercase;
 
@@ -114,8 +114,16 @@
       flex-direction: column;
 
       figure {
-        display: none;
+        text-align: center;
+
+        img {
+          transform: rotate3d(1, 1, 1, 0);
+        }
       }
+    }
+
+    h2 {
+      font-size: 1.8rem;
     }
 
     h3 {
@@ -126,13 +134,19 @@
 
     figure {
       margin: 0;
+      text-align: center;
 
       img {
         height: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         max-width: 100%;
         transform: rotate3d(1, 1, 1, 0);
       }
+    }
+
+    a {
+      justify-content: center;
+      width: 100%;
     }
   }
 
