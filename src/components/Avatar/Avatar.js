@@ -1,7 +1,7 @@
 import cx from 'classnames';
 
-import mirigoyenWebp from '../../assets/mirigoyen.webp';
-import mirigoyenJpeg from '../../assets/mirigoyen.jpg';
+import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
+import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
 import classes from './Avatar.scss';
 
