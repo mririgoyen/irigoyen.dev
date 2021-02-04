@@ -25,7 +25,7 @@ const Philanthropy = ({ reportVisibility }) => {
             <picture>
               <source srcset={ELTeamWebp} type='image/webp' />
               <source srcset={ELTeamJpeg} type='image/jpeg' />
-              <img alt='Accusoft Extra Life Team - 2019' height={254} src={ELTeamJpeg} width={560} />
+              <img alt='Accusoft Extra Life Team - 2019' height={268} src={ELTeamJpeg} width={574} />
             </picture>
             <figcaption>Accusoft Extra Life Team 2019</figcaption>
           </figure>
