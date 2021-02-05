@@ -5,10 +5,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "preact build",
-    "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
-    "lint": "eslint src",
-    "test": "jest"
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "eslint \"**/*.{js,jsx}\"",
+    "lint:style": "stylelint \"./src/**/*.{css,scss}\""
   },
   "dependencies": {
     "@fontsource/ibm-plex-serif": "^4.1.0",
@@ -29,7 +29,6 @@
     "preact-cli": "^3.0.0",
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
-    "sirv-cli": "1.0.3",
     "stylelint": "^13.9.0",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-standard": "^20.0.0",
