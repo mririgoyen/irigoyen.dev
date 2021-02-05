@@ -1,31 +1,24 @@
 .root {
+  background-attachment: fixed;
+  background-image: url('../../assets/images/chicago.jpg');
+  background-position: right;
+  background-size: cover;
   height: 100vh;
+  overflow: hidden;
+  perspective: 300px;
   position: relative;
   transform-style: preserve-3d;
 }
 
-.background,
 .container {
+  align-items: center;
   bottom: 0;
+  display: flex;
+  justify-content: center;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.background {
-  background-image: url('../../assets/images/chicago.jpg');
-  background-position: right;
-  background-size: cover;
-  left: -5px;
-  transform: translateZ(-300px) scale(2);
-  z-index: 3;
-}
-
-.container {
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 .hero {
@@ -90,6 +83,7 @@
   text-transform: uppercase;
   transition: color .3s ease-in-out;
   will-change: color;
+  z-index: 4;
 
   svg {
     margin-right: .5rem;

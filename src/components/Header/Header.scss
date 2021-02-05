@@ -1,25 +1,30 @@
 .header {
+  background-color: rgba(0, 0, 0, .6);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
   nav {
     align-items: center;
-    background-color: rgba(0, 0, 0, .6);
     display: flex;
-    font-size: .9rem;
     justify-content: center;
-    left: 0;
-    position: absolute;
-    top: 0;
     user-select: none;
-    width: 100%;
-    z-index: 10;
   }
 
-  a {
+  button {
     align-items: center;
+    background-color: transparent;
+    border: 0;
     border-bottom: 3px solid transparent;
     color: rgba(255, 255, 255, .8);
+    cursor: pointer;
     display: flex;
+    font-size: .9rem;
     margin-top: 3px;
     min-height: 62px;
+    outline: 0;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
@@ -55,8 +60,9 @@
     display: flex;
     font-size: .9rem;
     font-weight: 600;
+    height: 56px;
     justify-content: space-between;
-    min-height: 56px;
+    overflow: hidden;
     position: absolute;
     right: 0;
     top: 0;
@@ -92,6 +98,7 @@
 
   .header {
     background-color: transparent;
+    height: 56px;
 
     nav {
       background-color: transparent;
@@ -103,23 +110,22 @@
       will-change: transform;
 
       &.active {
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 56px, 0);
       }
 
-      a {
+      button {
         background-color: rgb(10, 10, 10);
+        border-bottom: 0;
+        border-top: 1px solid rgb(255, 255, 255, .1);
         color: rgb(255, 255, 255);
         font-weight: 600;
+        height: 56px;
         justify-content: center;
         margin: 0;
         width: 100%;
 
-        &:not(:last-child) {
-          border-bottom: 1px solid rgb(255, 255, 255, .1);
-        }
-
-        &:last-child {
-          border: 0;
+        &.current {
+          border-color: rgb(255, 255, 255, .1);
         }
       }
     }

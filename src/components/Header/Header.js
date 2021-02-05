@@ -1,21 +1,25 @@
 import { useState } from 'preact/hooks';
 import cx from 'classnames';
+import { useScrollSections } from 'react-scroll-section';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiHome, mdiMenu } from '@mdi/js';
 
-import useConfig from '../../hooks/useConfig';
-
 import classes from './Header.scss';
 
-const Header = ({ active }) => {
+const Header = () => {
   const [ menuOpen, setMenuOpen ] = useState(false);
-  const { config } = useConfig();
+  const sections = useScrollSections();
+  const activeSection = sections.find((s) => s.selected)?.id || 'home';
 
   return (
     <header className={classes.header}>
       <div className={classes.mobile}>
-        <p><em>irigoyen.dev</em> <Icon className={classes.chevron} path={mdiChevronRight} size={1} /> {active === 'home' ? <Icon path={mdiHome} size={1} /> : active}</p>
-        <button aria-label='Menu' onClick={() => setMenuOpen(true)}>
+        <p>
+          <em>irigoyen.dev</em>
+          <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
+          {activeSection === 'home' ? <Icon path={mdiHome} size={1} /> : activeSection}
+        </p>
+        <button aria-label='Menu' onClick={() => setMenuOpen(!menuOpen)}>
           <Icon path={mdiMenu} size={1} />
         </button>
       </div>
@@ -23,16 +27,21 @@ const Header = ({ active }) => {
         className={cx({
           [classes.active]: menuOpen
         })}
-        onClick={() => setMenuOpen(false)}
       >
-        {config.map((section) => (
-          <a
-            aria-label={section.name}
-            className={cx({ [classes.current]: active === section.id })}
-            href={`#${section.id}`}
+        {sections.map((section) => (
+          <button
+            aria-label={section.id}
+            className={cx({ [classes.current]: section.selected })}
+            key={section.id}
+            onClick={() => {
+              section.onClick();
+              history.pushState({}, '', `#${section.id}`);
+              setMenuOpen(false);
+            }}
+            selected={section.selected}
           >
-            {section.icon ? <Icon path={section.icon} size={1} /> : section.name}
-          </a>
+            {section.id === 'home' ? <Icon path={mdiHome} size={1} /> : section.id}
+          </button>
         ))}
       </nav>
     </header>

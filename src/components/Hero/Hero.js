@@ -1,18 +1,26 @@
+import { useEffect, useState } from 'preact/hooks';
+import { Section } from 'react-scroll-section';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
 
-import useDisplayed from '../../hooks/useDisplayed';
-
 import classes from './Hero.scss';
 
-const Hero = ({ reportVisibility }) => {
-  const { ref } = useDisplayed({ id: 'home', reportVisibility });
+const Hero = () => {
+  const [ offset, setOffset ] = useState(0);
+
+  useEffect(() => {
+    const parallaxShift = () => setOffset((window.pageYOffset / 5) * -1);
+    window.addEventListener('scroll', parallaxShift);
+    return () => window.removeEventListener('scroll', parallaxShift);
+  }, []);
 
   return (
-    <section
+    <Section
       className={classes.root}
       id='home'
-      ref={ref}
+      style={{
+        backgroundPositionY: offset
+      }}
     >
       <div className={classes.container}>
         <div className={classes.hero}>
@@ -32,8 +40,7 @@ const Hero = ({ reportVisibility }) => {
           <span>Scroll Down</span>
         </a>
       </div>
-      <div className={classes.background} />
-    </section>
+    </Section>
   );
 };
 
