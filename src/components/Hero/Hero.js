@@ -9,7 +9,7 @@ const Hero = () => {
   const [ offset, setOffset ] = useState(0);
 
   useEffect(() => {
-    const parallaxShift = () => setOffset((window.pageYOffset / 5) * -1);
+    const parallaxShift = () => setOffset(window.pageYOffset / 5);
     window.addEventListener('scroll', parallaxShift);
     return () => window.removeEventListener('scroll', parallaxShift);
   }, []);
