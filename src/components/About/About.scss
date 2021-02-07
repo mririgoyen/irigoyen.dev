@@ -1,7 +1,7 @@
 .root {
   align-items: center;
   background-color: rgb(40, 40, 40);
-  color: rgb(255, 255, 255);
+  color: $white;
   min-height: 100vh;
 }
 
@@ -16,23 +16,14 @@
   }
 
   p {
-    color: rgba(255, 255, 255, .8);
+    color: rgba($white, .8);
     font-size: 1.1rem;
     line-height: 1.75;
-  }
-
-  a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-
-    &:hover {
-      color: var(--active-color);
-    }
   }
 }
 
 .contact {
-  border-top: 1px solid rgba(255, 255, 255, .05);
+  border-top: 1px solid rgba($white, .05);
   display: flex;
   margin-top: 4rem;
   padding-top: 4rem;
@@ -52,29 +43,23 @@
   }
 
   a {
-    color: rgba(255, 255, 255, .5);
-    text-decoration: none;
-
-    &:hover {
-      color: var(--active-color);
-    }
+    color: rgba($white, .5);
   }
 }
 
 .actions {
   a {
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: $white;
     border: 0;
     border-radius: 5px;
-    color: var(--text-color);
+    color: $text-color;
     display: flex;
     font-size: .8rem;
     font-weight: 600;
     justify-content: center;
     letter-spacing: 2px;
     padding: 1.25rem 2.5rem;
-    text-decoration: none;
     text-transform: uppercase;
     user-select: none;
 
@@ -83,8 +68,8 @@
     }
 
     &:hover {
-      background-color: var(--active-color);
-      color: rgb(255, 255, 255);
+      background-color: $active-color;
+      color: $white;
     }
   }
 }

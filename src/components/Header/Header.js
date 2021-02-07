@@ -2,7 +2,7 @@ import { useState } from 'preact/hooks';
 import cx from 'classnames';
 import { useScrollSections } from 'react-scroll-section';
 import Icon from '@mdi/react';
-import { mdiChevronRight, mdiHome, mdiMenu } from '@mdi/js';
+import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
 
 import classes from './Header.scss';
 
@@ -20,7 +20,7 @@ const Header = () => {
           {activeSection === 'home' ? <Icon path={mdiHome} size={1} /> : activeSection}
         </p>
         <button aria-label='Menu' onClick={() => setMenuOpen(!menuOpen)}>
-          <Icon path={mdiMenu} size={1} />
+          <Icon path={menuOpen ? mdiClose : mdiMenu} size={1} />
         </button>
       </div>
       <nav

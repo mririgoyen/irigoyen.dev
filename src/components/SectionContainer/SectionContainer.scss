@@ -6,7 +6,7 @@
 
 .container {
   display: flex;
-  max-width: var(--width-max);
+  max-width: $width-max;
   width: 100%;
 }
 

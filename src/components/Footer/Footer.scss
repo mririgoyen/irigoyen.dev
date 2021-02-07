@@ -1,28 +1,23 @@
 .root {
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, .05);
-  color: rgb(255, 255, 255);
+  border-top: 1px solid rgba($white, .05);
+  color: $white;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: var(--width-max);
+  max-width: $width-max;
   padding: 3rem 1rem;
   user-select: none;
 }
 
 .copyright {
-  color: rgba(255, 255, 255, .5);
+  color: rgba($white, .5);
   margin: 0;
 }
 
 .social {
   a {
-    color: rgb(255, 255, 255);
     margin: .25rem;
-
-    &:hover {
-      color: var(--active-color);
-    }
   }
 }
 

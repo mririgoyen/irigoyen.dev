@@ -1,9 +1,9 @@
 .root {
   background-color: rgb(40, 40, 40);
-  color: rgb(255, 255, 255);
+  color: $white;
 
   h2 {
-    border-bottom: 2px solid var(--active-color);
+    border-bottom: 2px solid $active-color;
     display: inline-block;
     font-size: 1.2rem;
     letter-spacing: 3px;
@@ -32,7 +32,7 @@
   margin: 0 2rem;
 
   dt {
-    color: rgba(255, 255, 255, .5);
+    color: rgba($white, .5);
     font-size: 1.3rem;
     user-select: none;
   }
@@ -40,15 +40,6 @@
   dd {
     font-size: 1.5rem;
     margin: .5rem 0 2rem;
-  }
-
-  a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-
-    &:hover {
-      color: var(--active-color);
-    }
   }
 }
 

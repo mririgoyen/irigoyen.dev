@@ -1,6 +1,6 @@
 .root {
-  background-color: rgb(255, 255, 255);
-  color: var(--text-color);
+  background-color: $white;
+  color: $text-color;
 }
 
 .container {
@@ -12,7 +12,7 @@
   }
 
   h2 {
-    border-bottom: 2px solid var(--active-color);
+    border-bottom: 2px solid $active-color;
     display: inline-block;
     font-size: 1.1rem;
     letter-spacing: 5px;
@@ -28,7 +28,7 @@
   padding: 1rem 0 3rem;
 
   &:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba($black, .1);
     margin-bottom: 3rem;
   }
 
@@ -43,19 +43,19 @@
     margin: 0;
 
     em {
-      font-family: var(--secondary-font);
+      font-family: $secondary-font;
       font-size: 1.2rem;
     }
 
     span {
-      color: rgba(0, 0, 0, .5);
+      color: rgba($black, .5);
       font-size: .9rem;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     .bullet {
-      color: rgb(0, 0, 0);
+      color: $black;
       padding: 0 .5rem;
     }
   }
@@ -66,18 +66,17 @@
   }
 
   a {
-    color: var(--active-color);
-    text-decoration: none;
+    color: $active-color;
 
     &:hover {
-      color: darken(rgb(0, 132, 255), 20%);
+      color: darken($active-color, 20%);
     }
   }
 
   figure {
     img {
-      box-shadow: 0 3px 10px 10px rgba(0, 0, 0, .2);
-      outline: 7px solid rgba(255, 255, 255);
+      box-shadow: 0 3px 10px 10px rgba($black, .2);
+      outline: 7px solid rgba($white);
       transform: rotate3d(1, 1, 1, -5deg);
     }
   }

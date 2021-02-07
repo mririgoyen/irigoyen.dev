@@ -1,8 +1,6 @@
 .root {
   align-items: center;
-  background-image: url('../../assets/images/chicago.jpg');
-  background-position: right;
-  background-size: cover;
+  background: url('../../assets/images/chicago.jpg') right center;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -14,9 +12,8 @@
   text-align: center;
 
   h1,
-  em,
-  a {
-    color: rgb(255, 255, 255);
+  em {
+    color: $white;
   }
 
   h1 {
@@ -26,8 +23,8 @@
   }
 
   h2 {
-    color: rgba(255, 255, 255, .7);
-    font-family: var(--secondary-font);
+    color: rgba($white, .7);
+    font-family: $secondary-font;
     font-size: 2.5vh;
     font-weight: 500;
   }
@@ -35,18 +32,10 @@
   em {
     font-style: normal;
   }
-
-  a {
-    text-decoration: none;
-
-    &:hover {
-      color: var(--active-color);
-    }
-  }
 }
 
 .social {
-  border-top: 1px solid rgba(255, 255, 255, .25);
+  border-top: 1px solid rgba($white, .25);
   display: inline-block;
   margin-top: 2rem;
   padding: 2rem;
@@ -59,7 +48,7 @@
 .scroll {
   align-items: center;
   bottom: 2rem;
-  color: rgb(255, 255, 255);
+  color: $white;
   display: flex;
   font-size: .7rem;
   letter-spacing: .25rem;
@@ -79,7 +68,7 @@
     position: relative;
 
     &::after {
-      border-bottom: 1px solid var(--active-color);
+      border-bottom: 1px solid $active-color;
       bottom: 0;
       content: '';
       left: -250px;
@@ -91,6 +80,8 @@
   }
 
   &:hover {
+    color: $white;
+
     span {
       &::after {
         left: 0;
