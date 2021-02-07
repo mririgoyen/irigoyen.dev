@@ -7,6 +7,6 @@ import '@fontsource/ibm-plex-serif/500.css';
 
 import App from './components/App/App';
 
-import './style.scss';
+import './style/defaults.scss';
 
 export default App;

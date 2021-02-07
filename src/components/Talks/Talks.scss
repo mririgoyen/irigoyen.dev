@@ -1,3 +1,5 @@
+@import '../../style/variables.scss';
+
 .root {
   background-color: rgb(240, 240, 240);
   color: $text-color;
@@ -78,7 +80,7 @@
   figure {
     img {
       box-shadow: 0 3px 10px 10px rgba($black, .2);
-      outline: 7px solid rgba($white);
+      outline: 7px solid $white;
       transform: rotate3d(1, 1, 1, -5deg);
     }
   }
