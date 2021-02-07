@@ -6,9 +6,7 @@ import classes from './Footer.scss';
 const Footer = () => {
   return (
     <footer className={classes.root}>
-      <div className={classes.copyright}>
-        <p>© {new Date().getFullYear()} Michael Irigoyen</p>
-      </div>
+      <p className={classes.copyright}>© {new Date().getFullYear()} Michael Irigoyen</p>
       <div className={classes.social}>
         <a aria-label='GitHub Profile' href='https://github.com/goyney'>
           <Icon path={mdiGithub} size={1.5} />

@@ -1,42 +1,28 @@
 .root {
+  align-items: center;
   background-image: url('../../assets/images/chicago.jpg');
   background-position: right;
   background-size: cover;
-  height: 100vh;
-  overflow: hidden;
-  perspective: 300px;
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.container {
-  align-items: center;
-  bottom: 0;
   display: flex;
+  height: 100vh;
   justify-content: center;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+  will-change: background-position-y;
 }
 
 .hero {
   max-width: 80%;
   text-align: center;
-  transform: translateZ(0);
-  z-index: 4;
-
-  h1 {
-    color: rgb(255, 255, 255);
-    font-size: 9vh;
-    font-weight: 600;
-    margin-bottom: 0;
-  }
 
   h1,
   em,
   a {
     color: rgb(255, 255, 255);
+  }
+
+  h1 {
+    font-size: 9vh;
+    font-weight: 600;
+    margin-bottom: 0;
   }
 
   h2 {
@@ -82,7 +68,6 @@
   text-transform: uppercase;
   transition: color .3s ease-in-out;
   will-change: color;
-  z-index: 4;
 
   svg {
     margin-right: .5rem;

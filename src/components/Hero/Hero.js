@@ -22,24 +22,22 @@ const Hero = () => {
         backgroundPositionY: offset
       }}
     >
-      <div className={classes.container}>
-        <div className={classes.hero}>
-          <h1>I'm Michael Irigoyen.</h1>
-          <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about'>Start scrolling</a> to learn more.</h2>
-          <div className={classes.social}>
-            <a aria-label='GitHub Profile' href='https://github.com/goyney'>
-              <Icon path={mdiGithub} size={1.5} />
-            </a>
-            <a aria-label='LinkedIn Profile' href='https://www.linkedin.com/in/michael-irigoyen/'>
-              <Icon path={mdiLinkedin} size={1.5} />
-            </a>
-          </div>
+      <div className={classes.hero}>
+        <h1>I'm Michael Irigoyen.</h1>
+        <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about'>Start scrolling</a> to learn more.</h2>
+        <div className={classes.social}>
+          <a aria-label='GitHub Profile' href='https://github.com/goyney'>
+            <Icon path={mdiGithub} size={1.5} />
+          </a>
+          <a aria-label='LinkedIn Profile' href='https://www.linkedin.com/in/michael-irigoyen/'>
+            <Icon path={mdiLinkedin} size={1.5} />
+          </a>
         </div>
-        <a className={classes.scroll} href='#about'>
-          <Icon path={mdiArrowDownCircleOutline} size={1.5} />
-          <span>Scroll Down</span>
-        </a>
       </div>
+      <a className={classes.scroll} href='#about'>
+        <Icon path={mdiArrowDownCircleOutline} size={1.5} />
+        <span>Scroll Down</span>
+      </a>
     </Section>
   );
 };
