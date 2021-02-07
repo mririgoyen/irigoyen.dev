@@ -16,11 +16,11 @@ const About = ({ reportVisibility }) => {
     >
       <Avatar className={classes.avatar} />
       <div className={classes.about}>
-        <h1>About Me</h1>
+        <h2>About Me</h2>
         <p>I am a software engineer who has been working in the industry for over fifteen years. I enjoy music, gaming, iconography, and home improvement projects. I love to continuously learn new things, and I find expanding my knowledge base often comes while helping others do the same. One of my passions is the <a href='#philanthropy'>Extra Life fundraiser</a>, which raises money for kids in Children's Miracle Network Hospitals.</p>
         <div className={classes.contact}>
           <div className={classes.details}>
-            <h2>Contact Details</h2>
+            <h3>Contact Details</h3>
             <p>Michael Irigoyen</p>
             <p><a href='mailto:michael@irigoyen.dev'>michael@irigoyen.dev</a></p>
           </div>

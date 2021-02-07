@@ -18,7 +18,7 @@ const Philanthropy = ({ reportVisibility }) => {
     >
       <div className={classes.container}>
         <header>
-          <h1>Philanthropy</h1>
+          <h2>Philanthropy</h2>
         </header>
         <div className={classes.intro}>
           <figure>

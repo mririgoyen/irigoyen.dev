@@ -27,7 +27,7 @@ const Talks = ({ reportVisibility }) => {
     >
       <div className={classes.container}>
         <header>
-          <h1>Talks & Presentations</h1>
+          <h2>Talks & Presentations</h2>
         </header>
         <div className={classes.items}>
           <div className={classes.item}>
@@ -45,12 +45,12 @@ const Talks = ({ reportVisibility }) => {
               </picture>
             </figure>
             <div className={classes.info}>
-              <h2>1UP: Empowering Communities with APIs</h2>
-              <h3>
+              <h3>1UP: Empowering Communities with APIs</h3>
+              <h4>
                 <em>Presented at API: World &mdash; San Jose, CA</em>
                 <span className={classes.bullet}>&bull;</span>
                 <span>October 9, 2019</span>
-              </h3>
+              </h4>
               <p>Good APIs can level-up the dev life, but great APIs can bring an "Extra Life" to kids in need. In this talk, we discuss building a JavaScript API that can be used in 3 different ways from the same source code with the goal of making it easier to help raise money for sick kids in our communities via the Extra Life fundraiser.</p>
               <a href='/presentations/1up-empowering-communities-with-apis'>
                 <Icon path={mdiArrowDown} size={.9} />
@@ -74,12 +74,12 @@ const Talks = ({ reportVisibility }) => {
               </picture>
             </figure>
             <div className={classes.info}>
-              <h2>Design Your API for Humans</h2>
-              <h3>
+              <h3>Design Your API for Humans</h3>
+              <h4>
                 <em>Presented on Main Stage at API: World &mdash; San Jose, CA</em>
                 <span className={classes.bullet}>&bull;</span>
                 <span>September 12, 2018</span>
-              </h3>
+              </h4>
               <p>Throw away the notion of building something for a computer to consume. Let's determine what your users need to successfully and easily implement your interface.</p>
               <a href='/presentations/design-your-api-for-humans'>
                 <Icon path={mdiArrowDown} size={.9} />
@@ -103,12 +103,12 @@ const Talks = ({ reportVisibility }) => {
               </picture>
             </figure>
             <div className={classes.info}>
-              <h2>The API User Experience</h2>
-              <h3>
+              <h3>The API User Experience</h3>
+              <h4>
                 <em>Presented at API: World &mdash; San Jose, CA</em>
                 <span className={classes.bullet}>&bull;</span>
                 <span>September 11, 2018</span>
-              </h3>
+              </h4>
               <p>Why aren't people using your API? Why aren't people using your product? Let's determine how to define why and discuss a successful implementation and usage process.</p>
               <a href='/presentations/the-api-user-experience'>
                 <Icon path={mdiArrowDown} size={.9} />
@@ -132,12 +132,12 @@ const Talks = ({ reportVisibility }) => {
               </picture>
             </figure>
             <div className={classes.info}>
-              <h2>Continuous DevOps</h2>
-              <h3>
+              <h3>Continuous DevOps</h3>
+              <h4>
                 <em>Presented at DeveloperWeek &mdash; San Francisco, CA</em>
                 <span className={classes.bullet}>&bull;</span>
                 <span>February 14, 2017</span>
-              </h3>
+              </h4>
               <p>DevOps emphasizes quality-of-life improvements at all stages of the software delivery process, not just through continuous integration/deployment. Learn more about Accusoft's approach into implementing Continuous DevOps.</p>
               <a href='/presentations/continuous-devops'>
                 <Icon path={mdiArrowDown} size={.9} />
@@ -161,12 +161,12 @@ const Talks = ({ reportVisibility }) => {
               </picture>
             </figure>
             <div className={classes.info}>
-              <h2>Nobody Cares About Your UI</h2>
-              <h3>
+              <h3>Nobody Cares About Your UI</h3>
+              <h4>
                 <em>Presented at BarCamp Tampa Bay &mdash; Tampa, FL</em>
                 <span className={classes.bullet}>&bull;</span>
                 <span>October 1, 2016</span>
-              </h3>
+              </h4>
               <p>For back-end developers jumping into front-end work, UI and UX can be very daunting. In this presentation we will answer: What is UI and UX design? What are common misconceptions? What external factors do we need to consider when working in the front-end?</p>
               <a href='/presentations/nobody-cares-about-your-ui'>
                 <Icon path={mdiArrowDown} size={.9} />
