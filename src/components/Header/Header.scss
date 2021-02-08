@@ -95,6 +95,12 @@
       color: $white;
       outline: 0;
       padding: 1rem;
+      transition: background-color .5s;
+      will-change: background-color;
+
+      &.open {
+        background-color: rgb(204, 56, 56);
+      }
     }
   }
 

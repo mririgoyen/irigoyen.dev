@@ -19,7 +19,13 @@ const Header = () => {
           <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
           {activeSection === 'home' ? <Icon path={mdiHome} size={1} /> : activeSection}
         </p>
-        <button aria-label='Menu' onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          aria-label='Menu'
+          className={cx({
+            [classes.open]: menuOpen
+          })}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <Icon path={menuOpen ? mdiClose : mdiMenu} size={1} />
         </button>
       </div>
