@@ -3,10 +3,6 @@
 .root {
   background-color: $white;
   color: $text-color;
-}
-
-.container {
-  width: 100%;
 
   header {
     margin-bottom: 3rem;
@@ -38,6 +34,8 @@
 
     img {
       box-shadow: 0 3px 10px 10px rgba($black, .2);
+      height: auto;
+      max-width: 100%;
       outline: 7px solid $white;
     }
 

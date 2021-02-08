@@ -3,10 +3,6 @@
 .root {
   background-color: rgb(240, 240, 240);
   color: $text-color;
-}
-
-.container {
-  width: 100%;
 
   header {
     margin-bottom: 3rem;
@@ -97,6 +93,7 @@
     padding: 1.25rem 2.5rem;
     text-transform: uppercase;
     user-select: none;
+    white-space: nowrap;
 
     svg {
       margin-right: .25rem;
