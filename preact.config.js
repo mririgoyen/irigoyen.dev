@@ -3,7 +3,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default (config, eng, helpers) => {
   // Override CSS modules class names
-  const cssClassIdentName = process.env.NODE_ENV === 'development' ? '[path][name]__[local]' : '[hash:base64:5]';
+  const cssClassIdentName = process.env.BUILD_ID ? '[hash:base64:5]' : '[path][name]__[local]';
   config.module.rules[4].use[1].options.modules.localIdentName = cssClassIdentName;
 
   // Inject the GitHub build ID
