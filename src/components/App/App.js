@@ -7,8 +7,6 @@ import ErrorPage from '../../routes/ErrorPage/ErrorPage';
 const App = () => {
   return (
     <Router>
-      <Home path='/' />
-
       <Download
         name='Michael Irigoyen.pdf'
         path='/resume'
@@ -40,6 +38,7 @@ const App = () => {
         file='https://github.com/goyney/presentations/blob/main/FED%20UP%20-%20Nobody%20Cares%20About%20Your%20UI.pptx?raw=true'
       />
 
+      <Home path='/' />
       <ErrorPage default />
     </Router>
   );
