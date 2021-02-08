@@ -18,25 +18,16 @@
   button {
     align-items: center;
     background-color: transparent;
-    border: 0;
     border-bottom: 3px solid transparent;
     color: rgba($white, .8);
-    cursor: pointer;
     display: flex;
     font-size: .9rem;
     margin-top: 3px;
     min-height: 62px;
-    outline: 0;
-    padding: 1rem;
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;
     transition: border-color .3s, color .3s;
-
-    svg {
-      margin: 0;
-      padding: 0;
-    }
 
     &:hover {
       border-color: rgba($white, .25);
@@ -67,7 +58,7 @@
     overflow: hidden;
     position: absolute;
     right: 0;
-    top: 0;
+    top: -1px;
     width: 100%;
     z-index: 10;
 
@@ -91,10 +82,7 @@
 
     button {
       background-color: $active-color;
-      border: 0;
       color: $white;
-      outline: 0;
-      padding: 1rem;
       transition: background-color .5s;
       will-change: background-color;
 
@@ -118,7 +106,7 @@
       will-change: transform;
 
       &.active {
-        transform: translate3d(0, 56px, 0);
+        transform: translate3d(0, 55px, 0);
       }
 
       button {
