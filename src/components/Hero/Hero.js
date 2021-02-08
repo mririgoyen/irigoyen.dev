@@ -1,18 +1,28 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { Section } from 'react-scroll-section';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
 
+import useIntersection from '../../hooks/useIntersection';
+
 import classes from './Hero.scss';
 
 const Hero = () => {
+  const heroRef = useRef();
   const [ offset, setOffset ] = useState(0);
+  const onScreen = useIntersection(heroRef, { rootMargin: '300px', threshold: .1 });
 
   useEffect(() => {
     const parallaxShift = () => setOffset(window.pageYOffset / 5);
-    window.addEventListener('scroll', parallaxShift);
+
+    if (onScreen) {
+      window.addEventListener('scroll', parallaxShift);
+    } else {
+      window.removeEventListener('scroll', parallaxShift);
+    }
+
     return () => window.removeEventListener('scroll', parallaxShift);
-  }, []);
+  }, [ onScreen ]);
 
   return (
     <Section
@@ -22,7 +32,7 @@ const Hero = () => {
         backgroundPositionY: offset
       }}
     >
-      <div className={classes.hero}>
+      <div className={classes.hero} ref={heroRef}>
         <h1>I'm Michael Irigoyen.</h1>
         <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about'>Start scrolling</a> to learn more.</h2>
         <div className={classes.social}>
