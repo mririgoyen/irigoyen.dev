@@ -1,7 +1,8 @@
 @import '../../style/variables.scss';
 
 .header {
-  background-color: rgba($black, .8);
+  background-color: rgba($black, .9);
+  box-shadow: 0 0 25px 5px rgba($black, .5);
   left: 0;
   position: fixed;
   top: 0;
@@ -22,7 +23,7 @@
     display: flex;
     font-size: .9rem;
     margin-top: 3px;
-    min-height: 62px;
+    min-height: 58px;
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;
@@ -43,7 +44,7 @@
 
   div {
     background-color: $active-color;
-    height: 3px;
+    height: 4px;
   }
 }
 
@@ -90,6 +91,7 @@
       background-color: $active-color;
       color: $white;
       height: 56px;
+      margin: 0;
       transition: background-color .5s;
       width: 56px;
       will-change: background-color;
@@ -131,7 +133,7 @@
   }
 
   .progress {
-    margin-top: -3px;
+    margin-top: -4px;
     max-width: calc(100% - 56px);
     position: absolute;
     z-index: 11;
