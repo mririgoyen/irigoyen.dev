@@ -20,6 +20,6 @@ export default {
 
     // Assign variables for use in client code
     const { plugin } = helpers.getPluginsByName(config, 'DefinePlugin')[0];
-    Object.assign(plugin.definitions, { 'process.env.GITHUB_RUN_ID': process.env.GITHUB_RUN_ID || 'dev' });
+    Object.assign(plugin.definitions, { 'process.env.GITHUB_RUN_ID': process.env.GITHUB_RUN_ID || '"dev"' });
   }
 };
