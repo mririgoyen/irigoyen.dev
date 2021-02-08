@@ -4,6 +4,7 @@ import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
 
 import useIntersection from '../../hooks/useIntersection';
+import useScrollTo from '../../hooks/useScrollTo';
 
 import classes from './Hero.scss';
 
@@ -11,6 +12,7 @@ const Hero = () => {
   const heroRef = useRef();
   const [ offset, setOffset ] = useState(0);
   const onScreen = useIntersection(heroRef, { rootMargin: '300px', threshold: .1 });
+  const scrollTo = useScrollTo();
 
   useEffect(() => {
     const parallaxShift = () => setOffset(window.pageYOffset / 5);
@@ -34,7 +36,7 @@ const Hero = () => {
     >
       <div className={classes.hero} ref={heroRef}>
         <h1>I'm Michael Irigoyen.</h1>
-        <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about'>Start scrolling</a> to learn more.</h2>
+        <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a onClick={scrollTo('about')}>Start scrolling</a> to learn more.</h2>
         <div className={classes.social}>
           <a aria-label='GitHub Profile' href='https://github.com/goyney'>
             <Icon path={mdiGithub} size={1.5} />
@@ -44,7 +46,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <a className={classes.scroll} href='#about'>
+      <a className={classes.scroll} onClick={scrollTo('about')}>
         <Icon path={mdiArrowDownCircleOutline} size={1.5} />
         <span>Scroll Down</span>
       </a>
