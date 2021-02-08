@@ -1,10 +1,20 @@
-import { Router } from 'preact-router';
+import { Router, route } from 'preact-router';
+import { useEffect } from 'preact/hooks';
 
 import Download from '../../routes/Download/Download';
 import Home from '../../routes/Home/Home';
 import ErrorPage from '../../routes/ErrorPage/ErrorPage';
 
 const App = () => {
+  // This handles the redirect by the 404.html file to
+  // get around GitHub Page's SPA problem.
+  useEffect(() => {
+    const redirect = window.location.search.split('?')[1];
+    if (redirect) {
+      route(redirect, true);
+    }
+  }, []);
+
   return (
     <Router>
       <Download
