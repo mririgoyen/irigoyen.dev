@@ -16,7 +16,7 @@ const Avatar = ({ className }) => {
           height={200}
           loading='lazy'
           src={mirigoyenJpeg}
-          width={224}
+          width={225}
         />
       </picture>
     </div>

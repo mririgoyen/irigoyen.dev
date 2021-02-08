@@ -2,11 +2,17 @@
 
 .root {
   align-items: center;
-  background: url('../../assets/images/chicago.jpg') right center;
+  background-image: url('../../assets/images/chicago.jpg');
+  background-position: right;
+  background-size: cover;
   display: flex;
   height: 100vh;
   justify-content: center;
   will-change: background-position-y;
+
+  @supports (background-image: url('../../assets/images/chicago.webp')) {
+    background-image: url('../../assets/images/chicago.webp');
+  }
 }
 
 .hero {

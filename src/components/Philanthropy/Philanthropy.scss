@@ -32,6 +32,10 @@
     margin-bottom: 2rem;
     text-align: center;
 
+    @supports (background-image: url('../../assets/images/el-back.webp')) {
+      background-image: url('../../assets/images/el-back.webp');
+    }
+
     img {
       box-shadow: 0 3px 10px 10px rgba($black, .2);
       outline: 7px solid $white;
