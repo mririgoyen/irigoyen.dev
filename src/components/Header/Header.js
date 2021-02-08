@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import cx from 'classnames';
 import { useScrollSection, useScrollSections } from 'react-scroll-section';
 import Icon from '@mdi/react';
@@ -8,9 +8,21 @@ import classes from './Header.scss';
 
 const Header = () => {
   const [ menuOpen, setMenuOpen ] = useState(false);
+  const [ scrollPercent, setScrollPercent ] = useState(0);
   const sections = useScrollSections();
   const homeSection = useScrollSection('home');
   const activeSection = sections.find((s) => s.selected)?.id || 'home';
+
+  useEffect(() => {
+    const getScrollPercent = () => {
+      const { body, documentElement } = document;
+      const percent = (documentElement.scrollTop || body.scrollTop) / ((documentElement.scrollHeight || body.scrollHeight) - documentElement.clientHeight) * 100;
+      setScrollPercent(percent.toFixed(2));
+    };
+
+    window.addEventListener('scroll', getScrollPercent);
+    return () => window.removeEventListener('scroll', getScrollPercent);
+  }, []);
 
   return (
     <header className={classes.header}>
@@ -51,6 +63,13 @@ const Header = () => {
           </button>
         ))}
       </nav>
+      <div className={classes.progress}>
+        <div
+          style={{
+            width: `${scrollPercent}%`
+          }}
+        />
+      </div>
     </header>
   );
 };
