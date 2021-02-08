@@ -1,8 +1,6 @@
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-import { version } from './package.json';
-
 export default (config, eng, helpers) => {
   // Override CSS modules class names
   const cssClassIdentName = process.env.NODE_ENV === 'development' ? '[path][name]__[local]' : '[hash:base64:5]';
@@ -11,8 +9,7 @@ export default (config, eng, helpers) => {
   // Inject the GitHub build ID
   const { plugin: HtmlWebpackPlugin } = helpers.getPluginsByName(config, 'HtmlWebpackPlugin')[0] || {};
   if (HtmlWebpackPlugin) {
-    const [ major, minor ] = version.split('.');
-    HtmlWebpackPlugin.options.meta.version = process.env.GITHUB_RUN_ID ? `${major}.${minor}.${process.env.GITHUB_RUN_ID}` : 'dev';
+    HtmlWebpackPlugin.options.meta.version = process.env.BUILD_ID || 'dev';
   }
 
   // Copy assets to the root
