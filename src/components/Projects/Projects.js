@@ -1,3 +1,6 @@
+import { useSetRecoilState } from 'recoil';
+
+import { activeState } from '../../atoms/activeState';
 import SectionContainer from '../SectionContainer/SectionContainer';
 
 import PictogrammersWebp from '../../assets/images/pictogrammers.webp';
@@ -8,6 +11,8 @@ import GamecenterJpeg from '../../assets/images/gamecenter.jpg';
 import classes from './Projects.scss';
 
 const Projects = () => {
+  const setActiveSection = useSetRecoilState(activeState);
+
   return (
     <SectionContainer
       animate
@@ -60,7 +65,7 @@ const Projects = () => {
             <h4>
               <em>Supporting the Extra Life fundraiser</em>
             </h4>
-            <p>Accusoft has been participating in the <a href='/philanthropy/'>Extra Life fundraiser</a> for the past several years. Every year, we hold a classic arcade tournament on game day to bring awareness to our fundraising efforts and to have a bit of fun.</p>
+            <p>Accusoft has been participating in the <a href='#philanthropy' onClick={() => setActiveSection({ id: 'philanthropy', scrollTo: true })}>Extra Life fundraiser</a> for the past several years. Every year, we hold a classic arcade tournament on game day to bring awareness to our fundraising efforts and to have a bit of fun.</p>
             <p>However, the COVID-19 pandemic that started in 2020 forced all employees to work remotely. I didn't want this to prevent the company from coming together on game day this year, so I came up with the idea for the Accusoft GameCenter.</p>
             <p>Over the course of about a month, I put together a completely virtual way for the company to come together and play three classic arcade games, right in our browsers. Using the <a href='https://www.mamedev.org/'>MAME emulator</a>, <a href='https://emscripten.org/'>Emscripten</a>, and a React application I developed, employees could play each game and their scores would be tracked in real-time.</p>
             <p>Leaderboards allowed everyone to get a little competitive, and we had a lot of fun! Other features built into the GameCenter includes an avatar generator and an achievement system.</p>

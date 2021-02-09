@@ -1,6 +1,8 @@
+import { useSetRecoilState } from 'recoil';
 import Icon from '@mdi/react';
 import { mdiHandHeart } from '@mdi/js';
 
+import { activeState } from '../../atoms/activeState';
 import SectionContainer from '../SectionContainer/SectionContainer';
 
 import ELTeamWebp from '../../assets/images/elteam.webp';
@@ -9,6 +11,8 @@ import ELTeamJpeg from '../../assets/images/elteam.jpg';
 import classes from './Philanthropy.scss';
 
 const Philanthropy = () => {
+  const setActiveSection = useSetRecoilState(activeState);
+
   return (
     <SectionContainer
       animate
@@ -38,7 +42,7 @@ const Philanthropy = () => {
           <p>I have been a huge advocate for Extra Life over the years, because I believe so strongly in its goal: to give hope to children who are confronting scary things no child should have to face. Besides leading Accusoft's team, I have also:</p>
           <ul>
             <li>Created an <a href='https://www.npmjs.com/package/extra-life'>NPM module wrapping the Extra Life API</a>, allowing fundraisers to build interactive applications to help them in their fundraising goals.</li>
-            <li><a href='/talks/'>Given a presentation</a> about the creation of that NPM module at API: World 2019.</li>
+            <li><a href='#talks' onClick={() => setActiveSection({ id: 'talks', scrollTo: true })}>Given a presentation</a> about the creation of that NPM module at API: World 2019.</li>
           </ul>
           <p>If I have ever helped you in the past, and you are looking for a way to give back or if you are just feeling generous, please consider donating to this amazing cause! #ForTheKids</p>
           <div className={classes.action}>
