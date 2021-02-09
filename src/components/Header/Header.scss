@@ -27,7 +27,7 @@
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;
-    transition: border-color .3s, color .3s;
+    transition: color .5s .2s;
 
     &:hover {
       color: $white;
@@ -45,6 +45,8 @@
   div {
     background-color: $active-color;
     height: 4px;
+    transition: width .1s;
+    will-change: width;
   }
 }
 

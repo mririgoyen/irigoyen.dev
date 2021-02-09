@@ -2,9 +2,9 @@
 
 .root {
   align-items: center;
-  border-top: 1px solid rgba($white, .05);
   color: $white;
   display: flex;
+  height: 137px;
   justify-content: space-between;
   margin: 0 auto;
   max-width: $width-max;
@@ -26,13 +26,17 @@
 @media only screen and (max-width: 600px) {
   .root {
     flex-direction: column-reverse;
+    height: 100px;
+    justify-content: center;
   }
 
   .copyright {
-    margin-top: 2rem;
+    font-size: .8rem;
   }
 
   .social {
+    margin-bottom: 1rem;
+
     a {
       padding: .75rem;
     }

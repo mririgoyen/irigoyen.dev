@@ -1,5 +1,4 @@
 import { useState } from 'preact/hooks';
-import { Link } from 'preact-router/match';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline } from '@mdi/js';
 
@@ -18,9 +17,9 @@ const Download = ({ file, name }) => {
 
   return (
     <div className={classes.root}>
-      <Avatar />
       <div className={classes.about}>
-        <Link href='/'>Michael Irigoyen</Link>
+        <Avatar />
+        <a href='/'>Michael Irigoyen</a>
       </div>
       <div className={classes.container}>
         <p>Your file should begin downloading shortly.</p>

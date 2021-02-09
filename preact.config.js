@@ -15,10 +15,21 @@ export default (config, eng, helpers) => {
   // Copy assets to the root
   config.plugins.push(
     new CopyWebpackPlugin({
-      patterns: [{
-        context: path.resolve(__dirname, 'src/assets'),
-        from: '*'
-      }]
+      patterns: [
+        {
+          context: path.resolve(__dirname, 'src/assets'),
+          from: '*'
+        },
+        {
+          context: path.resolve(__dirname, 'posts'),
+          from: '*',
+          to: 'posts'
+        }
+      ]
     })
   );
+
+  // Keep Markdown files out of the main bundle
+  config.module.rules[6].test = /\.(xml|html|txt)$/,
+  config.module.rules[7].test = /\.(svg|woff2?|ttf|eot|jpe?g|png|webp|gif|mp4|mov|ogg|webm|md)(\?.*)?$/i;
 };

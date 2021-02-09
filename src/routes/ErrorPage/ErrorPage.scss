@@ -4,8 +4,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - 137px);
   justify-content: center;
+  overflow-y: auto;
 }
 
 .container {
@@ -40,5 +41,16 @@
       background-color: $active-color;
       color: $white;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .root {
+    height: calc(100% - 100px);
+  }
+
+  .container {
+    font-size: .8rem;
+    width: 90%;
   }
 }

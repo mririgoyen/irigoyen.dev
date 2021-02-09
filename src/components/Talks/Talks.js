@@ -17,13 +17,12 @@ import UiJpeg from '../../assets/images/ui.jpg';
 
 import classes from './Talks.scss';
 
-const Talks = ({ reportVisibility }) => {
+const Talks = () => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='talks'
-      reportVisibility={reportVisibility}
     >
       <header>
         <h2>Talks & Presentations</h2>

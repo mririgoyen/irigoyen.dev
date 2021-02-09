@@ -2,13 +2,12 @@ import SectionContainer from '../SectionContainer/SectionContainer';
 
 import classes from './Contact.scss';
 
-const Contact = ({ reportVisibility }) => {
+const Contact = () => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='contact'
-      reportVisibility={reportVisibility}
     >
       <h2>Contact Me</h2>
       <div className={classes.outro}>
