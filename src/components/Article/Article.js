@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
-import { Helmet } from 'react-helmet';
 import readingTime from 'reading-time';
-import ellipsize from 'ellipsize';
 
 import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
@@ -16,8 +14,6 @@ import classes from './Article.scss';
 const Article = ({ id }) => {
   const [ error, setError ] = useState(false);
   const [ article, setArticle ] = useState();
-  // TODO: Update to the default image URL
-  const [ socialImageUrl, setSocialImageUrl ] = useState('https://www.irigoyen.dev/assets/blog/blog-image.jpg');
 
   useEffect(() => {
     const getArticle = async () => {
@@ -27,7 +23,6 @@ const Article = ({ id }) => {
         try {
           const image = await import(`../../assets/blog/${article.default.attributes.image}`);
           article.default.image = image.default;
-          setSocialImageUrl(`https://www.irigoyen.dev/assets/blog/${article.default.attributes.image}`);
         } catch (err) {
           article.default.image = defaultImage;
         }
@@ -45,28 +40,8 @@ const Article = ({ id }) => {
     return <p>Loading...</p>;
   }
 
-  const shortDesc = ellipsize(article.body, 60);
-
   return (
     <div className={classes.root}>
-      <Helmet>
-        <title>{article.attributes.title} | Michael Irigoyen</title>
-        <meta name='description' content={shortDesc} />
-        <meta name='author' content='Michael Irigoyen' />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content={`${article.attributes.title} | Michael Irigoyen`} />
-        <meta name='twitter:description' content={shortDesc} />
-        <meta name='twitter:image' content={socialImageUrl} />
-        <meta name='twitter:label1' content='Reading time' />
-        <meta name='twitter:data1' content={article.attributes.readingTime.text} />
-        <meta property='og:type' content='article' />
-        <meta property='og:article:author' content='Michael Irigoyen' />
-        <meta property='og:article:published_time' content={article.attributes.date} />
-        <meta property='og:url' content={`https://www.irigoyen.dev/blog/${id}`} />
-        <meta property='og:title' content={`${article.attributes.title} | Michael Irigoyen`} />
-        <meta property='og:description' content={shortDesc} />
-        <meta property='og:image' content={socialImageUrl} />
-      </Helmet>
       <div className={classes.container}>
         {!article && <CircularProgress />}
         {!!article && (

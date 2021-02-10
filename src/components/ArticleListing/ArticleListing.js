@@ -1,7 +1,6 @@
 import { Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import cx from 'classnames';
-import { Helmet } from 'react-helmet';
 
 import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
@@ -103,19 +102,6 @@ const ArticleListing = () => {
 
   return (
     <div className={classes.root}>
-      <Helmet>
-        <title>Blog | Michael Irigoyen - Front-End Software Engineer</title>
-        <meta name='description' content="I'm a Chicago-based software engineer with a passion for front-end development and user experience." />
-        <meta name='twitter:card' content='summary' />
-        <meta name='twitter:title' content='Blog | Michael Irigoyen - Front-End Software Engineer' />
-        <meta name='twitter:description' content="I'm a Chicago-based software engineer with a passion for front-end development and user experience." />
-        <meta name='twitter:image' content='https://www.irigoyen.dev/assets/images/twitter-card.png' />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://www.irigoyen.dev/blog/' />
-        <meta property='og:title' content='Blog | Michael Irigoyen - Front-End Software Engineer' />
-        <meta property='og:description' content="I'm a Chicago-based software engineer with a passion for front-end development and user experience." />
-        <meta property='og:image' content='https://www.irigoyen.dev/assets/images/facebook-card.png' />
-      </Helmet>
       <div className={classes.container}>
         {!visibleArticles.length && <CircularProgress />}
         {!!visibleArticles.length && (
