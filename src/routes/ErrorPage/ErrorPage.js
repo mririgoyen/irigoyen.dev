@@ -17,7 +17,7 @@ const ErrorPage = () => {
         </h1>
         <p>The page you are looking for could not be found.</p>
         <p>
-          <a href='/'>Return to the Homepage</a>
+          <a href='/' native>Return to the Homepage</a>
         </p>
       </div>
     </div>
