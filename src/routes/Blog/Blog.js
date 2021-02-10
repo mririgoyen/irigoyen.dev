@@ -1,45 +1,17 @@
-import { Fragment } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import ArticleListing from '../../components/ArticleListing/ArticleListing';
+import Article from '../../components/Article/Article';
 
-const Blog = () => {
-  const [ articles, setArticles ] = useState([]);
+const Blog = ({
+  postDay,
+  postMonth,
+  postTitle,
+  postYear
+}) => {
+  if (postYear && postMonth && postYear && postTitle) {
+    return <Article id={`${postYear}-${postMonth}-${postDay}-${postTitle}`} />;
+  }
 
-  // TODO: Keep state of "where" in the articles array we are for pagination
-  // TODO: Split the array and only load up to 5 on first load, and 4 every page after
-
-  useEffect(() => {
-    const loadRecentPosts = async () => {
-      const markdown = require.context('../../../posts', false, /\.md$/, 'lazy');
-
-      const posts = await markdown.keys().reverse().reduce(async (prevPromise, path) => {
-        const output = await prevPromise;
-        const post = await markdown(path);
-
-        if (post.attributes.published) {
-          output.push(post);
-        }
-
-        return output;
-      }, Promise.resolve([]));
-
-      setArticles(posts);
-    };
-
-    loadRecentPosts();
-  }, []);
-
-  return (
-    <Fragment>
-      {!articles.length ? (
-        <div>Loading...</div>
-      ) : articles.map((article, i) => (
-        <div key={i}>
-          <h1>{article.attributes.title}</h1>
-          <article.react />
-        </div>
-      ))}
-    </Fragment>
-  );
+  return <ArticleListing />;
 };
 
 export default Blog;

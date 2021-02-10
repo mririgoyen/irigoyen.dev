@@ -1,0 +1,50 @@
+@import '../../style/variables.scss';
+
+$loader-offset: 187;
+$loader-duration: 1.4s;
+
+.root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+  svg {
+    animation: rotator $loader-duration linear infinite;
+  }
+
+  circle {
+    animation: dash $loader-duration ease-in-out infinite;
+    stroke: $active-color;
+    stroke-dasharray: $loader-offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $loader-offset;
+  }
+
+  50% {
+    stroke-dashoffset: $loader-offset / 4;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: $loader-offset;
+    transform: rotate(450deg);
+  }
+}

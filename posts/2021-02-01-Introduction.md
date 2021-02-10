@@ -1,7 +1,7 @@
 ---
 title: The First Article
-published: true
 date: 2021-02-01
+image: blog-image.jpg
 category: Development
 ---
 

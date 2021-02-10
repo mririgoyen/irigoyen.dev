@@ -12,10 +12,10 @@ const Avatar = ({ className }) => {
       <source srcset={mirigoyenJpeg} type='image/jpeg' />
       <img
         alt='Michael Irigoyen'
-        height={200}
+        height={225}
         loading='lazy'
         src={mirigoyenJpeg}
-        width={225}
+        width={200}
       />
     </picture>
   );

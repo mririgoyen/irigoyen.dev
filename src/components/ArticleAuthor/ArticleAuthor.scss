@@ -1,0 +1,47 @@
+@import '../../style/variables.scss';
+
+.root {
+  align-items: center;
+  display: flex;
+  font-family: $secondary-font;
+  font-style: italic;
+  margin: 1rem 0;
+
+  picture {
+    margin-right: .5rem;
+  }
+
+  img {
+    border-radius: 50%;
+  }
+
+  .bullet {
+    color: $black;
+    padding: 0 .5rem;
+  }
+
+  time,
+  .estimate {
+    color: rgba($black, .5);
+    font-family: $primary-font;
+    font-size: .9rem;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bullet {
+    display: none;
+  }
+
+  time,
+  .estimate {
+    display: block;
+  }
+
+  p {
+    margin: 0;
+  }
+}

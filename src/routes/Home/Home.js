@@ -1,5 +1,7 @@
+import { Fragment } from 'preact';
 import { useEffect, useRef } from 'preact/hooks';
 import { useRecoilValue } from 'recoil';
+import { Helmet } from 'react-helmet';
 
 import { activeState } from '../../atoms/activeState';
 
@@ -31,7 +33,24 @@ const Home = () => {
     }
   }, [ activeSection ]);
 
-  return sections.map((section) => (<section.component ref={section.ref} />));
+  return (
+    <Fragment>
+      <Helmet>
+        <title>Michael Irigoyen - Front-End Software Engineer</title>
+        <meta name='description' content="I'm a Chicago-based software engineer with a passion for front-end development and user experience." />
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:title' content='Michael Irigoyen - Front-End Software Engineer' />
+        <meta name='twitter:description' content="I'm a Chicago-based software engineer with a passion for front-end development and user experience." />
+        <meta name='twitter:image' content='https://www.irigoyen.dev/assets/images/twitter-card.png' />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://www.irigoyen.dev/' />
+        <meta property='og:title' content='Michael Irigoyen - Front-End Software Engineer' />
+        <meta property='og:description' content="I'm a Chicago-based software engineer with a passion for front-end development and user experience." />
+        <meta property='og:image' content='https://www.irigoyen.dev/assets/images/facebook-card.png' />
+      </Helmet>
+      {sections.map((section) => (<section.component ref={section.ref} />))}
+    </Fragment>
+  );
 };
 
 export default Home;

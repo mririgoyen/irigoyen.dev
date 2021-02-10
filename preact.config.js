@@ -29,7 +29,7 @@ export default (config, eng, helpers) => {
   config.module.rules.push({
     loader: 'frontmatter-markdown-loader',
     options: {
-      mode: [ 'react-component' ]
+      mode: [ 'body', 'react-component' ]
     },
     test: /\.md$/
   });

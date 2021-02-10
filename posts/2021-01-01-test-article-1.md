@@ -1,7 +1,7 @@
 ---
 title: Test Article 1
-published: true
 date: 2021-01-01
+image: blog-image.jpg
 category: Development
 ---
 

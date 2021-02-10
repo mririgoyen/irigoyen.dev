@@ -49,7 +49,7 @@ const Router = () => {
         />
         <Blog
           activeHeader
-          path='/blog/:articleId'
+          path='/blog/:postYear/:postMonth/:postDay/:postTitle'
           showHeaderScroll
         />
 
