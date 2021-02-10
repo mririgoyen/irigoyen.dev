@@ -2,11 +2,13 @@
 
 .root {
   align-items: center;
+  background-color: rgb(20, 20, 20);
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 500;
 }
 
