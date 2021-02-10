@@ -1,29 +1,28 @@
 import { Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import frontmatter from 'front-matter';
-import ReactMarkdown from 'react-markdown';
 
 const Blog = () => {
   const [ articles, setArticles ] = useState([]);
 
   useEffect(() => {
-    const posts = require.context('../../../posts', false, /\.md$/);
+    const loadRecentPosts = async () => {
+      const markdown = require.context('../../../posts', false, /\.md$/, 'lazy');
 
-    const loadArticles = async (offset = 0, limit = 5) => {
-      const filteredPosts = posts.keys().reverse().slice(offset, limit);
+      const posts = await markdown.keys().reverse().reduce(async (prevPromise, path) => {
+        const output = await prevPromise;
+        const post = await markdown(path);
 
-      const postsContent = await Promise.all(filteredPosts.map(async (path) => {
-        const response = await fetch(`/posts/${path}`);
-        if (response.ok) {
-          const content = await response.text();
-          return frontmatter(content);
+        if (post.attributes.published) {
+          output.push(post);
         }
-      }));
 
-      setArticles(postsContent);
+        return output;
+      }, Promise.resolve([]));
+
+      setArticles(posts);
     };
 
-    loadArticles();
+    loadRecentPosts();
   }, []);
 
   return (
@@ -33,7 +32,7 @@ const Blog = () => {
       ) : articles.map((article, i) => (
         <div key={i}>
           <h1>{article.attributes.title}</h1>
-          <ReactMarkdown>{article.body}</ReactMarkdown>
+          <article.react />
         </div>
       ))}
     </Fragment>

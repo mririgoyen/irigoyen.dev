@@ -19,17 +19,18 @@ export default (config, eng, helpers) => {
         {
           context: path.resolve(__dirname, 'src/assets'),
           from: '*'
-        },
-        {
-          context: path.resolve(__dirname, 'posts'),
-          from: '*',
-          to: 'posts'
         }
       ]
     })
   );
 
-  // Keep Markdown files out of the main bundle
+  // Move Markdown files to be handled by the loader
   config.module.rules[6].test = /\.(xml|html|txt)$/,
-  config.module.rules[7].test = /\.(svg|woff2?|ttf|eot|jpe?g|png|webp|gif|mp4|mov|ogg|webm|md)(\?.*)?$/i;
+  config.module.rules.push({
+    loader: 'frontmatter-markdown-loader',
+    options: {
+      mode: [ 'react-component' ]
+    },
+    test: /\.md$/
+  });
 };

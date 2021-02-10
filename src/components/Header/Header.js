@@ -37,12 +37,14 @@ const Header = ({ showScroll }) => {
   }, []);
 
   const isSelected = (id) => {
-    if (window.location.hash === '' && activeSection.id === id) {
-      return true;
-    }
+    if (typeof window !== 'undefined') {
+      if (window.location.hash === '' && activeSection.id === id) {
+        return true;
+      }
 
-    if (window.location.hash === `#${id}`) {
-      return true;
+      if (window.location.hash === `#${id}`) {
+        return true;
+      }
     }
   };
 
