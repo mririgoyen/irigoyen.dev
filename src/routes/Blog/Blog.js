@@ -4,6 +4,9 @@ import { useEffect, useState } from 'preact/hooks';
 const Blog = () => {
   const [ articles, setArticles ] = useState([]);
 
+  // TODO: Keep state of "where" in the articles array we are for pagination
+  // TODO: Split the array and only load up to 5 on first load, and 4 every page after
+
   useEffect(() => {
     const loadRecentPosts = async () => {
       const markdown = require.context('../../../posts', false, /\.md$/, 'lazy');
