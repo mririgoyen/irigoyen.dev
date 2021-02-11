@@ -8,7 +8,7 @@ category: Development
 
 When it comes to improving the quality of your web pages, no automated tool is more useful than Google’s [Lighthouse](https://developers.google.com/web/tools/lighthouse). Lighthouse is an open-source tool that audits performance, accessibility, progressive web apps (PWAs), search engine optimization (SEO), and more.
 
-One of the most common recommendations Lighthouse can give is to “Serve images in next-gen formats.” The [official recommendation](https://web.dev/uses-webp-images) suggests using WebP versions of your images, however there are several newer formats still emerging. Regardless of which next-gen format you choose to use, implementing next-gen image formats can potentially cause issues for your visitors if they visit your site in older browser technology.
+One of the most common recommendations Lighthouse can give is to “Serve images in next-gen formats.” The [official recommendation](https://web.dev/uses-webp-images) suggests using WebP versions of your images, however there are several newer formats still emerging. Regardless of which next-gen format you choose to use, implementing next-gen image formats can potentially cause issues for your visitors using older browser technology.
 
 ## Using the `<picture>` element
 
@@ -21,16 +21,16 @@ The HTML standard defines the **`<picture>` element**. Using the `<picture>` ele
 </picture>
 ```
 
-In the above example, the browser will first try to render `sunset.webp`. If the browser doesn't support the WebP format for images, it will instead render the `sunset.jpg`. The `<img>` serves two purposes in this case:
+In the above example, the browser will first try to render `sunset.webp`. If the browser doesn't support the WebP format, it will instead render the `sunset.jpg`. The `<img>` element serves two purposes in this case:
 
-1. It provides the fallback if none of the available `<source>` elements are able to product a usable image.
-2. It defines the image size and other presentation attributes of the image.
+1. It provides the fallback if none of the available `<source>` elements are able to produce a usable image.
+2. It defines the image size and other presentation attributes of the rendered image.
 
 The `<picture>` element is [supported in all modern browsers](https://caniuse.com/picture).
 
 ## What about `background-image`s?
 
-When it comes to providing image fallbacks in your Cascading Stylesheets (CSS), there has been several methods floating around the internet on how to achieve this. Some methods would make use of JavaScript to detect if the browser supports WebP, and then append a class to the element in which a `background-image` was attached to. Other methods would do some interesting hacks utilizing SVG images.
+When it comes to providing image fallbacks in your Cascading Stylesheets (CSS), there has been several methods floating around the internet on how to achieve this. Some methods would make use of JavaScript to detect if the browser supports WebP, and then append a class an overriding class. Other methods would do some interesting hacks utilizing SVG images.
 
 However, one often overlooked CSS at-rule is **`@supports`**. With `@supports`, you can test whether or not a browser supports the CSS declaration before using it. With it, we can do in CSS what we can do in HTML with the `<picture>` element.
 
@@ -44,7 +44,7 @@ However, one often overlooked CSS at-rule is **`@supports`**. With `@supports`, 
 }
 ```
 
-In this class declaration, we set our default `background-image` like normal. Then, using `@supports` we test if the browser can set a `background-image` of our WebP version of the image. If so, we overwrite the original `background-image` declaration with our new one, using our more efficient WebP version of the image.
+In this class declaration, we set our default `background-image` like normal. Then, using `@supports`, we test if the browser can set a `background-image` of our WebP version of the image. If so, we overwrite the original `background-image` declaration with our new one, using our more efficient WebP version of the image.
 
 The `@supports` at-rule is also [supported in all modern browsers](https://caniuse.com/css-featurequeries).
 
