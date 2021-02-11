@@ -49,7 +49,7 @@ const getBlogRoutes = () => {
     const article = fm(fs.readFileSync(`${__dirname}/posts/${path}`, 'utf8'));
     const articleUrl = `/blog/${fileName.replace(/^(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}`;
     const articleTitle = `${article.attributes.title} by Michael Irigoyen`;
-    const articleDesc = ellipsize(removeMarkdown(article.body).replace(/\n/g, ''), 200);
+    const articleDesc = ellipsize(article.attributes.description || removeMarkdown(article.body).replace(/\n/g, ''), 200);
     const articleImage = fs.existsSync(`${__dirname}/src/assets/blog/${article.attributes.image}`) ? `https://www.irigoyen.dev/assets/blog/${article.attributes.image}` : 'https://www.irigoyen.dev/assets/images/facebook-card.png';
     const articlePublished = dayjs.utc(article.attributes.date).format('YYYY-MM-DD');
     const readTime = readingTime(article.body);
@@ -98,7 +98,6 @@ const getBlogRoutes = () => {
 
 const prerenderRoutes = () => {
   const allRoutes = staticRoutes.concat(getBlogRoutes());
-  console.log(allRoutes);
   return allRoutes;
 };
 

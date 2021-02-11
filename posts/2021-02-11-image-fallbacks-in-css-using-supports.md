@@ -1,5 +1,6 @@
 ---
 title: Image Fallbacks in CSS Using @supports
+description: Serve next-gen image formats with traditional fallbacks using the HTML <picture> element and the CSS @supports at-rule.
 date: 2021-02-11
 image: supports.png
 category: Development
