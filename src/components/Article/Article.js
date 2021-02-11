@@ -51,10 +51,6 @@ const Article = ({ id }) => {
     return <ErrorPage type='article' />;
   }
 
-  if (!article) {
-    return <p>Loading...</p>;
-  }
-
   return (
     <div className={classes.root}>
       <div className={classes.container}>
