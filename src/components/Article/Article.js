@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
+import 'prismjs';
 import { useEffect, useState } from 'preact/hooks';
 import readingTime from 'reading-time';
 import Icon from '@mdi/react';
@@ -107,9 +108,7 @@ const Article = ({ id }) => {
                 publishDate={article.attributes.date}
                 readingTime={article.attributes.readingTime.text}
               />
-              <div className={classes.content}>
-                <article.react />
-              </div>
+              <div className={classes.content} dangerouslySetInnerHTML={{ __html: article.html }} />
               <div className={classes.author}>
                 <picture>
                   <source srcset={mirigoyenWebp} type='image/webp' />

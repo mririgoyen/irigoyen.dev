@@ -84,6 +84,122 @@
   p {
     margin: 2rem 0;
   }
+
+  a {
+    color: $active-color;
+
+    &:hover {
+      color: darken($active-color, 20%);
+    }
+  }
+
+  code,
+  pre {
+    background: none;
+    color: rgb(248, 248, 242);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: .9em;
+    hyphens: none;
+    line-height: 1.5;
+    tab-size: 4;
+    text-align: left;
+    text-shadow: 0 1px rgba(0, 0, 0, .3);
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+  }
+
+  pre {
+    border-radius: .3em;
+    margin: .5em 0;
+    overflow: auto;
+    padding: 1em;
+  }
+
+  :not(pre) > code,
+  pre {
+    background: rgb(39, 40, 34);
+  }
+
+  :not(pre) > code {
+    border-radius: .3em;
+    padding: .1em;
+    white-space: normal;
+  }
+
+  [class*='comment'],
+  [class*='prolog'],
+  [class*='doctype'],
+  [class*='cdata'] {
+    color: rgb(130, 146, 162);
+  }
+
+  [class*='namespace'] {
+    opacity: .7;
+  }
+
+  [class*='property'],
+  [class*='tag'],
+  [class*='constant'],
+  [class*='symbol'],
+  [class*='deleted'] {
+    color: rgb(249, 38, 114);
+  }
+
+  [class*='boolean'],
+  [class*='number'] {
+    color: rgb(174, 129, 255);
+  }
+
+  [class*='selector'],
+  [class*='attr-name'],
+  [class*='string'],
+  [class*='char'],
+  [class*='builtin'],
+  [class*='interpolation'],
+  [class*='punctuation'],
+  [class*='operator'],
+  [class*='inserted'] {
+    color: rgb(166, 226, 46);
+  }
+
+  [class*='entity'],
+  [class*='url'],
+  [class*='string'],
+  [class*='variable'] {
+    color: rgb(248, 248, 242);
+  }
+
+  [class*='atrule'],
+  [class*='attr-value'],
+  [class*='function'],
+  [class*='class-name'] {
+    color: rgb(230, 219, 116);
+  }
+
+  [class*='keyword'] {
+    color: rgb(102, 217, 239);
+  }
+
+  [class*='regex'],
+  [class*='template-punctuation'],
+  [class*='important'] {
+    color: rgb(253, 151, 31);
+  }
+
+  [class*='important'],
+  [class*='bold'] {
+    font-weight: 700;
+  }
+
+  [class*='italic'] {
+    font-style: italic;
+  }
+
+  [class*='entity'] {
+    cursor: help;
+  }
 }
 
 .author {
