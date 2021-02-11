@@ -115,6 +115,20 @@
   }
 }
 
+.empty {
+  align-items: center;
+  color: rgba($black, .5);
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  user-select: none;
+
+  svg {
+    color: rgba($black, .3);
+    margin-right: .6rem;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .root {
     min-height: calc(100% - 100px);

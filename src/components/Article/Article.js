@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-target-blank */
 import 'prismjs';
 import { useEffect, useState } from 'preact/hooks';
 import readingTime from 'reading-time';
@@ -79,7 +78,7 @@ const Article = ({ id }) => {
                 <a
                   className={classes.facebook}
                   href={`https://facebook.com/sharer.php?u=${window.location.href}`}
-                  rel='nofollow'
+                  rel='nofollow noreferrer'
                   target='_blank'
                   title='Share on Facebook'
                 >
@@ -88,7 +87,7 @@ const Article = ({ id }) => {
                 <a
                   className={classes.twitter}
                   href={`https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`${article.attributes.title} by Michael Irigoyen`)}`}
-                  rel='nofollow'
+                  rel='nofollow noreferrer'
                   target='_blank'
                   title='Share on Twitter'
                 >
@@ -96,7 +95,7 @@ const Article = ({ id }) => {
                 </a>
                 <a
                   href={`mailto:?subject=${encodeURIComponent(article.attributes.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(window.location.href)}`}
-                  rel='nofollow'
+                  rel='nofollow noreferrer'
                   target='_blank'
                   title='Share via Email'
                 >
