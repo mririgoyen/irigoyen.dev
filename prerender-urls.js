@@ -1,5 +1,6 @@
 const fs = require('fs');
 const fm = require('front-matter');
+const removeMarkdown = require('markdown-to-text').default;
 const ellipsize = require('ellipsize');
 const readingTime = require('reading-time');
 const { simpleSitemapAndIndex } = require('sitemap');
@@ -45,7 +46,7 @@ const getBlogRoutes = () => {
     const article = fm(fs.readFileSync(`${__dirname}/posts/${path}`, 'utf8'));
     const articleUrl = `/blog/${fileName.replace(/^(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}`;
     const articleTitle = `${article.attributes.title} by Michael Irigoyen`;
-    const articleDesc = ellipsize(article.body, 200);
+    const articleDesc = ellipsize(removeMarkdown(article.body).replace(/\n/g, ''), 200);
     const articleImage = fs.existsSync(`${__dirname}/src/assets/blog/${article.attributes.image}`) ? `https://www.irigoyen.dev/assets/blog/${article.attributes.image}` : 'https://www.irigoyen.dev/assets/images/facebook-card.png';
     const readTime = readingTime(article.body);
 

@@ -1,7 +1,7 @@
 ---
 title: Image Fallbacks in CSS Using @supports
-date: 2021-02-08
-image: blog-image.jpg
+date: 2021-02-11
+image: supports.png
 category: Development
 ---
 
