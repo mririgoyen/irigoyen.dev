@@ -42,8 +42,7 @@ const getBlogRoutes = () => {
 
     const article = fm(fs.readFileSync(`${__dirname}/posts/${path}`, 'utf8'));
     const articleUrl = `/blog/${fileName.replace(/^(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}`;
-    const aritcleTitle = `${ellipsize(article.attributes.title, 33)} | Michael Irigoyen`;
-    const articleDesc = ellipsize(article.body, 60);
+    const articleDesc = ellipsize(article.body, 200);
     const readTime = readingTime(article.body);
 
     output.push({
@@ -55,7 +54,7 @@ const getBlogRoutes = () => {
         'og:article:published_time': { content: article.attributes.date, property: 'og:article:published_time' },
         'og:description': { content: articleDesc, property: 'og:description' },
         'og:image': { content: `https://www.irigoyen.dev/assets/blog/${article.attributes.image}`, property: 'og:image' },
-        'og:title': { content: aritcleTitle, property: 'og:title' },
+        'og:title': { content: article.attributes.title, property: 'og:title' },
         'og:type': { content: 'article', property: 'og:type' },
         'og:url': { content: `https://www.irigoyen.dev${articleUrl}`, property: 'og:url' },
         'twitter:card': 'summary_large_image',
@@ -63,9 +62,9 @@ const getBlogRoutes = () => {
         'twitter:description': articleDesc,
         'twitter:image': `https://www.irigoyen.dev/assets/blog/${article.attributes.image}`,
         'twitter:label1': 'Reading time',
-        'twitter:title': aritcleTitle
+        'twitter:title': article.attributes.title
       },
-      title: aritcleTitle,
+      title: `${article.attributes.title} | Michael Irigoyen`,
       url: articleUrl
     });
 

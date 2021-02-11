@@ -20,6 +20,8 @@
   user-select: none;
 
   h1 {
+    text-transform: capitalize;
+
     span {
       color: rgba($black, .5);
       display: block;

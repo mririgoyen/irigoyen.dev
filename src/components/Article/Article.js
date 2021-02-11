@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { useEffect, useState } from 'preact/hooks';
 import readingTime from 'reading-time';
+import Icon from '@mdi/react';
+import { mdiEmailOutline, mdiFacebook, mdiTwitter } from '@mdi/js';
 
 import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
+import ErrorPage from '../../routes/ErrorPage/ErrorPage';
 
 // TODO: Create a real default image
 import defaultImage from '../../assets/blog/blog-image.jpg';
@@ -36,6 +40,10 @@ const Article = ({ id }) => {
     getArticle();
   }, []);
 
+  if (error) {
+    return <ErrorPage type='article' />;
+  }
+
   if (!article) {
     return <p>Loading...</p>;
   }
@@ -59,6 +67,34 @@ const Article = ({ id }) => {
               </picture>
             </figure>
             <div className={classes.article}>
+              <div className={classes.share}>
+                <a
+                  className={classes.facebook}
+                  href={`https://facebook.com/sharer.php?u=${window.location.href}`}
+                  rel='nofollow'
+                  target='_blank'
+                  title='Share on Facebook'
+                >
+                  <Icon path={mdiFacebook} size={1} />
+                </a>
+                <a
+                  className={classes.twitter}
+                  href={`https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`${article.attributes.title} by Michael Irigoyen`)}`}
+                  rel='nofollow'
+                  target='_blank'
+                  title='Share on Twitter'
+                >
+                  <Icon path={mdiTwitter} size={1} />
+                </a>
+                <a
+                  href={`mailto:?subject=${encodeURIComponent(article.attributes.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(window.location.href)}`}
+                  rel='nofollow'
+                  target='_blank'
+                  title='Share via Email'
+                >
+                  <Icon path={mdiEmailOutline} size={1} />
+                </a>
+              </div>
               <h1>{article.attributes.title}</h1>
               <ArticleAuthor
                 publishDate={article.attributes.date}

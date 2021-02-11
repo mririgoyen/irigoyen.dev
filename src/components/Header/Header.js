@@ -83,6 +83,10 @@ const Header = ({ showScroll }) => {
                 setMenuOpen(false);
                 route(`${itemRoute}`);
                 setActiveSection({ id, scrollTo: itemRoute === '/' });
+
+                if (itemRoute !== '/') {
+                  window.scrollTo(0, 0);
+                }
               }}
             >
               {id === 'home' ? <Icon path={mdiHome} size={1} /> : id}
