@@ -18,6 +18,8 @@ const ArticleListing = () => {
   const [ visibleArticles, setVisibleArticles ] = useState([]);
   const [ page, setPage ] = useState(0);
 
+  useEffect(() => document.title = 'Blog | Michael Irigoyen - Front-End Software Engineer', []);
+
   useEffect(() => {
     const loadPosts = async () => {
       const posts = await Promise.all(

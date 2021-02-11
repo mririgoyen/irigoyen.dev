@@ -24,6 +24,8 @@ const Home = () => {
 
   const activeSection = useRecoilValue(activeState);
 
+  useEffect(() => document.title = 'Michael Irigoyen - Front-End Software Engineer', []);
+
   useEffect(() => {
     if (activeSection.scrollTo) {
       const section = sections.find((s) => s.id === activeSection.id).ref.current.base;

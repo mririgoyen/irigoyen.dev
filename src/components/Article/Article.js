@@ -40,6 +40,12 @@ const Article = ({ id }) => {
     getArticle();
   }, []);
 
+  useEffect(() => {
+    if (article?.attributes?.title) {
+      document.title = `${article.attributes.title} by Michael Irigoyen`;
+    }
+  }, [ article ]);
+
   if (error) {
     return <ErrorPage type='article' />;
   }
