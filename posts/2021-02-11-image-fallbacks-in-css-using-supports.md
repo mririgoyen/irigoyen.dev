@@ -44,7 +44,7 @@ However, one often overlooked CSS at-rule is **`@supports`**. With `@supports`, 
 }
 ```
 
-In this class declaration, we set our default `background-image` like normal. Then, using `@supports`, we test if the browser can set a `background-image` of our WebP version of the image. If so, we overwrite the original `background-image` declaration with our new one, using our more efficient WebP version of the image.
+In this class declaration, we set our default `background-image` like normal. Then, using `@supports` we test if the browser can set a `background-image` of our WebP version of the image. If so, we overwrite the original `background-image` declaration with our new one, using our more efficient WebP version of the image.
 
 The `@supports` at-rule is also [supported in all modern browsers](https://caniuse.com/css-featurequeries).
 
