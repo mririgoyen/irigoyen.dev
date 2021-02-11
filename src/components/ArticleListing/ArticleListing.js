@@ -5,8 +5,7 @@ import cx from 'classnames';
 import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
 
-// TODO: Create a real default image
-import defaultImage from '../../assets/blog/blog-image.jpg';
+import defaultImage from '../../assets/images/facebook-card.png';
 
 import classes from './ArticleListing.scss';
 
@@ -32,10 +31,13 @@ const ArticleListing = () => {
             post.route = `/blog/${path.split('.')[1].replace(/^\/(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}`;
 
             try {
-              const image = await import(`../../assets/blog/${post.attributes.image}2`);
+              const image = await import(`../../assets/blog/${post.attributes.image}`);
               post.image = image.default;
+              const imageExt = post.attributes.image.split('.')[1];
+              post.imageMime = `image/${imageExt === 'jpg' ? 'jpeg' : imageExt}`;
             } catch (err) {
               post.image = defaultImage;
+              post.imageMime = 'image/png';
             }
 
             return post;
@@ -57,7 +59,7 @@ const ArticleListing = () => {
         </div>
         <figure>
           <picture>
-            <source srcset={article.image} type='image/jpeg' />
+            <source srcset={article.image} type={article.imageMime} />
             <img
               alt={article.attributes.title}
               height={315}
@@ -84,7 +86,7 @@ const ArticleListing = () => {
             <a className={classes.article} href={article.route} key={i}>
               <figure>
                 <picture>
-                  <source srcset={article.image} type='image/jpeg' />
+                  <source srcset={article.image} type={article.imageMime} />
                   <img
                     alt={article.attributes.title}
                     height={315}

@@ -42,11 +42,11 @@ const getBlogRoutes = () => {
       return output;
     }
 
-    const postPath = `${__dirname}/posts/${path}`;
-    const article = fm(fs.readFileSync(postPath, 'utf8'));
+    const article = fm(fs.readFileSync(`${__dirname}/posts/${path}`, 'utf8'));
     const articleUrl = `/blog/${fileName.replace(/^(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}`;
     const articleTitle = `${article.attributes.title} by Michael Irigoyen`;
     const articleDesc = ellipsize(article.body, 200);
+    const articleImage = fs.existsSync(`${__dirname}/src/assets/blog/${article.attributes.image}`) ? `https://www.irigoyen.dev/assets/blog/${article.attributes.image}` : 'https://www.irigoyen.dev/assets/images/facebook-card.png';
     const readTime = readingTime(article.body);
 
     output.push({
@@ -58,7 +58,7 @@ const getBlogRoutes = () => {
         'og:article:author': { content: 'Michael Irigoyen', property: 'og:article:author' },
         'og:article:published_time': { content: article.attributes.date, property: 'og:article:published_time' },
         'og:description': { content: articleDesc, property: 'og:description' },
-        'og:image': { content: `https://www.irigoyen.dev/assets/blog/${article.attributes.image}`, property: 'og:image' },
+        'og:image': { content: articleImage, property: 'og:image' },
         'og:title': { content: articleTitle, property: 'og:title' },
         'og:type': { content: 'article', property: 'og:type' },
         'og:url': { content: `https://www.irigoyen.dev${articleUrl}`, property: 'og:url' },
@@ -66,7 +66,7 @@ const getBlogRoutes = () => {
         'twitter:card': 'summary_large_image',
         'twitter:data1': readTime.text,
         'twitter:description': articleDesc,
-        'twitter:image': `https://www.irigoyen.dev/assets/blog/${article.attributes.image}`,
+        'twitter:image': articleImage,
         'twitter:label1': 'Reading time',
         'twitter:title': articleTitle
       },

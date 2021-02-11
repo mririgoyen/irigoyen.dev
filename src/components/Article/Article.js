@@ -8,8 +8,7 @@ import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
 import ErrorPage from '../../routes/ErrorPage/ErrorPage';
 
-// TODO: Create a real default image
-import defaultImage from '../../assets/blog/blog-image.jpg';
+import defaultImage from '../../assets/images/facebook-card.png';
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
 import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
@@ -27,6 +26,8 @@ const Article = ({ id }) => {
         try {
           const image = await import(`../../assets/blog/${article.default.attributes.image}`);
           article.default.image = image.default;
+          const imageExt = article.default.attributes.image.split('.')[1];
+          article.default.imageMime = `image/${imageExt === 'jpg' ? 'jpeg' : imageExt}`;
         } catch (err) {
           article.default.image = defaultImage;
         }
@@ -62,7 +63,7 @@ const Article = ({ id }) => {
           <article>
             <figure className={classes.image}>
               <picture>
-                <source srcset={article.image} type='image/jpeg' />
+                <source srcset={article.image} type={article.imageMime} />
                 <img
                   alt={article.attributes.title}
                   height={315}
