@@ -6,8 +6,7 @@ const readingTime = require('reading-time');
 const { simpleSitemapAndIndex } = require('sitemap');
 const dayjs = require('dayjs');
 const utc = require('dayjs/plugin/utc');
-const timezone = require('dayjs/plugin/timezone');
-dayjs.extend(utc).extend(timezone);
+dayjs.extend(utc);
 
 const defaultTitle = 'Michael Irigoyen - Front-End Software Engineer';
 const defaultDesc = 'I\'m a Chicago-based software engineer with a passion for front-end development and user experience.';
@@ -52,7 +51,7 @@ const getBlogRoutes = () => {
     const articleTitle = `${article.attributes.title} by Michael Irigoyen`;
     const articleDesc = ellipsize(removeMarkdown(article.body).replace(/\n/g, ''), 200);
     const articleImage = fs.existsSync(`${__dirname}/src/assets/blog/${article.attributes.image}`) ? `https://www.irigoyen.dev/assets/blog/${article.attributes.image}` : 'https://www.irigoyen.dev/assets/images/facebook-card.png';
-    const articlePublished = dayjs.tz(article.attributes.date, 'America/Chicago').format('YYYY-MM-DD');
+    const articlePublished = dayjs.utc(article.attributes.date).format('YYYY-MM-DD');
     const readTime = readingTime(article.body);
 
     output.push({
@@ -84,7 +83,7 @@ const getBlogRoutes = () => {
   }, []);
 
   posts.unshift({
-    lastmod: new Date(Math.max(...posts.map((e) => new Date(e.lastmod)))),
+    lastmod: dayjs.utc(Math.max(...posts.map((e) => new Date(e.lastmod)))).format('YYYY-MM-DD'),
     meta: {
       ...defaultMetadata,
       'og:url': { content: 'https://www.irigoyen.dev/blog/', property: 'og:url' },
@@ -99,6 +98,7 @@ const getBlogRoutes = () => {
 
 const prerenderRoutes = () => {
   const allRoutes = staticRoutes.concat(getBlogRoutes());
+  console.log(allRoutes);
   return allRoutes;
 };
 
