@@ -2,6 +2,7 @@ const fs = require('fs');
 const fm = require('front-matter');
 const ellipsize = require('ellipsize');
 const readingTime = require('reading-time');
+const { simpleSitemapAndIndex } = require('sitemap');
 
 const defaultTitle = 'Michael Irigoyen - Front-End Software Engineer';
 const defaultDesc = 'I\'m a Chicago-based software engineer with a passion for front-end development and user experience.';
@@ -22,30 +23,32 @@ const defaultMetadata = {
 
 const staticRoutes = [
   { meta: defaultMetadata, title: defaultTitle, url: '/' },
-  { meta: defaultMetadata, title: defaultTitle, url: '/resume' },
-  { meta: defaultMetadata, title: defaultTitle, url: '/presentations/1up-empowering-communities-with-apis' },
-  { meta: defaultMetadata, title: defaultTitle, url: '/presentations/design-your-api-for-humans' },
-  { meta: defaultMetadata, title: defaultTitle, url: '/presentations/the-api-user-experience' },
-  { meta: defaultMetadata, title: defaultTitle, url: '/presentations/continuous-devops' },
-  { meta: defaultMetadata, title: defaultTitle, url: '/presentations/nobody-cares-about-your-ui' }
+  { meta: defaultMetadata, omitSitemap: true, title: defaultTitle, url: '/resume' },
+  { meta: defaultMetadata, omitSitemap: true, title: defaultTitle, url: '/presentations/1up-empowering-communities-with-apis' },
+  { meta: defaultMetadata, omitSitemap: true, title: defaultTitle, url: '/presentations/design-your-api-for-humans' },
+  { meta: defaultMetadata, omitSitemap: true, title: defaultTitle, url: '/presentations/the-api-user-experience' },
+  { meta: defaultMetadata, omitSitemap: true, title: defaultTitle, url: '/presentations/continuous-devops' },
+  { meta: defaultMetadata, omitSitemap: true, title: defaultTitle, url: '/presentations/nobody-cares-about-your-ui' }
 ];
 
 const getBlogRoutes = () => {
   const rawPosts = fs.readdirSync(`${__dirname}/posts`);
 
-  return rawPosts.reduce((output, path) => {
+  const posts = rawPosts.reduce((output, path) => {
     const [ fileName, extension ] = path.split('.');
 
     if (extension !== 'md') {
       return output;
     }
 
-    const article = fm(fs.readFileSync(`${__dirname}/posts/${path}`, 'utf8'));
+    const postPath = `${__dirname}/posts/${path}`;
+    const article = fm(fs.readFileSync(postPath, 'utf8'));
     const articleUrl = `/blog/${fileName.replace(/^(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}`;
     const articleDesc = ellipsize(article.body, 200);
     const readTime = readingTime(article.body);
 
     output.push({
+      lastmod: article.attributes.date,
       meta: {
         ...defaultMetadata,
         author: 'Michael Irigoyen',
@@ -69,19 +72,38 @@ const getBlogRoutes = () => {
     });
 
     return output;
-  }, [{
+  }, []);
+
+  posts.unshift({
+    lastmod: new Date(Math.max(...posts.map((e) => new Date(e.lastmod)))),
     meta: {
       ...defaultMetadata,
       'og:url': { content: 'https://www.irigoyen.dev/blog/', property: 'og:url' }
     },
     title: `Blog | ${defaultTitle}`,
     url: '/blog'
-  }]);
+  });
+
+  return posts;
 };
 
 const prerenderRoutes = () => {
-  const blogRoutes = getBlogRoutes();
-  return staticRoutes.concat(blogRoutes);
+  const allRoutes = staticRoutes.concat(getBlogRoutes());
+  return allRoutes;
 };
+
+const generateSitemap = () => {
+  const allRoutes = prerenderRoutes();
+  const filteredRoutes = allRoutes.filter((r) => !r.omitSitemap);
+
+  simpleSitemapAndIndex({
+    destinationDir: './build',
+    gzip: false,
+    hostname: 'https://www.irigoyen.dev',
+    sourceData: filteredRoutes
+  });
+};
+
+generateSitemap();
 
 module.exports = prerenderRoutes;

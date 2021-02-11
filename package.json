@@ -34,6 +34,7 @@
     "preact-cli": "^3.0.0",
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
+    "sitemap": "^6.3.6",
     "stylelint": "^13.9.0",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-standard": "^20.0.0",
