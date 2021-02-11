@@ -4,6 +4,10 @@ const removeMarkdown = require('markdown-to-text').default;
 const ellipsize = require('ellipsize');
 const readingTime = require('reading-time');
 const { simpleSitemapAndIndex } = require('sitemap');
+const dayjs = require('dayjs');
+const utc = require('dayjs/plugin/utc');
+const timezone = require('dayjs/plugin/timezone');
+dayjs.extend(utc).extend(timezone);
 
 const defaultTitle = 'Michael Irigoyen - Front-End Software Engineer';
 const defaultDesc = 'I\'m a Chicago-based software engineer with a passion for front-end development and user experience.';
@@ -48,16 +52,17 @@ const getBlogRoutes = () => {
     const articleTitle = `${article.attributes.title} by Michael Irigoyen`;
     const articleDesc = ellipsize(removeMarkdown(article.body).replace(/\n/g, ''), 200);
     const articleImage = fs.existsSync(`${__dirname}/src/assets/blog/${article.attributes.image}`) ? `https://www.irigoyen.dev/assets/blog/${article.attributes.image}` : 'https://www.irigoyen.dev/assets/images/facebook-card.png';
+    const articlePublished = dayjs.tz(article.attributes.date, 'America/Chicago').format('YYYY-MM-DD');
     const readTime = readingTime(article.body);
 
     output.push({
-      lastmod: article.attributes.date,
+      lastmod: articlePublished,
       meta: {
         ...defaultMetadata,
         author: 'Michael Irigoyen',
         description: articleDesc,
         'og:article:author': { content: 'Michael Irigoyen', property: 'og:article:author' },
-        'og:article:published_time': { content: article.attributes.date, property: 'og:article:published_time' },
+        'og:article:published_time': { content: articlePublished, property: 'og:article:published_time' },
         'og:description': { content: articleDesc, property: 'og:description' },
         'og:image': { content: articleImage, property: 'og:image' },
         'og:title': { content: articleTitle, property: 'og:title' },
