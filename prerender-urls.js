@@ -13,6 +13,7 @@ const defaultMetadata = {
   'og:title': { content: defaultTitle, property: 'og:title' },
   'og:type': { content: 'website', property: 'og:type' },
   'og:url': { content: 'https://www.irigoyen.dev/', property: 'og:url' },
+  title: defaultTitle,
   'twitter:card': 'summary',
   'twitter:creator': '@mririgo',
   'twitter:description': defaultDesc,
@@ -60,6 +61,7 @@ const getBlogRoutes = () => {
         'og:title': { content: article.attributes.title, property: 'og:title' },
         'og:type': { content: 'article', property: 'og:type' },
         'og:url': { content: `https://www.irigoyen.dev${articleUrl}`, property: 'og:url' },
+        title: article.attributes.title,
         'twitter:card': 'summary_large_image',
         'twitter:data1': readTime.text,
         'twitter:description': articleDesc,
@@ -78,7 +80,8 @@ const getBlogRoutes = () => {
     lastmod: new Date(Math.max(...posts.map((e) => new Date(e.lastmod)))),
     meta: {
       ...defaultMetadata,
-      'og:url': { content: 'https://www.irigoyen.dev/blog/', property: 'og:url' }
+      'og:url': { content: 'https://www.irigoyen.dev/blog/', property: 'og:url' },
+      title: `Blog | ${defaultTitle}`
     },
     title: `Blog | ${defaultTitle}`,
     url: '/blog'
