@@ -4,15 +4,20 @@ const ellipsize = require('ellipsize');
 const readingTime = require('reading-time');
 
 const defaultTitle = 'Michael Irigoyen - Front-End Software Engineer';
+const defaultDesc = 'I\'m a Chicago-based software engineer with a passion for front-end development and user experience.';
 const defaultMetadata = {
-  description: 'I\'m a Chicago-based software engineer with a passion for front-end development and user experience.',
-  'og:image': 'https://www.irigoyen.dev/assets/images/facebook-card.png',
-  'og:type': 'website',
-  'og:url': 'https://www.irigoyen.dev/',
+  description: defaultDesc,
+  'og:description': { content: defaultDesc, property: 'og:description' },
+  'og:image': { content: 'https://www.irigoyen.dev/assets/images/facebook-card.png', property: 'og:image' },
+  'og:title': { content: defaultTitle, property: 'og:title' },
+  'og:type': { content: 'website', property: 'og:type' },
+  'og:url': { content: 'https://www.irigoyen.dev/', property: 'og:url' },
   'twitter:card': 'summary',
   'twitter:creator': '@mririgo',
+  'twitter:description': defaultDesc,
   'twitter:image': 'https://www.irigoyen.dev/assets/images/twitter-card.png',
-  'twitter:site': '@mririgo'
+  'twitter:site': '@mririgo',
+  'twitter:title': defaultTitle
 };
 
 const staticRoutes = [
@@ -37,23 +42,30 @@ const getBlogRoutes = () => {
 
     const article = fm(fs.readFileSync(`${__dirname}/posts/${path}`, 'utf8'));
     const articleUrl = `/blog/${fileName.replace(/^(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}`;
+    const aritcleTitle = `${ellipsize(article.attributes.title, 33)} | Michael Irigoyen`;
+    const articleDesc = ellipsize(article.body, 60);
     const readTime = readingTime(article.body);
 
     output.push({
       meta: {
         ...defaultMetadata,
-        description: ellipsize(article.body, 60),
-        'og:article:author': 'Michael Irigoyen',
-        'og:article:published_time': article.attributes.date,
-        'og:image': `https://www.irigoyen.dev/assets/blog/${article.attributes.image}`,
-        'og:type': 'article',
-        'og:url': `https://www.irigoyen.dev${articleUrl}`,
+        author: 'Michael Irigoyen',
+        description: articleDesc,
+        'og:article:author': { content: 'Michael Irigoyen', property: 'og:article:author' },
+        'og:article:published_time': { content: article.attributes.date, property: 'og:article:published_time' },
+        'og:description': { content: articleDesc, property: 'og:description' },
+        'og:image': { content: `https://www.irigoyen.dev/assets/blog/${article.attributes.image}`, property: 'og:image' },
+        'og:title': { content: aritcleTitle, property: 'og:title' },
+        'og:type': { content: 'article', property: 'og:type' },
+        'og:url': { content: `https://www.irigoyen.dev${articleUrl}`, property: 'og:url' },
         'twitter:card': 'summary_large_image',
         'twitter:data1': readTime.text,
+        'twitter:description': articleDesc,
         'twitter:image': `https://www.irigoyen.dev/assets/blog/${article.attributes.image}`,
-        'twitter:label1': 'Reading time'
+        'twitter:label1': 'Reading time',
+        'twitter:title': aritcleTitle
       },
-      title: `${article.attributes.title} | Michael Irigoyen`,
+      title: aritcleTitle,
       url: articleUrl
     });
 
@@ -61,7 +73,7 @@ const getBlogRoutes = () => {
   }, [{
     meta: {
       ...defaultMetadata,
-      'og:url': 'https://www.irigoyen.dev/blog/'
+      'og:url': { content: 'https://www.irigoyen.dev/blog/', property: 'og:url' }
     },
     title: `Blog | ${defaultTitle}`,
     url: '/blog'
