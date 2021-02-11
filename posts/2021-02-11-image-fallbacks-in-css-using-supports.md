@@ -5,311 +5,48 @@ image: supports.png
 category: Development
 ---
 
-* [Overview](#overview)
-  * [Philosophy](#philosophy)
-  * [Inline HTML](#html)
-  * [Automatic Escaping for Special Characters](#autoescape)
-* [Block Elements](#block)
-  * [Paragraphs and Line Breaks](#p)
-  * [Headers](#header)
-  * [Blockquotes](#blockquote)
-  * [Lists](#list)
-  * [Code Blocks](#precode)
-  * [Horizontal Rules](#hr)
-* [Span Elements](#span)
-  * [Links](#link)
-  * [Emphasis](#em)
-  * [Code](#code)
-  * [Images](#img)
-* [Miscellaneous](#misc)
-  * [Backslash Escapes](#backslash)
-  * [Automatic Links](#autolink)
+When it comes to improving the quality of your web pages, no automated tool is more useful than Google’s [Lighthouse](https://developers.google.com/web/tools/lighthouse). Lighthouse is an open-source tool that audits performance, accessibility, progressive web apps (PWAs), search engine optimization (SEO), and more.
 
-**Note:** This document is itself written using Markdown; you
-can [see the source for it by adding '.text' to the URL](/projects/markdown/syntax.text).
+One of the most common recommendations Lighthouse can give is to “Serve images in next-gen formats.” The [official recommendation](https://web.dev/uses-webp-images) suggests using WebP versions of your images, however there are several newer formats still emerging. Regardless of which next-gen format you choose to use, implementing next-gen image formats can potentially cause issues for your visitors if they visit your site in older browser technology.
 
-----
+## Using the `<picture>` element
 
-## Overview
+The HTML standard defines the **`<picture>` element**. Using the `<picture>` element, you can define multiple `<source>` elements to offer alternative versions of an image.
 
-### Philosophy
-
-Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
-
-Readability, however, is emphasized above all else. A Markdown-formatted
-document should be publishable as-is, as plain text, without looking
-like it's been marked up with tags or formatting instructions. While
-Markdown's syntax has been influenced by several existing text-to-HTML
-filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
-[Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
-inspiration for Markdown's syntax is the format of plain text email.
-
-## Block Elements
-
-### Paragraphs and Line Breaks
-
-A paragraph is simply one or more consecutive lines of text, separated
-by one or more blank lines. (A blank line is any line that looks like a
-blank line -- a line containing nothing but spaces or tabs is considered
-blank.) Normal paragraphs should not be indented with spaces or tabs.
-
-The implication of the "one or more consecutive lines of text" rule is
-that Markdown supports "hard-wrapped" text paragraphs. This differs
-significantly from most other text-to-HTML formatters (including Movable
-Type's "Convert Line Breaks" option) which translate every line break
-character in a paragraph into a `<br />` tag.
-
-When you *do* want to insert a `<br />` break tag using Markdown, you
-end a line with two or more spaces, then type return.
-
-### Headers
-
-Markdown supports two styles of headers, [Setext] [1] and [atx] [2].
-
-Optionally, you may "close" atx-style headers. This is purely
-cosmetic -- you can use this if you think it looks better. The
-closing hashes don't even need to match the number of hashes
-used to open the header. (The number of opening hashes
-determines the header level.)
-
-
-### Blockquotes
-
-Markdown uses email-style `>` characters for blockquoting. If you're
-familiar with quoting passages of text in an email message, then you
-know how to create a blockquote in Markdown. It looks best if you hard
-wrap the text and put a `>` before every line:
-
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-> 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
-
-Markdown allows you to be lazy and only put the `>` before the first
-line of a hard-wrapped paragraph:
-
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
-
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
-adding additional levels of `>`:
-
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
-
-Blockquotes can contain other Markdown elements, including headers, lists,
-and code blocks:
-
-> ## This is a header
->
-> 1. This is the first list item.
-> 2. This is the second list item.
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
-
-Any decent text editor should make email-style quoting easy. For
-example, with BBEdit, you can make a selection and choose Increase
-Quote Level from the Text menu.
-
-### Lists
-
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
-
-Unordered lists use asterisks, pluses, and hyphens -- interchangeably
--- as list markers:
-
-* Red
-* Green
-* Blue
-
-is equivalent to:
-
-+ Red
-+ Green
-+ Blue
-
-and:
-
-- Red
-- Green
-- Blue
-
-Ordered lists use numbers followed by periods:
-
-1. Bird
-2. McHale
-3. Parish
-
-It's important to note that the actual numbers you use to mark the
-list have no effect on the HTML output Markdown produces. The HTML
-Markdown produces from the above list is:
-
-If you instead wrote the list in Markdown like this:
-
-1. Bird
-1. McHale
-1. Parish
-
-or even:
-
-3. Bird
-1. McHale
-8. Parish
-
-you'd get the exact same HTML output. The point is, if you want to,
-you can use ordinal numbers in your ordered Markdown lists, so that
-the numbers in your source match the numbers in your published HTML.
-But if you want to be lazy, you don't have to.
-
-To make lists look nice, you can wrap items with hanging indents:
-
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-* Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-But if you want to be lazy, you don't have to:
-
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-viverra nec, fringilla in, laoreet vitae, risus.
-* Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-Suspendisse id sem consectetuer libero luctus adipiscing.
-
-List items may consist of multiple paragraphs. Each subsequent
-paragraph in a list item must be indented by either 4 spaces
-or one tab:
-
-1. This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2. Suspendisse id sem consectetuer libero luctus adipiscing.
-
-It looks nice if you indent every line of the subsequent
-paragraphs, but here again, Markdown will allow you to be
-lazy:
-
-* This is a list item with two paragraphs.
-
-    This is the second paragraph in the list item. You're
-only required to indent the first line. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit.
-
-* Another item in the same list.
-
-To put a blockquote within a list item, the blockquote's `>`
-delimiters need to be indented:
-
-* A list item with a blockquote:
-
-    > This is a blockquote
-    > inside a list item.
-
-To put a code block within a list item, the code block needs
-to be indented *twice* -- 8 spaces or two tabs:
-
-* A list item with a code block:
-
-        <code goes here>
-
-### Code Blocks
-
-Pre-formatted code blocks are used for writing about programming or
-markup source code. Rather than forming normal paragraphs, the lines
-of a code block are interpreted literally. Markdown wraps a code block
-in both `<pre>` and `<code>` tags.
-
-To produce a code block in Markdown, simply indent every line of the
-block by at least 4 spaces or 1 tab.
-
-This is a normal paragraph:
-
-    This is a code block.
-
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
-
-A code block continues until it reaches a line that is not indented
-(or the end of the article).
-
-Within a code block, ampersands (`&`) and angle brackets (`<` and `>`)
-are automatically converted into HTML entities. This makes it very
-easy to include example HTML source code using Markdown -- just paste
-it and indent it, and Markdown will handle the hassle of encoding the
-ampersands and angle brackets. For example, this:
-
-    <div class="footer">
-        &copy; 2004 Foo Corporation
-    </div>
-
-Regular Markdown syntax is not processed within code blocks. E.g.,
-asterisks are just literal asterisks within a code block. This means
-it's also easy to use Markdown to write about Markdown's own syntax.
-
-```js
-// A comment
-const image = await import(`../../assets/blog/${test.default.attributes.image}`);
-test.default.image = image.default;
-const imageExt = test.default.attributes.image.split('.')[1];
-test.default.imageMime = `image/${imageExt === 'jpg' ? 'jpeg' : imageExt}`;
+```jsx
+<picture>
+  <source srcset='https://www.example.net/sunset.webp' type='image/webp' />
+  <img src='https://www.example.net/sunset.jpg' alt='A beautiful sunset' />
+</picture>
 ```
 
-## Span Elements
+In the above example, the browser will first try to render `sunset.webp`. If the browser doesn't support the WebP format for images, it will instead render the `sunset.jpg`. The `<img>` serves two purposes in this case:
 
-### Links
+1. It provides the fallback if none of the available `<source>` elements are able to product a usable image.
+2. It defines the image size and other presentation attributes of the image.
 
-Markdown supports two style of links: *inline* and *reference*.
+The `<picture>` element is [supported in all modern browsers](https://caniuse.com/picture).
 
-In both styles, the link text is delimited by [square brackets].
+## What about `background-image`s?
 
-To create an inline link, use a set of regular parentheses immediately
-after the link text's closing square bracket. Inside the parentheses,
-put the URL where you want the link to point, along with an *optional*
-title for the link, surrounded in quotes. For example:
+When it comes to providing image fallbacks in your Cascading Stylesheets (CSS), there has been several methods floating around the internet on how to achieve this. Some methods would make use of JavaScript to detect if the browser supports WebP, and then append a class to the element in which a `background-image` was attached to. Other methods would do some interesting hacks utilizing SVG images.
 
-This is [an example](http://example.com/) inline link.
+However, one often overlooked CSS at-rule is **`@supports`**. With `@supports`, you can test whether or not a browser supports the CSS declaration before using it. With it, we can do in CSS what we can do in HTML with the `<picture>` element.
 
-[This link](http://example.net/) has no title attribute.
+```css
+.my-class {
+  background-image: url('https://www.example.net/chicago.jpg');
 
-### Emphasis
+  @supports (background-image: url('https://www.example.net/chicago.webp')) {
+    background-image: url('https://www.example.net/chicago.webp');
+  }
+}
+```
 
-Markdown treats asterisks (`*`) and underscores (`_`) as indicators of
-emphasis. Text wrapped with one `*` or `_` will be wrapped with an
-HTML `<em>` tag; double `*`'s or `_`'s will be wrapped with an HTML
-`<strong>` tag. E.g., this input:
+In this class declaration, we set our default `background-image` like normal. Then, using `@supports` we test if the browser can set a `background-image` of our WebP version of the image. If so, we overwrite the original `background-image` declaration with our new one, using our more efficient WebP version of the image.
 
-*single asterisks*
+The `@supports` at-rule is also [supported in all modern browsers](https://caniuse.com/css-featurequeries).
 
-_single underscores_
+## Conclusion
 
-**double asterisks**
-
-__double underscores__
-
-### Code
-
-To indicate a span of code, wrap it with backtick quotes (`` ` ``).
-Unlike a pre-formatted code block, a code span indicates code within a
-normal paragraph. For example:
-
-Use the `printf()` function.
+Utilizing the `<picture>` element and the `@supports` at-rule, you can provide next-gen image formats to your web visitors without degrading the experience for those on older browsers. If you have failed the "Serve images in next-gen formats" audit in Lighthouse before, your path forward should be as easy as converting your images to WebP and utilizing the two methods outlined in this article.
