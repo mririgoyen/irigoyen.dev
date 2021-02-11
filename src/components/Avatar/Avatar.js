@@ -7,19 +7,17 @@ import classes from './Avatar.scss';
 
 const Avatar = ({ className }) => {
   return (
-    <div className={cx(classes.root, className)}>
-      <picture>
-        <source srcset={mirigoyenWebp} type='image/webp' />
-        <source srcset={mirigoyenJpeg} type='image/jpeg' />
-        <img
-          alt='Michael Irigoyen'
-          height={200}
-          loading='lazy'
-          src={mirigoyenJpeg}
-          width={225}
-        />
-      </picture>
-    </div>
+    <picture className={cx(classes.root, className)}>
+      <source srcset={mirigoyenWebp} type='image/webp' />
+      <source srcset={mirigoyenJpeg} type='image/jpeg' />
+      <img
+        alt='Michael Irigoyen'
+        height={225}
+        loading='lazy'
+        src={mirigoyenJpeg}
+        width={200}
+      />
+    </picture>
   );
 };
 

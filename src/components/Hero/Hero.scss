@@ -65,6 +65,7 @@
   text-transform: uppercase;
   transition: color .3s ease-in-out;
   will-change: color;
+  z-index: 8;
 
   svg {
     margin-right: .5rem;

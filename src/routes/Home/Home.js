@@ -1,8 +1,10 @@
-import { ScrollingProvider } from 'react-scroll-section';
+import { Fragment } from 'preact';
+import { useEffect, useRef } from 'preact/hooks';
+import { useRecoilValue } from 'recoil';
 
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import { activeState } from '../../atoms/activeState';
 
+import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Hero from '../../components/Hero/Hero';
 import About from '../../components/About/About';
 import Resume from '../../components/Resume/Resume';
@@ -12,18 +14,32 @@ import Philanthropy from '../../components/Philanthropy/Philanthropy';
 import Contact from '../../components/Contact/Contact';
 
 const Home = () => {
+  const sections = [
+    { component: Hero, id: 'home', ref: useRef() },
+    { component: About, id: 'about', ref: useRef() },
+    { component: Resume, id: 'resume', ref: useRef() },
+    { component: Projects, id: 'projects', ref: useRef() },
+    { component: Talks, id: 'talks', ref: useRef() },
+    { component: Philanthropy, id: 'philanthropy', ref: useRef() },
+    { component: Contact, id: 'contact', ref: useRef() }
+  ];
+
+  const activeSection = useRecoilValue(activeState);
+
+  useEffect(() => document.title = 'Michael Irigoyen - Front-End Software Engineer', []);
+
+  useEffect(() => {
+    if (activeSection.scrollTo) {
+      const section = sections.find((s) => s.id === activeSection.id).ref.current.base;
+      window.scrollTo({ behavior: 'smooth', top: section.offsetTop });
+    }
+  }, [ activeSection ]);
+
   return (
-    <ScrollingProvider>
-      <Header />
-      <Hero />
-      <About />
-      <Resume />
-      <Projects />
-      <Talks />
-      <Philanthropy />
-      <Contact />
-      <Footer />
-    </ScrollingProvider>
+    <Fragment>
+      {sections.map((section) => (<section.component ref={section.ref} />))}
+      <ScrollToTop />
+    </Fragment>
   );
 };
 

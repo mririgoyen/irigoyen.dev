@@ -2,7 +2,7 @@
 
 .header {
   background-color: rgba($black, .9);
-  box-shadow: 0 0 25px 5px rgba($black, .5);
+  box-shadow: 0 0 15px 2px rgba($black, .4);
   left: 0;
   position: fixed;
   top: 0;
@@ -27,7 +27,7 @@
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;
-    transition: border-color .3s, color .3s;
+    transition: color .5s .2s;
 
     &:hover {
       color: $white;
@@ -45,6 +45,8 @@
   div {
     background-color: $active-color;
     height: 4px;
+    transition: width .1s;
+    will-change: width;
   }
 }
 

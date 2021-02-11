@@ -1,17 +1,29 @@
 import { useEffect, useState } from 'preact/hooks';
+import { useRecoilState } from 'recoil';
 import cx from 'classnames';
-import { useScrollSection, useScrollSections } from 'react-scroll-section';
+import { route } from 'preact-router';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
 
+import { activeState } from '../../atoms/activeState';
+
 import classes from './Header.scss';
 
-const Header = () => {
+const MENU_ITEMS = [
+  { id: 'home', route: '/' },
+  { id: 'about', route: '/' },
+  { id: 'resume', route: '/' },
+  { id: 'projects', route: '/' },
+  { id: 'talks', route: '/' },
+  { id: 'philanthropy', route: '/' },
+  { id: 'contact', route: '/' },
+  { id: 'blog', route: '/blog/' }
+];
+
+const Header = ({ showScroll }) => {
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ scrollPercent, setScrollPercent ] = useState(0);
-  const sections = useScrollSections();
-  const homeSection = useScrollSection('home');
-  const activeSection = sections.find((s) => s.selected)?.id || 'home';
+  const [ activeSection, setActiveSection ] = useRecoilState(activeState);
 
   useEffect(() => {
     const getScrollPercent = () => {
@@ -24,13 +36,25 @@ const Header = () => {
     return () => window.removeEventListener('scroll', getScrollPercent);
   }, []);
 
+  const isSelected = (id) => {
+    if (typeof window !== 'undefined') {
+      if (window.location.hash === '' && activeSection.id === id) {
+        return true;
+      }
+
+      if (window.location.hash === `#${id}`) {
+        return true;
+      }
+    }
+  };
+
   return (
     <header className={classes.header}>
       <div className={classes.mobile}>
         <p>
-          <em onClick={homeSection.onClick}>irigoyen.dev</em>
+          <em onClick={() => route('/')}>irigoyen.dev</em>
           <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
-          {activeSection === 'home' ? <Icon path={mdiHome} size={1} /> : activeSection}
+          {activeSection.id === 'home' ? <Icon path={mdiHome} size={1} /> : activeSection.id}
         </p>
         <button
           aria-label='Menu'
@@ -47,26 +71,33 @@ const Header = () => {
           [classes.active]: menuOpen
         })}
       >
-        {sections.map((section) => (
-          <button
-            aria-label={section.id}
-            className={cx({ [classes.current]: section.selected })}
-            key={section.id}
-            onClick={() => {
-              section.onClick();
-              history.pushState({}, '', `#${section.id}`);
-              setMenuOpen(false);
-            }}
-            selected={section.selected}
-          >
-            {section.id === 'home' ? <Icon path={mdiHome} size={1} /> : section.id}
-          </button>
-        ))}
+        {MENU_ITEMS.map(({ id, route: itemRoute }) => {
+          return (
+            <button
+              aria-label={id}
+              className={cx(classes[id], {
+                [classes.current]: isSelected(id)
+              })}
+              key={id}
+              onClick={() => {
+                setMenuOpen(false);
+                route(`${itemRoute}`);
+                setActiveSection({ id, scrollTo: itemRoute === '/' });
+
+                if (itemRoute !== '/') {
+                  window.scrollTo(0, 0);
+                }
+              }}
+            >
+              {id === 'home' ? <Icon path={mdiHome} size={1} /> : id}
+            </button>
+          );
+        })}
       </nav>
       <div className={classes.progress}>
         <div
           style={{
-            width: `${scrollPercent}%`
+            width: showScroll ? `${scrollPercent}%` : 0
           }}
         />
       </div>

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { Section } from 'react-scroll-section';
+import { useSetRecoilState } from 'recoil';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
 
+import { activeState } from '../../atoms/activeState';
 import useIntersection from '../../hooks/useIntersection';
-import useScrollTo from '../../hooks/useScrollTo';
 
 import classes from './Hero.scss';
 
@@ -12,12 +12,14 @@ const Hero = () => {
   const heroRef = useRef();
   const [ offset, setOffset ] = useState(0);
   const onScreen = useIntersection(heroRef, { rootMargin: '300px', threshold: .1 });
-  const scrollTo = useScrollTo();
+  const setActiveSection = useSetRecoilState(activeState);
 
   useEffect(() => {
     const parallaxShift = () => setOffset(window.pageYOffset / 5);
 
     if (onScreen) {
+      setActiveSection({ id: 'home', scrollTo: false });
+      history.replaceState({}, '', '/');
       window.addEventListener('scroll', parallaxShift);
     } else {
       window.removeEventListener('scroll', parallaxShift);
@@ -27,7 +29,7 @@ const Hero = () => {
   }, [ onScreen ]);
 
   return (
-    <Section
+    <section
       className={classes.root}
       id='home'
       style={{
@@ -36,7 +38,7 @@ const Hero = () => {
     >
       <div className={classes.hero} ref={heroRef}>
         <h1>I'm Michael Irigoyen.</h1>
-        <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a onClick={scrollTo('about')}>Start scrolling</a> to learn more.</h2>
+        <h2>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about' onClick={() => setActiveSection({ id: 'about', scrollTo: true })}>Start scrolling</a> to learn more.</h2>
         <div className={classes.social}>
           <a aria-label='GitHub Profile' href='https://github.com/goyney'>
             <Icon path={mdiGithub} size={1.5} />
@@ -46,11 +48,11 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <a className={classes.scroll} onClick={scrollTo('about')}>
+      <a className={classes.scroll} href='#about' onClick={() => setActiveSection({ id: 'about', scrollTo: true })}>
         <Icon path={mdiArrowDownCircleOutline} size={1.5} />
         <span>Scroll Down</span>
       </a>
-    </Section>
+    </section>
   );
 };
 

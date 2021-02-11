@@ -1,0 +1,285 @@
+@import '../../style/variables.scss';
+
+.root {
+  background-color: $white;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100% - 137px);
+  padding: 5rem 2rem;
+}
+
+.container {
+  display: block;
+  max-width: $width-max;
+  padding-top: 3rem;
+  width: 100%;
+}
+
+.image {
+  align-items: center;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  max-height: 350px;
+  overflow: hidden;
+
+  img {
+    border-radius: 4px;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin: 20px -85px 0 0;
+  position: sticky;
+  top: 120px;
+
+  a {
+    align-items: center;
+    background-color: rgba($black, .05);
+    border-radius: 50%;
+    color: $black;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin-bottom: .75rem;
+    padding: .5rem;
+    width: 40px;
+
+    &:hover {
+      background-color: $active-color;
+      color: $white;
+
+      &.facebook {
+        background-color: rgb(59, 89, 152);
+      }
+
+      &.twitter {
+        background-color: rgb(29, 161, 242);
+      }
+    }
+  }
+}
+
+.article {
+  padding: 1rem 8rem;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.content {
+  border-top: 1px solid rgba($black, .1);
+  font-size: 1.1rem;
+  line-height: 2;
+  margin-top: 3rem;
+  padding-top: 1rem;
+
+  h2 {
+    margin: 3rem 0 1rem;
+  }
+
+  p {
+    margin: 2rem 0;
+  }
+
+  a {
+    color: $active-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken($active-color, 20%);
+    }
+  }
+
+  li {
+    margin: 1rem 0;
+  }
+
+  code,
+  pre {
+    background: none;
+    color: rgb(248, 248, 242);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: .9em;
+    hyphens: none;
+    line-height: 1.5;
+    tab-size: 4;
+    text-align: left;
+    text-shadow: 0 1px rgba(0, 0, 0, .3);
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+  }
+
+  pre {
+    background: rgb(39, 40, 34);
+    border-radius: .3em;
+    margin: .5em 0;
+    overflow: auto;
+    padding: 1em;
+  }
+
+  :not(pre) > code {
+    background: rgb(233, 233, 233);
+    border-radius: .3em;
+    color: $black;
+    display: inline-flex;
+    padding: .1rem .3rem;
+    text-shadow: none;
+    white-space: normal;
+  }
+
+  [class*='comment'],
+  [class*='prolog'],
+  [class*='doctype'],
+  [class*='cdata'] {
+    color: rgb(130, 146, 162);
+  }
+
+  [class*='namespace'] {
+    opacity: .7;
+  }
+
+  [class*='property'],
+  [class*='tag'],
+  [class*='constant'],
+  [class*='symbol'],
+  [class*='deleted'] {
+    color: rgb(249, 38, 114);
+  }
+
+  [class*='boolean'],
+  [class*='number'] {
+    color: rgb(174, 129, 255);
+  }
+
+  [class*='selector'],
+  [class*='attr-name'],
+  [class*='string'],
+  [class*='char'],
+  [class*='builtin'],
+  [class*='interpolation'],
+  [class*='punctuation'],
+  [class*='operator'],
+  [class*='inserted'] {
+    color: rgb(166, 226, 46);
+  }
+
+  [class*='entity'],
+  [class*='url'],
+  [class*='string'],
+  [class*='variable'] {
+    color: rgb(248, 248, 242);
+  }
+
+  [class*='atrule'],
+  [class*='attr-value'],
+  [class*='function'],
+  [class*='class-name'] {
+    color: rgb(230, 219, 116);
+  }
+
+  [class*='keyword'] {
+    color: rgb(102, 217, 239);
+  }
+
+  [class*='regex'],
+  [class*='template-punctuation'],
+  [class*='important'] {
+    color: rgb(253, 151, 31);
+  }
+
+  [class*='important'],
+  [class*='bold'] {
+    font-weight: 700;
+  }
+
+  [class*='italic'] {
+    font-style: italic;
+  }
+
+  [class*='entity'] {
+    cursor: help;
+  }
+}
+
+.author {
+  border-top: 1px solid rgba($black, .1);
+  display: flex;
+  margin-top: 4rem;
+  padding-top: 4rem;
+
+  img {
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+}
+
+.name {
+  color: $black;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.bio {
+  color: rgba($black, .6);
+  display: flex;
+  flex-direction: column;
+  font-size: .9rem;
+  justify-content: center;
+  line-height: 1.5;
+
+  a {
+    color: $active-color;
+
+    &:hover {
+      color: darken($active-color, 20%);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .root {
+    min-height: calc(100% - 100px);
+    padding-top: 3rem;
+  }
+
+  .article {
+    padding: 0;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+  }
+
+  .share {
+    flex-direction: row;
+    float: none;
+    justify-content: center;
+    margin: 0;
+    padding: .5rem 0 0;
+    position: relative;
+    top: 0;
+
+    a {
+      margin: .5rem;
+    }
+  }
+
+  .author {
+    p {
+      margin-bottom: .5rem;
+    }
+  }
+}
