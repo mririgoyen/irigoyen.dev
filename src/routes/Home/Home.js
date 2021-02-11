@@ -1,8 +1,10 @@
+import { Fragment } from 'preact';
 import { useEffect, useRef } from 'preact/hooks';
 import { useRecoilValue } from 'recoil';
 
 import { activeState } from '../../atoms/activeState';
 
+import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Hero from '../../components/Hero/Hero';
 import About from '../../components/About/About';
 import Resume from '../../components/Resume/Resume';
@@ -33,7 +35,12 @@ const Home = () => {
     }
   }, [ activeSection ]);
 
-  return sections.map((section) => (<section.component ref={section.ref} />));
+  return (
+    <Fragment>
+      {sections.map((section) => (<section.component ref={section.ref} />))}
+      <ScrollToTop />
+    </Fragment>
+  );
 };
 
 export default Home;
