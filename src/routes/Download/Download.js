@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline } from '@mdi/js';
 
@@ -14,6 +14,8 @@ const Download = ({ file, name }) => {
     setDownloaded(true);
     window.location.replace(file);
   }, !downloaded ? 3000 : null);
+
+  useEffect(() => document.title = `Downloading ${name}... | Michael Irigoyen`, []);
 
   return (
     <div className={classes.root}>
