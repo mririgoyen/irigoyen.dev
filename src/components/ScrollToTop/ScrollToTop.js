@@ -21,7 +21,7 @@ const ScrollToTop = () => {
         [classes.hide]: !scrolled
       })}
       title='Scroll to Top'
-      onClick={() => window.scrollTo(0, 0)}
+      onClick={() => window.scrollTo({ behavior: 'smooth', top: 0 })}
     >
       <Icon path={mdiArrowUp} size={1} />
     </button>
