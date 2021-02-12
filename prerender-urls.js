@@ -70,7 +70,7 @@ const getBlogRoutes = () => {
         title: articleTitle,
         'twitter:card': 'summary_large_image',
         'twitter:data1': readTime.text,
-        'twitter:description': `${article.attributes.title} by @mririgo`,
+        'twitter:description': articleDesc,
         'twitter:image': articleImage,
         'twitter:label1': 'Reading time',
         'twitter:title': articleTitle

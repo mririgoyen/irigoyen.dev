@@ -34,6 +34,8 @@
     flex-direction: row-reverse;
 
     figure {
+      margin: 1rem 2rem 1rem 4rem;
+
       img {
         transform: rotate3d(1, 1, 1, 5deg);
       }
@@ -74,6 +76,8 @@
   }
 
   figure {
+    margin: 1rem 4rem 1rem 2rem;
+
     img {
       box-shadow: 0 3px 10px 10px rgba($black, .2);
       outline: 7px solid $white;
@@ -114,6 +118,7 @@
       flex-direction: column;
 
       figure {
+        margin: 0;
         text-align: center;
 
         img {

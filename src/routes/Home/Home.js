@@ -4,6 +4,8 @@ import { useRecoilValue } from 'recoil';
 
 import { activeState } from '../../atoms/activeState';
 
+import useMetaTags from '../../hooks/useMetaTags';
+
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Hero from '../../components/Hero/Hero';
 import About from '../../components/About/About';
@@ -13,7 +15,7 @@ import Talks from '../../components/Talks/Talks';
 import Philanthropy from '../../components/Philanthropy/Philanthropy';
 import Contact from '../../components/Contact/Contact';
 
-const Home = () => {
+const Home = ({ url }) => {
   const sections = [
     { component: Hero, id: 'home', ref: useRef() },
     { component: About, id: 'about', ref: useRef() },
@@ -25,8 +27,7 @@ const Home = () => {
   ];
 
   const activeSection = useRecoilValue(activeState);
-
-  useEffect(() => document.title = 'Michael Irigoyen - Front-End Software Engineer', []);
+  const updateMetaTags = useMetaTags(url);
 
   useEffect(() => {
     if (activeSection.scrollTo) {
@@ -37,6 +38,7 @@ const Home = () => {
 
   return (
     <Fragment>
+      {updateMetaTags()}
       {sections.map((section) => (<section.component ref={section.ref} />))}
       <ScrollToTop />
     </Fragment>

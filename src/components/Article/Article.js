@@ -42,12 +42,6 @@ const Article = ({ id }) => {
     getArticle();
   }, []);
 
-  useEffect(() => {
-    if (article?.attributes?.title) {
-      document.title = `${article.attributes.title} by Michael Irigoyen`;
-    }
-  }, [ article ]);
-
   if (error) {
     return <ErrorPage type='article' />;
   }
@@ -83,7 +77,7 @@ const Article = ({ id }) => {
                 </a>
                 <a
                   className={classes.twitter}
-                  href={`https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`${article.attributes.title} by Michael Irigoyen`)}`}
+                  href={`https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`${article.attributes.title} by @mririgo`)}`}
                   rel='nofollow noreferrer'
                   target='_blank'
                   title='Share on Twitter'

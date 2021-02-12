@@ -1,24 +1,26 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useState } from 'preact/hooks';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline } from '@mdi/js';
 
 import useInterval from '../../hooks/useInterval';
+import useMetaTags from '../../hooks/useMetaTags';
+
 import Avatar from '../../components/Avatar/Avatar';
 
 import classes from './Download.scss';
 
-const Download = ({ file, name }) => {
+const Download = ({ file, name, url }) => {
   const [ downloaded, setDownloaded ] = useState(false);
+  const updateMetaTags = useMetaTags(url);
 
   useInterval(() => {
     setDownloaded(true);
     window.location.replace(file);
   }, !downloaded ? 3000 : null);
 
-  useEffect(() => document.title = `Downloading ${name}... | Michael Irigoyen`, []);
-
   return (
     <div className={classes.root}>
+      {updateMetaTags({ robotsBehavior: 'noindex' })}
       <div className={classes.about}>
         <Avatar />
         <a href='/'>Michael Irigoyen</a>

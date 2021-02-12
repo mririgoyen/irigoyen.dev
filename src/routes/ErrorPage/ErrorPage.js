@@ -1,8 +1,12 @@
 import { useEffect } from 'preact/hooks';
 
+import useMetaTags from '../../hooks/useMetaTags';
+
 import classes from './ErrorPage.scss';
 
-const ErrorPage = ({ type = 'page' }) => {
+const ErrorPage = ({ type = 'page', url }) => {
+  const updateMetaTags = useMetaTags(url);
+
   useEffect(() => {
     document.body.classList.add(classes.error);
     return () => document.body.classList.remove(classes.error);
@@ -10,6 +14,7 @@ const ErrorPage = ({ type = 'page' }) => {
 
   return (
     <div className={classes.root}>
+      {updateMetaTags({ robotsBehavior: 'noindex,nofollow' })}
       <div className={classes.container}>
         <h1>
           <span>— 404 —</span>

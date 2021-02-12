@@ -8,13 +8,16 @@ import '@fontsource/ibm-plex-serif/500.css';
 import './style/defaults.scss';
 
 import { RecoilRoot } from 'recoil';
+import { Provider as PrerenderProvider } from '@preact/prerender-data-provider';
 
 import Router from './Router';
 
-const App = () => (
-  <RecoilRoot>
-    <Router />
-  </RecoilRoot>
+const App = (props) => (
+  <PrerenderProvider value={props}>
+    <RecoilRoot>
+      <Router />
+    </RecoilRoot>
+  </PrerenderProvider>
 );
 
 export default App;
