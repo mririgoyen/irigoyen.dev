@@ -32,6 +32,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .root {
+    p {
+      margin: 0;
+    }
+  }
+
   .bullet {
     display: none;
   }
@@ -39,9 +45,5 @@
   time,
   .estimate {
     display: block;
-  }
-
-  p {
-    margin: 0;
   }
 }
