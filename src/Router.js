@@ -84,7 +84,7 @@ const Router = () => {
           file='https://github.com/goyney/presentations/blob/main/FED%20UP%20-%20Nobody%20Cares%20About%20Your%20UI.pptx?raw=true'
         />
 
-        <ErrorPage default />
+        <ErrorPage default path='/404' />
       </PreactRouter>
       <Footer />
     </Fragment>

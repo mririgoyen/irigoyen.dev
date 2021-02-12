@@ -33,7 +33,17 @@ const staticRoutes = [
   { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/presentations/design-your-api-for-humans' },
   { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/presentations/the-api-user-experience' },
   { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/presentations/continuous-devops' },
-  { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/presentations/nobody-cares-about-your-ui' }
+  { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/presentations/nobody-cares-about-your-ui' },
+  {
+    meta: {
+      ...defaultMetadata,
+      'og:title': { content: 'Page Not Found | Michael Irigoyen', property: 'og:title' },
+      robots: 'nofollow,noindex',
+      title: 'Page Not Found | Michael Irigoyen',
+      'twitter:title': 'Page Not Found | Michael Irigoyen'
+    },
+    title: 'Page Not Found | Michael Irigoyen', url: '/404'
+  }
 ];
 
 const getBlogRoutes = () => {
