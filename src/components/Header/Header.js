@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import cx from 'classnames';
 import { route } from 'preact-router';
 import Icon from '@mdi/react';
-import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
+import { mdiChevronRight, mdiClose, mdiCodeBracesBox, mdiHome, mdiMenu } from '@mdi/js';
 
 import { activeState } from '../../atoms/activeState';
 
@@ -52,7 +52,10 @@ const Header = ({ showScroll }) => {
     <header className={classes.header}>
       <div className={classes.mobile}>
         <p>
-          <em onClick={() => route('/')}>irigoyen.dev</em>
+          <em onClick={() => route('/')}>
+            <Icon className={classes.logo} path={mdiCodeBracesBox} size={1} />
+            irigoyen.dev
+          </em>
           <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
           {activeSection.id === 'home' ? <Icon path={mdiHome} size={1} /> : activeSection.id}
         </p>
@@ -89,7 +92,17 @@ const Header = ({ showScroll }) => {
                 }
               }}
             >
-              {id === 'home' ? <Icon path={mdiHome} size={1} /> : id}
+              {id === 'home' ? (
+                <em className={classes.home}>
+                  <span className={classes['desktop-home']}>
+                    <Icon className={classes.logo} path={mdiCodeBracesBox} size={1} />
+                    irigoyen.dev
+                  </span>
+                  <span className={classes['mobile-home']}>
+                    <Icon path={mdiHome} size={1} />
+                  </span>
+                </em>
+              ) : id}
             </button>
           );
         })}

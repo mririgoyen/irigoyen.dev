@@ -35,7 +35,32 @@
 
     &.current {
       color: $active-color;
+
+      .home {
+        color: $white;
+        transition: none;
+      }
     }
+  }
+
+  .desktop-home {
+    align-items: center;
+    color: $white !important;
+    display: flex;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .logo {
+    color: $active-color;
+    margin-right: .5rem;
+    opacity: .7;
+  }
+
+  .chevron {
+    margin: 0 .25rem;
+    opacity: .6;
   }
 }
 
@@ -50,11 +75,12 @@
   }
 }
 
-.mobile {
+.mobile,
+.mobile-home {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 736px) {
   .mobile {
     align-items: center;
     background-color: rgb(10, 10, 10);
@@ -78,15 +104,12 @@
       text-transform: capitalize;
 
       em {
+        align-items: center;
+        display: flex;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: uppercase;
       }
-    }
-
-    .chevron {
-      margin: 0 .25rem;
-      opacity: .6;
     }
 
     button {
@@ -112,12 +135,17 @@
       background-color: transparent;
       flex-direction: column;
       height: 100%;
+      height: 100vh;
       justify-content: start;
-      transform: translate3d(0, -100vh, 0);
+      overflow-y: auto;
+      position: absolute;
+      transform: translate3d(0, -200vh, 0);
       transition: transform .5s;
+      width: 100%;
       will-change: transform;
 
       &.active {
+        padding-bottom: 56px;
         transform: translate3d(0, 56px, 0);
       }
 
@@ -131,6 +159,14 @@
         margin: 0;
         width: 100%;
       }
+    }
+
+    .desktop-home {
+      display: none;
+    }
+
+    .mobile-home {
+      display: block;
     }
   }
 
