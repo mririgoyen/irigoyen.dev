@@ -17,6 +17,7 @@ const ScrollToTop = () => {
   return (
     <button
       aria-label='Scroll to Top'
+      aria-hidden={!scrolled}
       className={cx(classes.root, {
         [classes.hide]: !scrolled
       })}
