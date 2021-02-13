@@ -7,6 +7,8 @@ import { mdiChevronRight, mdiClose, mdiCodeBracesBox, mdiHome, mdiMenu } from '@
 
 import { activeState } from '../../atoms/activeState';
 
+import useWindowSize from '../../hooks/useWindowSize';
+
 import classes from './Header.scss';
 
 const MENU_ITEMS = [
@@ -24,6 +26,7 @@ const Header = ({ showScroll }) => {
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ scrollPercent, setScrollPercent ] = useState(0);
   const [ activeSection, setActiveSection ] = useRecoilState(activeState);
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     const getScrollPercent = () => {
@@ -50,7 +53,11 @@ const Header = ({ showScroll }) => {
 
   return (
     <header className={classes.header}>
-      <div className={classes.mobile}>
+      <div
+        aria-hidden={windowSize.width > 736}
+        className={classes.mobile}
+        role='presentation'
+      >
         <p>
           <em onClick={() => route('/')}>
             <Icon className={classes.logo} path={mdiCodeBracesBox} size={1} />
@@ -70,6 +77,7 @@ const Header = ({ showScroll }) => {
         </button>
       </div>
       <nav
+        aria-hidden={windowSize.width <= 736 && !menuOpen}
         className={cx({
           [classes.active]: menuOpen
         })}
