@@ -4,8 +4,8 @@ import useMetaTags from '../../hooks/useMetaTags';
 
 import classes from './ErrorPage.scss';
 
-const ErrorPage = ({ type = 'page', url }) => {
-  const updateMetaTags = useMetaTags(url);
+const ErrorPage = ({ type = 'page' }) => {
+  const updateMetaTags = useMetaTags();
 
   useEffect(() => {
     document.body.classList.add(classes.error);

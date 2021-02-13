@@ -15,7 +15,7 @@ import Talks from '../../components/Talks/Talks';
 import Philanthropy from '../../components/Philanthropy/Philanthropy';
 import Contact from '../../components/Contact/Contact';
 
-const Home = ({ url }) => {
+const Home = () => {
   const sections = [
     { component: Hero, id: 'home', ref: useRef() },
     { component: About, id: 'about', ref: useRef() },
@@ -27,7 +27,7 @@ const Home = ({ url }) => {
   ];
 
   const activeSection = useRecoilValue(activeState);
-  const updateMetaTags = useMetaTags(url);
+  const updateMetaTags = useMetaTags();
 
   useEffect(() => {
     if (activeSection.scrollTo) {
