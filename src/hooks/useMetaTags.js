@@ -10,7 +10,7 @@ const ARTICLE_ONLY_TAGS = [
 ];
 
 const useMetaTags = () => {
-  const [ data, loading, error ] = usePrerenderData({ url: window?.location?.pathname });
+  const [ data, loading, error ] = usePrerenderData({ url: typeof window !== 'undefined' ? window.location.pathname : '/' });
 
   const updateMetaTags = ({ articleView = false, robotsBehavior = 'index' } = {}) => {
     if (loading || error) {
