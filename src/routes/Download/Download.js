@@ -9,9 +9,9 @@ import Avatar from '../../components/Avatar/Avatar';
 
 import classes from './Download.scss';
 
-const Download = ({ file, name, url }) => {
+const Download = ({ file, name }) => {
   const [ downloaded, setDownloaded ] = useState(false);
-  const updateMetaTags = useMetaTags(url);
+  const updateMetaTags = useMetaTags();
 
   useInterval(() => {
     setDownloaded(true);

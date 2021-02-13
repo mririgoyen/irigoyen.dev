@@ -9,8 +9,8 @@ const ARTICLE_ONLY_TAGS = [
   'twitter:label1'
 ];
 
-const useMetaTags = (url) => {
-  const [ data, loading, error ] = usePrerenderData({ url });
+const useMetaTags = () => {
+  const [ data, loading, error ] = usePrerenderData({ url: window.location.pathname });
 
   const updateMetaTags = ({ articleView = false, robotsBehavior = 'index' } = {}) => {
     if (loading || error) {

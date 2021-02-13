@@ -5,8 +5,8 @@ import useMetaTags from '../../hooks/useMetaTags';
 import ArticleListing from '../../components/ArticleListing/ArticleListing';
 import Article from '../../components/Article/Article';
 
-const Blog = ({ postDay, postMonth, postTitle, postYear, url }) => {
-  const updateMetaTags = useMetaTags(url);
+const Blog = ({ postDay, postMonth, postTitle, postYear }) => {
+  const updateMetaTags = useMetaTags();
   const articleView = postYear && postMonth && postYear && postTitle;
 
   return (
