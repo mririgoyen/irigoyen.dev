@@ -42,6 +42,7 @@ const staticRoutes = [
       title: 'Page Not Found | Michael Irigoyen',
       'twitter:title': 'Page Not Found | Michael Irigoyen'
     },
+    omitSitemap: true,
     title: 'Page Not Found | Michael Irigoyen', url: '/404'
   }
 ];
