@@ -9,8 +9,8 @@ import { activeState } from '../../atoms/activeState';
 
 import useWindowSize from '../../hooks/useWindowSize';
 
-import logoImageWebp from '../../assets/icons/favicon-32x32.webp';
-import logoImagePng from '../../assets/icons/favicon-32x32.png';
+import logoImageWebp from '../../assets/icons/favicon-48x48.webp';
+import logoImagePng from '../../assets/icons/favicon-48x48.png';
 
 import classes from './Header.scss';
 

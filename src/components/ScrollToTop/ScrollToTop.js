@@ -21,6 +21,7 @@ const ScrollToTop = () => {
       className={cx(classes.root, {
         [classes.hide]: !scrolled
       })}
+      tabIndex='-1'
       title='Scroll to Top'
       onClick={() => window.scrollTo({ behavior: 'smooth', top: 0 })}
     >
