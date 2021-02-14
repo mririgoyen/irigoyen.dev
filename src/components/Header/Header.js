@@ -3,13 +3,15 @@ import { useRecoilState } from 'recoil';
 import cx from 'classnames';
 import { route } from 'preact-router';
 import Icon from '@mdi/react';
-import { mdiChevronRight, mdiClose, mdiCodeBracesBox, mdiHome, mdiMenu } from '@mdi/js';
+import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
 
 import { activeState } from '../../atoms/activeState';
 
 import useWindowSize from '../../hooks/useWindowSize';
 
 import classes from './Header.scss';
+
+const miIcon = 'M12,2C6.477,2,2,6.477,2,12c0,5.523,4.477,10,10,10s10-4.477,10-10C22,6.477,17.523,2,12,2z M18,18h-1.988V9.755h-0.106l-3.162,8.21h-1.486L8.095,9.738H7.989V18H6V6h2.536l3.397,8.695h0.134L15.465,6H18V18z';
 
 const MENU_ITEMS = [
   { id: 'home', route: '/' },
@@ -60,7 +62,7 @@ const Header = ({ showScroll }) => {
       >
         <p>
           <em onClick={() => route('/')}>
-            <Icon className={classes.logo} path={mdiCodeBracesBox} size={1} />
+            <Icon className={classes.logo} path={miIcon} size={1} />
             irigoyen.dev
           </em>
           <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
@@ -103,7 +105,7 @@ const Header = ({ showScroll }) => {
               {id === 'home' ? (
                 <em className={classes.home}>
                   <span className={classes['desktop-home']}>
-                    <Icon className={classes.logo} path={mdiCodeBracesBox} size={1} />
+                    <Icon className={classes.logo} path={miIcon} size={1} />
                     irigoyen.dev
                   </span>
                   <span className={classes['mobile-home']}>
