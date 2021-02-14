@@ -9,9 +9,10 @@ import { activeState } from '../../atoms/activeState';
 
 import useWindowSize from '../../hooks/useWindowSize';
 
-import classes from './Header.scss';
+import logoImageWebp from '../../assets/icons/favicon-32x32.webp';
+import logoImagePng from '../../assets/icons/favicon-32x32.png';
 
-const miIcon = 'M12,2C6.477,2,2,6.477,2,12c0,5.523,4.477,10,10,10s10-4.477,10-10C22,6.477,17.523,2,12,2z M18,18h-1.988V9.755h-0.106l-3.162,8.21h-1.486L8.095,9.738H7.989V18H6V6h2.536l3.397,8.695h0.134L15.465,6H18V18z';
+import classes from './Header.scss';
 
 const MENU_ITEMS = [
   { id: 'home', route: '/' },
@@ -62,7 +63,16 @@ const Header = ({ showScroll }) => {
       >
         <p>
           <em onClick={() => route('/')}>
-            <Icon className={classes.logo} path={miIcon} size={1} />
+            <picture className={classes.logo}>
+              <source srcset={logoImageWebp} type='image/webp' />
+              <source srcset={logoImagePng} type='image/png' />
+              <img
+                alt='Irigoyen.dev'
+                height={24}
+                src={logoImagePng}
+                width={24}
+              />
+            </picture>
             irigoyen.dev
           </em>
           <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
@@ -105,7 +115,16 @@ const Header = ({ showScroll }) => {
               {id === 'home' ? (
                 <em className={classes.home}>
                   <span className={classes['desktop-home']}>
-                    <Icon className={classes.logo} path={miIcon} size={1} />
+                    <picture className={classes.logo}>
+                      <source srcset={logoImageWebp} type='image/webp' />
+                      <source srcset={logoImagePng} type='image/png' />
+                      <img
+                        alt='Irigoyen.dev'
+                        height={24}
+                        src={logoImagePng}
+                        width={24}
+                      />
+                    </picture>
                     irigoyen.dev
                   </span>
                   <span className={classes['mobile-home']}>
