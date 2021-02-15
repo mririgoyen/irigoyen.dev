@@ -54,6 +54,8 @@ const Header = ({ showScroll }) => {
     }
   };
 
+  const navHidden = windowSize.width <= 736 && !menuOpen;
+
   return (
     <header className={classes.header}>
       <div
@@ -89,12 +91,12 @@ const Header = ({ showScroll }) => {
         </button>
       </div>
       <nav
-        aria-hidden={windowSize.width <= 736 && !menuOpen}
+        aria-hidden={navHidden}
         className={cx({
           [classes.active]: menuOpen
         })}
       >
-        {MENU_ITEMS.map(({ id, route: itemRoute }) => {
+        {MENU_ITEMS.map(({ id, route: itemRoute }, i) => {
           return (
             <button
               aria-label={id}
@@ -111,6 +113,7 @@ const Header = ({ showScroll }) => {
                   window.scrollTo(0, 0);
                 }
               }}
+              tabIndex={navHidden ? -1 : i}
             >
               {id === 'home' ? (
                 <em className={classes.home}>
