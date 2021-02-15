@@ -9,6 +9,7 @@
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  padding-top: 56px;
   will-change: background-position-y;
 
   @supports (background-image: url('../../assets/images/chicago.webp')) {
@@ -76,29 +77,16 @@
   }
 
   span {
-    overflow: hidden;
+    border-bottom: transparent;
     padding: 5px 0 5px 1px;
-    position: relative;
-
-    &::after {
-      border-bottom: 1px solid $active-color;
-      bottom: 0;
-      content: '';
-      left: -250px;
-      position: absolute;
-      transition: left .5s ease-in-out;
-      width: 100%;
-      will-change: left;
-    }
+    transition: border-bottom .5s;
   }
 
   &:hover {
     color: $white;
 
     span {
-      &::after {
-        left: 0;
-      }
+      border-bottom: 1px solid $active-color;
     }
   }
 }

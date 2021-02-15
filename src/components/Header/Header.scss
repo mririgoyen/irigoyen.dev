@@ -92,9 +92,7 @@
     height: 56px;
     justify-content: space-between;
     overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: fixed;
     width: 100%;
     z-index: 10;
 
@@ -131,6 +129,7 @@
   .header {
     background-color: transparent;
     height: 56px;
+    position: relative;
 
     nav {
       background-color: transparent;
@@ -139,15 +138,17 @@
       height: 100vh;
       justify-content: start;
       overflow-y: auto;
-      position: absolute;
+      position: fixed;
       transform: translate3d(0, -200vh, 0);
       transition: transform .5s;
+      visibility: hidden;
       width: 100%;
-      will-change: transform;
+      will-change: transform, visibility;
 
       &.active {
         padding-bottom: 56px;
         transform: translate3d(0, 56px, 0);
+        visibility: visible;
       }
 
       button {
@@ -172,9 +173,9 @@
   }
 
   .progress {
-    margin-top: -4px;
     max-width: calc(100% - 56px);
-    position: absolute;
+    position: fixed;
+    top: 52px;
     z-index: 11;
   }
 }
