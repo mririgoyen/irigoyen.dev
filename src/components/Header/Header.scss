@@ -129,7 +129,7 @@
   .header {
     background-color: transparent;
     height: 56px;
-    position: relative;
+    position: fixed;
 
     nav {
       background-color: transparent;
@@ -144,6 +144,7 @@
       visibility: hidden;
       width: 100%;
       will-change: transform, visibility;
+      z-index: 9;
 
       &.active {
         padding-bottom: 56px;
