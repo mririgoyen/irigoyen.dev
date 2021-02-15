@@ -30,16 +30,16 @@
     margin-bottom: 0;
   }
 
-  h2 {
-    color: rgba($white, .7);
-    font-family: $secondary-font;
-    font-size: 2.5vh;
-    font-weight: 500;
-  }
-
   em {
     font-style: normal;
   }
+}
+
+.subheading {
+  color: rgba($white, .7);
+  font-family: $secondary-font;
+  font-size: 2.5vh;
+  font-weight: 500;
 }
 
 .social {

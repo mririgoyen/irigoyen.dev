@@ -54,9 +54,9 @@ const Router = () => {
         />
 
         <Download
-          name='Michael Irigoyen.pdf'
+          name='Michael Irigoyen Resume.pdf'
           path='/resume/download'
-          file='/Michael%20Irigoyen.pdf'
+          file='/Michael%20Irigoyen%20Resume.pdf'
         />
         <Download
           name='1UP: Empowering Communities with APIs.pptx'

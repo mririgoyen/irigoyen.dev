@@ -36,28 +36,6 @@
     margin: 0 0 .5rem;
   }
 
-  h4 {
-    font-weight: 400;
-    margin: 0;
-
-    em {
-      font-family: $secondary-font;
-      font-size: 1.2rem;
-    }
-
-    span {
-      color: rgba($black, .5);
-      font-size: .9rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .bullet {
-      color: $black;
-      padding: 0 .5rem;
-    }
-  }
-
   p {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -90,18 +68,29 @@
   }
 }
 
+.subheading {
+  font-weight: 400;
+  margin: 0;
+
+  em {
+    font-family: $secondary-font;
+    font-size: 1.2rem;
+  }
+
+  span {
+    color: rgba($black, .5);
+    font-size: .9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
 @media only screen and (max-width: 736px) {
   .item {
     flex-direction: column;
 
     h3 {
       font-size: 1.8rem;
-    }
-
-    h4 {
-      em {
-        display: block;
-      }
     }
 
     figure {
@@ -117,7 +106,9 @@
     }
   }
 
-  .bullet {
-    display: none;
+  .subheading {
+    em {
+      display: block;
+    }
   }
 }
