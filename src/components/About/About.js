@@ -28,7 +28,7 @@ const About = () => {
             <p><a href='mailto:michael@irigoyen.dev'>michael@irigoyen.dev</a></p>
           </div>
           <div className={classes.actions}>
-            <a href='/resume/download'>
+            <a href='/resume/download/'>
               <Icon path={mdiFileDownloadOutline} size={1} />
               Download Resume
             </a>
