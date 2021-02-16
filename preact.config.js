@@ -28,6 +28,19 @@ export default (config, eng, helpers) => {
     })
   );
 
+  const { rule: fileLoader } = helpers.getLoadersByName(config, 'file-loader')[0] || [];
+  if (fileLoader) {
+    fileLoader.options = {
+      name(resourcePath) {
+        if (path.extname(resourcePath).match(/.woff2?/)) {
+          return '[name].[ext]';
+        }
+
+        return '[contenthash].[ext]';
+      }
+    };
+  }
+
   // Move Markdown files to be handled by the loader
   config.module.rules[6].test = /\.(xml|html|txt)$/,
   config.module.rules.push({
