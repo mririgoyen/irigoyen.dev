@@ -1,5 +1,6 @@
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
 import markdownItLinks from 'markdown-it-link-attributes';
@@ -28,6 +29,7 @@ export default (config, eng, helpers) => {
     })
   );
 
+  // Don't hash woff files so we can preload them
   const { rule: fileLoader } = helpers.getLoadersByName(config, 'file-loader')[0] || [];
   if (fileLoader) {
     fileLoader.options = {
@@ -40,6 +42,15 @@ export default (config, eng, helpers) => {
       }
     };
   }
+
+  // Bundle analyzer
+  config.plugins.push(
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: path.resolve(__dirname, 'webpack-report.html')
+    })
+  );
 
   // Move Markdown files to be handled by the loader
   config.module.rules[6].test = /\.(xml|html|txt)$/,
