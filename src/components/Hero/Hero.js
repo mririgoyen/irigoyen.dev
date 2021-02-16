@@ -1,18 +1,15 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { useSetRecoilState } from 'recoil';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
 
-import { activeState } from '../../atoms/activeState';
 import useIntersection from '../../hooks/useIntersection';
 
 import classes from './Hero.scss';
 
-const Hero = () => {
+const Hero = ({ setActiveSection }) => {
   const heroRef = useRef();
   const [ offset, setOffset ] = useState(0);
   const onScreen = useIntersection(heroRef, { rootMargin: '300px', threshold: .1 });
-  const setActiveSection = useSetRecoilState(activeState);
 
   useEffect(() => {
     const parallaxShift = () => setOffset(window.pageYOffset / 5);

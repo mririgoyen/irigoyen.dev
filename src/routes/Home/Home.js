@@ -1,8 +1,5 @@
 import { Fragment } from 'preact';
 import { useEffect, useRef } from 'preact/hooks';
-import { useRecoilValue } from 'recoil';
-
-import { activeState } from '../../atoms/activeState';
 
 import useMetaTags from '../../hooks/useMetaTags';
 
@@ -15,7 +12,7 @@ import Talks from '../../components/Talks/Talks';
 import Philanthropy from '../../components/Philanthropy/Philanthropy';
 import Contact from '../../components/Contact/Contact';
 
-const Home = () => {
+const Home = ({ activeSection, setActiveSection }) => {
   const sections = [
     { component: Hero, id: 'home', ref: useRef() },
     { component: About, id: 'about', ref: useRef() },
@@ -26,7 +23,6 @@ const Home = () => {
     { component: Contact, id: 'contact', ref: useRef() }
   ];
 
-  const activeSection = useRecoilValue(activeState);
   const updateMetaTags = useMetaTags();
 
   useEffect(() => {
@@ -39,7 +35,7 @@ const Home = () => {
   return (
     <Fragment>
       {updateMetaTags()}
-      {sections.map((section) => (<section.component ref={section.ref} />))}
+      {sections.map((section) => (<section.component ref={section.ref} setActiveSection={setActiveSection} />))}
       <ScrollToTop />
     </Fragment>
   );

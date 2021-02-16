@@ -1,8 +1,6 @@
-import { useSetRecoilState } from 'recoil';
 import Icon from '@mdi/react';
 import { mdiHandHeart } from '@mdi/js';
 
-import { activeState } from '../../atoms/activeState';
 import SectionContainer from '../SectionContainer/SectionContainer';
 
 import ELTeamWebp from '../../assets/images/elteam.webp';
@@ -10,14 +8,13 @@ import ELTeamJpeg from '../../assets/images/elteam.jpg';
 
 import classes from './Philanthropy.scss';
 
-const Philanthropy = () => {
-  const setActiveSection = useSetRecoilState(activeState);
-
+const Philanthropy = ({ setActiveSection }) => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='philanthropy'
+      setActiveSection={setActiveSection}
     >
       <header>
         <h2>Philanthropy</h2>

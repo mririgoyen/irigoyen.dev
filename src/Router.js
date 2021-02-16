@@ -1,9 +1,6 @@
 import { Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import { useSetRecoilState } from 'recoil';
 import { Router as PreactRouter, getCurrentUrl } from 'preact-router';
-
-import { activeState } from './atoms/activeState';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -14,8 +11,8 @@ import Download from './routes/Download/Download';
 import ErrorPage from './routes/ErrorPage/ErrorPage';
 
 const Router = () => {
-  const setActiveSection = useSetRecoilState(activeState);
   const [ headerScrollEnabled, setHeaderScrollEnabled ] = useState(true);
+  const [ activeSection, setActiveSection ] = useState({ id: 'home', scrollTo: false });
 
   useEffect(() => {
     const initialUrl = getCurrentUrl();
@@ -36,11 +33,17 @@ const Router = () => {
 
   return (
     <Fragment>
-      <Header showScroll={headerScrollEnabled} />
+      <Header
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        showScroll={headerScrollEnabled}
+      />
       <PreactRouter onChange={onRouteChange}>
         <Home
           activeHeader
+          activeSection={activeSection}
           path='/'
+          setActiveSection={setActiveSection}
           showHeaderScroll
         />
         <Blog

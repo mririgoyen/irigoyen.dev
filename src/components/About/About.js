@@ -1,21 +1,18 @@
-import { useSetRecoilState } from 'recoil';
 import Icon from '@mdi/react';
 import { mdiFileDownloadOutline } from '@mdi/js';
 
-import { activeState } from '../../atoms/activeState';
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Avatar from '../Avatar/Avatar';
 
 import classes from './About.scss';
 
-const About = () => {
-  const setActiveSection = useSetRecoilState(activeState);
-
+const About = ({ setActiveSection }) => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='about'
+      setActiveSection={setActiveSection}
     >
       <Avatar className={classes.avatar} />
       <div className={classes.about}>

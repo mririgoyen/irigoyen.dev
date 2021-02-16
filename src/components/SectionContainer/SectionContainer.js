@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { useSetRecoilState } from 'recoil';
 import cx from 'classnames';
 
-import { activeState } from '../../atoms/activeState';
 import useIntersection from '../../hooks/useIntersection';
 
 import classes from './SectionContainer.scss';
@@ -11,12 +9,12 @@ const SectionContainer = ({
   animate = false,
   children,
   className,
-  id
+  id,
+  setActiveSection
 }) => {
   const sectionRef = useRef();
   const [ displayed, setDisplayed ] = useState(false);
   const onScreen = useIntersection(sectionRef, { rootMargin: '200px', threshold: .1 });
-  const setActiveSection = useSetRecoilState(activeState);
 
   useEffect(() => {
     if (onScreen) {

@@ -1,6 +1,3 @@
-import { useSetRecoilState } from 'recoil';
-
-import { activeState } from '../../atoms/activeState';
 import SectionContainer from '../SectionContainer/SectionContainer';
 
 import PictogrammersWebp from '../../assets/images/pictogrammers.webp';
@@ -10,14 +7,13 @@ import GamecenterJpeg from '../../assets/images/gamecenter.jpg';
 
 import classes from './Projects.scss';
 
-const Projects = () => {
-  const setActiveSection = useSetRecoilState(activeState);
-
+const Projects = ({ setActiveSection }) => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='projects'
+      setActiveSection={setActiveSection}
     >
       <header>
         <h2>Projects</h2>

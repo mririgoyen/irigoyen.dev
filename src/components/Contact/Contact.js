@@ -2,12 +2,13 @@ import SectionContainer from '../SectionContainer/SectionContainer';
 
 import classes from './Contact.scss';
 
-const Contact = () => {
+const Contact = ({ setActiveSection }) => {
   return (
     <SectionContainer
       animate
       className={classes.root}
       id='contact'
+      setActiveSection={setActiveSection}
     >
       <header>
         <h2>Contact Me</h2>

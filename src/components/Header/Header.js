@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'preact/hooks';
-import { useRecoilState } from 'recoil';
 import cx from 'classnames';
 import { route } from 'preact-router';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
-
-import { activeState } from '../../atoms/activeState';
 
 import useWindowSize from '../../hooks/useWindowSize';
 
@@ -25,10 +22,9 @@ const MENU_ITEMS = [
   { id: 'blog', route: '/blog/' }
 ];
 
-const Header = ({ showScroll }) => {
+const Header = ({ activeSection, setActiveSection, showScroll }) => {
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ scrollPercent, setScrollPercent ] = useState(0);
-  const [ activeSection, setActiveSection ] = useRecoilState(activeState);
   const windowSize = useWindowSize();
 
   useEffect(() => {
