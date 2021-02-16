@@ -17,7 +17,7 @@
     "@mdi/react": "^1.4.0",
     "classnames": "^2.2.6",
     "dayjs": "^1.10.4",
-    "preact": "^10.3.2",
+    "preact": "^10.5.12",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
     "prismjs": "^1.23.0",
