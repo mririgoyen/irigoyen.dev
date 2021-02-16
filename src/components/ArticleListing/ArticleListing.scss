@@ -95,7 +95,7 @@
   text-align: center;
 
   button {
-    background-color: rgb(0, 0, 0, .1);
+    background-color: rgb(0 0 0 / 10%);
     border-radius: 4px;
     color: $black;
     font-size: .8rem;
@@ -109,7 +109,7 @@
     will-change: background-color, color;
 
     &:hover {
-      background-color: rgb(0, 0, 0, .2);
+      background-color: rgb(0 0 0 / 20%);
       color: $black;
     }
   }

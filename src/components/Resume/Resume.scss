@@ -1,7 +1,7 @@
 @import '../../style/variables.scss';
 
 .root {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(240 240 240);
   color: $text-color;
 }
 
@@ -48,7 +48,7 @@
   }
 
   hr {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgb(0 0 0 / 10%);
     border: none;
     height: 1px;
     margin: 2rem 0;

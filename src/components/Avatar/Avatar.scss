@@ -5,7 +5,7 @@
     animation: pulsate 5s ease-in-out 0s infinite alternate;
     border: 3px solid $active-color;
     border-radius: 50%;
-    box-shadow: 0 0 0 2rem rgb(60, 60, 60);
+    box-shadow: 0 0 0 2rem rgb(60 60 60);
     height: 225px;
     width: 200px;
   }
@@ -13,10 +13,10 @@
 
 @keyframes pulsate {
   from {
-    box-shadow: 0 0 0 1rem rgb(60, 60, 60);
+    box-shadow: 0 0 0 1rem rgb(60 60 60);
   }
 
   to {
-    box-shadow: 0 0 0 2rem rgb(60, 60, 60);
+    box-shadow: 0 0 0 2rem rgb(60 60 60);
   }
 }
