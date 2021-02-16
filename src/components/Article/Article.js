@@ -7,7 +7,7 @@ import { mdiEmailOutline, mdiFacebook, mdiTwitter } from '@mdi/js';
 import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
 import ErrorPage from '../../routes/ErrorPage/ErrorPage';
-import ScrollToTop from '../ScrollToTop/ScrollToTop';
+// import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 import defaultImage from '../../assets/images/facebook-card.png';
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
@@ -120,7 +120,7 @@ const Article = ({ id }) => {
           </article>
         )}
       </div>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
     </div>
   );
 };
