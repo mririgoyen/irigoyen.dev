@@ -7,6 +7,7 @@ const Button = ({
   className,
   disabled,
   href,
+  native,
   onClick = () => {},
   startIcon,
   variant = 'neutral'
@@ -15,12 +16,13 @@ const Button = ({
 
   return (
     <Element
-      aria-disabled={href && disabled}
+      aria-disabled={href && disabled || undefined}
       className={cx(classes.root, classes[variant], {
         [classes.disabled]: disabled
       }, className)}
-      disabled={!href && disabled}
+      disabled={!href && disabled || undefined}
       href={href}
+      native={href && native || undefined}
       onClick={onClick}
       type={!href ? 'button' : undefined}
     >

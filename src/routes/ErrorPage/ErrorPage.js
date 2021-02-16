@@ -1,6 +1,7 @@
 import { useEffect } from 'preact/hooks';
 
 import useMetaTags from '../../hooks/useMetaTags';
+import Button from '../../components/Button/Button';
 
 import classes from './ErrorPage.scss';
 
@@ -22,7 +23,9 @@ const ErrorPage = ({ type = 'page' }) => {
         </h1>
         <p>The {type} you are looking for could not be found.</p>
         <p>
-          <a href={type === 'page' ? '/' : '/blog/'} native>Return to the {type === 'page' ? 'Homepage' : 'Blog'}</a>
+          <Button href={type === 'page' ? '/' : '/blog/'} native>
+            Return to the {type === 'page' ? 'Homepage' : 'Blog'}
+          </Button>
         </p>
       </div>
     </div>
