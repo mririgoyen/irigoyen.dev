@@ -62,30 +62,6 @@
       transform: rotate3d(1, 1, 1, -5deg);
     }
   }
-
-  a {
-    align-items: center;
-    background-color: rgb(0, 0, 0, .1);
-    border-radius: 4px;
-    color: $black;
-    display: inline-flex;
-    font-size: .8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    padding: 1.25rem 2.5rem;
-    text-transform: uppercase;
-    user-select: none;
-    white-space: nowrap;
-
-    svg {
-      margin-right: .25rem;
-    }
-
-    &:hover {
-      background-color: rgb(0, 0, 0, .2);
-      color: $black;
-    }
-  }
 }
 
 .subheading {

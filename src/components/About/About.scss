@@ -35,51 +35,6 @@
   padding-top: 4rem;
 }
 
-.details {
-  width: 50%;
-
-  h3 {
-    font-size: 1.8rem;
-    margin-top: 0;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin: 0;
-  }
-
-  a {
-    color: rgba($white, .5);
-  }
-}
-
-.actions {
-  a {
-    align-items: center;
-    background-color: $white;
-    border: 0;
-    border-radius: 5px;
-    color: $text-color;
-    display: flex;
-    font-size: .8rem;
-    font-weight: 600;
-    justify-content: center;
-    letter-spacing: 2px;
-    padding: 1.25rem 2.5rem;
-    text-transform: uppercase;
-    user-select: none;
-
-    svg {
-      margin-right: .25rem;
-    }
-
-    &:hover {
-      background-color: $active-color;
-      color: $white;
-    }
-  }
-}
-
 @media only screen and (max-width: 736px) {
   .root {
     & > div {

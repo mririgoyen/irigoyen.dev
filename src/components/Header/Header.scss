@@ -20,11 +20,15 @@
   button {
     align-items: center;
     background-color: transparent;
+    border: none;
     color: rgba($white, .8);
+    cursor: pointer;
     display: flex;
     font-size: .9rem;
     margin-top: 3px;
     min-height: 58px;
+    outline: none;
+    padding: 1rem;
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;

@@ -2,6 +2,7 @@ import Icon from '@mdi/react';
 import { mdiHandHeart } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
+import Button from '../Button/Button';
 
 import ELTeamWebp from '../../assets/images/elteam.webp';
 import ELTeamJpeg from '../../assets/images/elteam.jpg';
@@ -43,13 +44,14 @@ const Philanthropy = ({ setActiveSection }) => {
           </ul>
           <p>If I have ever helped you in the past, and you are looking for a way to give back or if you are just feeling generous, please consider donating to this amazing cause! #ForTheKids</p>
           <div className={classes.action}>
-            <a
+            <Button
               className={classes.button}
               href='https://www.extra-life.org/participant/goyney'
+              startIcon={<Icon path={mdiHandHeart} size={1} />}
+              variant='dark'
             >
-              <Icon path={mdiHandHeart} size={1} />
               Donate Now
-            </a>
+            </Button>
           </div>
         </div>
       </div>

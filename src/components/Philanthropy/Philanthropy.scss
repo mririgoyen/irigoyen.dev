@@ -79,30 +79,6 @@
   display: flex;
   justify-content: center;
   padding-top: 3rem;
-
-  .button {
-    align-items: center;
-    background-color: $active-color;
-    border-radius: 4px;
-    color: $white;
-    display: inline-flex;
-    font-size: .8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    padding: 1.25rem 2.5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    user-select: none;
-
-    svg {
-      margin-right: .5rem;
-    }
-
-    &:hover {
-      background-color: darken($active-color, 10%);
-      color: $white;
-    }
-  }
 }
 
 @media only screen and (max-width: 736px) {
