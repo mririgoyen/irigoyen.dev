@@ -1,0 +1,60 @@
+@import '../../style/variables.scss';
+
+.root {
+  padding: .5rem 0;
+
+  label {
+    display: block;
+    font-size: .9rem;
+    padding-bottom: .3rem;
+  }
+
+  input,
+  textarea {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: $primary-font;
+    font-size: 1rem;
+    outline: none;
+    padding: calc(.5rem + 1px);
+    resize: vertical;
+    width: 100%;
+
+    &:disabled {
+      background-color: rgba($white, .5);
+      color: rgba($black, .5);
+    }
+
+    &:not(:disabled) {
+      &:hover {
+        border: 1px solid $active-color;
+      }
+    }
+
+    &:focus {
+      border: 2px solid $active-color;
+      padding: .5rem;
+    }
+  }
+
+  textarea {
+    min-height: 82px;
+  }
+
+  &.invalid {
+    label {
+      color: $error-color;
+    }
+
+    input {
+      border: 2px solid $error-color;
+      padding: .5rem;
+    }
+  }
+
+  .error-text {
+    color: $error-color;
+    font-size: .9rem;
+    margin: .2rem 0 0 2px;
+  }
+}
