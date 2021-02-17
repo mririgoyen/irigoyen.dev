@@ -74,7 +74,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
             irigoyen.dev
           </em>
           <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
-          {activeSection.id === 'home' ? <Icon path={mdiHome} size={1} /> : activeSection.id}
+          {activeSection.id === 'home' ? <Icon path={mdiHome} size={1} title='Home' /> : activeSection.id}
         </p>
         <button
           aria-label='Menu'
@@ -83,7 +83,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
           })}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <Icon path={menuOpen ? mdiClose : mdiMenu} size={1} />
+          <Icon path={menuOpen ? mdiClose : mdiMenu} size={1} title='Close' />
         </button>
       </div>
       <nav
@@ -127,7 +127,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
                     irigoyen.dev
                   </span>
                   <span className={classes['mobile-home']}>
-                    <Icon path={mdiHome} size={1} />
+                    <Icon path={mdiHome} size={1} title='Home' />
                   </span>
                 </em>
               ) : id}
