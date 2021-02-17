@@ -10,7 +10,6 @@ import Button from '../Button/Button';
 import classes from './Contact.scss';
 
 const Contact = ({ setActiveSection }) => {
-  const [ formSubmitting, setFormSubmitting ] = useState(false);
   const [ formSuccess, setFormSuccess ] = useState(false);
   const [ formError, setFormError ] = useState(false);
 
@@ -32,27 +31,46 @@ const Contact = ({ setActiveSection }) => {
   const encodeFormData = (data) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
 
   const handleSubmit = async () => {
-    setFormSubmitting(true);
-
     const sanitizedFirstName = sanitizeInput(firstName);
     const sanitizedLastName = sanitizeInput(lastName);
     const sanitizedEmailAddress = sanitizeInput(emailAddress);
     const sanitizedMessage = sanitizeInput(message);
 
-    setFirstNameError(!sanitizedFirstName.length ? 'Please provide your first name.' : false);
-    setLastNameError(!sanitizedLastName.length ? 'Please provide your last name.' : false);
-    setMessageError(!sanitizedMessage.length ? 'Please leave me a message.' : false);
+    let error = false;
+
+    if (!sanitizedFirstName.length) {
+      setFirstNameError('Please provide your first name.');
+      error = true;
+    } else {
+      setFirstNameError(false);
+    }
+
+    if (!sanitizedLastName.length) {
+      setLastNameError('Please provide your last name.');
+      error = true;
+    } else {
+      setLastNameError(false);
+    }
 
     if (!sanitizedEmailAddress.length) {
       setEmailAddressError('Please provide your email address.');
+      error = true;
     } else if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(sanitizedEmailAddress) === false) {
       setEmailAddressError('Please provide a valid email address.');
+      error = true;
     } else {
       setEmailAddressError(false);
     }
 
-    if (!!firstNameError || !!lastNameError || !!emailAddressError || !!messageError) {
-      return setFormSubmitting(false);
+    if (!sanitizedMessage.length) {
+      setMessageError('Please leave me a message.');
+      error = true;
+    } else {
+      setMessageError(false);
+    }
+
+    if (error) {
+      return;
     }
 
     try {
@@ -77,8 +95,6 @@ const Contact = ({ setActiveSection }) => {
       setFormSuccess(true);
     } catch (err) {
       setFormError(true);
-    } finally {
-      setFormSubmitting(false);
     }
   };
 
@@ -144,7 +160,7 @@ const Contact = ({ setActiveSection }) => {
             className={cx(classes.submit, {
               [classes.submitted]: formSuccess
             })}
-            disabled={formSubmitting || formSuccess}
+            disabled={formSuccess}
             onClick={handleSubmit}
             startIcon={<Icon path={formSuccess ? mdiCheck : mdiSend} size={.9} />}
             variant='dark'
