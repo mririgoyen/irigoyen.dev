@@ -20,7 +20,7 @@
     resize: vertical;
     width: 100%;
 
-    &.disabled {
+    &:disabled {
       background-color: rgba($white, .5);
       color: rgba($black, .5);
     }
