@@ -155,6 +155,7 @@ const Contact = ({ setActiveSection }) => {
           >
             {formSuccess ? 'Sent' : 'Send'}
           </Button>
+          <input type='hidden' name='form-name' value='contact-form' />
         </form>
       </div>
     </SectionContainer>
