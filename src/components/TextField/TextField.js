@@ -10,7 +10,6 @@ const TextField = ({
   name,
   onChange = () => {},
   type = 'text',
-  required,
   value
 }) => {
   const Element = multiline ? 'textarea' : 'input';
@@ -21,7 +20,7 @@ const TextField = ({
         [classes.invalid]: !!error
       })}
     >
-      <label for={name}>{label}{required && ' *'}</label>
+      <label for={name}>{label}</label>
       <Element
         aria-describedby={!!error && `${name}-error-text` || undefined}
         aria-invalid={!!error}

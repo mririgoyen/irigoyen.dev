@@ -58,10 +58,10 @@ const Contact = ({ setActiveSection }) => {
     try {
       const response = await fetch('/', {
         body: encodeFormData({
-          emailAddress,
-          firstName,
+          'email-address': emailAddress,
+          'first-name': firstName,
           'form-name': 'contact-form',
-          lastName,
+          'last-name': lastName,
           message
         }),
         headers: {
@@ -111,7 +111,6 @@ const Contact = ({ setActiveSection }) => {
               label='First Name'
               name='first-name'
               onChange={setFirstName}
-              required
               value={firstName}
             />
             <TextField
@@ -120,7 +119,6 @@ const Contact = ({ setActiveSection }) => {
               label='Last Name'
               name='last-name'
               onChange={setLastName}
-              required
               value={lastName}
             />
           </div>
@@ -130,7 +128,6 @@ const Contact = ({ setActiveSection }) => {
             label='Email Address'
             name='email-address'
             onChange={setEmailAddress}
-            required
             type='email'
             value={emailAddress}
           />
@@ -141,7 +138,6 @@ const Contact = ({ setActiveSection }) => {
             multiline
             name='message'
             onChange={setMessage}
-            required
             value={message}
           />
           <Button
