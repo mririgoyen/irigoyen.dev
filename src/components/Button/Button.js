@@ -10,6 +10,7 @@ const Button = ({
   native,
   onClick = () => {},
   startIcon,
+  type = 'button',
   variant = 'neutral'
 }) => {
   const Element = href ? 'a' : 'button';
@@ -24,7 +25,7 @@ const Button = ({
       href={href}
       native={href && native || undefined}
       onClick={onClick}
-      type={!href ? 'button' : undefined}
+      type={!href ? type : undefined}
     >
       {startIcon && <span className={classes['start-icon']}>{startIcon}</span>}
       {children}
