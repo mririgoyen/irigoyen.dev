@@ -56,6 +56,7 @@ const ArticleListing = () => {
         <div>
           <div className={classes.badge}>Latest Post</div>
           <h1>{article.attributes.title}</h1>
+          <p className={classes.desc}>{article.attributes.description}</p>
           <ArticleAuthor publishDate={article.attributes.date} />
         </div>
         <figure>
@@ -85,7 +86,12 @@ const ArticleListing = () => {
             }
 
             return (
-              <a className={classes.article} href={article.route} key={i}>
+              <a
+                className={classes.article}
+                href={article.route}
+                key={i}
+                title={article.attributes.description}
+              >
                 <figure>
                   <picture>
                     <source srcset={article.image} type={article.imageMime} />
