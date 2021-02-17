@@ -27,6 +27,7 @@ const TextField = ({
         aria-invalid={!!error}
         disabled={disabled}
         id={name}
+        name={name}
         onChange={(e) => onChange(e.target.value)}
         type={!multiline && type || undefined}
         value={value}

@@ -20,6 +20,11 @@
     resize: vertical;
     width: 100%;
 
+    &.disabled {
+      background-color: rgba($white, .5);
+      color: rgba($black, .5);
+    }
+
     &:not(:disabled) {
       &:hover {
         border: 1px solid $active-color;
