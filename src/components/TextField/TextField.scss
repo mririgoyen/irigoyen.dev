@@ -50,9 +50,14 @@
       color: $error-color;
     }
 
-    input {
+    input,
+    textarea {
       border: 2px solid $error-color;
       padding: .5rem;
+
+      &:hover {
+        border: 2px solid lighten($error-color, 15%);
+      }
     }
   }
 
