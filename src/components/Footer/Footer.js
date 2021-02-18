@@ -9,13 +9,13 @@ const Footer = () => {
       <p className={classes.copyright}>© {new Date().getFullYear()} Michael Irigoyen</p>
       <div className={classes.social}>
         <a aria-label='GitHub Profile' href='https://github.com/goyney'>
-          <Icon path={mdiGithub} size={1.5} />
+          <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
         </a>
         <a aria-label='LinkedIn Profile' href='https://www.linkedin.com/in/michael-irigoyen/'>
-          <Icon path={mdiLinkedin} size={1.5} />
+          <Icon path={mdiLinkedin} size={1.5} title='LinkedIn Profile' />
         </a>
         <a aria-label='Twitter Profile' href='https://twitter.com/mririgo'>
-          <Icon path={mdiTwitter} size={1.5} />
+          <Icon path={mdiTwitter} size={1.5} title='Twitter Profile' />
         </a>
       </div>
     </footer>

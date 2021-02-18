@@ -38,10 +38,10 @@ const Hero = ({ setActiveSection }) => {
         <p className={classes.subheading}>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about' onClick={() => setActiveSection({ id: 'about', scrollTo: true })}>Start scrolling</a> to learn more.</p>
         <div className={classes.social}>
           <a aria-label='GitHub Profile' href='https://github.com/goyney'>
-            <Icon path={mdiGithub} size={1.5} />
+            <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
           </a>
           <a aria-label='LinkedIn Profile' href='https://www.linkedin.com/in/michael-irigoyen/'>
-            <Icon path={mdiLinkedin} size={1.5} />
+            <Icon path={mdiLinkedin} size={1.5} title='LinkedIn Profile' />
           </a>
         </div>
       </div>

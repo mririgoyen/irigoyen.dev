@@ -73,7 +73,7 @@ const Article = ({ id }) => {
                   target='_blank'
                   title='Share on Facebook'
                 >
-                  <Icon path={mdiFacebook} size={1} />
+                  <Icon path={mdiFacebook} size={1} title='Share on Facebook' />
                 </a>
                 <a
                   className={classes.twitter}
@@ -82,7 +82,7 @@ const Article = ({ id }) => {
                   target='_blank'
                   title='Share on Twitter'
                 >
-                  <Icon path={mdiTwitter} size={1} />
+                  <Icon path={mdiTwitter} size={1} title='Share on Twitter' />
                 </a>
                 <a
                   href={`mailto:?subject=${encodeURIComponent(article.attributes.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(window.location.href)}`}
@@ -90,7 +90,7 @@ const Article = ({ id }) => {
                   target='_blank'
                   title='Share via Email'
                 >
-                  <Icon path={mdiEmailOutline} size={1} />
+                  <Icon path={mdiEmailOutline} size={1} title='Share via Email' />
                 </a>
               </div>
               <h1>{article.attributes.title}</h1>

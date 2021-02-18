@@ -116,7 +116,7 @@ const Contact = ({ setActiveSection }) => {
         <form data-netlify='true' name='contact-form'>
           {formError && (
             <div className={classes['form-error']}>
-              <Icon path={mdiAlertCircle} size={.9} />
+              <Icon path={mdiAlertCircle} size={.9} title='Alert' />
               Something unexpected happened. Please try again.
             </div>
           )}
