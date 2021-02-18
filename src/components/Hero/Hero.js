@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import Icon from '@mdi/react';
-import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
+import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin, mdiTwitter } from '@mdi/js';
 
 import useIntersection from '../../hooks/useIntersection';
 
@@ -42,6 +42,9 @@ const Hero = ({ setActiveSection }) => {
           </a>
           <a aria-label='LinkedIn Profile' href='https://www.linkedin.com/in/michael-irigoyen/'>
             <Icon path={mdiLinkedin} size={1.5} title='LinkedIn Profile' />
+          </a>
+          <a aria-label='Twitter Profile' href='https://twitter.com/mririgo'>
+            <Icon path={mdiTwitter} size={1.5} title='Twitter Profile' />
           </a>
         </div>
       </div>

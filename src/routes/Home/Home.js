@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'preact/hooks';
 
 import useMetaTags from '../../hooks/useMetaTags';
 
-// import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import Hero from '../../components/Hero/Hero';
 import About from '../../components/About/About';
 import Resume from '../../components/Resume/Resume';
@@ -36,7 +35,6 @@ const Home = ({ activeSection, setActiveSection }) => {
     <Fragment>
       {updateMetaTags()}
       {sections.map((section) => (<section.component ref={section.ref} setActiveSection={setActiveSection} />))}
-      {/* <ScrollToTop /> */}
     </Fragment>
   );
 };

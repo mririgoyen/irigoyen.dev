@@ -2,12 +2,11 @@ import 'prismjs';
 import { useEffect, useState } from 'preact/hooks';
 import readingTime from 'reading-time';
 import Icon from '@mdi/react';
-import { mdiEmailOutline, mdiFacebook, mdiTwitter } from '@mdi/js';
+import { mdiEmailOutline, mdiFacebook, mdiLinkedin, mdiTwitter } from '@mdi/js';
 
 import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
 import ErrorPage from '../../routes/ErrorPage/ErrorPage';
-// import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 import defaultImage from '../../assets/images/facebook-card.png';
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
@@ -85,6 +84,15 @@ const Article = ({ id }) => {
                   <Icon path={mdiTwitter} size={1} title='Share on Twitter' />
                 </a>
                 <a
+                  className={classes.linkedin}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                  rel='nofollow noreferrer'
+                  target='_blank'
+                  title='Share on LinkedIn'
+                >
+                  <Icon path={mdiLinkedin} size={1} title='Share on LinkedIn' />
+                </a>
+                <a
                   href={`mailto:?subject=${encodeURIComponent(article.attributes.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(window.location.href)}`}
                   rel='nofollow noreferrer'
                   target='_blank'
@@ -120,7 +128,6 @@ const Article = ({ id }) => {
           </article>
         )}
       </div>
-      {/* <ScrollToTop /> */}
     </div>
   );
 };
