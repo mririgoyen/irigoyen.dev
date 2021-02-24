@@ -59,8 +59,16 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
         className={classes.mobile}
         role='presentation'
       >
-        <p>
-          <em onClick={() => route('/')}>
+        <div className={classes['nav-container']}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setMenuOpen(false);
+              route('/');
+              setActiveSection({ id: 'home', scrollTo: false });
+            }}
+            href='/'
+          >
             <picture className={classes.logo}>
               <source srcset={logoImageWebp} type='image/webp' />
               <source srcset={logoImagePng} type='image/png' />
@@ -72,10 +80,10 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
               />
             </picture>
             irigoyen.dev
-          </em>
+          </a>
           <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
           {activeSection.id === 'home' ? <Icon path={mdiHome} size={1} title='Home' /> : activeSection.id}
-        </p>
+        </div>
         <button
           aria-label='Menu'
           className={cx({
@@ -94,15 +102,17 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
       >
         {MENU_ITEMS.map(({ id, route: itemRoute }) => {
           return (
-            <button
+            <a
               aria-label={id}
               className={cx(classes[id], {
                 [classes.current]: isSelected(id)
               })}
+              href={`${itemRoute}${!['home', 'blog'].includes(id) ? `#${id}` : '' }`}
               key={id}
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 setMenuOpen(false);
-                route(`${itemRoute}`);
+                route(itemRoute);
                 setActiveSection({ id, scrollTo: itemRoute === '/' });
 
                 if (itemRoute !== '/') {
@@ -131,7 +141,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
                   </span>
                 </em>
               ) : id}
-            </button>
+            </a>
           );
         })}
       </nav>
