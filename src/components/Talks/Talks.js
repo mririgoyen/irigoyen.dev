@@ -21,7 +21,6 @@ import classes from './Talks.scss';
 const Talks = ({ setActiveSection }) => {
   return (
     <SectionContainer
-      animate
       className={classes.root}
       id='talks'
       setActiveSection={setActiveSection}

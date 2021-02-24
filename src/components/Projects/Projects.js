@@ -10,7 +10,6 @@ import classes from './Projects.scss';
 const Projects = ({ setActiveSection }) => {
   return (
     <SectionContainer
-      animate
       className={classes.root}
       id='projects'
       setActiveSection={setActiveSection}

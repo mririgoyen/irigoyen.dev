@@ -12,7 +12,6 @@ import classes from './Philanthropy.scss';
 const Philanthropy = ({ setActiveSection }) => {
   return (
     <SectionContainer
-      animate
       className={classes.root}
       id='philanthropy'
       setActiveSection={setActiveSection}

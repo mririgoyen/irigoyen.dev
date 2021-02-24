@@ -100,7 +100,6 @@ const Contact = ({ setActiveSection }) => {
 
   return (
     <SectionContainer
-      animate
       className={classes.root}
       id='contact'
       setActiveSection={setActiveSection}
