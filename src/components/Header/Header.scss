@@ -91,6 +91,10 @@
 .mobile,
 .mobile-home {
   display: none;
+
+  button {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 736px) {
@@ -129,6 +133,7 @@
       background-color: $active-color;
       border: 0;
       color: $white;
+      display: block;
       height: 56px;
       margin: 0;
       outline: 0;
