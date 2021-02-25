@@ -77,7 +77,7 @@ const getBlogRoutes = () => {
   }, []);
 
   posts.unshift({
-    articles: posts.map((post) => ({
+    articles: posts.reverse().map((post) => ({
       description: post.meta.description,
       image: post.article.image,
       imageMime: post.article.imageMime,
