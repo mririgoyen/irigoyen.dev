@@ -53,11 +53,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
 
   return (
     <header className={classes.header}>
-      <div
-        aria-hidden={windowSize.width > 736}
-        className={classes.mobile}
-        role='presentation'
-      >
+      <div className={classes.mobile}>
         <div className={classes['nav-container']}>
           <a
             onClick={() => {
