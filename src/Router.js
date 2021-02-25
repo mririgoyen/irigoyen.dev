@@ -8,7 +8,6 @@ import Footer from './components/Footer/Footer';
 import Home from './routes/Home/Home';
 import Blog from './routes/Blog/Blog';
 import Download from './routes/Download/Download';
-import SuccessPage from './routes/SuccessPage/SuccessPage';
 import ErrorPage from './routes/ErrorPage/ErrorPage';
 
 const Router = () => {
@@ -88,7 +87,6 @@ const Router = () => {
           file='https://github.com/goyney/talks/blob/main/Nobody%20Cares%20About%20Your%20UI/Nobody%20Cares%20About%20Your%20UI.pptx?raw=true'
         />
 
-        <SuccessPage path='/success' />
         <ErrorPage default path='/404' />
       </PreactRouter>
       <Footer />

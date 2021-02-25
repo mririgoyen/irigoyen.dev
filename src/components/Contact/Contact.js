@@ -115,7 +115,6 @@ const Contact = ({ setActiveSection }) => {
           <p>Send me a message! I'll respond as quickly as possible.</p>
         </div>
         <form
-          action='/success'
           data-netlify='true'
           method='POST'
           name='contact-form'
@@ -133,6 +132,7 @@ const Contact = ({ setActiveSection }) => {
               label='First Name'
               name='first-name'
               onChange={setFirstName}
+              required
               value={firstName}
             />
             <TextField
@@ -141,6 +141,7 @@ const Contact = ({ setActiveSection }) => {
               label='Last Name'
               name='last-name'
               onChange={setLastName}
+              required
               value={lastName}
             />
           </div>
@@ -150,6 +151,7 @@ const Contact = ({ setActiveSection }) => {
             label='Email Address'
             name='email-address'
             onChange={setEmailAddress}
+            required
             type='email'
             value={emailAddress}
           />
@@ -160,6 +162,7 @@ const Contact = ({ setActiveSection }) => {
             multiline
             name='message'
             onChange={setMessage}
+            required
             value={message}
           />
           <Button

@@ -9,6 +9,7 @@ const TextField = ({
   multiline,
   name,
   onChange = () => {},
+  required,
   type = 'text',
   value
 }) => {
@@ -28,6 +29,7 @@ const TextField = ({
         id={name}
         name={name}
         onChange={(e) => onChange(e.target.value)}
+        required={required}
         type={!multiline && type || undefined}
         value={value}
       />
