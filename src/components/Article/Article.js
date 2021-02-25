@@ -38,7 +38,7 @@ const Article = ({ url }) => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <article>
+        <article role='main'>
           <figure className={classes.image}>
             <picture>
               <source srcset={articleImage} type={article.imageMime || 'image/png'} />

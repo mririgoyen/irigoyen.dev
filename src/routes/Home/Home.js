@@ -1,4 +1,3 @@
-import { Fragment } from 'preact';
 import { useRef } from 'preact/hooks';
 
 import useMetaTags from '../../hooks/useMetaTags';
@@ -25,10 +24,10 @@ const Home = ({ setActiveSection }) => {
   const updateMetaTags = useMetaTags();
 
   return (
-    <Fragment>
+    <div role='main'>
       {updateMetaTags()}
       {sections.map((section) => (<section.component ref={section.ref} setActiveSection={setActiveSection} />))}
-    </Fragment>
+    </div>
   );
 };
 
