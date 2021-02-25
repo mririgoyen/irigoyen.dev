@@ -50,7 +50,7 @@ As if I haven't said it enough, icon fonts are fonts first and icons second. Thi
 
 ## SVG's to the Rescue!
 
-With the release of Chromium-powered version Microsoft's Edge browser in early 2020, Scalable Vector Graphics (SVG) became fully supported across all major browsers. Even before that, SVGs have been supported in all browsers since 2012, [albeit with some caveats in Internet Explorer and pre-Chromium Edge](https://caniuse.com/svg). And guess what? SVGs are _awesome_ for web icons!
+With the release of Chromium-powered version Microsoft's Edge browser in early 2020, Scalable Vector Graphics (SVG) became fully supported across all major browsers. Even before that, SVGs have been supported in all browsers since 2012, [albeit with some scaling caveats in Internet Explorer and pre-Chromium Edge](https://caniuse.com/svg). And guess what? SVGs are _awesome_ for web icons!
 
 ### Icons Just Work
 
@@ -65,13 +65,17 @@ SVGs have built-in accessibility features that give them the edge over using ico
 
 ### Easier to Maintain
 
-Compared one-to-one, a collection of 100 SVGs versus a WOFF2 of 100 icon glyphs will be larger. However, the benefits of SVGs easily outweigh an icon font implementation. With SVGs, you will only be including the icons that are required for that individual page, directly in your code. You do not need to maintain a font and its supporting CSS files outside of your site.
+Compared one-to-one, a collection of 100 SVGs versus a WOFF2 of 100 icon glyphs will be larger. However, the benefits of SVGs easily outweigh an icon font implementation.
+
+With SVGs, you will only be including the icons that are required for that individual page, directly in your code. The most efficient way to do this is by using the SVG [`<defs>` element](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs) to define your icons once, and then referring to them with the `<use>` element. You can also inline your SVG icons directly, however if you use the same icon multiple times on the same page, you're just adding to overall page weight.
 
 > **Note:** If you're creating a Single Page Application (SPA), be sure to look into proper [code-splitting](https://developer.mozilla.org/en-US/docs/Glossary/Code_splitting) techniques to keep your bundle sizes down.
 
+Another advantage is that you do not need to maintain a font and its supporting CSS files outside of your site. A common practice for those who do use icon fonts is to cherry-pick the icons they need and rebuild a smaller font that only includes those icons. Utilizing SVG icons allows you to do this within your codebase without the need for generating the font assets in external tools.
+
 ### Sharp-Dressed Images
 
-SVGs are straight up vector images. Anti-aliasing methods employed by your browser or operating system have no effect and your icons will be noticeably sharper.
+SVGs are straight up vector images. Anti-aliasing methods employed by your browser or operating system on text have no effect on SVGs and your icons will be noticeably sharper.
 
 ### Full CSS Control
 
@@ -95,16 +99,16 @@ If you're using a framework, many of the major icon libraries also have released
 
 - **Material Design Icons** - [@mdi/react](https://www.npmjs.com/package/@mdi/react) & [@mdi/js](https://www.npmjs.com/package/@mdi/js)
 
-  ```jsx
+  ```js
   import Icon from '@mdi/react';
   import { mdiCoffee } from '@mdi/js';
 
   const element = <Icon path={mdiCoffee} size={1} />;
   ```
 
-- **Font Awesome** - [@fortawesome/react-fontawesome](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
+- **Font Awesome** - [@fortawesome/react-fontawesome](https://www.npmjs.com/package/@fortawesome/react-fontawesome) & [@fortawesome/free-solid-svg-icons](https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons)
 
-  ```jsx
+  ```js
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 

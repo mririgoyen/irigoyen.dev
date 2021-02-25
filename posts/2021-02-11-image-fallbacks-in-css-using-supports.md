@@ -14,7 +14,7 @@ One of the most common recommendations Lighthouse can give is to “Serve images
 
 The HTML standard defines the **`<picture>` element**. Using the `<picture>` element, you can define multiple `<source>` elements to offer alternative versions of an image.
 
-```jsx
+```html
 <picture>
   <source srcset='https://www.example.net/sunset.webp' type='image/webp' />
   <img src='https://www.example.net/sunset.jpg' alt='A beautiful sunset' />
