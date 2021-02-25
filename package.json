@@ -4,7 +4,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "preact build --no-inline-css --prerenderUrls ./prerender-urls.js",
+    "build": "preact build --prerenderUrls ./prerender-urls.js",
     "dev": "preact watch --prerenderUrls ./prerender-urls.js",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint \"**/*.{js,jsx}\"",
