@@ -1,5 +1,5 @@
 import { Fragment } from 'preact';
-import { useEffect, useRef } from 'preact/hooks';
+import { useRef } from 'preact/hooks';
 
 import useMetaTags from '../../hooks/useMetaTags';
 
@@ -11,7 +11,7 @@ import Talks from '../../components/Talks/Talks';
 import Philanthropy from '../../components/Philanthropy/Philanthropy';
 import Contact from '../../components/Contact/Contact';
 
-const Home = ({ activeSection, setActiveSection }) => {
+const Home = ({ setActiveSection }) => {
   const sections = [
     { component: Hero, id: 'home', ref: useRef() },
     { component: About, id: 'about', ref: useRef() },
@@ -23,13 +23,6 @@ const Home = ({ activeSection, setActiveSection }) => {
   ];
 
   const updateMetaTags = useMetaTags();
-
-  useEffect(() => {
-    if (activeSection.scrollTo) {
-      const section = sections.find((s) => s.id === activeSection.id).ref.current.base;
-      window.scrollTo({ behavior: 'smooth', top: section.offsetTop });
-    }
-  }, [ activeSection ]);
 
   return (
     <Fragment>

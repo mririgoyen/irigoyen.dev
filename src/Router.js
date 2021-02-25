@@ -12,16 +12,16 @@ import ErrorPage from './routes/ErrorPage/ErrorPage';
 
 const Router = () => {
   const [ headerScrollEnabled, setHeaderScrollEnabled ] = useState(true);
-  const [ activeSection, setActiveSection ] = useState({ id: 'home', scrollTo: false });
+  const [ activeSection, setActiveSection ] = useState({ id: 'home' });
 
   useEffect(() => {
     const initialUrl = getCurrentUrl();
-    setActiveSection({ id: initialUrl.split('/')[1], scrollTo: false });
+    setActiveSection({ id: initialUrl.split('/')[1] });
   }, []);
 
   const onRouteChange = (e) => {
     if (!e.current.props.activeHeader) {
-      setActiveSection({ id: '', scrollTo: false });
+      setActiveSection({ id: '' });
     }
 
     if (e.current.props.showHeaderScroll) {

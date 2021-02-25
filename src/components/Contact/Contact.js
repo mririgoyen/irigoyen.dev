@@ -30,7 +30,9 @@ const Contact = ({ setActiveSection }) => {
 
   const encodeFormData = (data) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const sanitizedFirstName = sanitizeInput(firstName);
     const sanitizedLastName = sanitizeInput(lastName);
     const sanitizedEmailAddress = sanitizeInput(emailAddress);
@@ -112,7 +114,11 @@ const Contact = ({ setActiveSection }) => {
           <p>Would you like me to speak at your event, be a guest on your podcast, or just simply get in touch with me?</p>
           <p>Send me a message! I'll respond as quickly as possible.</p>
         </div>
-        <form data-netlify='true' name='contact-form'>
+        <form
+          data-netlify='true'
+          method='POST'
+          name='contact-form'
+        >
           {formError && (
             <div className={classes['form-error']}>
               <Icon path={mdiAlertCircle} size={.9} title='Alert' />
@@ -126,6 +132,7 @@ const Contact = ({ setActiveSection }) => {
               label='First Name'
               name='first-name'
               onChange={setFirstName}
+              required
               value={firstName}
             />
             <TextField
@@ -134,6 +141,7 @@ const Contact = ({ setActiveSection }) => {
               label='Last Name'
               name='last-name'
               onChange={setLastName}
+              required
               value={lastName}
             />
           </div>
@@ -143,6 +151,7 @@ const Contact = ({ setActiveSection }) => {
             label='Email Address'
             name='email-address'
             onChange={setEmailAddress}
+            required
             type='email'
             value={emailAddress}
           />
@@ -153,6 +162,7 @@ const Contact = ({ setActiveSection }) => {
             multiline
             name='message'
             onChange={setMessage}
+            required
             value={message}
           />
           <Button
@@ -162,6 +172,7 @@ const Contact = ({ setActiveSection }) => {
             disabled={formSuccess}
             onClick={handleSubmit}
             startIcon={<Icon path={formSuccess ? mdiCheck : mdiSend} size={.9} />}
+            type='submit'
             variant='dark'
           >
             {formSuccess ? 'Sent' : 'Send'}

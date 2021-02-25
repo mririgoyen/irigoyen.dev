@@ -15,6 +15,13 @@
     align-items: center;
     display: flex;
     justify-content: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   a {
@@ -39,7 +46,7 @@
     }
 
     &.current {
-      color: $active-color;
+      color: lighten($active-color, 25%);
 
       .home {
         color: $white;
@@ -74,7 +81,7 @@
   width: 100%;
 
   div {
-    background-color: $active-color;
+    background-color: lighten($active-color, 25%);
     height: 4px;
     transition: width .1s;
     will-change: width;
@@ -84,6 +91,10 @@
 .mobile,
 .mobile-home {
   display: none;
+
+  button {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 736px) {
@@ -122,6 +133,7 @@
       background-color: $active-color;
       border: 0;
       color: $white;
+      display: block;
       height: 56px;
       margin: 0;
       outline: 0;
@@ -154,6 +166,11 @@
       width: 100%;
       will-change: transform, visibility;
       z-index: 9;
+
+      ul {
+        display: block;
+        width: 100%;
+      }
 
       &.active {
         padding-bottom: 56px;

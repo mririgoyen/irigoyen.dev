@@ -18,7 +18,7 @@ const SectionContainer = ({
 
   useEffect(() => {
     if (onScreen) {
-      setActiveSection({ id, scrollTo: false });
+      setActiveSection({ id });
       history.replaceState({}, '', `#${id}`);
       setDisplayed(true);
     }

@@ -1,10 +1,6 @@
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import markdownIt from 'markdown-it';
-import markdownItAnchor from 'markdown-it-anchor';
-import markdownItLinks from 'markdown-it-link-attributes';
-import markdownItPrism from 'markdown-it-prism';
 
 export default (config, eng, helpers) => {
   // Override CSS modules class names
@@ -51,25 +47,4 @@ export default (config, eng, helpers) => {
       reportFilename: path.resolve(__dirname, 'webpack-report.html')
     })
   );
-
-  // Move Markdown files to be handled by the loader
-  config.module.rules[6].test = /\.(xml|html|txt)$/,
-  config.module.rules.push({
-    loader: 'frontmatter-markdown-loader',
-    options: {
-      markdownIt: markdownIt({ html: true })
-        .use(markdownItAnchor)
-        .use(markdownItPrism)
-        .use(markdownItLinks, {
-          attrs: {
-            rel: 'noopener nofollow',
-            target: '_blank'
-          },
-          pattern: /^(?!https?:\/\/(www.)?irigoyen.dev*$)(?!#)(?!\/).*/
-
-        }),
-      mode: [ 'body', 'html' ]
-    },
-    test: /\.md$/
-  });
 };

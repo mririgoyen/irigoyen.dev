@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
 import cx from 'classnames';
-import { route } from 'preact-router';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
 
@@ -54,26 +53,21 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
 
   return (
     <header className={classes.header}>
-      <div
-        aria-hidden={windowSize.width > 736}
-        className={classes.mobile}
-        role='presentation'
-      >
+      <div className={classes.mobile}>
         <div className={classes['nav-container']}>
           <a
-            onClick={(e) => {
-              e.preventDefault();
+            onClick={() => {
               setMenuOpen(false);
-              route('/');
-              setActiveSection({ id: 'home', scrollTo: false });
+              setActiveSection({ id: 'home' });
             }}
-            href='/'
+            href='/#home'
+            native
           >
             <picture className={classes.logo}>
               <source srcset={logoImageWebp} type='image/webp' />
               <source srcset={logoImagePng} type='image/png' />
               <img
-                alt='Irigoyen.dev'
+                alt=''
                 height={24}
                 src={logoImagePng}
                 width={24}
@@ -100,50 +94,49 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
           [classes.active]: menuOpen
         })}
       >
-        {MENU_ITEMS.map(({ id, route: itemRoute }) => {
-          return (
-            <a
-              aria-label={id}
-              className={cx(classes[id], {
-                [classes.current]: isSelected(id)
-              })}
-              href={`${itemRoute}${!['home', 'blog'].includes(id) ? `#${id}` : '' }`}
-              key={id}
-              onClick={(e) => {
-                e.preventDefault();
-                setMenuOpen(false);
-                route(itemRoute);
-                setActiveSection({ id, scrollTo: itemRoute === '/' });
-
-                if (itemRoute !== '/') {
-                  window.scrollTo(0, 0);
-                }
-              }}
-              tabIndex={navHidden ? -1 : undefined}
-            >
-              {id === 'home' ? (
-                <em className={classes.home}>
-                  <span className={classes['desktop-home']}>
-                    <picture className={classes.logo}>
-                      <source srcset={logoImageWebp} type='image/webp' />
-                      <source srcset={logoImagePng} type='image/png' />
-                      <img
-                        alt='Irigoyen.dev'
-                        height={24}
-                        src={logoImagePng}
-                        width={24}
-                      />
-                    </picture>
-                    irigoyen.dev
-                  </span>
-                  <span className={classes['mobile-home']}>
-                    <Icon path={mdiHome} size={1} title='Home' />
-                  </span>
-                </em>
-              ) : id}
-            </a>
-          );
-        })}
+        <ul>
+          {MENU_ITEMS.map(({ id, route: itemRoute }) => {
+            return (
+              <li>
+                <a
+                  aria-label={id}
+                  className={cx(classes[id], {
+                    [classes.current]: isSelected(id)
+                  })}
+                  href={`${itemRoute}${!['blog'].includes(id) ? `#${id}` : '' }`}
+                  key={id}
+                  native
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setActiveSection({ id });
+                  }}
+                  tabIndex={navHidden ? -1 : undefined}
+                >
+                  {id === 'home' ? (
+                    <em className={classes.home}>
+                      <span className={classes['desktop-home']}>
+                        <picture className={classes.logo}>
+                          <source srcset={logoImageWebp} type='image/webp' />
+                          <source srcset={logoImagePng} type='image/png' />
+                          <img
+                            alt=''
+                            height={24}
+                            src={logoImagePng}
+                            width={24}
+                          />
+                        </picture>
+                        irigoyen.dev
+                      </span>
+                      <span className={classes['mobile-home']}>
+                        <Icon path={mdiHome} size={1} title='Home' />
+                      </span>
+                    </em>
+                  ) : id}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </nav>
       <div className={classes.progress}>
         <div

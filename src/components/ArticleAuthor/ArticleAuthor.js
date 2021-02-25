@@ -1,8 +1,4 @@
 import { Fragment } from 'preact';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
-dayjs.extend(utc).extend(timezone);
 
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
 import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
@@ -10,11 +6,10 @@ import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 import classes from './ArticleAuthor.scss';
 
 const ArticleAuthor = ({
+  prettyDate,
   publishDate,
   readingTime
 }) => {
-  const prettyDate = dayjs.tz(publishDate, 'America/Chicago').format('MMMM D, YYYY');
-
   return (
     <div className={classes.root}>
       <picture>
