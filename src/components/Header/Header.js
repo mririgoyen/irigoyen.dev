@@ -19,7 +19,7 @@ const MENU_ITEMS = [
   { id: 'talks', route: '/' },
   { id: 'philanthropy', route: '/' },
   { id: 'contact', route: '/' },
-  { id: 'blog', route: '/blog/' }
+  { id: 'blog', native: true, route: '/blog/' }
 ];
 
 const Header = ({ activeSection, setActiveSection, showScroll }) => {
@@ -100,7 +100,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
           [classes.active]: menuOpen
         })}
       >
-        {MENU_ITEMS.map(({ id, route: itemRoute }) => {
+        {MENU_ITEMS.map(({ id, native, route: itemRoute }) => {
           return (
             <a
               aria-label={id}
@@ -109,6 +109,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
               })}
               href={`${itemRoute}${!['home', 'blog'].includes(id) ? `#${id}` : '' }`}
               key={id}
+              native={native}
               onClick={(e) => {
                 e.preventDefault();
                 setMenuOpen(false);

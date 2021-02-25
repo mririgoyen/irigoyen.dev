@@ -112,7 +112,7 @@ const Contact = ({ setActiveSection }) => {
           <p>Would you like me to speak at your event, be a guest on your podcast, or just simply get in touch with me?</p>
           <p>Send me a message! I'll respond as quickly as possible.</p>
         </div>
-        <form data-netlify='true' name='contact-form'>
+        <form data-netlify='true' method='POST' name='contact-form'>
           {formError && (
             <div className={classes['form-error']}>
               <Icon path={mdiAlertCircle} size={.9} title='Alert' />
