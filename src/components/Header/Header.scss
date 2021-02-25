@@ -46,7 +46,7 @@
     }
 
     &.current {
-      color: $active-color;
+      color: lighten($active-color, 25%);
 
       .home {
         color: $white;
@@ -81,7 +81,7 @@
   width: 100%;
 
   div {
-    background-color: $active-color;
+    background-color: lighten($active-color, 25%);
     height: 4px;
     transition: width .1s;
     will-change: width;

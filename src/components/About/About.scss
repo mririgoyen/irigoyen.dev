@@ -26,6 +26,12 @@
     font-size: 1.1rem;
     line-height: 1.75;
   }
+
+  a {
+    &:hover {
+      color: lighten($active-color, 25%);
+    }
+  }
 }
 
 .contact {
