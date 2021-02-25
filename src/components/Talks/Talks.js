@@ -44,7 +44,7 @@ const Talks = ({ setActiveSection }) => {
             </picture>
           </figure>
           <div className={classes.info}>
-            <h3>1UP: Empowering Communities with APIs</h3>
+            <h3 id='empowering-communities'>1UP: Empowering Communities with APIs</h3>
             <p className={classes.subheading}>
               <em>Presented at API: World &mdash; San Jose, CA</em>
               <span className={classes.bullet}>&bull;</span>
@@ -52,6 +52,7 @@ const Talks = ({ setActiveSection }) => {
             </p>
             <p>Good APIs can level-up the dev life, but great APIs can bring an "Extra Life" to kids in need. In this talk, we discuss building a JavaScript API that can be used in 3 different ways from the same source code with the goal of making it easier to help raise money for sick kids in our communities via the Extra Life fundraiser.</p>
             <Button
+              aria-describedby='empowering-communities'
               href='/presentations/1up-empowering-communities-with-apis/'
               startIcon={<Icon path={mdiArrowDown} size={.9} />}
             >
@@ -75,7 +76,7 @@ const Talks = ({ setActiveSection }) => {
             </picture>
           </figure>
           <div className={classes.info}>
-            <h3>Design Your API for Humans</h3>
+            <h3 id='api-for-humans'>Design Your API for Humans</h3>
             <p className={classes.subheading}>
               <em>Presented on Main Stage at API: World &mdash; San Jose, CA</em>
               <span className={classes.bullet}>&bull;</span>
@@ -83,6 +84,7 @@ const Talks = ({ setActiveSection }) => {
             </p>
             <p>Throw away the notion of building something for a computer to consume. Let's determine what your users need to successfully and easily implement your interface.</p>
             <Button
+              aria-describedby='api-for-humans'
               href='/presentations/design-your-api-for-humans/'
               startIcon={<Icon path={mdiArrowDown} size={.9} />}
             >
@@ -106,7 +108,7 @@ const Talks = ({ setActiveSection }) => {
             </picture>
           </figure>
           <div className={classes.info}>
-            <h3>The API User Experience</h3>
+            <h3 id='api-ux'>The API User Experience</h3>
             <p className={classes.subheading}>
               <em>Presented at API: World &mdash; San Jose, CA</em>
               <span className={classes.bullet}>&bull;</span>
@@ -114,6 +116,7 @@ const Talks = ({ setActiveSection }) => {
             </p>
             <p>Why aren't people using your API? Why aren't people using your product? Let's determine how to define why and discuss a successful implementation and usage process.</p>
             <Button
+              aria-describedby='api-ux'
               href='/presentations/the-api-user-experience/'
               startIcon={<Icon path={mdiArrowDown} size={.9} />}
             >
@@ -137,7 +140,7 @@ const Talks = ({ setActiveSection }) => {
             </picture>
           </figure>
           <div className={classes.info}>
-            <h3>Continuous DevOps</h3>
+            <h3 id='continuous-devops'>Continuous DevOps</h3>
             <p className={classes.subheading}>
               <em>Presented at DeveloperWeek &mdash; San Francisco, CA</em>
               <span className={classes.bullet}>&bull;</span>
@@ -145,6 +148,7 @@ const Talks = ({ setActiveSection }) => {
             </p>
             <p>DevOps emphasizes quality-of-life improvements at all stages of the software delivery process, not just through continuous integration/deployment. Learn more about Accusoft's approach into implementing Continuous DevOps.</p>
             <Button
+              aria-describedby='continuous-devops'
               href='/presentations/continuous-devops/'
               startIcon={<Icon path={mdiArrowDown} size={.9} />}
             >
@@ -168,7 +172,7 @@ const Talks = ({ setActiveSection }) => {
             </picture>
           </figure>
           <div className={classes.info}>
-            <h3>Nobody Cares About Your UI</h3>
+            <h3 id='nobody-cares'>Nobody Cares About Your UI</h3>
             <p className={classes.subheading}>
               <em>Presented at BarCamp Tampa Bay &mdash; Tampa, FL</em>
               <span className={classes.bullet}>&bull;</span>
@@ -176,6 +180,7 @@ const Talks = ({ setActiveSection }) => {
             </p>
             <p>For back-end developers jumping into front-end work, UI and UX can be very daunting. In this presentation we will answer: What is UI and UX design? What are common misconceptions? What external factors do we need to consider when working in the front-end?</p>
             <Button
+              aria-describedby='nobody-cares'
               href='/presentations/nobody-cares-about-your-ui/'
               startIcon={<Icon path={mdiArrowDown} size={.9} />}
             >
