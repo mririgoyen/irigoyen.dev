@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
 import cx from 'classnames';
-import { route } from 'preact-router';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
 
@@ -19,7 +18,7 @@ const MENU_ITEMS = [
   { id: 'talks', route: '/' },
   { id: 'philanthropy', route: '/' },
   { id: 'contact', route: '/' },
-  { id: 'blog', native: true, route: '/blog/' }
+  { id: 'blog', route: '/blog/' }
 ];
 
 const Header = ({ activeSection, setActiveSection, showScroll }) => {
@@ -61,13 +60,12 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
       >
         <div className={classes['nav-container']}>
           <a
-            onClick={(e) => {
-              e.preventDefault();
+            onClick={() => {
               setMenuOpen(false);
-              route('/');
-              setActiveSection({ id: 'home', scrollTo: false });
+              setActiveSection({ id: 'home' });
             }}
             href='/'
+            native
           >
             <picture className={classes.logo}>
               <source srcset={logoImageWebp} type='image/webp' />
@@ -100,25 +98,19 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
           [classes.active]: menuOpen
         })}
       >
-        {MENU_ITEMS.map(({ id, native, route: itemRoute }) => {
+        {MENU_ITEMS.map(({ id, route: itemRoute }) => {
           return (
             <a
               aria-label={id}
               className={cx(classes[id], {
                 [classes.current]: isSelected(id)
               })}
-              href={`${itemRoute}${!['home', 'blog'].includes(id) ? `#${id}` : '' }`}
+              href={`${itemRoute}${!['blog'].includes(id) ? `#${id}` : '' }`}
               key={id}
-              native={native}
-              onClick={(e) => {
-                e.preventDefault();
+              native
+              onClick={() => {
                 setMenuOpen(false);
-                route(itemRoute);
-                setActiveSection({ id, scrollTo: itemRoute === '/' });
-
-                if (itemRoute !== '/') {
-                  window.scrollTo(0, 0);
-                }
+                setActiveSection({ id });
               }}
               tabIndex={navHidden ? -1 : undefined}
             >

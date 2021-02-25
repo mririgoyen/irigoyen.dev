@@ -15,7 +15,7 @@ const Hero = ({ setActiveSection }) => {
     const parallaxShift = () => setOffset(window.pageYOffset / 5);
 
     if (onScreen) {
-      setActiveSection({ id: 'home', scrollTo: false });
+      setActiveSection({ id: 'home' });
       history.replaceState({}, '', '/');
       window.addEventListener('scroll', parallaxShift);
     } else {
@@ -35,7 +35,7 @@ const Hero = ({ setActiveSection }) => {
     >
       <div className={classes.hero} ref={heroRef}>
         <h1>I'm Michael Irigoyen.</h1>
-        <p className={classes.subheading}>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about' onClick={() => setActiveSection({ id: 'about', scrollTo: true })}>Start scrolling</a> to learn more.</p>
+        <p className={classes.subheading}>I am a Chicago-based <em>software engineer</em> with a passion for <em>front-end development</em> and <em>user experience</em>. <a href='#about' onClick={() => setActiveSection({ id: 'about' })}>Start scrolling</a> to learn more.</p>
         <div className={classes.social}>
           <a aria-label='GitHub Profile' href='https://github.com/goyney'>
             <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
@@ -48,7 +48,7 @@ const Hero = ({ setActiveSection }) => {
           </a>
         </div>
       </div>
-      <a className={classes.scroll} href='#about' onClick={() => setActiveSection({ id: 'about', scrollTo: true })}>
+      <a className={classes.scroll} href='#about' onClick={() => setActiveSection({ id: 'about' })}>
         <Icon path={mdiArrowDownCircleOutline} size={1.5} />
         <span>Scroll Down</span>
       </a>
