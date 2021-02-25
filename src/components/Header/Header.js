@@ -64,7 +64,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
               setMenuOpen(false);
               setActiveSection({ id: 'home' });
             }}
-            href='/'
+            href='/#home'
             native
           >
             <picture className={classes.logo}>
