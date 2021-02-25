@@ -16,7 +16,13 @@ const ArticleListing = () => {
   const [ data, loading ] = usePrerenderData({ url: '/blog/' });
 
   if (loading) {
-    return null;
+    return (
+      <div className={classes.root}>
+        <div className={classes.container}>
+          <CircularProgress />
+        </div>
+      </div>
+    );
   }
 
   const { articles = [] } = data;
@@ -25,7 +31,7 @@ const ArticleListing = () => {
     const articleImage = article.image || defaultImage;
 
     return (
-      <a className={cx(classes.article, classes.latest)} href={article.route}>
+      <a className={cx(classes.article, classes.latest)} href={article.route} native>
         <div>
           <div className={classes.badge}>Latest Post</div>
           <h1>{article.title}</h1>
@@ -68,6 +74,7 @@ const ArticleListing = () => {
                 className={classes.article}
                 href={article.route}
                 key={i}
+                native
                 title={article.description}
               >
                 <figure>
@@ -100,8 +107,7 @@ const ArticleListing = () => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        {!articles.length && <CircularProgress />}
-        {!!articles.length && renderArticles()}
+        {renderArticles()}
       </div>
     </div>
   );
