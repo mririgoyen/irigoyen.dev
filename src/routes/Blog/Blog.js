@@ -13,7 +13,7 @@ const Blog = ({ postDay, postMonth, postTitle, postYear }) => {
     <Fragment>
       {updateMetaTags({ articleView })}
       {articleView ? (
-        <Article id={`${postYear}-${postMonth}-${postDay}-${postTitle}`} />
+        <Article url={`/blog/${postYear}/${postMonth}/${postDay}/${postTitle}`} />
       ) : (
         <ArticleListing />
       )}

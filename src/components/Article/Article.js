@@ -1,6 +1,5 @@
 import 'prismjs';
-import { useEffect, useState } from 'preact/hooks';
-import readingTime from 'reading-time';
+import { usePrerenderData } from '@preact/prerender-data-provider';
 import Icon from '@mdi/react';
 import { mdiEmailOutline, mdiFacebook, mdiLinkedin, mdiTwitter } from '@mdi/js';
 
@@ -14,36 +13,21 @@ import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
 import classes from './Article.scss';
 
-const Article = ({ id }) => {
-  const [ error, setError ] = useState(false);
-  const [ article, setArticle ] = useState();
+const BASE_URL = 'https://www.irigoyen.dev';
 
-  useEffect(() => {
-    const getArticle = async () => {
-      try {
-        const article = await import(`../../../posts/${id}.md`);
+const Article = ({ url }) => {
+  const [ data, loading, error ] = usePrerenderData({ url });
 
-        try {
-          const image = await import(`../../assets/blog/${article.default.attributes.image}`);
-          article.default.image = image.default;
-          const imageExt = article.default.attributes.image.split('.')[1];
-          article.default.imageMime = `image/${imageExt === 'jpg' ? 'jpeg' : imageExt}`;
-        } catch (err) {
-          article.default.image = defaultImage;
-        }
-
-        article.attributes.readingTime = readingTime(article.body);
-        setArticle(article.default);
-      } catch (err) {
-        setError(true);
-      }
-    };
-    getArticle();
-  }, []);
+  if (loading) {
+    return null;
+  }
 
   if (error) {
     return <ErrorPage type='article' />;
   }
+
+  const { article, lastmod } = data;
+  const articleImage = article.image || defaultImage;
 
   return (
     <div className={classes.root}>
@@ -53,12 +37,12 @@ const Article = ({ id }) => {
           <article>
             <figure className={classes.image}>
               <picture>
-                <source srcset={article.image} type={article.imageMime} />
+                <source srcset={articleImage} type={article.imageMime || 'image/png'} />
                 <img
-                  alt={article.attributes.title}
+                  alt={article.title}
                   height={315}
                   loading='lazy'
-                  src={article.image}
+                  src={articleImage}
                   width={600}
                 />
               </picture>
@@ -67,7 +51,7 @@ const Article = ({ id }) => {
               <div className={classes.share}>
                 <a
                   className={classes.facebook}
-                  href={`https://facebook.com/sharer.php?u=${window.location.href}`}
+                  href={`https://facebook.com/sharer.php?u=${BASE_URL}${url}`}
                   rel='nofollow noreferrer'
                   target='_blank'
                   title='Share on Facebook'
@@ -76,7 +60,7 @@ const Article = ({ id }) => {
                 </a>
                 <a
                   className={classes.twitter}
-                  href={`https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`${article.attributes.title} by @mririgo`)}`}
+                  href={`https://twitter.com/share?url=${encodeURIComponent(`${BASE_URL}${url}`)}&text=${encodeURIComponent(`${article.title} by @mririgo`)}`}
                   rel='nofollow noreferrer'
                   target='_blank'
                   title='Share on Twitter'
@@ -85,7 +69,7 @@ const Article = ({ id }) => {
                 </a>
                 <a
                   className={classes.linkedin}
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${BASE_URL}${url}`)}`}
                   rel='nofollow noreferrer'
                   target='_blank'
                   title='Share on LinkedIn'
@@ -93,7 +77,7 @@ const Article = ({ id }) => {
                   <Icon path={mdiLinkedin} size={1} title='Share on LinkedIn' />
                 </a>
                 <a
-                  href={`mailto:?subject=${encodeURIComponent(article.attributes.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(window.location.href)}`}
+                  href={`mailto:?subject=${encodeURIComponent(article.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(`${BASE_URL}${url}`)}`}
                   rel='nofollow noreferrer'
                   target='_blank'
                   title='Share via Email'
@@ -101,12 +85,13 @@ const Article = ({ id }) => {
                   <Icon path={mdiEmailOutline} size={1} title='Share via Email' />
                 </a>
               </div>
-              <h1>{article.attributes.title}</h1>
+              <h1>{article.title}</h1>
               <ArticleAuthor
-                publishDate={article.attributes.date}
-                readingTime={article.attributes.readingTime.text}
+                prettyDate={article.publishDate}
+                publishDate={lastmod}
+                readingTime={article.readingTime}
               />
-              <div className={classes.content} dangerouslySetInnerHTML={{ __html: article.html }} />
+              <div className={classes.content} dangerouslySetInnerHTML={{ __html: article.body }} />
               <div className={classes.author}>
                 <picture>
                   <source srcset={mirigoyenWebp} type='image/webp' />
