@@ -15,6 +15,13 @@
     align-items: center;
     display: flex;
     justify-content: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   a {
@@ -154,6 +161,11 @@
       width: 100%;
       will-change: transform, visibility;
       z-index: 9;
+
+      ul {
+        display: block;
+        width: 100%;
+      }
 
       &.active {
         padding-bottom: 56px;

@@ -71,7 +71,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
               <source srcset={logoImageWebp} type='image/webp' />
               <source srcset={logoImagePng} type='image/png' />
               <img
-                alt='Irigoyen.dev'
+                alt=''
                 height={24}
                 src={logoImagePng}
                 width={24}
@@ -98,45 +98,49 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
           [classes.active]: menuOpen
         })}
       >
-        {MENU_ITEMS.map(({ id, route: itemRoute }) => {
-          return (
-            <a
-              aria-label={id}
-              className={cx(classes[id], {
-                [classes.current]: isSelected(id)
-              })}
-              href={`${itemRoute}${!['blog'].includes(id) ? `#${id}` : '' }`}
-              key={id}
-              native
-              onClick={() => {
-                setMenuOpen(false);
-                setActiveSection({ id });
-              }}
-              tabIndex={navHidden ? -1 : undefined}
-            >
-              {id === 'home' ? (
-                <em className={classes.home}>
-                  <span className={classes['desktop-home']}>
-                    <picture className={classes.logo}>
-                      <source srcset={logoImageWebp} type='image/webp' />
-                      <source srcset={logoImagePng} type='image/png' />
-                      <img
-                        alt='Irigoyen.dev'
-                        height={24}
-                        src={logoImagePng}
-                        width={24}
-                      />
-                    </picture>
-                    irigoyen.dev
-                  </span>
-                  <span className={classes['mobile-home']}>
-                    <Icon path={mdiHome} size={1} title='Home' />
-                  </span>
-                </em>
-              ) : id}
-            </a>
-          );
-        })}
+        <ul>
+          {MENU_ITEMS.map(({ id, route: itemRoute }) => {
+            return (
+              <li>
+                <a
+                  aria-label={id}
+                  className={cx(classes[id], {
+                    [classes.current]: isSelected(id)
+                  })}
+                  href={`${itemRoute}${!['blog'].includes(id) ? `#${id}` : '' }`}
+                  key={id}
+                  native
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setActiveSection({ id });
+                  }}
+                  tabIndex={navHidden ? -1 : undefined}
+                >
+                  {id === 'home' ? (
+                    <em className={classes.home}>
+                      <span className={classes['desktop-home']}>
+                        <picture className={classes.logo}>
+                          <source srcset={logoImageWebp} type='image/webp' />
+                          <source srcset={logoImagePng} type='image/png' />
+                          <img
+                            alt=''
+                            height={24}
+                            src={logoImagePng}
+                            width={24}
+                          />
+                        </picture>
+                        irigoyen.dev
+                      </span>
+                      <span className={classes['mobile-home']}>
+                        <Icon path={mdiHome} size={1} title='Home' />
+                      </span>
+                    </em>
+                  ) : id}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </nav>
       <div className={classes.progress}>
         <div
