@@ -88,7 +88,7 @@ Additionally, SVGs are simply the size they are. They are not affected by text-b
 To fully support the use of SVGs on your site, make sure you're following other common best practices:
 
 - **Optimize your SVGs** — [Run your SVG images through an optimizer](https://jakearchibald.github.io/svgomg/) to get the size down. (Most, if not all, icon libraries that offer SVG packages do this by default.)
-- **Enable GZIP** — Configure your server to send all assets with GZIP. This will include SVG data in your HTML and/or JS files.
+- **Enable Compression** — Configure your server to send all textual assets (HTML, JS, CSS) with [Brotli](https://caniuse.com/?search=brotli) (or GZIP). This will include the SVG data in your HTML and/or JS files.
 - **Cache effectively** — Set appropriate caching headers so your visitors only download things as they change. Since your SVGs will be part of your HTML and/or JS files, you'll only want your visitors to download them again if they change.
 
 ## Get Started with SVG Icons
