@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "https://blog.irigoyen.dev/*"
+  to = "https://www.irigoyen.dev/blog/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404
