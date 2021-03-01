@@ -1,6 +1,6 @@
 import { useState } from 'preact/hooks';
 import Icon from '@mdi/react';
-import { mdiArrowDownCircleOutline } from '@mdi/js';
+import { mdiArrowDown } from '@mdi/js';
 
 import useInterval from '../../hooks/useInterval';
 import useMetaTags from '../../hooks/useMetaTags';
@@ -29,7 +29,7 @@ const Download = ({ file, name }) => {
         <p>Your file should begin downloading shortly.</p>
         <a href={file}>
           <p className={classes.file}>
-            <Icon path={mdiArrowDownCircleOutline} size={.8} />
+            <Icon path={mdiArrowDown} size={.8} />
             {name}
           </p>
           <p className={classes.manual}>

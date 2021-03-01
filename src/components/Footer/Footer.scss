@@ -22,6 +22,16 @@
 .social {
   a {
     margin: .5rem;
+
+    &:hover {
+      &.linkedin {
+        color: $linkedin-color;
+      }
+
+      &.twitter {
+        color: $twitter-color;
+      }
+    }
   }
 }
 

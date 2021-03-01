@@ -1,5 +1,5 @@
 import Icon from '@mdi/react';
-import { mdiFileDownloadOutline } from '@mdi/js';
+import { mdiArrowDown } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
@@ -21,7 +21,7 @@ const About = ({ setActiveSection }) => {
         <div className={classes.contact}>
           <Button
             href='/resume/download/'
-            startIcon={<Icon path={mdiFileDownloadOutline} size={1} />}
+            startIcon={<Icon path={mdiArrowDown} size={1} />}
             variant='light'
           >
             Download Resume

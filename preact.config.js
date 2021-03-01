@@ -33,18 +33,4 @@ export default (config, eng, helpers) => {
       ]
     })
   );
-
-  // Don't hash woff files so we can preload them
-  const { rule: fileLoader } = helpers.getLoadersByName(config, 'file-loader')[0] || [];
-  if (fileLoader) {
-    fileLoader.options = {
-      name(resourcePath) {
-        if (path.extname(resourcePath).match(/.woff2?/)) {
-          return '[name].[ext]';
-        }
-
-        return '[contenthash].[ext]';
-      }
-    };
-  }
 };

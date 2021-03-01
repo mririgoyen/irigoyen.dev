@@ -1,13 +1,16 @@
 // Fonts
-$primary-font: 'Inter', sans-serif;
-$secondary-font: 'IBM Plex Serif', serif;
+$primary-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$secondary-font: 'Cambria', 'Georgia', serif;
 
 // Colors
+$white: rgb(255 255 255);
+$black: rgb(0 0 0);
 $text-color: rgb(40 40 40);
 $active-color: rgb(0 88 170);
 $error-color: rgb(244 67 54);
-$white: rgb(255 255 255);
-$black: rgb(0 0 0);
+$facebook-color: rgb(59 89 152);
+$twitter-color: rgb(29 161 242);
+$linkedin-color: rgb(0 114 177);
 
 // Measurements
 $mobile-width: 736px;

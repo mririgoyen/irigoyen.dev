@@ -47,22 +47,22 @@
 
   &.invalid {
     label {
-      color: $error-color;
+      color: lighten($error-color, 20%);
     }
 
     input,
     textarea {
-      border: 2px solid $error-color;
+      border: 2px solid lighten($error-color, 20%);
       padding: .5rem;
 
       &:hover {
-        border: 2px solid lighten($error-color, 15%);
+        border: 2px solid $error-color;
       }
     }
   }
 
   .error-text {
-    color: $error-color;
+    color: lighten($error-color, 20%);
     font-size: .9rem;
     margin: .2rem 0 0 2px;
   }

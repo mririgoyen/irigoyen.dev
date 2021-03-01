@@ -11,8 +11,6 @@
     "lint:style": "stylelint \"./src/**/*.{css,scss}\""
   },
   "dependencies": {
-    "@fontsource/ibm-plex-serif": "^4.2.1",
-    "@fontsource/inter": "^4.2.1",
     "@mdi/js": "^5.9.55",
     "@mdi/react": "^1.4.0",
     "classnames": "^2.2.6",
