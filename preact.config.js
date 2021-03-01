@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export default (config, eng, helpers) => {
   // Set global variables
@@ -48,13 +47,4 @@ export default (config, eng, helpers) => {
       }
     };
   }
-
-  // Bundle analyzer
-  config.plugins.push(
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
-      reportFilename: path.resolve(__dirname, 'webpack-report.html')
-    })
-  );
 };
