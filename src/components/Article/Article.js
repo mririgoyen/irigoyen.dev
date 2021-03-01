@@ -13,8 +13,6 @@ import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
 import classes from './Article.scss';
 
-const BASE_URL = 'https://www.irigoyen.dev';
-
 const Article = ({ url }) => {
   const [ data, loading, error ] = usePrerenderData({ url });
 
@@ -55,7 +53,7 @@ const Article = ({ url }) => {
             <div className={classes.share}>
               <a
                 className={classes.facebook}
-                href={`https://facebook.com/sharer.php?u=${BASE_URL}${url}`}
+                href={`https://facebook.com/sharer.php?u=${config.baseUrl}${url}`}
                 rel='nofollow noreferrer'
                 target='_blank'
                 title='Share on Facebook'
@@ -64,7 +62,7 @@ const Article = ({ url }) => {
               </a>
               <a
                 className={classes.twitter}
-                href={`https://twitter.com/share?url=${encodeURIComponent(`${BASE_URL}${url}`)}&text=${encodeURIComponent(`${article.title} by @mririgo`)}`}
+                href={`https://twitter.com/share?url=${encodeURIComponent(`${config.baseUrl}${url}`)}&text=${encodeURIComponent(`${article.title} by @mririgo`)}`}
                 rel='nofollow noreferrer'
                 target='_blank'
                 title='Share on Twitter'
@@ -73,7 +71,7 @@ const Article = ({ url }) => {
               </a>
               <a
                 className={classes.linkedin}
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${BASE_URL}${url}`)}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${config.baseUrl}${url}`)}`}
                 rel='nofollow noreferrer'
                 target='_blank'
                 title='Share on LinkedIn'
@@ -81,7 +79,7 @@ const Article = ({ url }) => {
                 <Icon path={mdiLinkedin} size={1} title='Share on LinkedIn' />
               </a>
               <a
-                href={`mailto:?subject=${encodeURIComponent(article.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(`${BASE_URL}${url}`)}`}
+                href={`mailto:?subject=${encodeURIComponent(article.title)}&body=Check%20out%20this%20article%20I%20found%3A%20${encodeURIComponent(`${config.baseUrl}${url}`)}`}
                 rel='nofollow noreferrer'
                 target='_blank'
                 title='Share via Email'

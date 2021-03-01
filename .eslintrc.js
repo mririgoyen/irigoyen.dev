@@ -4,8 +4,11 @@ module.exports = {
     es2020: true,
     jest: true
   },
-  'extends': 'preact',
-  'ignorePatterns': [
+  extends: 'preact',
+  globals: [
+    'config'
+  ],
+  ignorePatterns: [
     'build/'
   ],
   parserOptions: {

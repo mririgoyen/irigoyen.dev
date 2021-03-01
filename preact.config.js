@@ -1,8 +1,18 @@
 import path from 'path';
+import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export default (config, eng, helpers) => {
+  // Set global variables
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      config: {
+        baseUrl: JSON.stringify('https://www.irigoyen.dev')
+      }
+    })
+  );
+
   // Override CSS modules class names
   const cssClassIdentName = process.env.BUILD_ID ? '[hash:base64:5]' : '[path][name]__[local]';
   config.module.rules[4].use[1].options.modules.localIdentName = cssClassIdentName;

@@ -49,7 +49,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
     }
   };
 
-  const navHidden = windowSize.width <= 736 && !menuOpen;
+  const navHidden = windowSize.width <= classes['mobile-width'].match(/\d+/)[0] && !menuOpen;
 
   return (
     <header className={classes.header}>
