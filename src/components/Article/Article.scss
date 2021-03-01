@@ -5,7 +5,7 @@
   color: $text-color;
   display: flex;
   justify-content: center;
-  min-height: calc(100% - $footer-height);
+  min-height: calc(100% - #{$footer-height});
   padding: 5rem 2rem;
 }
 
@@ -285,7 +285,7 @@
 
 @media only screen and (max-width: $mobile-width) {
   .root {
-    min-height: calc(100% - $footer-height-mobile);
+    min-height: calc(100% - #{$footer-height-mobile});
     padding-top: 3rem;
   }
 

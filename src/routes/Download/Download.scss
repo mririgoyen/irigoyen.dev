@@ -4,7 +4,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: calc(100% - $footer-height);
+  height: calc(100% - #{$footer-height});
   overflow-y: auto;
 }
 
@@ -63,7 +63,7 @@
 
 @media only screen and (max-width: $mobile-width) {
   .root {
-    height: calc(100% - $footer-height-mobile);
+    height: calc(100% - #{$footer-height-mobile});
   }
 
   .container {
