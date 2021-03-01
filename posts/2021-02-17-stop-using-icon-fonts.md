@@ -46,9 +46,17 @@ All modern browsers and operating system employ anti-aliasing on text to some de
 
 As if I haven't said it enough, icon fonts are fonts first and icons second. This mean that your icons follow text-based CSS rules, such as `font-size`, `letter-spacing`, `line-height`, etc. This can make positioning icons more difficult and less consistent. Additionally, icon font glyphs are monochromatic, meaning any stylistic changes you make affect the entire glyph.
 
-![SVG Logo](/assets/blog/svg-logo.png)
+<picture>
+  <source srcset='/assets/blog/svg-logo.webp' type='image/webp' />
+  <source srcset='/assets/blog/svg-logo.png' type='image/png' />
+  <img
+    alt='SVGs to the Rescue!'
+    loading='lazy'
+    src='/assets/blog/svg-logo.png'
+  />
+</picture>
 
-## SVG's to the Rescue!
+## SVGs to the Rescue!
 
 With the release of Chromium-powered version Microsoft's Edge browser in early 2020, Scalable Vector Graphics (SVG) became fully supported across all major browsers. Even before that, SVGs have been supported in all browsers since 2012, [albeit with some scaling caveats in Internet Explorer and pre-Chromium Edge](https://caniuse.com/svg). And guess what? SVGs are _awesome_ for web icons!
 

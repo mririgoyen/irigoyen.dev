@@ -7,7 +7,6 @@ import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
 import ErrorPage from '../../routes/ErrorPage/ErrorPage';
 
-import defaultImage from '../../assets/images/facebook-card.png';
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
 import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
@@ -31,7 +30,7 @@ const Article = ({ url }) => {
   }
 
   const { article, lastmod } = data;
-  const articleImage = article.image || defaultImage;
+  const articleImageModern = article.image.replace('.png', '.webp');
 
   return (
     <div className={classes.root}>
@@ -39,12 +38,13 @@ const Article = ({ url }) => {
         <article role='main'>
           <figure className={classes.image}>
             <picture>
-              <source srcset={articleImage} type={article.imageMime || 'image/png'} />
+              <source srcset={articleImageModern} type='image/webp' />
+              <source srcset={article.image} type={article.imageMime} />
               <img
                 alt={article.title}
                 height={315}
                 loading='lazy'
-                src={articleImage}
+                src={article.image}
                 width={600}
               />
             </picture>

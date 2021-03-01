@@ -9,7 +9,7 @@ const dayjs = require('dayjs').extend(utc).extend(timezone);
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItLinks = require('markdown-it-link-attributes');
 const markdownItPrism = require('markdown-it-prism');
-const md = require('markdown-it')()
+const md = require('markdown-it')({ html: true })
   .use(markdownItAnchor)
   .use(markdownItPrism)
   .use(markdownItLinks, {
@@ -37,7 +37,7 @@ const getBlogRoutes = () => {
     const { text: articleReadTime } = readingTime(article.body);
     const articleImageExists = fs.existsSync(`${__dirname}/../src/assets/blog/${article.attributes.image}`);
     const articleImageExtension = articleImageExists ? article.attributes.image.split('.')[1] : undefined;
-    const articleImageMime = articleImageExtension ? `image/${articleImageExtension === 'jpg' ? 'jpeg' : articleImageExtension}` : undefined;
+    const articleImageMime = articleImageExtension ? `image/${articleImageExtension === 'jpg' ? 'jpeg' : articleImageExtension}` : 'image/png';
     const articleImagePath = articleImageExists ? `${baseUrl}assets/blog/${article.attributes.image}` : `${baseUrl}assets/images/facebook-card.png`;
 
     output.push({
