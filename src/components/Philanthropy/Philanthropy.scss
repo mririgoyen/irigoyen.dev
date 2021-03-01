@@ -81,7 +81,7 @@
   padding-top: 3rem;
 }
 
-@media only screen and (max-width: 736px) {
+@media only screen and (max-width: $mobile-width) {
   .root {
     figure {
       margin: 0;

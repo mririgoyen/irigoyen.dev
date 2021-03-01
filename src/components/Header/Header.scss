@@ -97,7 +97,7 @@
   }
 }
 
-@media only screen and (max-width: 736px) {
+@media only screen and (max-width: $mobile-width) {
   .mobile {
     align-items: center;
     background-color: rgb(10 10 10);
