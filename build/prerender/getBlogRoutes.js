@@ -60,7 +60,7 @@ const getBlogRoutes = () => {
         'og:image': { content: articleImagePath, property: 'og:image' },
         'og:title': { content: articleTitle, property: 'og:title' },
         'og:type': { content: 'article', property: 'og:type' },
-        'og:url': { content: `${baseUrl}${articleUrl}`, property: 'og:url' },
+        'og:url': { content: `${baseUrl}${articleUrl.substring(1)}`, property: 'og:url' },
         title: articleTitle,
         'twitter:card': 'summary_large_image',
         'twitter:data1': articleReadTime,
