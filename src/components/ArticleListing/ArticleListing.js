@@ -37,6 +37,8 @@ const ArticleListing = () => {
           <ArticleAuthor
             prettyDate={article.prettyDate}
             publishDate={article.publishDate}
+            readingTime={article.readingTime}
+            singleLine={false}
           />
         </div>
         <figure>
@@ -67,6 +69,7 @@ const ArticleListing = () => {
             }
 
             const articleImageModern = article.image.replace('.png', '.webp');
+            console.log(article);
 
             return (
               <a
@@ -90,6 +93,15 @@ const ArticleListing = () => {
                   </picture>
                 </figure>
                 <p>{article.title}</p>
+                <p className={classes.meta}>
+                  <time datetime={article.publishDate}>{article.prettyDate}</time>
+                  {!!article.readingTime && (
+                    <Fragment>
+                      <span className={classes.bullet}>&bull;</span>
+                      <span className={classes.estimate}>{article.readingTime}</span>
+                    </Fragment>
+                  )}
+                </p>
               </a>
             );
           })}

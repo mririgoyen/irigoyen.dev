@@ -83,6 +83,7 @@ const getBlogRoutes = () => {
       imageMime: post.article.imageMime,
       prettyDate: post.article.publishDate,
       publishDate: post.lastmod,
+      readingTime: post.article.readingTime,
       route: post.url,
       title: post.article.title
     })),

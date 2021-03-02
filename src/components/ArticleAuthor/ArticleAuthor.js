@@ -8,7 +8,8 @@ import classes from './ArticleAuthor.scss';
 const ArticleAuthor = ({
   prettyDate,
   publishDate,
-  readingTime
+  readingTime,
+  singleLine = true
 }) => {
   return (
     <div className={classes.root}>
@@ -25,7 +26,7 @@ const ArticleAuthor = ({
       </picture>
       <p>
         Written by Michael Irigoyen
-        <span className={classes.bullet}>&bull;</span>
+        {singleLine ? <span className={classes.bullet}>&bull;</span> : <br/>}
         <time datetime={publishDate}>{prettyDate}</time>
         {!!readingTime && (
           <Fragment>

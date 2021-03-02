@@ -57,6 +57,27 @@
   }
 }
 
+.meta {
+  align-items: center;
+  display: flex;
+
+  .bullet {
+    color: $black;
+    padding: 0 .5rem;
+  }
+
+  time,
+  .estimate {
+    color: rgba($black, .67);
+    font-family: $primary-font;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+}
+
 .latest {
   align-items: center;
   border-bottom: 1px solid rgba($black, .1);
