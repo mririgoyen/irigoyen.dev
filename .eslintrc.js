@@ -1,15 +1,14 @@
 module.exports = {
   env: {
     browser: true,
-    es2020: true,
-    jest: true
+    es2020: true
   },
   extends: 'preact',
   globals: [
     'config'
   ],
   ignorePatterns: [
-    'build/'
+    'dist/'
   ],
   parserOptions: {
     sourceType: 'module'
@@ -23,12 +22,6 @@ module.exports = {
     'brace-style': 2,
     'comma-dangle': [ 2, 'never' ],
     'comma-spacing': [ 2, { after: true } ],
-    'jest/consistent-test-it': [ 2, { fn: 'it', withinDescribe: 'it' } ],
-    'jest/no-focused-tests': 2,
-    'jest/no-identical-title': 2,
-    'jest/no-jest-import': 2,
-    'jest/no-test-prefixes': 2,
-    'jest/no-test-return-statement': 2,
     'jsx-quotes': [ 2, 'prefer-single' ],
     'key-spacing': [ 2, { afterColon: true, beforeColon: false } ],
     'keyword-spacing': [ 2, { overrides: { else: { before: true } } } ],

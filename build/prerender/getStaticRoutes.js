@@ -1,4 +1,4 @@
-const { defaultMetadata, defaultTitle } = require('./defaults');
+const { defaultMetadata, defaultTitle } = require('../defaults');
 
 module.exports = [
   { meta: defaultMetadata, title: defaultTitle, url: '/' },
