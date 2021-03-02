@@ -1,6 +1,4 @@
 .DS_Store
 node_modules
-/build
-/*.log
+/dist
 size-plugin.json
-webpack-report.html

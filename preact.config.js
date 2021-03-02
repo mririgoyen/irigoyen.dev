@@ -1,13 +1,14 @@
-import path from 'path';
 import webpack from 'webpack';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+import RobotstxtPlugin from 'robotstxt-webpack-plugin';
 
-export default (config, eng, helpers) => {
+import { baseUrl } from './build/defaults';
+
+export default (config) => {
   // Set global variables
   config.plugins.push(
     new webpack.DefinePlugin({
       config: {
-        baseUrl: JSON.stringify('https://www.irigoyen.dev')
+        baseUrl: JSON.stringify(baseUrl)
       }
     })
   );
@@ -16,21 +17,16 @@ export default (config, eng, helpers) => {
   const cssClassIdentName = process.env.BUILD_ID ? '[hash:base64:5]' : '[path][name]__[local]';
   config.module.rules[4].use[1].options.modules.localIdentName = cssClassIdentName;
 
-  // Inject the GitHub build ID
-  const { plugin: HtmlWebpackPlugin } = helpers.getPluginsByName(config, 'HtmlWebpackPlugin')[0] || {};
-  if (HtmlWebpackPlugin) {
-    HtmlWebpackPlugin.options.meta.version = process.env.BUILD_ID || 'dev';
-  }
-
-  // Copy assets to the root
+  // Robots.txt Generation
   config.plugins.push(
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          context: path.resolve(__dirname, 'src/assets'),
-          from: '*'
-        }
-      ]
+    new RobotstxtPlugin({
+      filePath: 'robots.txt',
+      host: baseUrl,
+      policy: [{
+        userAgent: '*',
+        disallow: ''
+      }],
+      sitemap: `${baseUrl}sitemap-index.xml`
     })
   );
 };

@@ -17,10 +17,10 @@ const md = require('markdown-it')({ html: true })
     pattern: /^(?!https?:\/\/(www.)?irigoyen.dev*$)(?!#)(?!\/).*/
   });
 
-const { baseUrl, defaultMetadata, defaultTitle } = require('./defaults');
+const { baseUrl, defaultMetadata, defaultTitle } = require('../defaults');
 
 const getBlogRoutes = () => {
-  const rawPosts = fs.readdirSync(`${__dirname}/../posts`);
+  const rawPosts = fs.readdirSync(`${__dirname}/../../posts`);
 
   const posts = rawPosts.reduce((output, path) => {
     const [ fileName, extension ] = path.split('.');
@@ -29,13 +29,13 @@ const getBlogRoutes = () => {
       return output;
     }
 
-    const article = fm(fs.readFileSync(`${__dirname}/../posts/${path}`, 'utf8'));
+    const article = fm(fs.readFileSync(`${__dirname}/../../posts/${path}`, 'utf8'));
     const articleUrl = `/blog/${fileName.replace(/^(\d+)-(\d+)-(\d+)-/, '$1/$2/$3/')}/`;
     const articleTitle = `${article.attributes.title} by Michael Irigoyen`;
     const articleDesc = ellipsize(article.attributes.description || removeMarkdown(article.body).replace(/\n/g, ''), 200);
     const articlePublished = dayjs.utc(article.attributes.date).format('YYYY-MM-DD');
     const { text: articleReadTime } = readingTime(article.body);
-    const articleImageExists = fs.existsSync(`${__dirname}/../src/assets/blog/${article.attributes.image}`);
+    const articleImageExists = fs.existsSync(`${__dirname}/../../src/assets/blog/${article.attributes.image}`);
     const articleImageExtension = articleImageExists ? article.attributes.image.split('.')[1] : undefined;
     const articleImageMime = articleImageExtension ? `image/${articleImageExtension === 'jpg' ? 'jpeg' : articleImageExtension}` : 'image/png';
     const articleImagePath = articleImageExists ? `${baseUrl}assets/blog/${article.attributes.image}` : `${baseUrl}assets/images/facebook-card.png`;

@@ -14,7 +14,8 @@ const defaultMetadata = {
   'twitter:description': defaultDesc,
   'twitter:image': `${baseUrl}assets/images/twitter-card.png`,
   'twitter:site': '@mririgo',
-  'twitter:title': defaultTitle
+  'twitter:title': defaultTitle,
+  version: process.env.BUILD_ID || 'dev'
 };
 
 module.exports = {
