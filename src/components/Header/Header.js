@@ -50,7 +50,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
         <Icon path={isDarkMode ? mdiBrightness7 : mdiBrightness4} size={1} />
       </li>
     );
-  }, []);
+  }, [ isDarkMode ]);
 
   const isSelected = (id) => {
     if (typeof window !== 'undefined') {
