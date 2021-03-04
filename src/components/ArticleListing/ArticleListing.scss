@@ -1,12 +1,13 @@
 @import '../../style/variables.scss';
 
 .root {
-  background-color: $white;
-  color: $text-color;
+  background-color: hsl(var(--article-bg));
   display: flex;
   justify-content: center;
   min-height: calc(100% - #{$footer-height});
   padding: 5rem 2rem;
+  transition: background-color .3s ease-in-out;
+  will-change: background-color;
 }
 
 .container {
@@ -43,11 +44,13 @@
 }
 
 .article {
-  color: $text-color;
+  color: hsl(var(--text-color));
   display: flex;
+  transition: color .3s ease-in-out;
+  will-change: color;
 
   &:hover {
-    color: $text-color;
+    color: hsl(var(--text-color));
   }
 
   figure {
@@ -62,30 +65,36 @@
   display: flex;
 
   .bullet {
-    color: $black;
+    color: hsl(var(--text-color));
     padding: 0 .5rem;
+    transition: color .3s ease-in-out;
+    will-change: color;
   }
 
   time,
   .estimate {
-    color: rgba($black, .67);
-    font-family: $primary-font;
+    color: hsla(var(--text-color), .67);
+    font-family: var(--primary-font);
     font-size: .8rem;
     font-style: normal;
     font-weight: 400;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    transition: color .3s ease-in-out;
+    will-change: color;
   }
 }
 
 .latest {
   align-items: center;
-  border-bottom: 1px solid rgba($black, .1);
+  border-bottom: 1px solid hsla(var(--text-color), .1);
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
   padding: 3rem 0;
   text-decoration: none;
+  transition: border .3s ease-in-out, color .3s ease-in-out;
+  will-change: border, color;
 
   h1 {
     font-size: 2.5rem;
@@ -107,27 +116,28 @@
 }
 
 .badge {
-  background-color: rgba($black, .1);
+  background-color: hsla(var(--text-color), .1);
   border-radius: 4px;
-  color: rgba($black, .5);
+  color: hsla(var(--text-color), .5);
   display: inline-block;
   font-size: .7rem;
   font-weight: 600;
   letter-spacing: 2px;
   padding: 3px 6px;
   text-transform: uppercase;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
 
 .empty {
   align-items: center;
-  color: rgba($black, .5);
+  color: hsla(var(--text-color), .5);
   display: flex;
   justify-content: center;
   padding: 3rem 1rem;
   user-select: none;
 
   svg {
-    color: rgba($black, .3);
+    color: hsla(var(--text-color), .3);
     margin-right: .6rem;
   }
 }

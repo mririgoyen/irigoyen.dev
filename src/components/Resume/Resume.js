@@ -5,7 +5,6 @@ import classes from './Resume.scss';
 const Resume = ({ setActiveSection }) => {
   return (
     <SectionContainer
-      className={classes.root}
       id='resume'
       setActiveSection={setActiveSection}
     >

@@ -1,16 +1,13 @@
 @import '../../style/variables.scss';
 
 .root {
-  background-color: $white;
-  color: $text-color;
-
   header {
     margin-bottom: 3rem;
     text-align: center;
   }
 
   h2 {
-    border-bottom: 2px solid $active-color;
+    border-bottom: 2px solid hsl(var(--accent-color));
     display: inline-block;
     font-size: 1.1rem;
     letter-spacing: 5px;
@@ -18,33 +15,37 @@
     padding: .5rem .2rem;
     text-align: center;
     text-transform: uppercase;
+    transition: border .3s ease-in-out;
+    will-change: border;
   }
 
   figure {
-    background-image: url('../../assets/images/el-back.png');
+    background-image: url('~assets/images/el-back.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     margin-bottom: 2rem;
     text-align: center;
 
-    @supports (background-image: url('../../assets/images/el-back.webp')) {
-      background-image: url('../../assets/images/el-back.webp');
+    @supports (background-image: url('~assets/images/el-back.webp')) {
+      background-image: url('~assets/images/el-back.webp');
     }
 
     img {
-      box-shadow: 0 3px 10px 10px rgba($black, .2);
+      box-shadow: 0 3px 10px 10px hsla(var(--black), .2);
       height: auto;
       max-width: 100%;
-      outline: 7px solid $white;
+      outline: 7px solid hsl(var(--white));
     }
 
     figcaption {
-      color: rgba($black, .67);
+      color: hsla(var(--text-color), .67);
       font-size: .8rem;
       letter-spacing: 1px;
       margin-top: 1.5rem;
       text-transform: uppercase;
+      transition: color .3s ease-in-out;
+      will-change: color;
     }
   }
 
@@ -55,7 +56,7 @@
   }
 
   ul {
-    border-bottom: 1px solid rgba($black, .1);
+    border-bottom: 1px solid hsla(var(--text-color), .1);
     margin-bottom: 3rem;
     padding: .25rem 3rem 2rem;
   }
@@ -67,10 +68,10 @@
 
 .intro {
   a {
-    color: $active-color;
+    color: hsl(var(--link-color));
 
     &:hover {
-      color: darken($active-color, 20%);
+      color: hsl(var(--link-hover-color));
     }
   }
 }

@@ -1,22 +1,22 @@
-@import '../../style/variables.scss';
-
 .root {
   img {
     animation: pulsate 5s ease-in-out 0s infinite alternate;
-    border: 3px solid $active-color;
+    border: 3px solid hsl(var(--accent-color));
     border-radius: 50%;
-    box-shadow: 0 0 0 2rem rgb(60 60 60);
+    box-shadow: 0 0 0 2rem hsla(var(--light-grey), .2);
     height: 225px;
+    transition: border .3s ease-in-out;
     width: 200px;
+    will-change: border;
   }
 }
 
 @keyframes pulsate {
   from {
-    box-shadow: 0 0 0 1rem rgb(60 60 60);
+    box-shadow: 0 0 0 1rem hsla(var(--light-grey), .2);
   }
 
   to {
-    box-shadow: 0 0 0 2rem rgb(60 60 60);
+    box-shadow: 0 0 0 2rem hsla(var(--light-grey), .2);
   }
 }

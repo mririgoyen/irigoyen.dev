@@ -1,8 +1,8 @@
-import './style/defaults.scss';
-
 import { Provider as PrerenderProvider } from '@preact/prerender-data-provider';
 
 import Router from './Router';
+
+import './style/defaults.scss';
 
 const App = (props) => {
   return (

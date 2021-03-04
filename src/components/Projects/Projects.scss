@@ -1,16 +1,13 @@
 @import '../../style/variables.scss';
 
 .root {
-  background-color: $white;
-  color: $text-color;
-
   header {
     margin-bottom: 3rem;
     text-align: center;
   }
 
   h2 {
-    border-bottom: 2px solid $active-color;
+    border-bottom: 2px solid hsl(var(--accent-color));
     display: inline-block;
     font-size: 1.1rem;
     letter-spacing: 5px;
@@ -18,15 +15,19 @@
     padding: .5rem .2rem;
     text-align: center;
     text-transform: uppercase;
+    transition: border .3s ease-in-out;
+    will-change: border;
   }
 }
 
 .item {
   display: flex;
   padding: 1rem 0 3rem;
+  transition: border .3s ease-in-out;
+  will-change: border;
 
   &:not(:last-child) {
-    border-bottom: 1px solid rgba($black, .1);
+    border-bottom: 1px solid hsla(var(--text-color), .1);
     margin-bottom: 3rem;
   }
 
@@ -42,10 +43,10 @@
   }
 
   a {
-    color: $active-color;
+    color: hsl(var(--link-color));
 
     &:hover {
-      color: darken($active-color, 20%);
+      color: hsl(var(--link-hover-color));
     }
   }
 
@@ -53,8 +54,8 @@
     margin: 1rem 4rem 1rem 2rem;
 
     img {
-      box-shadow: 0 3px 10px 10px rgba($black, .2);
-      outline: 7px solid $white;
+      box-shadow: 0 3px 10px 10px hsla(var(--black), .2);
+      outline: 7px solid hsl(var(--white));
       transform: rotate3d(1, 1, 1, -5deg);
     }
   }
@@ -75,16 +76,9 @@
   margin: 0;
 
   em {
-    font-family: $secondary-font;
+    font-family: var(--secondary-font);
     font-size: 1.2rem;
     letter-spacing: normal;
-  }
-
-  span {
-    color: rgba($black, .5);
-    font-size: .9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
   }
 }
 

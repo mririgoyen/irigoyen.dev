@@ -1,5 +1,3 @@
-@import '../../style/variables.scss';
-
 $loader-offset: 187;
 $loader-duration: 1.4s;
 
@@ -16,7 +14,7 @@ $loader-duration: 1.4s;
 
   circle {
     animation: dash $loader-duration ease-in-out infinite;
-    stroke: $active-color;
+    stroke: hsl(var(--accent-color));
     stroke-dasharray: $loader-offset;
     stroke-dashoffset: 0;
     transform-origin: center;

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'preact/hooks';
 import cx from 'classnames';
+import useDarkMode from 'use-dark-mode';
 import Icon from '@mdi/react';
-import { mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
+import { mdiBrightness4, mdiBrightness7, mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
 
 import useWindowSize from '../../hooks/useWindowSize';
 
@@ -22,6 +23,8 @@ const MENU_ITEMS = [
 ];
 
 const Header = ({ activeSection, setActiveSection, showScroll }) => {
+  const { toggle: toggleTheme, value: isDarkMode } = useDarkMode(false);
+  const [ themeControl, setThemeControl ] = useState();
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ scrollPercent, setScrollPercent ] = useState(0);
   const windowSize = useWindowSize();
@@ -37,6 +40,18 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
     return () => window.removeEventListener('scroll', getScrollPercent);
   }, []);
 
+  useEffect(() => {
+    setThemeControl(
+      <li
+        className={classes['theme-toggle']}
+        onClick={toggleTheme}
+        title={`Switch to ${isDarkMode ? 'Light' : 'Dark'} mode`}
+      >
+        <Icon path={isDarkMode ? mdiBrightness7 : mdiBrightness4} size={1} />
+      </li>
+    );
+  }, [ isDarkMode ]);
+
   const isSelected = (id) => {
     if (typeof window !== 'undefined') {
       if (window.location.hash === '' && activeSection.id === id) {
@@ -50,6 +65,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
   };
 
   const navHidden = windowSize.width <= classes['mobile-width'].match(/\d+/)[0] && !menuOpen;
+  const sectionTitle = MENU_ITEMS.find((i) => i.id === activeSection.id) ? activeSection.id : undefined;
 
   return (
     <header className={classes.header}>
@@ -75,8 +91,12 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
             </picture>
             irigoyen.dev
           </a>
-          <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
-          {activeSection.id === 'home' ? <Icon path={mdiHome} size={1} title='Home' /> : activeSection.id}
+          {sectionTitle && (
+            <Fragment>
+              <Icon className={classes.chevron} path={mdiChevronRight} size={1} />
+              {activeSection.id === 'home' ? <Icon path={mdiHome} size={1} title='Home' /> : activeSection.id}
+            </Fragment>
+          )}
         </div>
         <button
           aria-label='Menu'
@@ -136,6 +156,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
               </li>
             );
           })}
+          {themeControl}
         </ul>
       </nav>
       <div className={classes.progress}>

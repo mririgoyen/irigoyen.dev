@@ -1,21 +1,25 @@
 @import '../../style/variables.scss';
 
 .root {
-  align-items: center;
-  color: $white;
-  display: flex;
+  background-color: hsla(var(--black), .9) !important;
+  color: hsl(var(--white));
   height: $footer-height;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: $width-max;
-  padding: 3rem 1rem;
   position: static;
   user-select: none;
   z-index: 10;
+
+  & > div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $width-max;
+    padding: 3rem 1rem;
+  }
 }
 
 .copyright {
-  color: darken($white, 35%);
+  color: hsla(var(--white), .75);
   margin: 0;
 }
 
@@ -25,11 +29,11 @@
 
     &:hover {
       &.linkedin {
-        color: $linkedin-color;
+        color: hsl(var(--linkedin-color));
       }
 
       &.twitter {
-        color: $twitter-color;
+        color: hsl(var(--twitter-color));
       }
     }
   }
@@ -37,9 +41,11 @@
 
 @media only screen and (max-width: $mobile-width) {
   .root {
-    flex-direction: column-reverse;
-    height: $footer-height-mobile;
-    justify-content: center;
+    & > div {
+      flex-direction: column-reverse;
+      height: $footer-height-mobile;
+      justify-content: center;
+    }
   }
 
   .copyright {

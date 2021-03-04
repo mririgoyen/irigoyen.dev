@@ -6,7 +6,6 @@ import useIntersection from '../../hooks/useIntersection';
 import classes from './SectionContainer.scss';
 
 const SectionContainer = ({
-  animate = false,
   children,
   className,
   id,
@@ -27,14 +26,10 @@ const SectionContainer = ({
   return (
     <section
       id={id}
-      className={cx(classes.root, className, {
-        [classes.animate]: animate
-      })}
+      className={cx(classes.root, className)}
     >
       <div
-        className={cx(classes.container, {
-          [classes.in]: animate && displayed
-        })}
+        className={classes.container}
         ref={sectionRef}
       >
         {children}

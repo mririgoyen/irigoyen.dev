@@ -1,3 +1,4 @@
+import path from 'path';
 import webpack from 'webpack';
 import RobotstxtPlugin from 'robotstxt-webpack-plugin';
 
@@ -16,6 +17,9 @@ export default (config) => {
   // Override CSS modules class names
   const cssClassIdentName = process.env.BUILD_ID ? '[hash:base64:5]' : '[path][name]__[local]';
   config.module.rules[4].use[1].options.modules.localIdentName = cssClassIdentName;
+
+  // Add an alias to the assets directory
+  config.resolve.alias.assets = path.resolve(__dirname, './src/assets/');
 
   // Robots.txt Generation
   config.plugins.push(
