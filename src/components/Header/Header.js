@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import cx from 'classnames';
-import { useTheme } from 'use-theme';
+import useDarkMode from 'use-dark-mode';
 import Icon from '@mdi/react';
 import { mdiBrightness4, mdiBrightness7, mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
 
@@ -23,7 +23,7 @@ const MENU_ITEMS = [
 ];
 
 const Header = ({ activeSection, setActiveSection, showScroll }) => {
-  const [ currentTheme, setTheme ] = useTheme();
+  const { toggle: toggleTheme, value: isDarkMode } = useDarkMode(false);
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ scrollPercent, setScrollPercent ] = useState(0);
   const windowSize = useWindowSize();
@@ -38,8 +38,6 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
     window.addEventListener('scroll', getScrollPercent);
     return () => window.removeEventListener('scroll', getScrollPercent);
   }, []);
-
-  const toggleTheme = () => setTheme(currentTheme === 'dark' ? 'light' : 'dark');
 
   const isSelected = (id) => {
     if (typeof window !== 'undefined') {
@@ -148,9 +146,9 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
           <li
             className={classes['theme-toggle']}
             onClick={toggleTheme}
-            title={`Switch to ${currentTheme === 'dark' ? 'Light' : 'Dark'} mode`}
+            title={`Switch to ${isDarkMode ? 'Light' : 'Dark'} mode`}
           >
-            <Icon path={currentTheme === 'dark' ? mdiBrightness7 : mdiBrightness4} size={1} />
+            <Icon path={isDarkMode ? mdiBrightness7 : mdiBrightness4} size={1} />
           </li>
         </ul>
       </nav>

@@ -20,11 +20,11 @@ body {
     @include theme-dark;
   }
 
-  &[data-theme='light'] {
+  &[class='light-mode'] {
     @include theme-light;
   }
 
-  &[data-theme='dark'] {
+  &[class='dark-mode'] {
     @include theme-dark;
   }
 

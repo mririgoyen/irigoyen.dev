@@ -19,7 +19,7 @@
     "preact-router": "^3.2.1",
     "prismjs": "^1.23.0",
     "react-meta-tags": "^1.0.1",
-    "use-theme": "^0.1.5"
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.12.13",
