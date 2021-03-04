@@ -24,6 +24,7 @@ const MENU_ITEMS = [
 
 const Header = ({ activeSection, setActiveSection, showScroll }) => {
   const { toggle: toggleTheme, value: isDarkMode } = useDarkMode(false);
+  const [ themeControl, setThemeControl ] = useState();
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ scrollPercent, setScrollPercent ] = useState(0);
   const windowSize = useWindowSize();
@@ -37,6 +38,18 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
 
     window.addEventListener('scroll', getScrollPercent);
     return () => window.removeEventListener('scroll', getScrollPercent);
+  }, []);
+
+  useEffect(() => {
+    setThemeControl(
+      <li
+        className={classes['theme-toggle']}
+        onClick={toggleTheme}
+        title={`Switch to ${isDarkMode ? 'Light' : 'Dark'} mode`}
+      >
+        <Icon path={isDarkMode ? mdiBrightness7 : mdiBrightness4} size={1} />
+      </li>
+    );
   }, []);
 
   const isSelected = (id) => {
@@ -143,13 +156,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
               </li>
             );
           })}
-          <li
-            className={classes['theme-toggle']}
-            onClick={toggleTheme}
-            title={`Switch to ${isDarkMode ? 'Light' : 'Dark'} mode`}
-          >
-            <Icon path={isDarkMode ? mdiBrightness7 : mdiBrightness4} size={1} />
-          </li>
+          {themeControl}
         </ul>
       </nav>
       <div className={classes.progress}>
