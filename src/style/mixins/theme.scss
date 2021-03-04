@@ -1,0 +1,55 @@
+/* stylelint-disable custom-property-empty-line-before, at-rule-empty-line-before */
+
+@mixin defaults {
+  --primary-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --secondary-font: 'Cambria', 'Georgia', serif;
+
+  --black: 0, 0%, 0%;
+  --white: 0, 0%, 100%;
+  --red: 4, 90%, 58%;
+  --blue: 209, 100%, 60%;
+  --dark-blue: 209, 100%, 33%;
+  --light-grey: 0, 0%, 94%;
+  --dark-grey: 0, 0%, 20%;
+  --error-color: 4, 90%, 75%;
+
+  --facebook-color: 221, 44%, 41%;
+  --twitter-color: 203, 89%, 53%;
+  --linkedin-color: 201, 100%, 35%;
+}
+
+@mixin theme-light {
+  @include defaults;
+
+  --accent-color: var(--dark-blue);
+  --article-bg: var(--white);
+  --link-color: var(--dark-blue);
+  --link-hover-color: var(--blue);
+  --section-even-bg: 0, 0%, 95%;
+  --section-odd-bg: var(--white);
+  --text-color: 0, 0%, 16%;
+  --text-color-invert: 0, 0%, 100%;
+
+  --hero-image: url('~assets/images/chicago-light.jpg');
+  @supports (background-image: url('~assets/images/chicago-light.webp')) {
+    --hero-image: url('~assets/images/chicago-light.webp');
+  }
+}
+
+@mixin theme-dark {
+  @include defaults;
+
+  --accent-color: var(--blue);
+  --article-bg: var(--dark-grey);
+  --link-color: var(--white);
+  --link-hover-color: var(--blue);
+  --section-even-bg: 0, 0%, 30%;
+  --section-odd-bg: 0, 0%, 25%;
+  --text-color: 0, 0%, 100%;
+  --text-color-invert: 0, 0%, 16%;
+
+  --hero-image: url('~assets/images/chicago-dark.jpg');
+  @supports (background-image: url('~assets/images/chicago-dark.webp')) {
+    --hero-image: url('~assets/images/chicago-dark.webp');
+  }
+}

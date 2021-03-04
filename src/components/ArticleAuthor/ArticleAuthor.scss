@@ -3,7 +3,7 @@
 .root {
   align-items: center;
   display: flex;
-  font-family: $secondary-font;
+  font-family: var(--secondary-font);
   font-size: 1.1rem;
   font-style: italic;
   letter-spacing: normal;
@@ -18,18 +18,22 @@
   }
 
   .bullet {
-    color: $black;
+    color: hsl(var(--text-color));
     padding: 0 .5rem;
+    transition: color .3s ease-in-out;
+    will-change: color;
   }
 
   time,
   .estimate {
-    color: rgba($black, .67);
-    font-family: $primary-font;
+    color: hsla(var(--text-color), .67);
+    font-family: var(--primary-font);
     font-size: .9rem;
     font-style: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: color .3s ease-in-out;
+    will-change: color;
   }
 }
 

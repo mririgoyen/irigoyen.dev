@@ -2,6 +2,8 @@
 
 .root {
   align-items: center;
+  background-color: hsla(var(--black), .9);
+  color: hsl(var(--black));
   display: flex;
   flex-direction: column;
   height: calc(100% - #{$footer-height});
@@ -17,18 +19,18 @@
   margin: 7rem 1rem 1rem;
 
   a {
-    color: $white;
+    color: hsl(var(--white));
     margin-top: 2rem;
     text-decoration: none;
 
     &:hover {
-      color: $active-color;
+      color: hsl(var(--accent-color));
     }
   }
 }
 
 .container {
-  background-color: $white;
+  background-color: hsl(var(--white));
   border-radius: 5px;
   margin: 1rem;
   padding: 1rem;
@@ -36,14 +38,14 @@
   user-select: none;
 
   a {
-    color: $black;
+    color: hsl(var(--black));
     text-decoration: none;
   }
 }
 
 .file {
   align-items: center;
-  border-top: 1px solid rgba($black, .1);
+  border-top: 1px solid hsla(var(--black), .1);
   display: flex;
   font-size: .9rem;
   font-weight: 600;
@@ -57,7 +59,7 @@
 }
 
 .manual {
-  color: rgba($black, .6);
+  color: hsla(var(--black), .6);
   font-size: .7rem;
 }
 

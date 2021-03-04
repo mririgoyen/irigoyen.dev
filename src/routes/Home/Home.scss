@@ -1,0 +1,11 @@
+.root {
+  section {
+    &:nth-child(odd) {
+      background-color: hsl(var(--section-odd-bg));
+    }
+
+    &:nth-child(even) {
+      background-color: hsl(var(--section-even-bg));
+    }
+  }
+}

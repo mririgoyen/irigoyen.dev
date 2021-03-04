@@ -18,7 +18,8 @@
     "preact-render-to-string": "^5.1.12",
     "preact-router": "^3.2.1",
     "prismjs": "^1.23.0",
-    "react-meta-tags": "^1.0.1"
+    "react-meta-tags": "^1.0.1",
+    "use-theme": "^0.1.5"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.12.13",

@@ -1,12 +1,10 @@
-@import '../../style/variables.scss';
-
 .root {
   align-items: center;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
   display: inline-flex;
-  font-family: $primary-font;
+  font-family: var(--primary-font);
   font-size: .8rem;
   font-weight: 600;
   justify-content: center;
@@ -33,31 +31,31 @@
 
   &.neutral {
     background-color: rgb(214 214 214);
-    color: $text-color;
+    color: hsla(var(--black), .7);
 
     &:hover {
       background-color: rgb(190 190 190);
-      color: $text-color;
+      color: hsla(var(--black), .7);
     }
   }
 
   &.dark {
-    background-color: $active-color;
-    color: $white;
+    background-color: hsl(var(--dark-blue));
+    color: hsl(var(--white));
 
     &:hover {
-      background-color: lighten($active-color, 10%);
-      color: $white;
+      background-color: hsl(var(--blue));
+      color: hsl(var(--white));
     }
   }
 
   &.light {
-    background-color: $white;
-    color: $text-color;
+    background-color: hsl(var(--white));
+    color: hsla(var(--black), .8);
 
     &:hover {
-      background-color: $active-color;
-      color: $white;
+      background-color: hsl(var(--dark-blue));
+      color: hsl(var(--white));
     }
   }
 }

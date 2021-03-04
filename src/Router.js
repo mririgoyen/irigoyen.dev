@@ -1,6 +1,7 @@
 import { Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { Router as PreactRouter, getCurrentUrl } from 'preact-router';
+import { useTheme } from 'use-theme';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -11,8 +12,13 @@ import Download from './routes/Download/Download';
 import ErrorPage from './routes/ErrorPage/ErrorPage';
 
 const Router = () => {
+  const [ currentTheme ] = useTheme();
   const [ headerScrollEnabled, setHeaderScrollEnabled ] = useState(true);
   const [ activeSection, setActiveSection ] = useState({ id: 'home' });
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', currentTheme);
+  }, [ currentTheme ]);
 
   useEffect(() => {
     const initialUrl = getCurrentUrl();
@@ -21,6 +27,7 @@ const Router = () => {
 
   const onRouteChange = (e) => {
     if (!e.current.props.activeHeader) {
+      console.log('HERE???');
       setActiveSection({ id: '' });
     }
 

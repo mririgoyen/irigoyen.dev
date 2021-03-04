@@ -1,8 +1,6 @@
-@import '../../style/variables.scss';
-
 .root {
   align-items: center;
-  background-image: url('../../assets/images/chicago.jpg');
+  background-image: var(--hero-image);
   background-position: right;
   background-size: cover;
   display: flex;
@@ -10,11 +8,8 @@
   height: 100vh;
   justify-content: center;
   padding-top: 56px;
-  will-change: background-position-y;
-
-  @supports (background-image: url('../../assets/images/chicago.webp')) {
-    background-image: url('../../assets/images/chicago.webp');
-  }
+  transition: background-image .3s ease-in-out;
+  will-change: background-image, background-position-y;
 }
 
 .hero {
@@ -25,10 +20,11 @@
   justify-content: center;
   max-width: 80%;
   text-align: center;
+  text-shadow: 0 0 20px hsl(var(--black));
 
   h1,
   em {
-    color: $white;
+    color: hsl(var(--white));
   }
 
   h1 {
@@ -43,8 +39,8 @@
 }
 
 .subheading {
-  color: darken($white, 20%);
-  font-family: $secondary-font;
+  color: hsla(var(--white), .8);
+  font-family: var(--secondary-font);
   font-size: 2.5vh;
   font-weight: 500;
   letter-spacing: normal;
@@ -53,13 +49,13 @@
     text-decoration: none;
 
     &:hover {
-      color: lighten($active-color, 25%);
+      color: hsl(var(--blue));
     }
   }
 }
 
 .social {
-  border-top: 1px solid rgba($white, .25);
+  border-top: 1px solid hsla(var(--white), .25);
   display: inline-block;
   margin-top: 2rem;
   padding: 2rem;
@@ -68,14 +64,14 @@
     margin: .5rem;
 
     &:hover {
-      color: lighten($active-color, 25%);
+      color: hsl(var(--blue));
 
       &.linkedin {
-        color: $linkedin-color;
+        color: hsl(var(--linkedin-color));
       }
 
       &.twitter {
-        color: $twitter-color;
+        color: hsl(var(--twitter-color));
       }
     }
   }
@@ -83,7 +79,7 @@
 
 .scroll {
   align-items: center;
-  color: $white;
+  color: hsl(var(--white));
   display: flex;
   font-size: .7rem;
   letter-spacing: .25rem;
@@ -98,16 +94,16 @@
   }
 
   span {
-    border-bottom: transparent;
+    border-bottom: 1px solid transparent;
     padding: 5px 0 5px 1px;
     transition: border-bottom .5s;
   }
 
   &:hover {
-    color: $white;
+    color: hsl(var(--white));
 
     span {
-      border-bottom: 1px solid $active-color;
+      border-bottom: 1px solid hsl(var(--dark-blue));
     }
   }
 }

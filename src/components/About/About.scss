@@ -2,8 +2,8 @@
 
 .root {
   align-items: center;
-  background-color: rgb(40 40 40);
-  color: $white;
+  background-color: hsl(var(--dark-grey)) !important;
+  color: hsl(var(--white));
   min-height: 100vh;
 
   & > div {
@@ -22,20 +22,14 @@
   }
 
   p {
-    color: darken($white, 20%);
+    color: hsla(var(--white), .8);
     font-size: 1.1rem;
     line-height: 1.75;
-  }
-
-  a {
-    &:hover {
-      color: lighten($active-color, 25%);
-    }
   }
 }
 
 .contact {
-  border-top: 1px solid rgba($white, .05);
+  border-top: 1px solid hsla(var(--white), .1);
   display: flex;
   margin-top: 4rem;
   padding-top: 4rem;

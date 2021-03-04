@@ -1,17 +1,19 @@
 @import '../../style/variables.scss';
 
 .root {
-  background-color: rgb(40 40 40);
-  color: $white;
+  background-color: hsl(var(--dark-grey)) !important;
+  color: hsl(var(--white));
 
   h2 {
-    border-bottom: 2px solid $active-color;
+    border-bottom: 2px solid hsl(var(--accent-color));
     display: inline-block;
     font-size: 1.2rem;
     letter-spacing: 3px;
     padding: .5rem .3rem;
     text-transform: uppercase;
+    transition: border .3s ease-in-out;
     user-select: none;
+    will-change: border;
   }
 }
 
@@ -57,14 +59,13 @@
 
 .form-error {
   align-items: center;
-  background-color: lighten($error-color, 35%);
-  border: 1px solid $error-color;
+  background-color: hsl(var(--red));
   border-radius: 4px;
-  color: $error-color;
+  color: hsl(var(--white));
   display: flex;
   font-size: .9rem;
   margin-bottom: .5rem;
-  padding: .2rem;
+  padding: .3rem .5rem;
 
   svg {
     margin-right: .25rem;
@@ -86,7 +87,7 @@
     }
 
     form {
-      border-top: 1px solid rgba($white, .05);
+      border-top: 1px solid hsla(var(--white), .05);
       margin-top: 2rem;
       padding: 2rem 0 0;
     }

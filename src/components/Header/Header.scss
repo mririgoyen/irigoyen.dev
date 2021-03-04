@@ -1,8 +1,8 @@
 @import '../../style/variables.scss';
 
 .header {
-  background-color: rgba($black, .9);
-  box-shadow: 0 0 15px 2px rgba($black, .4);
+  background-color: hsla(var(--black), .9);
+  box-shadow: 0 0 15px 2px hsla(var(--black), .4);
   left: 0;
   overflow: hidden;
   position: fixed;
@@ -28,7 +28,7 @@
     align-items: center;
     background-color: transparent;
     border: none;
-    color: rgba($white, .8);
+    color: hsla(var(--white), .8);
     cursor: pointer;
     display: flex;
     font-size: .9rem;
@@ -42,14 +42,14 @@
     transition: color .5s .2s;
 
     &:hover {
-      color: $white;
+      color: hsl(var(--white));
     }
 
     &.current {
-      color: lighten($active-color, 25%);
+      color: hsl(var(--blue));
 
       .home {
-        color: $white;
+        color: hsl(var(--white));
         transition: none;
       }
     }
@@ -57,7 +57,7 @@
 
   .desktop-home {
     align-items: center;
-    color: $white !important;
+    color: hsl(var(--white)) !important;
     display: flex;
     font-style: normal;
     font-weight: 600;
@@ -65,7 +65,7 @@
   }
 
   .logo {
-    color: $active-color;
+    color: hsl(var(--dark-blue));
     height: 24px;
     margin-right: .5rem;
     width: 24px;
@@ -77,11 +77,24 @@
   }
 }
 
+.theme-toggle {
+  align-items: center;
+  color: hsla(var(--white), .8);
+  cursor: pointer;
+  display: flex;
+  padding: 1rem;
+  transition: color .3s ease-in-out;
+
+  &:hover {
+    color: hsl(var(--white));
+  }
+}
+
 .progress {
   width: 100%;
 
   div {
-    background-color: lighten($active-color, 25%);
+    background-color: hsl(var(--blue));
     height: 4px;
     transition: width .1s;
     will-change: width;
@@ -101,7 +114,7 @@
   .mobile {
     align-items: center;
     background-color: rgb(10 10 10);
-    color: $white;
+    color: hsl(var(--white));
     display: flex;
     font-size: .9rem;
     font-weight: 600;
@@ -130,9 +143,9 @@
     }
 
     button {
-      background-color: $active-color;
+      background-color: hsl(var(--dark-blue));
       border: 0;
-      color: $white;
+      color: hsl(var(--white));
       display: block;
       height: 56px;
       margin: 0;
@@ -180,8 +193,8 @@
 
       a {
         background-color: rgb(10 10 10);
-        border-top: 1px solid rgba($white, .2);
-        color: $white;
+        border-top: 1px solid hsla(var(--white), .2);
+        color: hsl(var(--white));
         font-weight: 600;
         height: 56px;
         justify-content: center;
