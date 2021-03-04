@@ -82,7 +82,10 @@
   color: hsla(var(--white), .8);
   cursor: pointer;
   display: flex;
+  height: 100%;
   padding: 1rem;
+  position: absolute;
+  right: 0;
   transition: color .3s ease-in-out;
 
   &:hover {
@@ -106,6 +109,12 @@
   display: none;
 
   button {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $mobile-width + 150) {
+  .theme-toggle {
     display: none;
   }
 }
