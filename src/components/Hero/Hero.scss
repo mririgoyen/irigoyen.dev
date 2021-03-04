@@ -10,6 +10,15 @@
   padding-top: 56px;
   transition: background-image .3s ease-in-out;
   will-change: background-image, background-position-y;
+
+  &::after {
+    content: var(--hero-opposite);
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    z-index: -1;
+  }
 }
 
 .hero {

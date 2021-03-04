@@ -69,7 +69,6 @@ const ArticleListing = () => {
             }
 
             const articleImageModern = article.image.replace('.png', '.webp');
-            console.log(article);
 
             return (
               <a

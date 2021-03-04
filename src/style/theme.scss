@@ -1,5 +1,10 @@
 /* stylelint-disable custom-property-empty-line-before, at-rule-empty-line-before */
 
+$hero-light-jpg: '~assets/images/chicago-light.jpg';
+$hero-light-webp: '~assets/images/chicago-light.webp';
+$hero-dark-jpg: '~assets/images/chicago-dark.jpg';
+$hero-dark-webp: '~assets/images/chicago-dark.webp';
+
 @mixin defaults {
   --primary-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --secondary-font: 'Cambria', 'Georgia', serif;
@@ -30,9 +35,11 @@
   --text-color: 0, 0%, 16%;
   --text-color-invert: 0, 0%, 100%;
 
-  --hero-image: url('~assets/images/chicago-light.jpg');
-  @supports (background-image: url('~assets/images/chicago-light.webp')) {
-    --hero-image: url('~assets/images/chicago-light.webp');
+  --hero-image: url(#{$hero-light-jpg});
+  --hero-opposite: url(#{$hero-dark-jpg});
+  @supports (background-image: url(#{$hero-light-webp})) {
+    --hero-image: url(#{$hero-light-webp});
+    --hero-opposite: url(#{$hero-dark-webp});
   }
 }
 
@@ -48,8 +55,10 @@
   --text-color: 0, 0%, 100%;
   --text-color-invert: 0, 0%, 16%;
 
-  --hero-image: url('~assets/images/chicago-dark.jpg');
-  @supports (background-image: url('~assets/images/chicago-dark.webp')) {
-    --hero-image: url('~assets/images/chicago-dark.webp');
+  --hero-image: url(#{$hero-dark-jpg});
+  --hero-opposite: url(#{$hero-light-jpg});
+  @supports (background-image: url(#{$hero-dark-webp})) {
+    --hero-image: url(#{$hero-dark-webp});
+    --hero-opposite: url(#{$hero-light-webp});
   }
 }

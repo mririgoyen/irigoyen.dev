@@ -27,7 +27,6 @@ const Router = () => {
 
   const onRouteChange = (e) => {
     if (!e.current.props.activeHeader) {
-      console.log('HERE???');
       setActiveSection({ id: '' });
     }
 
