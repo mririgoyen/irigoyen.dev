@@ -39,14 +39,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
     return () => window.removeEventListener('scroll', getScrollPercent);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-
-    // See: https://github.com/scastiel/use-theme/issues/11
-    if (window.localStorage) {
-      localStorage.removeItem('theme');
-    }
-  };
+  const toggleTheme = () => setTheme(currentTheme === 'dark' ? 'light' : 'dark');
 
   const isSelected = (id) => {
     if (typeof window !== 'undefined') {
