@@ -1,6 +1,5 @@
 import { Fragment } from 'preact';
 
-import mirigoyenAvif from '../../assets/images/mirigoyen.avif';
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
 import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
@@ -15,7 +14,6 @@ const ArticleAuthor = ({
   return (
     <div className={classes.root}>
       <picture>
-        <source srcset={mirigoyenAvif} type='image/avif' />
         <source srcset={mirigoyenWebp} type='image/webp' />
         <source srcset={mirigoyenJpeg} type='image/jpeg' />
         <img

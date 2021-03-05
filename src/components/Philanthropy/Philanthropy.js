@@ -4,7 +4,6 @@ import { mdiHandHeart } from '@mdi/js';
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
 
-import ELTeamAvif from '../../assets/images/elteam.avif';
 import ELTeamWebp from '../../assets/images/elteam.webp';
 import ELTeamJpeg from '../../assets/images/elteam.jpg';
 
@@ -23,7 +22,6 @@ const Philanthropy = ({ setActiveSection }) => {
       <div className={classes.intro}>
         <figure>
           <picture>
-            <source srcset={ELTeamAvif} type='image/avif' />
             <source srcset={ELTeamWebp} type='image/webp' />
             <source srcset={ELTeamJpeg} type='image/jpeg' />
             <img

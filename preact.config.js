@@ -14,9 +14,6 @@ export default (config) => {
     })
   );
 
-  // Support AVIF images
-  config.module.rules.push({ test: /\.avif$/i, loader: 'url-loader' });
-
   // Override CSS modules class names
   const cssClassIdentName = process.env.BUILD_ID ? '[hash:base64:5]' : '[path][name]__[local]';
   config.module.rules[4].use[1].options.modules.localIdentName = cssClassIdentName;

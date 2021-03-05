@@ -36,10 +36,6 @@
     --hero-image: url('~assets/images/chicago-light.webp');
     --hero-opposite: url('~assets/images/chicago-dark.webp');
   }
-  @supports (background-image: url('~assets/images/chicago-light.avif')) {
-    --hero-image: url('~assets/images/chicago-light.avif');
-    --hero-opposite: url('~assets/images/chicago-dark.avif');
-  }
 }
 
 @mixin theme-dark {
@@ -59,9 +55,5 @@
   @supports (background-image: url('~assets/images/chicago-dark.webp')) {
     --hero-image: url('~assets/images/chicago-dark.webp');
     --hero-opposite: url('~assets/images/chicago-light.webp');
-  }
-  @supports (background-image: url('~assets/images/chicago-dark.avif')) {
-    --hero-image: url('~assets/images/chicago-dark.avif');
-    --hero-opposite: url('~assets/images/chicago-light.avif');
   }
 }
