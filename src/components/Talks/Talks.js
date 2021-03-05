@@ -5,14 +5,19 @@ import { mdiArrowDown } from '@mdi/js';
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
 
+import OneUpAvif from '../../assets/images/1up.avif';
 import OneUpWebp from '../../assets/images/1up.webp';
 import OneUpJpeg from '../../assets/images/1up.jpg';
+import HumansAvif from '../../assets/images/humans.avif';
 import HumansWebp from '../../assets/images/humans.webp';
 import HumansJpeg from '../../assets/images/humans.jpg';
+import ApiUxAvif from '../../assets/images/apiux.avif';
 import ApiUxWebp from '../../assets/images/apiux.webp';
 import ApiUxJpeg from '../../assets/images/apiux.jpg';
+import DevOpsAvif from '../../assets/images/devops.avif';
 import DevOpsWebp from '../../assets/images/devops.webp';
 import DevOpsJpeg from '../../assets/images/devops.jpg';
+import UiAvif from '../../assets/images/ui.avif';
 import UiWebp from '../../assets/images/ui.webp';
 import UiJpeg from '../../assets/images/ui.jpg';
 
@@ -32,6 +37,7 @@ const Talks = ({ setActiveSection }) => {
         <div className={classes.item}>
           <figure>
             <picture>
+              <source srcset={OneUpAvif} type='image/avif' />
               <source srcset={OneUpWebp} type='image/webp' />
               <source srcset={OneUpJpeg} type='image/jpeg' />
               <img
@@ -64,6 +70,7 @@ const Talks = ({ setActiveSection }) => {
         <div className={cx(classes.item, classes.reverse)}>
           <figure>
             <picture>
+              <source srcset={HumansAvif} type='image/avif' />
               <source srcset={HumansWebp} type='image/webp' />
               <source srcset={HumansJpeg} type='image/jpeg' />
               <img
@@ -96,6 +103,7 @@ const Talks = ({ setActiveSection }) => {
         <div className={classes.item}>
           <figure>
             <picture>
+              <source srcset={ApiUxAvif} type='image/avif' />
               <source srcset={ApiUxWebp} type='image/webp' />
               <source srcset={ApiUxJpeg} type='image/jpeg' />
               <img
@@ -128,6 +136,7 @@ const Talks = ({ setActiveSection }) => {
         <div className={cx(classes.item, classes.reverse)}>
           <figure>
             <picture>
+              <source srcset={DevOpsAvif} type='image/avif' />
               <source srcset={DevOpsWebp} type='image/webp' />
               <source srcset={DevOpsJpeg} type='image/jpeg' />
               <img
@@ -160,6 +169,7 @@ const Talks = ({ setActiveSection }) => {
         <div className={classes.item}>
           <figure>
             <picture>
+              <source srcset={UiAvif} type='image/avif' />
               <source srcset={UiWebp} type='image/webp' />
               <source srcset={UiJpeg} type='image/jpeg' />
               <img

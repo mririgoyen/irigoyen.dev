@@ -2,6 +2,7 @@ import SectionContainer from '../SectionContainer/SectionContainer';
 
 import PictogrammersWebp from '../../assets/images/pictogrammers.webp';
 import PictogrammersPng from '../../assets/images/pictogrammers.png';
+import GamecenterAvif from '../../assets/images/gamecenter.avif';
 import GamecenterWebp from '../../assets/images/gamecenter.webp';
 import GamecenterJpeg from '../../assets/images/gamecenter.jpg';
 
@@ -44,6 +45,7 @@ const Projects = ({ setActiveSection }) => {
         <div className={classes.item}>
           <figure>
             <picture>
+              <source srcset={GamecenterAvif} type='image/avif' />
               <source srcset={GamecenterWebp} type='image/webp' />
               <source srcset={GamecenterJpeg} type='image/jpeg' />
               <img
