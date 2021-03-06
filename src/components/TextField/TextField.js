@@ -25,6 +25,7 @@ const TextField = ({
       <Element
         aria-describedby={!!error && `${name}-error-text` || undefined}
         aria-invalid={!!error}
+        aria-required={required}
         disabled={disabled}
         id={name}
         name={name}

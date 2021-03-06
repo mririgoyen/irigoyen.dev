@@ -30,7 +30,7 @@ const Talks = ({ setActiveSection }) => {
       </header>
       <div className={classes.items}>
         <div className={classes.item}>
-          <figure>
+          <figure role='none'>
             <picture>
               <source srcset={OneUpWebp} type='image/webp' />
               <source srcset={OneUpJpeg} type='image/jpeg' />
@@ -45,7 +45,11 @@ const Talks = ({ setActiveSection }) => {
           </figure>
           <div className={classes.info}>
             <h3 id='empowering-communities'>1UP: Empowering Communities with APIs</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Presented at API: World &mdash; San Jose, CA</em>
               <span className={classes.bullet}>&bull;</span>
               <span>October 9, 2019</span>
@@ -62,7 +66,7 @@ const Talks = ({ setActiveSection }) => {
         </div>
 
         <div className={cx(classes.item, classes.reverse)}>
-          <figure>
+          <figure role='none'>
             <picture>
               <source srcset={HumansWebp} type='image/webp' />
               <source srcset={HumansJpeg} type='image/jpeg' />
@@ -77,7 +81,11 @@ const Talks = ({ setActiveSection }) => {
           </figure>
           <div className={classes.info}>
             <h3 id='api-for-humans'>Design Your API for Humans</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Presented on Main Stage at API: World &mdash; San Jose, CA</em>
               <span className={classes.bullet}>&bull;</span>
               <span>September 12, 2018</span>
@@ -94,7 +102,7 @@ const Talks = ({ setActiveSection }) => {
         </div>
 
         <div className={classes.item}>
-          <figure>
+          <figure role='none'>
             <picture>
               <source srcset={ApiUxWebp} type='image/webp' />
               <source srcset={ApiUxJpeg} type='image/jpeg' />
@@ -109,7 +117,11 @@ const Talks = ({ setActiveSection }) => {
           </figure>
           <div className={classes.info}>
             <h3 id='api-ux'>The API User Experience</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Presented at API: World &mdash; San Jose, CA</em>
               <span className={classes.bullet}>&bull;</span>
               <span>September 11, 2018</span>
@@ -126,7 +138,7 @@ const Talks = ({ setActiveSection }) => {
         </div>
 
         <div className={cx(classes.item, classes.reverse)}>
-          <figure>
+          <figure role='none'>
             <picture>
               <source srcset={DevOpsWebp} type='image/webp' />
               <source srcset={DevOpsJpeg} type='image/jpeg' />
@@ -141,7 +153,11 @@ const Talks = ({ setActiveSection }) => {
           </figure>
           <div className={classes.info}>
             <h3 id='continuous-devops'>Continuous DevOps</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Presented at DeveloperWeek &mdash; San Francisco, CA</em>
               <span className={classes.bullet}>&bull;</span>
               <span>February 14, 2017</span>
@@ -158,7 +174,7 @@ const Talks = ({ setActiveSection }) => {
         </div>
 
         <div className={classes.item}>
-          <figure>
+          <figure role='none'>
             <picture>
               <source srcset={UiWebp} type='image/webp' />
               <source srcset={UiJpeg} type='image/jpeg' />
@@ -173,7 +189,11 @@ const Talks = ({ setActiveSection }) => {
           </figure>
           <div className={classes.info}>
             <h3 id='nobody-cares'>Nobody Cares About Your UI</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Presented at BarCamp Tampa Bay &mdash; Tampa, FL</em>
               <span className={classes.bullet}>&bull;</span>
               <span>October 1, 2016</span>

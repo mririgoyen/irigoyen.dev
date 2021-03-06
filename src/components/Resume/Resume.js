@@ -15,7 +15,11 @@ const Resume = ({ setActiveSection }) => {
         <div className={classes.items}>
           <div className={classes.item}>
             <h3>Accusoft Corporation</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Senior Software Engineer II / Scrum Master</em>
               <span className={classes.bullet}>&bull;</span>
               <span>September 2015 - Current</span>
@@ -26,7 +30,11 @@ const Resume = ({ setActiveSection }) => {
 
           <div className={classes.item}>
             <h3>Intervest Construction, Inc.</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Web Administrator / Developer</em>
               <span className={classes.bullet}>&bull;</span>
               <span>April 2013 - September 2015</span>
@@ -37,14 +45,22 @@ const Resume = ({ setActiveSection }) => {
 
           <div className={classes.item}>
             <h3>Illinois State University</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Web Applications Developer</em>
               <span className={classes.bullet}>&bull;</span>
               <span>February 2008 - April 2013</span>
             </p>
             <p>My success as a student web developer translated into a full-time web applications developer upon my graduation from Illinois State. I continued to iterate and improve the Help Desk knowledge base site while I added a variety of departmental websites to my development responsibilities. As I became more comfortable in my developer role, I began to mentor staff members and student workers of the Help Desk who were also working on web projects.</p>
             <hr />
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Student Web Developer</em>
               <span className={classes.bullet}>&bull;</span>
               <span>October 2005 - February 2008</span>
@@ -61,7 +77,11 @@ const Resume = ({ setActiveSection }) => {
         <div className={classes.items}>
           <div className={classes.item}>
             <h3>Illinois State University</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>B.S. Technology</em>
               <span className={classes.bullet}>&bull;</span>
               <span>Graduated 2007</span>
@@ -79,7 +99,11 @@ const Resume = ({ setActiveSection }) => {
         <div className={classes.items}>
           <div className={classes.item}>
             <h3>Methods and Apparatus for Supporting the Display and Editing of OOXML Document Content Using a Web Browser</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>US 16/359,739</em>
               <span className={classes.bullet}>&bull;</span>
               <span>Patent Pending</span>
@@ -96,7 +120,11 @@ const Resume = ({ setActiveSection }) => {
         <div className={classes.items}>
           <div className={classes.item}>
             <h3>Zend Certified Engineer</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>#ZEND004465</em>
               <span className={classes.bullet}>&bull;</span>
               <span>March 14, 2007</span>
@@ -106,7 +134,11 @@ const Resume = ({ setActiveSection }) => {
 
           <div className={classes.item}>
             <h3>CompTIA Network+ Certified</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>#W6WPDLLBYE41QMY5</em>
               <span className={classes.bullet}>&bull;</span>
               <span>April 7, 2006</span>
@@ -116,7 +148,11 @@ const Resume = ({ setActiveSection }) => {
 
           <div className={classes.item}>
             <h3>CompTIA A+ Certified</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>#C4EZM4Y1X24EYP0Z</em>
               <span className={classes.bullet}>&bull;</span>
               <span>June 10, 2005</span>

@@ -19,12 +19,12 @@ const Projects = ({ setActiveSection }) => {
       </header>
       <div className={classes.items}>
         <div className={classes.item}>
-          <figure className={classes.pictogrammers}>
+          <figure className={classes.pictogrammers} role='none'>
             <picture>
               <source srcset={PictogrammersWebp} type='image/webp' />
               <source srcset={PictogrammersPng} type='image/png' />
               <img
-                alt='Pictogrammers'
+                alt='Pictogrammers Logo'
                 height={275}
                 loading='lazy'
                 src={PictogrammersPng}
@@ -34,7 +34,11 @@ const Projects = ({ setActiveSection }) => {
           </figure>
           <div className={classes.info}>
             <h3>Pictogrammers</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Iconography for Designers & Developers</em>
             </p>
             <p><a href='https://github.com/Pictogrammers'>Pictogrammers</a> is an open-source community developing high-quality icons for use by designers and developers in web and application development. As a core contributor, I help maintain our icon databases, <a href='https://github.com/Templarian/MaterialDesign/issues'>field issues on GitHub</a>, assist in creation and maintenance of our supporting websites, and have personally contributed more than 1000 icons to our <a href='https://materialdesignicons.com/'>Material Design Icons</a> library!</p>
@@ -42,12 +46,12 @@ const Projects = ({ setActiveSection }) => {
         </div>
 
         <div className={classes.item}>
-          <figure>
+          <figure role='none'>
             <picture>
               <source srcset={GamecenterWebp} type='image/webp' />
               <source srcset={GamecenterJpeg} type='image/jpeg' />
               <img
-                alt='Accusoft GameCenter'
+                alt='Screenshot of the Accusoft GameCenter'
                 height={194}
                 loading='lazy'
                 src={GamecenterJpeg}
@@ -57,7 +61,11 @@ const Projects = ({ setActiveSection }) => {
           </figure>
           <div className={classes.info}>
             <h3>Accusoft GameCenter</h3>
-            <p className={classes.subheading}>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
               <em>Supporting the Extra Life fundraiser</em>
             </p>
             <p>Accusoft has been participating in the <a href='#philanthropy' onClick={() => setActiveSection({ id: 'philanthropy' })}>Extra Life fundraiser for the past several years</a>. Every year, we hold a classic arcade tournament on game day to bring awareness to our fundraising efforts and to have a bit of fun.</p>
