@@ -14,6 +14,20 @@ const Resume = ({ setActiveSection }) => {
         </div>
         <div className={classes.items}>
           <div className={classes.item}>
+            <h3>Kohl's Corporation</h3>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
+              <em>Senior Software Engineer</em>
+              <span className={classes.bullet}>&bull;</span>
+              <span>March 2021 - Current</span>
+            </p>
+            <p>I've recently started on a new path in my career with Kohl's Technology. I look forward to sharing the details of my responsibilities in this role soon.</p>
+          </div>
+
+          <div className={classes.item}>
             <h3>Accusoft Corporation</h3>
             <p
               aria-level='4'
@@ -22,10 +36,10 @@ const Resume = ({ setActiveSection }) => {
             >
               <em>Senior Software Engineer II / Scrum Master</em>
               <span className={classes.bullet}>&bull;</span>
-              <span>September 2015 - Current</span>
+              <span>September 2015 - March 2021</span>
             </p>
-            <p>As a senior software engineer, I work daily in a continuously delivered React and Node.js microservice environment. Regularly, I take the lead on designing or implementing new functionality for our SaaS-based applications. I continuously work to improve the quality of my code through extensive unit and integration testing, as well as employing functional programming techniques and good coding patterns. Additionally, I explore DevOps related tasks that can help improve the quality of life for the engineering team.</p>
-            <p>As a scrum master, I facilitate and create opportunities each sprint for the team to succeed. I consistently research, analyze, and experiment to ensure our Scrum process runs smoothly and without interruption so the team can focus on reaching their goals.</p>
+            <p>As a senior software engineer, I worked daily in a continuously delivered React and Node.js microservice environment. Regularly, I took the lead on designing or implementing new functionality for our SaaS-based applications. I continuously worked to improve the quality of my code through extensive unit and integration testing, as well as employed functional programming techniques and good coding patterns. Additionally, I explored DevOps related tasks that could help improve the quality of life for the engineering team.</p>
+            <p>As a scrum master, I facilitated and created opportunities each sprint for the team to succeed. I consistently researched, analyzed, and experimented to ensure our Scrum process ran smoothly and without interruption so the team could focus on reaching their goals.</p>
           </div>
 
           <div className={classes.item}>
