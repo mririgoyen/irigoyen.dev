@@ -1,8 +1,11 @@
 const staticRoutes = require('./prerender/getStaticRoutes');
 const getBlogRoutes = require('./prerender/getBlogRoutes');
 const generateSitemap = require('./sitemap/generateSitemap');
+const generateRss = require('./syndication/generateRss');
 
-const prerenderedRoutes = staticRoutes.concat(getBlogRoutes());
+const blogRoutes = getBlogRoutes();
+const prerenderedRoutes = staticRoutes.concat(blogRoutes);
 generateSitemap(prerenderedRoutes);
+generateRss(blogRoutes);
 
 module.exports = prerenderedRoutes;
