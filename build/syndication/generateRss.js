@@ -53,9 +53,9 @@ const generateRss = (blogRoutes) => {
     });
   });
 
-  fs.writeFileSync('./dist/blog/feed.xml', feed.rss2());
-  fs.writeFileSync('./dist/blog/atom.xml', feed.atom1());
-  fs.writeFileSync('./dist/blog/feed.json', feed.json1());
+  fs.writeFileSync('./dist/feed.rss', feed.rss2());
+  fs.writeFileSync('./dist/feed.xml', feed.atom1());
+  fs.writeFileSync('./dist/feed.json', feed.json1());
 };
 
 module.exports = generateRss;
