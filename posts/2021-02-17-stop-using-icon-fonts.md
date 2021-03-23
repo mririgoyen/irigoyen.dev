@@ -47,12 +47,12 @@ All modern browsers and operating system employ anti-aliasing on text to some de
 As if I haven't said it enough, icon fonts are fonts first and icons second. This mean that your icons follow text-based CSS rules, such as `font-size`, `letter-spacing`, `line-height`, etc. This can make positioning icons more difficult and less consistent. Additionally, icon font glyphs are monochromatic, meaning any stylistic changes you make affect the entire glyph.
 
 <picture>
-  <source srcset='/assets/blog/svg-logo.webp' type='image/webp' />
-  <source srcset='/assets/blog/svg-logo.png' type='image/png' />
+  <source srcset='https://www.irigoyen.dev/assets/blog/svg-logo.webp' type='image/webp' />
+  <source srcset='https://www.irigoyen.dev/assets/blog/svg-logo.png' type='image/png' />
   <img
     alt='SVGs to the Rescue!'
     loading='lazy'
-    src='/assets/blog/svg-logo.png'
+    src='https://www.irigoyen.dev/assets/blog/svg-logo.png'
   />
 </picture>
 

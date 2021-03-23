@@ -18,7 +18,7 @@ const generateRss = (blogRoutes) => {
       link: 'https://www.irigoyen.dev',
       name: 'Michael Irigoyen'
     },
-    copyright: `&copy; ${new Date().getFullYear()} Michael Irigoyen`,
+    copyright: `Copyright ${new Date().getFullYear()} Michael Irigoyen`,
     description: defaultDesc,
     favicon: `${baseUrl}favicon.ico`,
     feedLinks: {
