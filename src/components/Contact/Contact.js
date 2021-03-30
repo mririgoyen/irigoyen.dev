@@ -127,6 +127,7 @@ const Contact = ({ setActiveSection }) => {
           )}
           <div className={classes.name}>
             <TextField
+              autocomplete='given-name'
               disabled={formSuccess}
               error={firstNameError}
               label='First Name'
@@ -136,6 +137,7 @@ const Contact = ({ setActiveSection }) => {
               value={firstName}
             />
             <TextField
+              autocomplete='family-name'
               disabled={formSuccess}
               error={lastNameError}
               label='Last Name'
@@ -146,6 +148,7 @@ const Contact = ({ setActiveSection }) => {
             />
           </div>
           <TextField
+            autocomplete='email'
             disabled={formSuccess}
             error={emailAddressError}
             label='Email Address'

@@ -3,6 +3,7 @@ import cx from 'classnames';
 import classes from './TextField.scss';
 
 const TextField = ({
+  autocomplete,
   disabled,
   error,
   label,
@@ -26,6 +27,7 @@ const TextField = ({
         aria-describedby={!!error && `${name}-error-text` || undefined}
         aria-invalid={!!error}
         aria-required={required}
+        autocomplete={autocomplete || undefined}
         disabled={disabled}
         id={name}
         name={name}
