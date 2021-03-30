@@ -34,7 +34,7 @@ Icon fonts are notoriously bad for accessibility and can lead to some frustratin
 
 ### Size and Maintainability
 
-Icon fonts are not cheap assets. Every time a visitor downloads your icon font, they are downloading every icon you intend to use anywhere on your site, regardless if they see them all or not. That fact alone makes icon fonts difficult, and rather annoying, to maintain. If your icon font contains 200 icons and you use 10 of the, you are forcing your visitors to download 190 icons that they'll never see. This will degrade your visitor's experience by increasing load times and extending FOUC.
+Icon fonts are not cheap assets. Every time a visitor downloads your icon font, they are downloading every icon you intend to use anywhere on your site, regardless if they see them all or not. That fact alone makes icon fonts difficult, and rather annoying, to maintain. If your icon font contains 200 icons and you use 10 of them, you are forcing your visitors to download 190 icons that they'll never see. This will degrade your visitor's experience by increasing load times and extending FOUC.
 
 Maintaining an icon font means adding and removing icons as necessary to keep the size of the font, and subsequent stylesheets, to a minimal. This also means that every time you update your font, you need to invalidate your visitor's cache of the assets and force them to re-download them.
 
