@@ -58,7 +58,7 @@ As if I haven't said it enough, icon fonts are fonts first and icons second. Thi
 
 ## SVGs to the Rescue!
 
-With the release of Chromium-powered version Microsoft's Edge browser in early 2020, Scalable Vector Graphics (SVG) became fully supported across all major browsers. Even before that, SVGs have been supported in all browsers since 2012, [albeit with some scaling caveats in Internet Explorer and pre-Chromium Edge](https://caniuse.com/svg). And guess what? SVGs are _awesome_ for web icons!
+With the release of the Chromium-powered version Microsoft's Edge browser in early 2020, Scalable Vector Graphics (SVG) became fully supported across all major browsers. Even before that, SVGs have been supported in all browsers since 2012, [albeit with some scaling caveats in Internet Explorer and pre-Chromium Edge](https://caniuse.com/svg). And guess what? SVGs are _awesome_ for web icons!
 
 ### Icons Just Work
 
