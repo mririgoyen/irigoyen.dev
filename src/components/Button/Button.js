@@ -10,6 +10,7 @@ const Button = ({
   native,
   onClick = () => {},
   startIcon,
+  target,
   type = 'button',
   variant = 'neutral',
   ...rest
@@ -26,6 +27,7 @@ const Button = ({
       href={href}
       native={href && native || undefined}
       onClick={onClick}
+      target={href && target}
       type={!href ? type : undefined}
       {...rest}
     >

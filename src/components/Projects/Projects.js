@@ -1,4 +1,8 @@
+import Icon from '@mdi/react';
+import { mdiGithub } from '@mdi/js';
+
 import SectionContainer from '../SectionContainer/SectionContainer';
+import Button from '../Button/Button';
 
 import PictogrammersWebp from '../../assets/images/pictogrammers.webp';
 import PictogrammersPng from '../../assets/images/pictogrammers.png';
@@ -60,7 +64,7 @@ const Projects = ({ setActiveSection }) => {
             </picture>
           </figure>
           <div className={classes.info}>
-            <h3>Accusoft GameCenter</h3>
+            <h3 id='accusoft-gamecenter'>Accusoft GameCenter</h3>
             <p
               aria-level='4'
               className={classes.subheading}
@@ -72,6 +76,14 @@ const Projects = ({ setActiveSection }) => {
             <p>However, the COVID-19 pandemic that started in 2020 forced all employees to work remotely. I didn't want this to prevent the company from coming together on game day this year, so I came up with the idea for the Accusoft GameCenter.</p>
             <p>Over the course of about a month, I put together a completely virtual way for the company to come together and play three classic arcade games, right in our browsers. Using the <a href='https://www.mamedev.org/'>MAME emulator</a>, <a href='https://emscripten.org/'>Emscripten</a>, and a React application I developed, employees could play each game and their scores would be tracked in real-time.</p>
             <p>Leaderboards allowed everyone to get a little competitive, and we had a lot of fun! Other features built into the GameCenter includes an avatar generator and an achievement system.</p>
+            <Button
+              aria-describedby='accusoft-gamecenter'
+              href='https://github.com/goyney/gamecenter'
+              startIcon={<Icon path={mdiGithub} size={.9} />}
+              target='_blank'
+            >
+              View Source Code
+            </Button>
           </div>
         </div>
       </div>
