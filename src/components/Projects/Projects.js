@@ -1,5 +1,5 @@
 import Icon from '@mdi/react';
-import { mdiGithub } from '@mdi/js';
+import { mdiGithub, mdiYoutube } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
@@ -78,11 +78,21 @@ const Projects = ({ setActiveSection }) => {
             <p>Leaderboards allowed everyone to get a little competitive, and we had a lot of fun! Other features built into the GameCenter includes an avatar generator and an achievement system.</p>
             <Button
               aria-describedby='accusoft-gamecenter'
+              className={classes.button}
               href='https://github.com/goyney/gamecenter'
               startIcon={<Icon path={mdiGithub} size={.9} />}
               target='_blank'
             >
               View Source Code
+            </Button>
+            <Button
+              aria-describedby='accusoft-gamecenter'
+              className={classes.button}
+              href='https://youtu.be/-sTN3-JGEX0'
+              startIcon={<Icon path={mdiYoutube} size={.9} />}
+              target='_blank'
+            >
+              Watch Demo Video
             </Button>
           </div>
         </div>
