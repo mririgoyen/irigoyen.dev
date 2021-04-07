@@ -94,7 +94,7 @@ useEffect(() => {
 }, [ user ]);
 ```
 
-You may also completely omit the dependency array. Omitting the dependency array completely will make your code inside the `useEffect` run on _every single change_ to the component. This could have potentially negative effects, especially around rerenders and performance. In nearly every case, you should provide only the dependencies to watch.
+You may also completely omit the dependency array. Omitting the dependency array completely will make your code inside the `useEffect` run on _every single change_ to the component. This could have potentially negative effects, especially around rerenders and performance. In nearly every case, you should provide an empty array or an array with the dependencies to watch.
 
 ```js
 useEffect(() => {
