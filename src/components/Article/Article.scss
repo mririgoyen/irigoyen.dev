@@ -91,8 +91,47 @@
   padding-top: 1rem;
 
   h2,
-  h3 {
-    margin: 3rem 0 1rem;
+  h3,
+  h4 {
+    display: flex;
+    margin: -75px 0 1rem;
+    padding-top: 100px;
+    position: relative;
+
+    &:hover {
+      [class='header-anchor'] {
+        opacity: .9;
+      }
+    }
+  }
+
+  [class='header-anchor'] {
+    align-items: center;
+    left: -2.5rem;
+    margin-top: 2px;
+    opacity: .2;
+    padding: 0 .5rem;
+    position: absolute;
+    transition: opacity .2s ease-in-out;
+
+    svg {
+      fill: hsl(var(--text-color));
+      transition: fill .3s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        fill: hsl(var(--link-hover-color));
+      }
+    }
+  }
+
+  hr {
+    background: linear-gradient(90deg, hsla(0, 0%, 0%, 0) 0%, hsl(var(--text-color)) 50%, hsla(0, 0%, 0%, 0) 100%);
+    border: 0;
+    height: 1px;
+    margin: 2rem 0;
+    opacity: .25;
   }
 
   p {

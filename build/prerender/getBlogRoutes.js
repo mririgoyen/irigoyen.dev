@@ -6,11 +6,17 @@ const readingTime = require('reading-time');
 const utc = require('dayjs/plugin/utc');
 const timezone = require('dayjs/plugin/timezone');
 const dayjs = require('dayjs').extend(utc).extend(timezone);
+const { mdiLinkVariant } = require('@mdi/js');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItLinks = require('markdown-it-link-attributes');
 const markdownItPrism = require('markdown-it-prism');
 const md = require('markdown-it')({ html: true })
-  .use(markdownItAnchor)
+  .use(markdownItAnchor, {
+    permalink: true,
+    permalinkAttrs: () => ({ title: 'Permalink' }),
+    permalinkBefore: true,
+    permalinkSymbol: `<svg viewBox="0 0 24 24" style="width: 1.5rem; height: 1.5rem;"><path d="${mdiLinkVariant}"></path></svg>`
+  })
   .use(markdownItPrism)
   .use(markdownItLinks, {
     attrs: { rel: 'noopener nofollow', target: '_blank' },
