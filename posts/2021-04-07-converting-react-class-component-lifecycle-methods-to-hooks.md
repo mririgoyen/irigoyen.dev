@@ -94,7 +94,7 @@ useEffect(() => {
 }, [ user ]);
 ```
 
-You may also completely omit the dependency array. Omitting the dependency array completely will make your code inside the `useEffect` run on _every single change_ to the component. This could have potentially negative effects, especially around re-renders and performance. In nearly every case, you should provide only the dependencies to watch.
+You may also completely omit the dependency array. Omitting the dependency array completely will make your code inside the `useEffect` run on _every single change_ to the component. This could have potentially negative effects, especially around rerenders and performance. In nearly every case, you should provide only the dependencies to watch.
 
 ```js
 useEffect(() => {
@@ -115,7 +115,7 @@ Store the incoming props you want to watch for changes in state. Then do compari
 ```js
 const MyComponent = ({ item }) => {
   const [ lastUpdated, setLastUpdated ] = useState(new Date());
-  const [ prevItem, setPrevItem ] = useState();
+  const [ prevItem, setPrevItem ] = useState(null);
 
   if (item !== prevItem) {
     setLastUpdate(new Date());
@@ -167,8 +167,12 @@ const MyComponent = () => {
   const [ data, setData ] = useState();
 
   useEffect(() => {
-    setData(...);
-    setLoading(false);
+    fetch('http://example.com/movies.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
   }, [
     // Run only on mount
   ]);
@@ -232,7 +236,7 @@ There is a [very well-written article by Ohans Emmanuel](https://blog.logrocket.
 
 As of this time, there is [currently no way to reimplement these lifecycle method in hooks](https://reactjs.org/docs/hooks-faq.html#do-hooks-cover-all-use-cases-for-classes).
 
-If you need to implement Error Boundaries in your application, you will need to continue to use a Class-based wrapper around your Functional Components.
+If you need to implement Error Boundaries in your application, you can build a [Higher Order Component](https://reactjs.org/docs/higher-order-components.html) (HOC) to wrap your Functional Components with. Build your HOC as a Class-based component to utilize these lifecycle methods. It is important to note that you can use Class and Functional components in the same application; whether a component is a Class or Functional is an implementation detail of that component.
 
 ---
 
