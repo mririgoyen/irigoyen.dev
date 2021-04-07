@@ -234,7 +234,7 @@ There is a [very well-written article by Ohans Emmanuel](https://blog.logrocket.
 
 ### getDerivedStateFromError / componentDidCatch
 
-As of this time, there is [currently no way to reimplement these lifecycle method in hooks](https://reactjs.org/docs/hooks-faq.html#do-hooks-cover-all-use-cases-for-classes).
+As of this time, there is [currently no way to reimplement these lifecycle methods in hooks](https://reactjs.org/docs/hooks-faq.html#do-hooks-cover-all-use-cases-for-classes).
 
 If you need to implement Error Boundaries in your application, you can build a [Higher Order Component](https://reactjs.org/docs/higher-order-components.html) (HOC) to wrap your Functional Components with. Build your HOC as a Class-based component to utilize these lifecycle methods. It is important to note that you can use Class and Functional components in the same application; whether a component is a Class or Functional is an implementation detail of that component.
 
