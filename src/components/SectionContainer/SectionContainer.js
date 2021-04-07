@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import cx from 'classnames';
+import cx from 'clsx';
 
 import useIntersection from '../../hooks/useIntersection';
 

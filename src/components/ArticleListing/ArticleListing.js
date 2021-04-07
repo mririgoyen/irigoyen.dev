@@ -1,6 +1,6 @@
 import { Fragment } from 'preact';
 import { usePrerenderData } from '@preact/prerender-data-provider';
-import cx from 'classnames';
+import cx from 'clsx';
 import Icon from '@mdi/react';
 
 import CircularProgress from '../CircularProgress/CircularProgress';

@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks';
-import cx from 'classnames';
+import cx from 'clsx';
 import Icon from '@mdi/react';
 import { mdiAlertCircle, mdiCheck, mdiSend } from '@mdi/js';
 

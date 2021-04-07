@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import cx from 'clsx';
 import Icon from '@mdi/react';
 import { mdiArrowDown } from '@mdi/js';
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
-import cx from 'classnames';
+import cx from 'clsx';
 import useDarkMode from 'use-dark-mode';
 import Icon from '@mdi/react';
 import { mdiBrightness4, mdiBrightness7, mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';

@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import cx from 'clsx';
 
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
 import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
