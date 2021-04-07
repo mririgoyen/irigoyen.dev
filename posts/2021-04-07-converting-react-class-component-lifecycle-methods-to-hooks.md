@@ -50,7 +50,7 @@ const MyComponent = () => {
 
 ### render
 
-Simply `return` from your Functional Component. Any `return` from your function are the equivalent to a `render`.
+Simply `return` from your Functional Component. Any `return` from your function is the equivalent to a `render`.
 
 ---
 
