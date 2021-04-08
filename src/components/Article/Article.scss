@@ -94,7 +94,6 @@
   h2,
   h3,
   h4 {
-    display: flex;
     margin: -75px 0 1rem;
     padding-top: 100px;
     position: relative;
@@ -109,7 +108,7 @@
   [class='header-anchor'] {
     align-items: center;
     left: -2.5rem;
-    margin-top: 2px;
+    margin-top: 3px;
     opacity: .2;
     padding: 0 .5rem;
     position: absolute;
@@ -195,7 +194,6 @@
     text-align: left;
     text-shadow: 0 1px hsla(0, 0%, 0%, .3);
     white-space: pre;
-    // word-break: normal;
     word-spacing: normal;
     word-wrap: normal;
   }
