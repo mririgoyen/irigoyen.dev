@@ -28,10 +28,12 @@ body {
     @include theme-dark;
   }
 
+  background-color: hsl(var(--article-bg));
   color: hsl(var(--text-color));
   font-family: var(--primary-font);
   font-weight: 400;
   letter-spacing: .025rem;
+  transition: background-color .3s ease-in-out;
 
   a {
     color: hsl(var(--white));
