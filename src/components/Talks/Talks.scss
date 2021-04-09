@@ -63,6 +63,10 @@
       transform: rotate3d(1, 1, 1, -5deg);
     }
   }
+
+  .button {
+    margin: 0 1rem 1rem 0;
+  }
 }
 
 .subheading {
@@ -127,6 +131,10 @@
 
     a {
       justify-content: center;
+      width: 100%;
+    }
+
+    .button {
       width: 100%;
     }
   }

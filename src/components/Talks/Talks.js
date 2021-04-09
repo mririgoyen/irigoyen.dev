@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import Icon from '@mdi/react';
-import { mdiArrowDown } from '@mdi/js';
+import { mdiArrowDown, mdiYoutube } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
@@ -201,6 +201,16 @@ const Talks = ({ setActiveSection }) => {
             <p>For back-end developers jumping into front-end work, UI and UX can be very daunting. In this presentation we will answer: What is UI and UX design? What are common misconceptions? What external factors do we need to consider when working in the front-end?</p>
             <Button
               aria-describedby='nobody-cares'
+              className={classes.button}
+              href='https://www.youtube.com/watch?v=j5URKwTkpIQ'
+              startIcon={<Icon path={mdiYoutube} size={.9} />}
+              target='_blank'
+            >
+              Watch Presentation
+            </Button>
+            <Button
+              aria-describedby='nobody-cares'
+              className={classes.button}
               href='/presentations/nobody-cares-about-your-ui/'
               startIcon={<Icon path={mdiArrowDown} size={.9} />}
             >
