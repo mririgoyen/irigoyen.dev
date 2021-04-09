@@ -1,6 +1,21 @@
 import { useEffect, useState } from 'preact/hooks';
 
-const useIntersection = (ref, {
+interface ReferenceInterface {
+  current: HTMLElement
+};
+
+interface OptionsInterface {
+  root: HTMLElement | null;
+  rootMargin: string;
+  threshold: number;
+  triggerOnce: boolean;
+};
+
+interface UseIntersectionInterface {
+  (ref: ReferenceInterface, options: OptionsInterface): boolean;
+};
+
+const useIntersection: UseIntersectionInterface = (ref, {
   root = null,
   rootMargin = '0px',
   threshold = 1,

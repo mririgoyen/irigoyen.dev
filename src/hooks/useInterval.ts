@@ -1,7 +1,15 @@
 import { useEffect, useRef } from 'preact/hooks';
 
-const useInterval = (callback, delay) => {
-  const savedCallback = useRef();
+interface CallbackInterface {
+  (): void;
+};
+
+interface UseIntervalInterface {
+  (callback: CallbackInterface, delay: number | null): void;
+};
+
+const useInterval: UseIntervalInterface = (callback, delay)  => {
+  const savedCallback = useRef<CallbackInterface>();
 
   useEffect(() => {
     savedCallback.current = callback;

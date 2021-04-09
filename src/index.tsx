@@ -4,7 +4,7 @@ import Router from './Router';
 
 import './style/defaults.scss';
 
-const App = (props) => {
+const App = (props: any) => {
   return (
     <PrerenderProvider value={props}>
       <Router />

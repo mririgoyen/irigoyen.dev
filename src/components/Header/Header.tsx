@@ -1,8 +1,11 @@
+import { Fragment, FunctionComponent, JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import cx from 'clsx';
 import useDarkMode from 'use-dark-mode';
 import Icon from '@mdi/react';
 import { mdiBrightness4, mdiBrightness7, mdiChevronRight, mdiClose, mdiHome, mdiMenu } from '@mdi/js';
+
+import { HeaderProps } from './HeaderProps';
 
 import useWindowSize from '../../hooks/useWindowSize';
 
@@ -22,9 +25,9 @@ const MENU_ITEMS = [
   { id: 'blog', route: '/blog/' }
 ];
 
-const Header = ({ activeSection, setActiveSection, showScroll }) => {
+const Header: FunctionComponent<HeaderProps> = ({ activeSection, setActiveSection, showScroll }) => {
   const { toggle: toggleTheme, value: isDarkMode } = useDarkMode(false);
-  const [ themeControl, setThemeControl ] = useState();
+  const [ themeControl, setThemeControl ] = useState<JSX.Element | null>(null);
   const [ menuOpen, setMenuOpen ] = useState(false);
   const [ scrollPercent, setScrollPercent ] = useState(0);
   const windowSize = useWindowSize();
@@ -33,7 +36,7 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
     const getScrollPercent = () => {
       const { body, documentElement } = document;
       const percent = (documentElement.scrollTop || body.scrollTop) / ((documentElement.scrollHeight || body.scrollHeight) - documentElement.clientHeight) * 100;
-      setScrollPercent(percent.toFixed(2));
+      setScrollPercent(parseFloat(percent.toFixed(2)));
     };
 
     window.addEventListener('scroll', getScrollPercent);
@@ -52,16 +55,8 @@ const Header = ({ activeSection, setActiveSection, showScroll }) => {
     );
   }, [ isDarkMode ]);
 
-  const isSelected = (id) => {
-    if (typeof window !== 'undefined') {
-      if (window.location.hash === '' && activeSection.id === id) {
-        return true;
-      }
-
-      if (window.location.hash === `#${id}`) {
-        return true;
-      }
-    }
+  const isSelected = (id: string): boolean => {
+    return typeof window !== 'undefined' && (window.location.hash === '' && activeSection.id === id || window.location.hash === `#${id}`);
   };
 
   const navHidden = windowSize.width <= classes['mobile-width'].match(/\d+/)[0] && !menuOpen;
