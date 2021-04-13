@@ -128,7 +128,17 @@ const Talks = ({ setActiveSection }) => {
             </p>
             <p>Why aren't people using your API? Why aren't people using your product? Let's determine how to define why and discuss a successful implementation and usage process.</p>
             <Button
+              aria-describedby='nobody-cares'
+              className={classes.button}
+              href='https://www.youtube.com/watch?v=s5OmYYwv2Ws'
+              startIcon={<Icon path={mdiYoutube} size={.9} />}
+              target='_blank'
+            >
+              Watch Presentation
+            </Button>
+            <Button
               aria-describedby='api-ux'
+              className={classes.button}
               href='/presentations/the-api-user-experience/'
               startIcon={<Icon path={mdiArrowDown} size={.9} />}
             >
