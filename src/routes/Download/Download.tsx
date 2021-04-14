@@ -1,6 +1,9 @@
+import { FunctionComponent } from 'preact';
 import { useState } from 'preact/hooks';
 import Icon from '@mdi/react';
 import { mdiArrowDown } from '@mdi/js';
+
+import { DownloadProps } from './DownloadProps';
 
 import useInterval from '../../hooks/useInterval';
 import useMetaTags from '../../hooks/useMetaTags';
@@ -9,8 +12,11 @@ import Avatar from '../../components/Avatar/Avatar';
 
 import classes from './Download.scss';
 
-const Download = ({ file, name }) => {
-  const [ downloaded, setDownloaded ] = useState(false);
+const Download: FunctionComponent<DownloadProps> = ({
+  file,
+  name
+}) => {
+  const [ downloaded, setDownloaded ] = useState<boolean>(false);
   const updateMetaTags = useMetaTags();
 
   useInterval(() => {

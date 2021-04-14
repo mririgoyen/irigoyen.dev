@@ -1,11 +1,14 @@
+import { FunctionComponent } from 'preact';
 import cx from 'clsx';
+
+import { AvatarProps } from './AvatarProps';
 
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
 import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
 import classes from './Avatar.scss';
 
-const Avatar = ({ className }) => {
+const Avatar: FunctionComponent<AvatarProps> = ({ className }) => {
   return (
     <picture className={cx(classes.root, className)}>
       <source srcset={mirigoyenWebp} type='image/webp' />

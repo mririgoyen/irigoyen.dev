@@ -1,5 +1,8 @@
+import { FunctionComponent } from 'preact';
 import Icon from '@mdi/react';
 import { mdiArrowDown } from '@mdi/js';
+
+import { AboutProps } from './AboutProps';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
@@ -7,7 +10,7 @@ import Avatar from '../Avatar/Avatar';
 
 import classes from './About.scss';
 
-const About = ({ setActiveSection }) => {
+const About: FunctionComponent<AboutProps> = ({ setActiveSection }) => {
   return (
     <SectionContainer
       className={classes.root}

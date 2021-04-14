@@ -1,7 +1,10 @@
 import 'prismjs';
+import { FunctionComponent } from 'preact';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import Icon from '@mdi/react';
 import { mdiEmailOutline, mdiFacebook, mdiLinkedin, mdiTwitter } from '@mdi/js';
+
+import { ArticleProps } from './ArticleProps';
 
 import CircularProgress from '../CircularProgress/CircularProgress';
 import ArticleAuthor from '../ArticleAuthor/ArticleAuthor';
@@ -12,7 +15,7 @@ import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
 import classes from './Article.scss';
 
-const Article = ({ url }) => {
+const Article: FunctionComponent<ArticleProps> = ({ url }) => {
   const [ data, loading, error ] = usePrerenderData({ url });
 
   if (loading) {

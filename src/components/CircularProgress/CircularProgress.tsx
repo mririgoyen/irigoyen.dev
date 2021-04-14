@@ -1,6 +1,8 @@
+import { FunctionComponent } from 'preact';
+
 import classes from './CircularProgress.scss';
 
-const CircularProgress = () => {
+const CircularProgress: FunctionComponent = () => {
   return (
     <div className={classes.root}>
       <svg

@@ -1,11 +1,13 @@
-import { Fragment } from 'preact';
+import { Fragment, FunctionComponent } from 'preact';
+
+import { ArticleAuthorProps } from './ArticleAuthorProps';
 
 import mirigoyenWebp from '../../assets/images/mirigoyen.webp';
 import mirigoyenJpeg from '../../assets/images/mirigoyen.jpg';
 
 import classes from './ArticleAuthor.scss';
 
-const ArticleAuthor = ({
+const ArticleAuthor: FunctionComponent<ArticleAuthorProps> = ({
   prettyDate,
   publishDate,
   readingTime,
@@ -27,7 +29,7 @@ const ArticleAuthor = ({
       <p>
         Written by Michael Irigoyen
         {singleLine ? <span className={classes.bullet}>&bull;</span> : <br/>}
-        <time datetime={publishDate}>{prettyDate}</time>
+        <time dateTime={publishDate}>{prettyDate}</time>
         {!!readingTime && (
           <Fragment>
             <span className={classes.bullet}>&bull;</span>

@@ -1,4 +1,7 @@
+import { FunctionComponent } from 'preact';
 import { useRef } from 'preact/hooks';
+
+import { HomeProps } from './HomeProps';
 
 import useMetaTags from '../../hooks/useMetaTags';
 
@@ -12,7 +15,7 @@ import Contact from '../../components/Contact/Contact';
 
 import classes from './Home.scss';
 
-const Home = ({ setActiveSection }) => {
+const Home: FunctionComponent<HomeProps> = ({ setActiveSection }) => {
   const sections = [
     { component: Hero, id: 'home', ref: useRef() },
     { component: About, id: 'about', ref: useRef() },

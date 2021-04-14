@@ -1,11 +1,16 @@
+import { FunctionComponent } from 'preact';
 import { useEffect } from 'preact/hooks';
+
+import { ErrorPageProps } from './ErrorPageProps';
 
 import useMetaTags from '../../hooks/useMetaTags';
 import Button from '../../components/Button/Button';
 
 import classes from './ErrorPage.scss';
 
-const ErrorPage = ({ type = 'page' }) => {
+const ErrorPage: FunctionComponent<ErrorPageProps> = ({
+  type = 'page'
+}) => {
   const updateMetaTags = useMetaTags();
 
   useEffect(() => {

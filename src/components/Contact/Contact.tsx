@@ -1,7 +1,10 @@
+import { FunctionComponent } from 'preact';
 import { useState } from 'preact/hooks';
 import cx from 'clsx';
 import Icon from '@mdi/react';
 import { mdiAlertCircle, mdiCheck, mdiSend } from '@mdi/js';
+
+import { ContactProps } from './ContactProps';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import TextField from '../TextField/TextField';
@@ -9,7 +12,7 @@ import Button from '../Button/Button';
 
 import classes from './Contact.scss';
 
-const Contact = ({ setActiveSection }) => {
+const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
   const [ formSuccess, setFormSuccess ] = useState(false);
   const [ formError, setFormError ] = useState(false);
 
@@ -18,10 +21,10 @@ const Contact = ({ setActiveSection }) => {
   const [ emailAddress, setEmailAddress ] = useState('');
   const [ message, setMessage ] = useState('');
 
-  const [ firstNameError, setFirstNameError ] = useState(false);
-  const [ lastNameError, setLastNameError ] = useState(false);
-  const [ emailAddressError, setEmailAddressError ] = useState(false);
-  const [ messageError, setMessageError ] = useState(false);
+  const [ firstNameError, setFirstNameError ] = useState<string | false>(false);
+  const [ lastNameError, setLastNameError ] = useState<string | false>(false);
+  const [ emailAddressError, setEmailAddressError ] = useState<string | false>(false);
+  const [ messageError, setMessageError ] = useState<string | false>(false);
 
   const sanitizeInput = (input) => {
     const parsed = new DOMParser().parseFromString(input, 'text/html');

@@ -1,4 +1,4 @@
-import { Fragment, VNode } from 'preact';
+import { Fragment, FunctionComponent, VNode } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { Router as PreactRouter, getCurrentUrl, RouterOnChangeArgs } from 'preact-router';
 
@@ -10,7 +10,6 @@ import Blog from './routes/Blog/Blog';
 import Download from './routes/Download/Download';
 import ErrorPage from './routes/ErrorPage/ErrorPage';
 
-
 interface IRouteChange extends RouterOnChangeArgs {
   current: VNode & {
     props: {
@@ -20,8 +19,8 @@ interface IRouteChange extends RouterOnChangeArgs {
   };
 }
 
-const Router = () => {
-  const [ headerScrollEnabled, setHeaderScrollEnabled ] = useState(true);
+const Router: FunctionComponent = () => {
+  const [ headerScrollEnabled, setHeaderScrollEnabled ] = useState<boolean>(true);
   const [ activeSection, setActiveSection ] = useState({ id: 'home' });
 
   useEffect(() => {

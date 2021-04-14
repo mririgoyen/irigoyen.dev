@@ -1,16 +1,19 @@
+import { FunctionComponent } from 'preact';
 import cx from 'clsx';
+
+import { TextFieldProps } from './TextFieldProps';
 
 import classes from './TextField.scss';
 
-const TextField = ({
-  autocomplete,
-  disabled,
-  error,
+const TextField: FunctionComponent<TextFieldProps> = ({
+  autocomplete = false,
+  disabled = false,
+  error = false,
   label,
-  multiline,
+  multiline = false,
   name,
   onChange = () => {},
-  required,
+  required = false,
   type = 'text',
   value
 }) => {

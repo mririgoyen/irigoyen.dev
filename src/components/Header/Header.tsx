@@ -25,15 +25,19 @@ const MENU_ITEMS = [
   { id: 'blog', route: '/blog/' }
 ];
 
-const Header: FunctionComponent<HeaderProps> = ({ activeSection, setActiveSection, showScroll }) => {
+const Header: FunctionComponent<HeaderProps> = ({
+  activeSection,
+  setActiveSection,
+  showScroll = false
+}) => {
   const { toggle: toggleTheme, value: isDarkMode } = useDarkMode(false);
   const [ themeControl, setThemeControl ] = useState<JSX.Element | null>(null);
-  const [ menuOpen, setMenuOpen ] = useState(false);
-  const [ scrollPercent, setScrollPercent ] = useState(0);
+  const [ menuOpen, setMenuOpen ] = useState<boolean>(false);
+  const [ scrollPercent, setScrollPercent ] = useState<number>(0);
   const windowSize = useWindowSize();
 
   useEffect(() => {
-    const getScrollPercent = () => {
+    const getScrollPercent = (): void => {
       const { body, documentElement } = document;
       const percent = (documentElement.scrollTop || body.scrollTop) / ((documentElement.scrollHeight || body.scrollHeight) - documentElement.clientHeight) * 100;
       setScrollPercent(parseFloat(percent.toFixed(2)));

@@ -1,13 +1,16 @@
+import { FunctionComponent } from 'preact';
 import cx from 'clsx';
+
+import { ButtonProps } from './ButtonProps';
 
 import classes from './Button.scss';
 
-const Button = ({
+const Button: FunctionComponent<ButtonProps> = ({
   children,
   className,
-  disabled,
+  disabled = false,
   href,
-  native,
+  native = false,
   onClick = () => {},
   startIcon,
   target,
