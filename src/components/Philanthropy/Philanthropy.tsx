@@ -1,15 +1,18 @@
+import { FunctionComponent } from 'preact';
 import Icon from '@mdi/react';
 import { mdiHandHeart } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
 
+import { PhilanthropyProps } from './PhilanthropyProps';
+
 import ELTeamWebp from '../../assets/images/elteam.webp';
 import ELTeamJpeg from '../../assets/images/elteam.jpg';
 
 import classes from './Philanthropy.scss';
 
-const Philanthropy = ({ setActiveSection }) => {
+const Philanthropy: FunctionComponent<PhilanthropyProps> = ({ setActiveSection }) => {
   return (
     <SectionContainer
       className={classes.root}

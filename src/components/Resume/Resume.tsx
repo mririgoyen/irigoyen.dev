@@ -1,8 +1,12 @@
+import { FunctionComponent } from 'preact';
+
 import SectionContainer from '../SectionContainer/SectionContainer';
+
+import { ResumeProps } from './ResumeProps';
 
 import classes from './Resume.scss';
 
-const Resume = ({ setActiveSection }) => {
+const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
   return (
     <SectionContainer
       id='resume'

@@ -6,7 +6,7 @@ import { TextFieldProps } from './TextFieldProps';
 import classes from './TextField.scss';
 
 const TextField: FunctionComponent<TextFieldProps> = ({
-  autocomplete = false,
+  autocomplete,
   disabled = false,
   error = false,
   label,
@@ -34,7 +34,7 @@ const TextField: FunctionComponent<TextFieldProps> = ({
         disabled={disabled}
         id={name}
         name={name}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e: Event) => onChange((e.target as HTMLInputElement | HTMLTextAreaElement).value)}
         required={required}
         type={!multiline && type || undefined}
         value={value}

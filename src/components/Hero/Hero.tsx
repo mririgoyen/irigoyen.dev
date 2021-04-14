@@ -1,13 +1,16 @@
+import { FunctionComponent } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import Icon from '@mdi/react';
 import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin, mdiTwitter } from '@mdi/js';
 
 import useIntersection from '../../hooks/useIntersection';
 
+import { HeroProps } from './HeroProps';
+
 import classes from './Hero.scss';
 
-const Hero = ({ setActiveSection }) => {
-  const heroRef = useRef();
+const Hero: FunctionComponent<HeroProps> = ({ setActiveSection }) => {
+  const heroRef = useRef<HTMLDivElement>();
   const [ offset, setOffset ] = useState(0);
   const onScreen = useIntersection(heroRef, { rootMargin: '300px', threshold: .1 });
 

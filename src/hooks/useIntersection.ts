@@ -5,10 +5,10 @@ interface ReferenceInterface {
 };
 
 interface OptionsInterface {
-  root: HTMLElement | null;
+  root?: HTMLElement | null;
   rootMargin: string;
   threshold: number;
-  triggerOnce: boolean;
+  triggerOnce?: boolean;
 };
 
 interface UseIntersectionInterface {

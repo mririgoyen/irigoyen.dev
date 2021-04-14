@@ -4,7 +4,7 @@ import cx from 'clsx';
 import Icon from '@mdi/react';
 import { mdiAlertCircle, mdiCheck, mdiSend } from '@mdi/js';
 
-import { ContactProps } from './ContactProps';
+import { ContactProps, FormDataInterface } from './ContactProps';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import TextField from '../TextField/TextField';
@@ -26,14 +26,14 @@ const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
   const [ emailAddressError, setEmailAddressError ] = useState<string | false>(false);
   const [ messageError, setMessageError ] = useState<string | false>(false);
 
-  const sanitizeInput = (input) => {
+  const sanitizeInput = (input: string) => {
     const parsed = new DOMParser().parseFromString(input, 'text/html');
     return (parsed.body.textContent || '').trim();
   };
 
-  const encodeFormData = (data) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
+  const encodeFormData = (data: FormDataInterface) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: MouseEvent | TouchEvent) => {
     e.preventDefault();
 
     const sanitizedFirstName = sanitizeInput(firstName);

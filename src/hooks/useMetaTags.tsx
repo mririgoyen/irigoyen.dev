@@ -1,5 +1,13 @@
+import { JSX } from 'preact';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import MetaTags from 'react-meta-tags';
+
+interface UpdateMetaTagsInterface {
+  (options?: {
+    articleView?: string | boolean;
+    robotsBehavior?: string;
+  }): JSX.Element | null;
+};
 
 const ARTICLE_ONLY_TAGS = [
   'author',
@@ -12,7 +20,7 @@ const ARTICLE_ONLY_TAGS = [
 const useMetaTags = () => {
   const [ data, loading, error ] = usePrerenderData({ url: typeof window !== 'undefined' ? window.location.pathname : '/' });
 
-  const updateMetaTags = ({ articleView = false, robotsBehavior = 'index' } = {}) => {
+  const updateMetaTags: UpdateMetaTagsInterface = ({ articleView = false, robotsBehavior = 'index' } = {}) => {
     if (loading || error) {
       return null;
     }
@@ -20,7 +28,7 @@ const useMetaTags = () => {
     data.meta.robots = robotsBehavior;
 
     if (!articleView) {
-      ARTICLE_ONLY_TAGS.forEach((tag) => data.meta[tag?.property || tag] = tag?.property ? { ...tag, content: null } : null);
+      ARTICLE_ONLY_TAGS.forEach((tag: any) => data.meta[tag?.property || tag] = tag?.property ? { ...tag, content: null } : null);
     }
 
     const tags = Object.keys(data.meta).map((tag) => {

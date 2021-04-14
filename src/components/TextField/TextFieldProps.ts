@@ -1,12 +1,12 @@
 export interface TextFieldProps {
-  autocomplete?: boolean;
+  autocomplete?: string;
   disabled?: boolean;
-  error?: boolean;
+  error?: string | boolean;
   label: string,
   multiline?: boolean;
   name: string;
-  onChange?(e: Event): void;
+  onChange?(value: string): void;
   required?: boolean;
-  type: 'email' | 'text';
+  type?: 'email' | 'text';
   value: string;
 };

@@ -1,8 +1,11 @@
+import { FunctionComponent } from 'preact';
 import Icon from '@mdi/react';
 import { mdiGithub, mdiYoutube } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
+
+import { ProjectsProps } from './ProjectsProps';
 
 import PictogrammersWebp from '../../assets/images/pictogrammers.webp';
 import PictogrammersPng from '../../assets/images/pictogrammers.png';
@@ -11,7 +14,7 @@ import GamecenterJpeg from '../../assets/images/gamecenter.jpg';
 
 import classes from './Projects.scss';
 
-const Projects = ({ setActiveSection }) => {
+const Projects: FunctionComponent<ProjectsProps> = ({ setActiveSection }) => {
   return (
     <SectionContainer
       className={classes.root}

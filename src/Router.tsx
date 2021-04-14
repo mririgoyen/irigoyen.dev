@@ -1,6 +1,6 @@
-import { Fragment, FunctionComponent, VNode } from 'preact';
+import { Fragment, FunctionComponent } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import { Router as PreactRouter, getCurrentUrl, RouterOnChangeArgs } from 'preact-router';
+import { Router as PreactRouter, getCurrentUrl } from 'preact-router';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -9,15 +9,6 @@ import Home from './routes/Home/Home';
 import Blog from './routes/Blog/Blog';
 import Download from './routes/Download/Download';
 import ErrorPage from './routes/ErrorPage/ErrorPage';
-
-interface IRouteChange extends RouterOnChangeArgs {
-  current: VNode & {
-    props: {
-      activeHeader: string;
-      showHeaderScroll: boolean;
-    }
-  };
-}
 
 const Router: FunctionComponent = () => {
   const [ headerScrollEnabled, setHeaderScrollEnabled ] = useState<boolean>(true);
@@ -28,7 +19,7 @@ const Router: FunctionComponent = () => {
     setActiveSection({ id: initialUrl.split('/')[1] });
   }, []);
 
-  const onRouteChange = (e: IRouteChange) => {
+  const onRouteChange = (e: any) => {
     if (!e.current.props.activeHeader) {
       setActiveSection({ id: '' });
     }

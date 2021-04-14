@@ -14,7 +14,7 @@ const SectionContainer: FunctionComponent<SectionContainerProps> = ({
   id,
   setActiveSection
 }) => {
-  const sectionRef = useRef();
+  const sectionRef = useRef<HTMLDivElement>();
   const onScreen = useIntersection(sectionRef, { rootMargin: '200px', threshold: .1 });
 
   useEffect(() => {

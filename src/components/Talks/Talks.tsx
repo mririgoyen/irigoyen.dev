@@ -1,9 +1,12 @@
+import { FunctionComponent } from 'preact';
 import cx from 'clsx';
 import Icon from '@mdi/react';
 import { mdiArrowDown, mdiYoutube } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
 import Button from '../Button/Button';
+
+import { TalksProps } from './TalksProps';
 
 import OneUpWebp from '../../assets/images/1up.webp';
 import OneUpJpeg from '../../assets/images/1up.jpg';
@@ -18,7 +21,7 @@ import UiJpeg from '../../assets/images/ui.jpg';
 
 import classes from './Talks.scss';
 
-const Talks = ({ setActiveSection }) => {
+const Talks: FunctionComponent<TalksProps> = ({ setActiveSection }) => {
   return (
     <SectionContainer
       className={classes.root}

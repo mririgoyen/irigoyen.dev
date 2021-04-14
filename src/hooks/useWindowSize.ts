@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 
-export interface WindowSizeInterface {
+interface WindowSizeInterface {
   height: number;
   width: number;
 };
