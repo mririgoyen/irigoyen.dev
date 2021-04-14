@@ -134,6 +134,7 @@ const Talks: FunctionComponent<TalksProps> = ({ setActiveSection }) => {
               aria-describedby='nobody-cares'
               className={classes.button}
               href='https://www.youtube.com/watch?v=s5OmYYwv2Ws'
+              rel='noopener'
               startIcon={<Icon path={mdiYoutube} size={.9} />}
               target='_blank'
             >
@@ -216,6 +217,7 @@ const Talks: FunctionComponent<TalksProps> = ({ setActiveSection }) => {
               aria-describedby='nobody-cares'
               className={classes.button}
               href='https://www.youtube.com/watch?v=j5URKwTkpIQ'
+              rel='noopener'
               startIcon={<Icon path={mdiYoutube} size={.9} />}
               target='_blank'
             >

@@ -83,6 +83,7 @@ const Projects: FunctionComponent<ProjectsProps> = ({ setActiveSection }) => {
               aria-describedby='accusoft-gamecenter'
               className={classes.button}
               href='https://github.com/goyney/gamecenter'
+              rel='noopener'
               startIcon={<Icon path={mdiGithub} size={.9} />}
               target='_blank'
             >
@@ -92,6 +93,7 @@ const Projects: FunctionComponent<ProjectsProps> = ({ setActiveSection }) => {
               aria-describedby='accusoft-gamecenter'
               className={classes.button}
               href='https://youtu.be/-sTN3-JGEX0'
+              rel='noopener'
               startIcon={<Icon path={mdiYoutube} size={.9} />}
               target='_blank'
             >

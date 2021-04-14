@@ -49,7 +49,9 @@ const Philanthropy: FunctionComponent<PhilanthropyProps> = ({ setActiveSection }
             <Button
               className={classes.button}
               href='https://www.extra-life.org/participant/goyney'
+              rel='noopener'
               startIcon={<Icon path={mdiHandHeart} size={1} />}
+              target='_blank'
               variant='dark'
             >
               Donate Now

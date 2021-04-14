@@ -7,6 +7,7 @@ export interface ButtonProps {
   href?: string;
   native?: boolean;
   onClick?(e: MouseEvent | TouchEvent): void;
+  rel?: string;
   startIcon?: JSX.Element;
   target?: string;
   type?: 'button' | 'submit';
