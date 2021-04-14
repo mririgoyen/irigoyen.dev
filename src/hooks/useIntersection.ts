@@ -21,7 +21,7 @@ const useIntersection: UseIntersectionInterface = (ref, {
   threshold = 1,
   triggerOnce = false
 }) => {
-  const [ isIntersecting, setIntersecting ] = useState(false);
+  const [ isIntersecting, setIntersecting ] = useState<boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([ entry ]) => {

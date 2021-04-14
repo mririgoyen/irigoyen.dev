@@ -11,7 +11,7 @@ import classes from './Hero.scss';
 
 const Hero: FunctionComponent<HeroProps> = ({ setActiveSection }) => {
   const heroRef = useRef<HTMLDivElement>();
-  const [ offset, setOffset ] = useState(0);
+  const [ offset, setOffset ] = useState<number>(0);
   const onScreen = useIntersection(heroRef, { rootMargin: '300px', threshold: .1 });
 
   useEffect(() => {

@@ -13,13 +13,13 @@ import Button from '../Button/Button';
 import classes from './Contact.scss';
 
 const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
-  const [ formSuccess, setFormSuccess ] = useState(false);
-  const [ formError, setFormError ] = useState(false);
+  const [ formSuccess, setFormSuccess ] = useState<boolean>(false);
+  const [ formError, setFormError ] = useState<boolean>(false);
 
-  const [ firstName, setFirstName ] = useState('');
-  const [ lastName, setLastName ] = useState('');
-  const [ emailAddress, setEmailAddress ] = useState('');
-  const [ message, setMessage ] = useState('');
+  const [ firstName, setFirstName ] = useState<string>('');
+  const [ lastName, setLastName ] = useState<string>('');
+  const [ emailAddress, setEmailAddress ] = useState<string>('');
+  const [ message, setMessage ] = useState<string>('');
 
   const [ firstNameError, setFirstNameError ] = useState<string | false>(false);
   const [ lastNameError, setLastNameError ] = useState<string | false>(false);
