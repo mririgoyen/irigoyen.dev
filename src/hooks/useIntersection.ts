@@ -40,12 +40,13 @@ const useIntersection: UseIntersectionInterface = (ref, {
       setIntersecting(entry.isIntersecting);
     }, { root, rootMargin, threshold });
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const { current } = ref;
+    if (current) {
+      observer.observe(current);
     }
 
-    return () => observer.unobserve(ref.current);
-  }, []);
+    return () => observer.unobserve(current);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return isIntersecting;
 };

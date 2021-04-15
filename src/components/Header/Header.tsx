@@ -57,7 +57,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         <Icon path={isDarkMode ? mdiBrightness7 : mdiBrightness4} size={1} />
       </li>
     );
-  }, [ isDarkMode ]);
+  }, [ isDarkMode, toggleTheme ]);
 
   const isSelected = (id: string): boolean => {
     return typeof window !== 'undefined' && (window.location.hash === '' && activeSection.id === id || window.location.hash === `#${id}`);

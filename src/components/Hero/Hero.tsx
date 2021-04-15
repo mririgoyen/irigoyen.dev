@@ -26,7 +26,7 @@ const Hero: FunctionComponent<HeroProps> = ({ setActiveSection }) => {
     }
 
     return () => window.removeEventListener('scroll', parallaxShift);
-  }, [ onScreen ]);
+  }, [ onScreen, setActiveSection ]);
 
   return (
     <section

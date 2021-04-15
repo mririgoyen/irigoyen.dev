@@ -22,7 +22,7 @@ const SectionContainer: FunctionComponent<SectionContainerProps> = ({
       setActiveSection({ id });
       history.replaceState({}, '', `#${id}`);
     }
-  }, [ id, onScreen ]);
+  }, [ id, onScreen, setActiveSection ]);
 
   return (
     <section
