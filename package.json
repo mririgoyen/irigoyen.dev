@@ -2,7 +2,7 @@
   "name": "goyney.github.io",
   "version": "1.1.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "build": "preact build --dest dist --prerenderUrls build/build.js",
     "dev": "preact watch --prerenderUrls build/build.js",
