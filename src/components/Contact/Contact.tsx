@@ -21,10 +21,10 @@ const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
   const [ emailAddress, setEmailAddress ] = useState<string>('');
   const [ message, setMessage ] = useState<string>('');
 
-  const [ firstNameError, setFirstNameError ] = useState<string | false>(false);
-  const [ lastNameError, setLastNameError ] = useState<string | false>(false);
-  const [ emailAddressError, setEmailAddressError ] = useState<string | false>(false);
-  const [ messageError, setMessageError ] = useState<string | false>(false);
+  const [ firstNameError, setFirstNameError ] = useState<string | null>(null);
+  const [ lastNameError, setLastNameError ] = useState<string | null>(null);
+  const [ emailAddressError, setEmailAddressError ] = useState<string | null>(null);
+  const [ messageError, setMessageError ] = useState<string | null>(null);
 
   const sanitizeInput = (input: string) => {
     const parsed = new DOMParser().parseFromString(input, 'text/html');
@@ -47,14 +47,14 @@ const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
       setFirstNameError('Please provide your first name.');
       error = true;
     } else {
-      setFirstNameError(false);
+      setFirstNameError(null);
     }
 
     if (!sanitizedLastName.length) {
       setLastNameError('Please provide your last name.');
       error = true;
     } else {
-      setLastNameError(false);
+      setLastNameError(null);
     }
 
     if (!sanitizedEmailAddress.length) {
@@ -64,14 +64,14 @@ const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
       setEmailAddressError('Please provide a valid email address.');
       error = true;
     } else {
-      setEmailAddressError(false);
+      setEmailAddressError(null);
     }
 
     if (!sanitizedMessage.length) {
       setMessageError('Please leave me a message.');
       error = true;
     } else {
-      setMessageError(false);
+      setMessageError(null);
     }
 
     if (error) {

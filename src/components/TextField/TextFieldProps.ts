@@ -1,7 +1,7 @@
 export interface TextFieldProps {
   autocomplete?: string;
   disabled?: boolean;
-  error?: string | boolean;
+  error?: string | null;
   label: string,
   multiline?: boolean;
   name: string;
