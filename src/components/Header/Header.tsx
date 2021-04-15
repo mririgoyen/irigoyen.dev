@@ -59,7 +59,10 @@ const Header: FunctionComponent<HeaderProps> = ({
     );
   }, [ isDarkMode ]);
 
-  const isSelected = (id: string): boolean => window?.location?.hash === '' && activeSection.id === id || window?.location?.hash === `#${id}`;
+  const isSelected = (id: string): boolean => {
+    return typeof window !== 'undefined' && (window.location.hash === '' && activeSection.id === id || window.location.hash === `#${id}`);
+  };
+
   const navHidden = windowSize.width <= classes['mobile-width'].match(/\d+/)[0] && !menuOpen;
   const sectionTitle = MENU_ITEMS.find((i) => i.id === activeSection.id) ? activeSection.id : undefined;
 
