@@ -4,24 +4,31 @@ module.exports = {
     es2020: true
   },
   extends: 'preact',
-  globals: [
-    'config'
-  ],
+  globals: {
+    config: 'readonly'
+  },
   ignorePatterns: [
     'dist/'
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module'
   },
   plugins: [
+    '@typescript-eslint',
     'sort-destructure-keys'
   ],
   rules: {
+    '@typescript-eslint/no-unused-vars': [ 2, { args: 'after-used', ignoreRestSiblings: true, vars: 'all' } ],
     'array-callback-return': [ 2, { allowImplicit: true } ],
     'arrow-parens': 2,
     'brace-style': 2,
+    camelcase: 0,
     'comma-dangle': [ 2, 'never' ],
     'comma-spacing': [ 2, { after: true } ],
+    curly: [ 2, 'all' ],
+    'eol-last': 2,
+    indent: [ 2, 2, { ignoredNodes: [ 'TemplateLiteral' ], SwitchCase: 1 } ],
     'jsx-quotes': [ 2, 'prefer-single' ],
     'key-spacing': [ 2, { afterColon: true, beforeColon: false } ],
     'keyword-spacing': [ 2, { overrides: { else: { before: true } } } ],
@@ -38,7 +45,7 @@ module.exports = {
     'no-template-curly-in-string': 2,
     'no-trailing-spaces': 2,
     'no-undef': 2,
-    'no-unused-vars': [ 2, { args: 'after-used', ignoreRestSiblings: true, vars: 'all' } ],
+    'no-unused-vars': 0,
     'no-var': 2,
     'no-with': 2,
     'object-shorthand': [ 2, 'properties' ],
@@ -49,7 +56,8 @@ module.exports = {
     'prefer-destructuring': [ 2, { array: false, object: true } ],
     'prefer-template': 2,
     'quote-props': [ 2, 'as-needed' ],
-    'sort-destructure-keys/sort-destructure-keys': 2,
+    quotes: [ 2, 'single' ],
+    semi: [ 2, 'always' ],
     'sort-destructure-keys/sort-destructure-keys': 2,
     'sort-imports': [ 2, { ignoreDeclarationSort: true } ],
     'sort-keys': [ 2, 'asc', { caseSensitive: false } ],
@@ -58,11 +66,6 @@ module.exports = {
     'space-infix-ops': 2,
     'space-unary-ops': [ 2, { nonwords: false } ],
     'spaced-comment': [ 2, 'always' ],
-    camelcase: 0,
-    curly: [ 2, 'all' ],
-    indent: [ 2, 2, { ignoredNodes: [ 'TemplateLiteral' ], SwitchCase: 1 } ],
-    quotes: [ 2, 'single' ],
-    semi: [ 2, 'always' ],
     strict: [ 2, 'never' ]
   }
 };

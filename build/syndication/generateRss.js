@@ -5,6 +5,7 @@ const { baseUrl, defaultDesc, defaultTitle } = require('../defaults');
 
 const generateRss = (blogRoutes) => {
   if (!Array.isArray(blogRoutes) || !blogRoutes.length) {
+    // eslint-disable-next-line no-console
     console.warn('WARNING: Unable to generate RSS feed.');
     return;
   }
