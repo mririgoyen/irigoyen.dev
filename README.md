@@ -8,9 +8,10 @@
   <p>
     <img src="https://api.netlify.com/api/v1/badges/1cb70056-7d92-48c2-9289-964c3656f8d0/deploy-status" alt="Netlify Status" />
   </p>
+  <p>
+    <img src="./.github/homepage.png" alt="Homepage Preview" />
+  </p>
 </div>
-
-![Homepage](./.github/homepage.png)
 
 ## Why Preact?
 
