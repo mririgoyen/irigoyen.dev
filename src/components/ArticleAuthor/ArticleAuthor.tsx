@@ -28,7 +28,7 @@ const ArticleAuthor: FunctionComponent<ArticleAuthorProps> = ({
       </picture>
       <p>
         Written by Michael Irigoyen
-        {singleLine ? <span className={classes.bullet}>&bull;</span> : <br/>}
+        {singleLine ? <span className={classes.bullet}>&bull;</span> : <br />}
         <time dateTime={publishDate}>{prettyDate}</time>
         {!!readingTime && (
           <Fragment>

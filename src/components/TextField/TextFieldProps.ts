@@ -9,4 +9,4 @@ export interface TextFieldProps {
   required?: boolean;
   type?: 'email' | 'text';
   value: string;
-};
+}

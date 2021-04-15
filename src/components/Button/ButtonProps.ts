@@ -12,4 +12,4 @@ export interface ButtonProps {
   target?: string;
   type?: 'button' | 'submit';
   variant?: 'dark' | 'light' | 'neutral';
-};
+}

@@ -7,4 +7,4 @@ export interface ArticleInterface {
   readingTime: string;
   route: string;
   title: string;
-};
+}

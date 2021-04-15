@@ -7,7 +7,7 @@ interface UpdateMetaTagsInterface {
     articleView?: string | boolean;
     robotsBehavior?: string;
   }): JSX.Element | null;
-};
+}
 
 const ARTICLE_ONLY_TAGS = [
   'author',

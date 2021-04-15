@@ -3,4 +3,4 @@ export interface ArticleAuthorProps {
   publishDate: string;
   readingTime: string;
   singleLine?: boolean;
-};
+}

@@ -7,4 +7,4 @@ export interface BlogProps extends RoutableProps {
   postTitle?: string;
   postYear?: string;
   showHeaderScroll?: boolean;
-};
+}

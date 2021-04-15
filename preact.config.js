@@ -27,8 +27,8 @@ export default (config) => {
       filePath: 'robots.txt',
       host: baseUrl,
       policy: [{
-        userAgent: '*',
-        disallow: ''
+        disallow: '',
+        userAgent: '*'
       }],
       sitemap: `${baseUrl}sitemap-index.xml`
     })

@@ -1,3 +1,3 @@
-declare var config: {
+declare const config: {
   baseUrl: string;
 };

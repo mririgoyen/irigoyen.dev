@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import 'prismjs';
 import { FunctionComponent } from 'preact';
 import { usePrerenderData } from '@preact/prerender-data-provider';

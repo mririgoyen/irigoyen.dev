@@ -5,4 +5,4 @@ export interface HomeProps extends RoutableProps {
   activeSection: { id: string };
   setActiveSection({ id }: { id: string }): void;
   showHeaderScroll?: boolean;
-};
+}

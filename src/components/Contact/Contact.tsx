@@ -60,7 +60,7 @@ const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
     if (!sanitizedEmailAddress.length) {
       setEmailAddressError('Please provide your email address.');
       error = true;
-    } else if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(sanitizedEmailAddress) === false) {
+    } else if (/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i.test(sanitizedEmailAddress) === false) {
       setEmailAddressError('Please provide a valid email address.');
       error = true;
     } else {

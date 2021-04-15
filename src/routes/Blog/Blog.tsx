@@ -1,5 +1,4 @@
-import { FunctionComponent } from 'preact';
-import { Fragment } from 'preact';
+import { Fragment, FunctionComponent } from 'preact';
 
 import { BlogProps } from './BlogProps';
 

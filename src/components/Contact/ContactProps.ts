@@ -1,6 +1,6 @@
 export interface ContactProps {
   setActiveSection({ id }: { id: string }): void;
-};
+}
 
 export interface FormDataInterface {
   [index:string]: string;
@@ -9,4 +9,4 @@ export interface FormDataInterface {
   'form-name': 'contact-form';
   'last-name': string;
   message: string;
-};
+}

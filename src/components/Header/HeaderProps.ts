@@ -4,4 +4,4 @@ export interface HeaderProps {
   };
   setActiveSection({ id }: { id: string }): void;
   showScroll?: boolean;
-};
+}

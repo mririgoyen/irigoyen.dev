@@ -7,7 +7,7 @@
     "build": "preact build --dest dist --prerenderUrls build/build.js",
     "dev": "preact watch --prerenderUrls build/build.js",
     "lint": "npm run lint:js && npm run lint:style",
-    "lint:js": "eslint \"**/*.{js,jsx}\"",
+    "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:style": "stylelint \"./src/**/*.{css,scss}\""
   },
   "dependencies": {
@@ -23,7 +23,10 @@
   },
   "devDependencies": {
     "@preact/prerender-data-provider": "^3.0.1",
+    "@types/prismjs": "^1.16.5",
     "@types/react": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "dayjs": "^1.10.4",
     "ellipsize": "^0.1.0",
     "eslint": "^7.24.0",

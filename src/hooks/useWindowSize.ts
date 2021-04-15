@@ -3,7 +3,7 @@ import { useEffect, useState } from 'preact/hooks';
 interface WindowSizeInterface {
   height: number;
   width: number;
-};
+}
 
 const useWindowSize = () => {
   const [ windowSize, setWindowSize ] = useState<WindowSizeInterface>({
