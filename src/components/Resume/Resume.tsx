@@ -28,7 +28,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>March 2021 - Current</span>
             </p>
-            <p>As a software engineering manager, I oversee several engineering teams developing and maintaining applications in the Fraud & Collections and Consumer Privary areas of Kohl's Technology.</p>
+            <p>As a software engineering manager, I oversee several engineering teams developing and maintaining applications in the Fraud & Collections and Consumer Privacy areas of Kohl's Technology.</p>
           </div>
 
           <div className={classes.item}>
