@@ -24,11 +24,11 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               className={classes.subheading}
               role='heading'
             >
-              <em>Senior Software Engineer</em>
+              <em>Software Engineering Manager</em>
               <span className={classes.bullet}>&bull;</span>
               <span>March 2021 - Current</span>
             </p>
-            <p>I've recently started on a new path in my career with Kohl's Technology. I look forward to sharing the details of my responsibilities in this role soon.</p>
+            <p>As a software engineering manager, I oversee several engineering teams developing and maintaining applications in the Fraud & Collections and Consumer Privary areas of Kohl's Technology.</p>
           </div>
 
           <div className={classes.item}>
