@@ -1,6 +1,9 @@
 import { FunctionComponent } from 'preact';
+import Icon from '@mdi/react';
+import { mdiOpenInNew } from '@mdi/js';
 
 import SectionContainer from '../SectionContainer/SectionContainer';
+import Button from '../Button/Button';
 
 import { ResumeProps } from './ResumeProps';
 
@@ -28,7 +31,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>March 2021 - Current</span>
             </p>
-            <p>As a software engineering manager, I oversee several engineering teams developing and maintaining applications in the Fraud & Collections and Consumer Privacy areas of Kohl's Technology.</p>
+            <p>As a software engineering manager, I oversee the engineering teams working in the Fraud & Collections and Consumer Privacy areas of Kohl's Technology.</p>
           </div>
 
           <div className={classes.item}>
@@ -42,8 +45,8 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>September 2015 - March 2021</span>
             </p>
-            <p>As a senior software engineer, I worked daily in a continuously delivered React and Node.js microservice environment. Regularly, I took the lead on designing or implementing new functionality for our SaaS-based applications. I continuously worked to improve the quality of my code through extensive unit and integration testing, as well as employed functional programming techniques and good coding patterns. Additionally, I explored DevOps related tasks that could help improve the quality of life for the engineering team.</p>
-            <p>As a scrum master, I facilitated and created opportunities each sprint for the team to succeed. I consistently researched, analyzed, and experimented to ensure our Scrum process ran smoothly and without interruption so the team could focus on reaching their goals.</p>
+            <p>As a senior software engineer, I worked in a continuously delivered React and Node.js microservice environment. Regularly, I took the lead on designing or implementing new functionality for our SaaS-based applications. I continuously worked to improve the quality of my code through extensive unit and integration testing, as well as employed functional programming techniques and good coding patterns. Additionally, I explored DevOps related tasks that could help improve the quality of life for the engineering team.</p>
+            <p>As a scrum master, I facilitated and created opportunities each sprint for the team to succeed. I consistently researched, analyzed, and experimented to ensure our Scrum process ran smoothly and without interruption so the team could focus on their goals.</p>
           </div>
 
           <div className={classes.item}>
@@ -72,7 +75,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>February 2008 - April 2013</span>
             </p>
-            <p>My success as a student web developer translated into a full-time web applications developer upon my graduation from Illinois State. I continued to iterate and improve the Help Desk knowledge base site while I added a variety of departmental websites to my development responsibilities. As I became more comfortable in my developer role, I began to mentor staff members and student workers of the Help Desk who were also working on web projects.</p>
+            <p>Upon graduation, I transitioned into a full-time web applications developer. I continued to iterate and improve the Help Desk knowledge base site while I added a variety of departmental websites to my development responsibilities. As I became more comfortable in my developer role, I began to mentor staff members and student workers of the Help Desk who were also working on web projects.</p>
             <hr />
             <p
               aria-level='4'
@@ -116,7 +119,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
         </div>
         <div className={classes.items}>
           <div className={classes.item}>
-            <h3>Methods and Apparatus for Supporting the Display and Editing of OOXML Document Content Using a Web Browser</h3>
+            <h3 id='ooxml-patent'>Methods and Apparatus for Supporting the Display and Editing of OOXML Document Content Using a Web Browser</h3>
             <p
               aria-level='4'
               className={classes.subheading}
@@ -127,6 +130,16 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span>Patent Pending</span>
             </p>
             <p>Patent relates to document storage, display and/or editing and, more particularly, to methods and apparatus which allow a device to display and edit a document using a Web browser, without having to support direct OOXML format document rendering and editing.</p>
+            <Button
+              aria-describedby='ooxml-patent'
+              className={classes.button}
+              href='https://patents.google.com/patent/US20200293609A1'
+              rel='noopener'
+              startIcon={<Icon path={mdiOpenInNew} size={.9} />}
+              target='_blank'
+            >
+              More Information
+            </Button>
           </div>
         </div>
       </div>

@@ -54,6 +54,10 @@
     transition: background-color .3s ease-in-out;
     will-change: background-color;
   }
+
+  .button {
+    margin: 0 1rem 1rem 0;
+  }
 }
 
 .subheading {
@@ -95,6 +99,10 @@
   .item {
     h3 {
       font-size: 1.8rem;
+    }
+
+    .button {
+      width: 100%;
     }
   }
 
