@@ -21,17 +21,17 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
         </div>
         <div className={classes.items}>
           <div className={classes.item}>
-            <h3>Kohl's Corporation</h3>
+            <h3>Salesforce</h3>
             <p
               aria-level='4'
               className={classes.subheading}
               role='heading'
             >
-              <em>Software Engineering Manager</em>
+              <em>Senior Member of Technical Staff</em>
               <span className={classes.bullet}>&bull;</span>
-              <span>March 2021 - Current</span>
+              <span>June 2021 - Current</span>
             </p>
-            <p>As a software engineering manager, I oversee the engineering teams working in the Fraud & Collections and Consumer Privacy areas of Kohl's Technology.</p>
+            <p>I've recently accepted a new role as a Senior Member of Technical Staff with Salesforce. I'm excited to get started and share my responsibilities soon!</p>
           </div>
 
           <div className={classes.item}>
