@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $loader-offset: 187;
 $loader-duration: 1.4s;
 
@@ -37,7 +39,7 @@ $loader-duration: 1.4s;
   }
 
   50% {
-    stroke-dashoffset: $loader-offset / 4;
+    stroke-dashoffset: math.div($loader-offset, 4);
     transform: rotate(135deg);
   }
 
