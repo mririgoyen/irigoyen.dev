@@ -72,6 +72,21 @@
   a {
     margin: .5rem;
 
+    &.polywork {
+      color: hsl(var(--white));
+
+      svg {
+        height: 2.25rem;
+        width: 2.25rem;
+
+        g {
+          opacity: 0;
+          transition: opacity .3s ease-in-out;
+          will-change: opacity;
+        }
+      }
+    }
+
     &:hover {
       color: hsl(var(--blue));
 
@@ -81,6 +96,16 @@
 
       &.twitter {
         color: hsl(var(--twitter-color));
+      }
+
+      &.polywork {
+        color: hsl(var(--dark-grey));
+
+        svg {
+          g {
+            opacity: 1;
+          }
+        }
       }
     }
   }
