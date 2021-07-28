@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'preact/hooks';
 
 interface ReferenceInterface {
-  current: HTMLElement
+  current: HTMLElement | null
 }
 
 interface OptionsInterface {
@@ -45,7 +45,7 @@ const useIntersection: UseIntersectionInterface = (ref, {
       observer.observe(current);
     }
 
-    return () => observer.unobserve(current);
+    return () => observer.unobserve(current!);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return isIntersecting;

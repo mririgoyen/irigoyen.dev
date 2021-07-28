@@ -12,7 +12,7 @@ import classes from './Hero.scss';
 import PolyworkSvg from '../../assets/images/polywork.svg';
 
 const Hero: FunctionComponent<HeroProps> = ({ setActiveSection }) => {
-  const heroRef = useRef<HTMLDivElement>();
+  const heroRef = useRef<HTMLDivElement>(null);
   const [ offset, setOffset ] = useState<number>(0);
   const onScreen = useIntersection(heroRef, { rootMargin: '300px', threshold: .1 });
 
