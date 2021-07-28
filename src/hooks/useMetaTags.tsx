@@ -31,19 +31,19 @@ const useMetaTags = () => {
       ARTICLE_ONLY_TAGS.forEach((tag: any) => data.meta[tag?.property || tag] = tag?.property ? { ...tag, content: null } : null);
     }
 
-    const tags = Object.keys(data.meta).map((tag) => {
+    const tags = Object.keys(data.meta).map((tag, i) => {
       if (tag === 'title') {
         return [
-          <title>{data.meta.title}</title>,
-          <meta content={data.meta.title} name='title' />
+          <title key={`title-${i}`}>{data.meta.title}</title>,
+          <meta content={data.meta.title} key={`meta-${i}`} name='title' />
         ];
       }
 
       if (data.meta[tag]?.property) {
-        return <meta content={data.meta[tag].content} property={tag} />;
+        return <meta content={data.meta[tag].content} key={`meta-${i}`} property={tag} />;
       }
 
-      return <meta content={data.meta[tag]} name={tag} />;
+      return <meta content={data.meta[tag]} key={`meta-${i}`} name={tag} />;
     });
 
     return <MetaTags>{tags}</MetaTags>;
