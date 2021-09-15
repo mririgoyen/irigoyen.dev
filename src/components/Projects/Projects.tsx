@@ -48,7 +48,7 @@ const Projects: FunctionComponent<ProjectsProps> = ({ setActiveSection }) => {
             >
               <em>Iconography for Designers & Developers</em>
             </p>
-            <p><a href='https://github.com/Pictogrammers'>Pictogrammers</a> is an open-source community developing high-quality icons for use by designers and developers in web and application development. As a core contributor, I help maintain our icon databases, <a href='https://github.com/Templarian/MaterialDesign/issues'>field issues on GitHub</a>, assist in creation and maintenance of our supporting websites, and have personally contributed more than 1000 icons to our <a href='https://materialdesignicons.com/'>Material Design Icons</a> library!</p>
+            <p><a href='https://github.com/Pictogrammers'>Pictogrammers</a> is an open-source community developing high-quality icons for use by designers and developers in web and application development. As a core contributor, I help maintain our icon databases, <a href='https://github.com/Templarian/MaterialDesign/issues'>field issues on GitHub</a>, assist in creation and maintenance of our supporting websites, and have personally contributed <a href='https://materialdesignicons.com/contributor/Michael%20Irigoyen'>more than 1200 icons to our Material Design Icons</a> library!</p>
           </div>
         </div>
 
