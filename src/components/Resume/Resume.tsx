@@ -31,7 +31,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>June 2021 - Current</span>
             </p>
-            <p>I've recently accepted a new role as a Senior Member of Technical Staff with Salesforce. I'm excited to get started and share my responsibilities soon!</p>
+            <p>I am a senior member of the Lightning Web Components team. My responsibilities include designing, building, updating, and testing a variety of different components that our customers use when building their user interfaces. Utilizing web standards, each component has aspects such as accessibility, internationalization, and responsiveness concerns baked in, giving end-users the best possible experience out of the box.</p>
           </div>
 
           <div className={classes.item}>
@@ -60,8 +60,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>April 2013 - September 2015</span>
             </p>
-            <p>As a web administrator, I maintained a cloud-hosted LAMP stack which hosted approximately a dozen separate sites. I engineered solutions for our cloud-hosted stack to securely communicate with locally hosted resources in an efficient manner.</p>
-            <p>As a web developer, I engineered a custom content management system (CMS) in PHP to showcase our home inventory on the web. Through storyboarding and market research, I designed a visually stunning web front-end. The front-end was built on top of the CMS in HTML 5 and JavaScript. Additionally, I developed standalone web applications for large touchscreen kiosks in several of our physical sales centers.</p>
+            <p>I maintained a cloud-hosted LAMP stack which hosted approximately a dozen separate sites. I engineered solutions for our cloud-hosted stack to securely communicate with locally hosted resources. I also created a custom content management system (CMS) in PHP to showcase our home inventory on the web. Through storyboarding and market research, I designed a visually stunning web front-end on top of the CMS in HTML and JavaScript. Additionally, I developed standalone web applications for large touchscreen kiosks in several of our physical sales centers.</p>
           </div>
 
           <div className={classes.item}>
@@ -86,7 +85,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>October 2005 - February 2008</span>
             </p>
-            <p>As a student web developer, I took on the daunting task of developing a brand new knowledge base content management system (CMS) for the University Computer Help Desk. I utilized PHP for the back-end and designed an HTML and JavaScript front-end. During my time as a student, I experimented and researched constantly, leading to a complete overhaul of the front-end UI within one year.</p>
+            <p>As a student web developer, I took on the daunting task of developing a brand new knowledge base content management system (CMS) for the University Computer Help Desk. I utilized PHP for the back-end and designed an HTML and JavaScript front-end.</p>
           </div>
         </div>
       </div>
