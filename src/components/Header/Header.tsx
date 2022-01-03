@@ -20,6 +20,7 @@ const MENU_ITEMS = [
   { id: 'resume', route: '/' },
   { id: 'projects', route: '/' },
   { id: 'talks', route: '/' },
+  { id: 'media', route: '/' },
   { id: 'philanthropy', route: '/' },
   { id: 'contact', route: '/' },
   { id: 'blog', route: '/blog/' }
@@ -116,7 +117,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         <ul>
           {MENU_ITEMS.map(({ id, route: itemRoute }) => {
             return (
-              <li>
+              <li key={id}>
                 <a
                   aria-label={id}
                   className={cx(classes[id], {

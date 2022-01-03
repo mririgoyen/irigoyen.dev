@@ -1,0 +1,151 @@
+@import '../../style/variables.scss';
+
+.root {
+  header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  h2 {
+    border-bottom: 2px solid hsl(var(--accent-color));
+    display: inline-block;
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    margin: 0 auto;
+    padding: .5rem .2rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: border .3s ease-in-out;
+    will-change: border;
+  }
+}
+
+.item {
+  display: flex;
+  padding: 1rem 0 3rem;
+  transition: border .3s ease-in-out;
+  will-change: transition;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid hsla(var(--text-color), .1);
+    margin-bottom: 3rem;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+
+    figure {
+      margin: 1rem 2rem 1rem 4rem;
+
+      img {
+        transform: rotate3d(1, 1, 1, 5deg);
+      }
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 .5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  figure {
+    margin: 1rem 4rem 1rem 2rem;
+
+    img {
+      box-shadow: 0 3px 10px 10px hsla(var(--black), .2);
+      outline: 7px solid hsl(var(--white));
+      transform: rotate3d(1, 1, 1, -5deg);
+    }
+  }
+
+  .button {
+    margin: 0 1rem 1rem 0;
+  }
+}
+
+.subheading {
+  font-weight: 400;
+  margin: 0;
+
+  em {
+    font-family: var(--secondary-font);
+    font-size: 1.2rem;
+    letter-spacing: normal;
+  }
+
+  span {
+    color: hsla(var(--text-color), .67);
+    font-size: .9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color .3s ease-in-out;
+    will-change: color;
+  }
+
+  .bullet {
+    color: hsl(var(--text-color));
+    padding: 0 .5rem;
+    transition: color .3s ease-in-out;
+    will-change: color;
+  }
+}
+
+@media only screen and (max-width: $mobile-width) {
+  .item {
+    flex-direction: column;
+
+    &.reverse {
+      flex-direction: column;
+
+      figure {
+        margin: 0;
+        text-align: center;
+
+        img {
+          transform: rotate3d(1, 1, 1, 0);
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    figure {
+      margin: 0;
+      text-align: center;
+
+      img {
+        height: auto;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        transform: rotate3d(1, 1, 1, 0);
+      }
+    }
+
+    a {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  .subheading {
+    em {
+      display: block;
+    }
+  }
+
+  .bullet {
+    display: none;
+  }
+}

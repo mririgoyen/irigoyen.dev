@@ -10,6 +10,7 @@ import About from '../../components/About/About';
 import Resume from '../../components/Resume/Resume';
 import Projects from '../../components/Projects/Projects';
 import Talks from '../../components/Talks/Talks';
+import Media from '../../components/Media/Media';
 import Philanthropy from '../../components/Philanthropy/Philanthropy';
 import Contact from '../../components/Contact/Contact';
 
@@ -22,6 +23,7 @@ const Home: FunctionComponent<HomeProps> = ({ setActiveSection }) => {
     { component: Resume, id: 'resume', ref: useRef() },
     { component: Projects, id: 'projects', ref: useRef() },
     { component: Talks, id: 'talks', ref: useRef() },
+    { component: Media, id: 'media', ref: useRef() },
     { component: Philanthropy, id: 'philanthropy', ref: useRef() },
     { component: Contact, id: 'contact', ref: useRef() }
   ];
@@ -31,7 +33,7 @@ const Home: FunctionComponent<HomeProps> = ({ setActiveSection }) => {
   return (
     <div className={classes.root} role='main'>
       {updateMetaTags()}
-      {sections.map((section) => (<section.component ref={section.ref} setActiveSection={setActiveSection} />))}
+      {sections.map((section, i) => (<section.component key={i} ref={section.ref} setActiveSection={setActiveSection} />))}
     </div>
   );
 };
