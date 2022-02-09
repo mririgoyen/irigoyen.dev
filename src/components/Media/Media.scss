@@ -67,6 +67,14 @@
   .button {
     margin: 0 1rem 1rem 0;
   }
+
+  a {
+    color: hsl(var(--link-color));
+
+    &:hover {
+      color: hsl(var(--link-hover-color));
+    }
+  }
 }
 
 .subheading {
