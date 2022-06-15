@@ -31,12 +31,12 @@ Absolutely! Here's some key information to help you get started:
 
 1. Clone this repository.
 2. Run `npm install` to install the dependencies.
-   - I used Node v14 and NPM v7 when creating it.
+   - You should use Node v16 and NPM v8.
 3. Run `npm run dev` to start the development server.
 4. You can find the site at <http://localhost:8080>.
 
 ## Legal
 
-&copy; Copyright 2020-2021 Michael Irigoyen
+&copy; Copyright 2020-2022 Michael Irigoyen
 
 I've spent a lot of time making my site personal to me. Feel free to mess around with the code as you want, but if you would like to reuse any of it for your own projects, please reach out to me for permission.

@@ -137,7 +137,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               startIcon={<Icon path={mdiOpenInNew} size={.9} />}
               target='_blank'
             >
-              More Information
+              View Patent Details
             </Button>
           </div>
         </div>

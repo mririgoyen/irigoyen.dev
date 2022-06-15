@@ -9,7 +9,7 @@ interface UseIntervalInterface {
 }
 
 const useInterval: UseIntervalInterface = (callback, delay) => {
-  const savedCallback = useRef<CallbackInterface>(null);
+  const savedCallback = useRef<CallbackInterface | null>(null);
 
   useEffect(() => {
     savedCallback.current = callback;
