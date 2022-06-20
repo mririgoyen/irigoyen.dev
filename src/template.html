@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <title><% preact.title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
@@ -14,9 +14,9 @@
     <link rel="alternate" type="application/atom+xml" title="Michael Irigoyen - Front-End Software Engineer" href="/feed.xml">
     <link rel="alternate" type="application/feed+json" title="Michael Irigoyen - Front-End Software Engineer" href="/feed.json">
     <% preact.headEnd %>
-	</head>
-	<body>
+  </head>
+  <body>
     <script>!function(){var e="dark-mode",a="light-mode";function o(o){document.body.classList.add(o?e:a),document.body.classList.remove(o?a:e)}var t=window.matchMedia("(prefers-color-scheme: dark)"),r="(prefers-color-scheme: dark)"===t.media,d=null;try{d=localStorage.getItem("darkMode")}catch(e){}var s=null!==d;if(s&&(d=JSON.parse(d)),s)o(d);else if(r)o(t.matches),localStorage.setItem("darkMode",t.matches);else{var c=document.body.classList.contains(e);localStorage.setItem("darkMode",JSON.stringify(c))}}();</script>
-		<% preact.bodyEnd %>
-	</body>
+    <% preact.bodyEnd %>
+  </body>
 </html>
