@@ -82,7 +82,7 @@ const Projects: FunctionComponent<ProjectsProps> = ({ setActiveSection }) => {
             <Button
               aria-describedby='accusoft-gamecenter'
               className={classes.button}
-              href='https://github.com/goyney/gamecenter'
+              href='https://github.com/mririgoyen/gamecenter'
               rel='noopener'
               startIcon={<Icon path={mdiGithub} size={.9} />}
               target='_blank'

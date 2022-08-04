@@ -10,10 +10,10 @@ const defaultMetadata = {
   'og:url': { content: baseUrl, property: 'og:url' },
   title: defaultTitle,
   'twitter:card': 'summary',
-  'twitter:creator': '@mririgo',
+  'twitter:creator': '@mririgoyen',
   'twitter:description': defaultDesc,
   'twitter:image': `${baseUrl}assets/images/twitter-card.png`,
-  'twitter:site': '@mririgo',
+  'twitter:site': '@mririgoyen',
   'twitter:title': defaultTitle,
   version: process.env.BUILD_ID || 'dev'
 };

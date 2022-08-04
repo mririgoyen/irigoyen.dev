@@ -45,14 +45,14 @@ const Hero: FunctionComponent<HeroProps> = ({ setActiveSection }) => {
           <a
             aria-label='GitHub Profile'
             className={classes.github}
-            href='https://github.com/goyney'
+            href='https://github.com/mririgoyen'
           >
             <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
           </a>
           <a
             aria-label='Twitter Profile'
             className={classes.twitter}
-            href='https://twitter.com/mririgo'
+            href='https://twitter.com/mririgoyen'
           >
             <Icon path={mdiTwitter} size={1.5} title='Twitter Profile' />
           </a>
