@@ -124,9 +124,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               className={classes.subheading}
               role='heading'
             >
-              <em>US 16/359,739</em>
-              <span className={classes.bullet}>&bull;</span>
-              <span>Patent Pending</span>
+              <em>US 11,449,665</em>
             </p>
             <p>Patent relates to document storage, display and/or editing and, more particularly, to methods and apparatus which allow a device to display and edit a document using a Web browser, without having to support direct OOXML format document rendering and editing.</p>
             <Button
