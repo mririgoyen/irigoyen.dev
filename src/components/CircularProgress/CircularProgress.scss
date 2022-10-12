@@ -23,7 +23,8 @@ $loader-duration: 1.4s;
   }
 }
 
-@keyframes rotator {
+@keyframes rotator
+{
   0% {
     transform: rotate(0deg);
   }
@@ -33,7 +34,8 @@ $loader-duration: 1.4s;
   }
 }
 
-@keyframes dash {
+@keyframes dash
+{
   0% {
     stroke-dashoffset: $loader-offset;
   }

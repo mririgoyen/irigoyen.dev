@@ -10,3 +10,14 @@
     will-change: border;
   }
 }
+
+@keyframes pulsate
+{
+  from {
+    box-shadow: 0 0 0 1rem hsl(var(--light-grey) / 20%);
+  }
+
+  to {
+    box-shadow: 0 0 0 2rem hsl(var(--light-grey) / 20%);
+  }
+}
