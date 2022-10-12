@@ -48,7 +48,7 @@
 }
 
 .subheading {
-  color: hsla(var(--white), .8);
+  color: hsl(var(--white) / 80%);
   font-family: var(--secondary-font);
   font-size: 2.5vh;
   font-weight: 500;
@@ -64,7 +64,7 @@
 }
 
 .social {
-  border-top: 1px solid hsla(var(--white), .25);
+  border-top: 1px solid hsl(var(--white) / 25%);
   display: inline-block;
   margin-top: 2rem;
   padding: 2rem;

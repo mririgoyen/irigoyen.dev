@@ -4,7 +4,7 @@
   display: flex;
 
   &:not(:last-child) {
-    border-bottom: 1px solid hsla(var(--text-color), .1);
+    border-bottom: 1px solid hsl(var(--text-color) / 10%);
     margin-bottom: 3rem;
     padding-bottom: 1rem;
     transition: border .3s ease-in-out;
@@ -47,7 +47,7 @@
   }
 
   hr {
-    background-color: hsla(var(--text-color), .1);
+    background-color: hsl(var(--text-color) / 10%);
     border: none;
     height: 1px;
     margin: 2rem 0;
@@ -71,7 +71,7 @@
   }
 
   span {
-    color: hsla(var(--text-color), .67);
+    color: hsl(var(--text-color) / 67%);
     font-size: .9rem;
     letter-spacing: 2px;
     text-transform: uppercase;

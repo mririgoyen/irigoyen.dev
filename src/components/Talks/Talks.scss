@@ -27,7 +27,7 @@
   will-change: transition;
 
   &:not(:last-child) {
-    border-bottom: 1px solid hsla(var(--text-color), .1);
+    border-bottom: 1px solid hsl(var(--text-color) / 10%);
     margin-bottom: 3rem;
   }
 
@@ -58,7 +58,7 @@
     margin: 1rem 4rem 1rem 2rem;
 
     img {
-      box-shadow: 0 3px 10px 10px hsla(var(--black), .2);
+      box-shadow: 0 3px 10px 10px hsl(var(--black) / 20%);
       outline: 7px solid hsl(var(--white));
       transform: rotate3d(1, 1, 1, -5deg);
     }
@@ -80,7 +80,7 @@
   }
 
   span {
-    color: hsla(var(--text-color), .67);
+    color: hsl(var(--text-color) / 67%);
     font-size: .9rem;
     letter-spacing: 2px;
     text-transform: uppercase;

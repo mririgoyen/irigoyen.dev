@@ -1,8 +1,8 @@
 @import '../../style/variables.scss';
 
 .header {
-  background-color: hsla(var(--black), .9);
-  box-shadow: 0 0 15px 2px hsla(var(--black), .4);
+  background-color: hsl(var(--black) / 90%);
+  box-shadow: 0 0 15px 2px hsl(var(--black) / 40%);
   left: 0;
   overflow: hidden;
   position: fixed;
@@ -28,7 +28,7 @@
     align-items: center;
     background-color: transparent;
     border: none;
-    color: hsla(var(--white), .8);
+    color: hsl(var(--white) / 80%);
     cursor: pointer;
     display: flex;
     font-size: .9rem;
@@ -56,7 +56,7 @@
 
   .desktop-home {
     align-items: center;
-    color: hsl(var(--white)) !important;
+    color: hsl(var(--white)) !important; /* stylelint-disable-line declaration-no-important */
     display: flex;
     font-style: normal;
     font-weight: 600;
@@ -78,7 +78,7 @@
 
 .theme-toggle {
   align-items: center;
-  color: hsla(var(--white), .8);
+  color: hsl(var(--white) / 80%);
   cursor: pointer;
   display: flex;
   height: 100%;
@@ -112,7 +112,7 @@
   }
 }
 
-@media only screen and (max-width: $mobile-width + 150) {
+@media only screen and (max-width: ($mobile-width + 150)) {
   .theme-toggle {
     display: none;
   }
@@ -201,7 +201,7 @@
 
       a {
         background-color: rgb(10 10 10);
-        border-top: 1px solid hsla(var(--white), .2);
+        border-top: 1px solid hsl(var(--white) / 20%);
         color: hsl(var(--white));
         font-weight: 600;
         height: 56px;
