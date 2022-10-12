@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'preact';
+import { FunctionComponent, JSX } from 'preact';
 import { useState } from 'preact/hooks';
 import cx from 'clsx';
 import Icon from '@mdi/react';
@@ -33,7 +33,7 @@ const Contact: FunctionComponent<ContactProps> = ({ setActiveSection }) => {
 
   const encodeFormData = (data: FormDataInterface) => Object.keys(data).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
 
-  const handleSubmit = async (e: MouseEvent | TouchEvent) => {
+  const handleSubmit = async (e: JSX.TargetedMouseEvent<HTMLElement>) => {
     e.preventDefault();
 
     const sanitizedFirstName = sanitizeInput(firstName);

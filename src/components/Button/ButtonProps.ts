@@ -6,7 +6,7 @@ export interface ButtonProps {
   disabled?: boolean;
   href?: string;
   native?: boolean;
-  onClick?(e: MouseEvent | TouchEvent): void;
+  onClick?(e: JSX.TargetedMouseEvent<HTMLElement>): void;
   rel?: string;
   startIcon?: JSX.Element;
   target?: string;
