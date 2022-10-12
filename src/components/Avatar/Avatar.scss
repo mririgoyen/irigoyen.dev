@@ -1,6 +1,6 @@
 .root {
   img {
-    animation: a-pulsate 5s ease-in-out 0s infinite alternate;
+    animation: pulsate 5s ease-in-out 0s infinite alternate;
     border: 3px solid hsl(var(--accent-color));
     border-radius: 50%;
     box-shadow: 0 0 0 2rem hsl(var(--light-grey) / 20%);
@@ -11,7 +11,7 @@
   }
 }
 
-@keyframes a-pulsate {
+@keyframes pulsate {
   from {
     box-shadow: 0 0 0 1rem hsl(var(--light-grey) / 20%);
   }

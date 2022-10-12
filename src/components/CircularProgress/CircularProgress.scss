@@ -11,11 +11,11 @@ $loader-duration: 1.4s;
   justify-content: center;
 
   svg {
-    animation: cp-rotator $loader-duration linear infinite;
+    animation: rotator $loader-duration linear infinite;
   }
 
   circle {
-    animation: cp-dash $loader-duration ease-in-out infinite;
+    animation: dash $loader-duration ease-in-out infinite;
     stroke: hsl(var(--accent-color));
     stroke-dasharray: $loader-offset;
     stroke-dashoffset: 0;
@@ -23,7 +23,7 @@ $loader-duration: 1.4s;
   }
 }
 
-@keyframes cp-rotator {
+@keyframes rotator {
   0% {
     transform: rotate(0deg);
   }
@@ -33,7 +33,7 @@ $loader-duration: 1.4s;
   }
 }
 
-@keyframes cp-dash {
+@keyframes dash {
   0% {
     stroke-dashoffset: $loader-offset;
   }
