@@ -44,7 +44,7 @@
 
   a {
     align-items: center;
-    background-color: hsla(var(--text-color), .1);
+    background-color: hsl(var(--text-color) / 10%);
     border-radius: 50%;
     color: hsl(var(--text-color));
     display: flex;
@@ -85,7 +85,7 @@
 }
 
 .content {
-  border-top: 1px solid hsla(var(--text-color), .1);
+  border-top: 1px solid hsl(var(--text-color) / 10%);
   font-size: 1.1rem;
   line-height: 2;
   margin-top: 3rem;
@@ -127,7 +127,7 @@
   }
 
   hr {
-    background: linear-gradient(90deg, hsla(0, 0%, 0%, 0) 0%, hsl(var(--text-color)) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: linear-gradient(90deg, hsl(0deg 0% 0% / 0%) 0%, hsl(var(--text-color)) 50%, hsl(0deg 0% 0% / 0%) 100%);
     border: 0;
     height: 1px;
     margin: 2rem 0;
@@ -139,7 +139,7 @@
   }
 
   blockquote {
-    background-color: hsla(var(--text-color), .05);
+    background-color: hsl(var(--text-color) / 5%);
     border-radius: 4px;
     margin: 0 2.5rem;
     padding: 1rem;
@@ -185,21 +185,21 @@
   code,
   pre {
     background: none;
-    color: hsl(0, 30%, 96%);
+    color: hsl(0deg 30% 96%);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: .9em;
     hyphens: none;
     line-height: 1.5;
     tab-size: 4;
     text-align: left;
-    text-shadow: 0 1px hsla(0, 0%, 0%, .3);
+    text-shadow: 0 1px hsl(0deg 0% 0% / 30%);
     white-space: pre;
     word-spacing: normal;
     word-wrap: normal;
   }
 
   pre {
-    background: hsl(70, 8%, 15%);
+    background: hsl(70deg 8% 15%);
     border-radius: .3em;
     margin: .5em 0;
     overflow: auto;
@@ -293,7 +293,7 @@
 }
 
 .author {
-  border-top: 1px solid hsla(var(--text-color), .1);
+  border-top: 1px solid hsl(var(--text-color) / 10%);
   display: flex;
   margin-top: 4rem;
   padding-top: 4rem;
@@ -316,7 +316,7 @@
 }
 
 .bio {
-  color: hsla(var(--text-color), .6);
+  color: hsl(var(--text-color) / 60%);
   display: flex;
   flex-direction: column;
   font-size: .9rem;

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'preact';
+import { FunctionComponent, JSX } from 'preact';
 import cx from 'clsx';
 
 import { TextFieldProps } from './TextFieldProps';
@@ -34,7 +34,7 @@ const TextField: FunctionComponent<TextFieldProps> = ({
         disabled={disabled}
         id={name}
         name={name}
-        onChange={(e: Event) => onChange((e.target as HTMLInputElement | HTMLTextAreaElement).value)}
+        onChange={(e: JSX.TargetedEvent<HTMLInputElement | HTMLTextAreaElement>) => onChange((e.target as HTMLInputElement | HTMLTextAreaElement).value)}
         required={required}
         type={!multiline && type || undefined}
         value={value}

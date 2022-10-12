@@ -73,7 +73,7 @@
 
   time,
   .estimate {
-    color: hsla(var(--text-color), .67);
+    color: hsl(var(--text-color) / 67%);
     font-family: var(--primary-font);
     font-size: .8rem;
     font-style: normal;
@@ -87,7 +87,7 @@
 
 .latest {
   align-items: center;
-  border-bottom: 1px solid hsla(var(--text-color), .1);
+  border-bottom: 1px solid hsl(var(--text-color) / 10%);
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
@@ -116,9 +116,9 @@
 }
 
 .badge {
-  background-color: hsla(var(--text-color), .1);
+  background-color: hsl(var(--text-color) / 10%);
   border-radius: 4px;
-  color: hsla(var(--text-color), .5);
+  color: hsl(var(--text-color) / 50%);
   display: inline-block;
   font-size: .7rem;
   font-weight: 600;
@@ -130,14 +130,14 @@
 
 .empty {
   align-items: center;
-  color: hsla(var(--text-color), .5);
+  color: hsl(var(--text-color) / 50%);
   display: flex;
   justify-content: center;
   padding: 3rem 1rem;
   user-select: none;
 
   svg {
-    color: hsla(var(--text-color), .3);
+    color: hsl(var(--text-color) / 30%);
     margin-right: .6rem;
   }
 }

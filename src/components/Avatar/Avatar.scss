@@ -3,7 +3,7 @@
     animation: pulsate 5s ease-in-out 0s infinite alternate;
     border: 3px solid hsl(var(--accent-color));
     border-radius: 50%;
-    box-shadow: 0 0 0 2rem hsla(var(--light-grey), .2);
+    box-shadow: 0 0 0 2rem hsl(var(--light-grey) / 20%);
     height: 225px;
     transition: border .3s ease-in-out;
     width: 200px;
@@ -13,10 +13,10 @@
 
 @keyframes pulsate {
   from {
-    box-shadow: 0 0 0 1rem hsla(var(--light-grey), .2);
+    box-shadow: 0 0 0 1rem hsl(var(--light-grey) / 20%);
   }
 
   to {
-    box-shadow: 0 0 0 2rem hsla(var(--light-grey), .2);
+    box-shadow: 0 0 0 2rem hsl(var(--light-grey) / 20%);
   }
 }

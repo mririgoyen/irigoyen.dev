@@ -124,7 +124,7 @@ const ArticleListing: FunctionComponent = () => {
           </div>
         )}
       </Fragment>
-    )
+    );
   };
 
   return (

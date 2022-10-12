@@ -2,7 +2,7 @@
 
 .root {
   align-items: center;
-  background-color: hsla(var(--black), .9);
+  background-color: hsl(var(--black) / 90%);
   color: hsl(var(--black));
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@
 
 .file {
   align-items: center;
-  border-top: 1px solid hsla(var(--black), .1);
+  border-top: 1px solid hsl(var(--black) / 10%);
   display: flex;
   font-size: .9rem;
   font-weight: 600;
@@ -59,7 +59,7 @@
 }
 
 .manual {
-  color: hsla(var(--black), .6);
+  color: hsl(var(--black) / 60%);
   font-size: .7rem;
 }
 

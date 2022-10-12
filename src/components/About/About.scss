@@ -2,7 +2,7 @@
 
 .root {
   align-items: center;
-  background-color: hsl(var(--dark-grey)) !important;
+  background-color: hsl(var(--dark-grey)) !important; /* stylelint-disable-line declaration-no-important */
   color: hsl(var(--white));
   min-height: 100vh;
 
@@ -22,14 +22,14 @@
   }
 
   p {
-    color: hsla(var(--white), .8);
+    color: hsl(var(--white) / 80%);
     font-size: 1.1rem;
     line-height: 1.75;
   }
 }
 
 .contact {
-  border-top: 1px solid hsla(var(--white), .1);
+  border-top: 1px solid hsl(var(--white) / 10%);
   display: flex;
   margin-top: 4rem;
   padding-top: 4rem;

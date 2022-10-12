@@ -1,7 +1,7 @@
 @import '../../style/variables.scss';
 
 .root {
-  background-color: hsl(var(--dark-grey)) !important;
+  background-color: hsl(var(--dark-grey)) !important; /* stylelint-disable-line declaration-no-important */
   color: hsl(var(--white));
 
   h2 {
@@ -87,7 +87,7 @@
     }
 
     form {
-      border-top: 1px solid hsla(var(--white), .05);
+      border-top: 1px solid hsl(var(--white) / 5%);
       margin-top: 2rem;
       padding: 2rem 0 0;
     }

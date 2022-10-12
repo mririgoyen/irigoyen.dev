@@ -31,11 +31,11 @@
 
   &.neutral {
     background-color: rgb(214 214 214);
-    color: hsla(var(--black), .7);
+    color: hsl(var(--black) / 70%);
 
     &:hover {
       background-color: rgb(190 190 190);
-      color: hsla(var(--black), .7);
+      color: hsl(var(--black) / 70%);
     }
   }
 
@@ -51,7 +51,7 @@
 
   &.light {
     background-color: hsl(var(--white));
-    color: hsla(var(--black), .8);
+    color: hsl(var(--black) / 80%);
 
     &:hover {
       background-color: hsl(var(--dark-blue));

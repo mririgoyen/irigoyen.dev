@@ -4,18 +4,18 @@
   --primary-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --secondary-font: 'Cambria', 'Georgia', serif;
 
-  --black: 0, 0%, 0%;
-  --white: 0, 0%, 100%;
-  --red: 4, 90%, 58%;
-  --blue: 209, 100%, 60%;
-  --dark-blue: 209, 100%, 33%;
-  --light-grey: 0, 0%, 94%;
-  --dark-grey: 0, 0%, 20%;
-  --error-color: 4, 90%, 75%;
+  --black: 0deg 0% 0%;
+  --white: 0deg 0% 100%;
+  --red: 4deg 90% 58%;
+  --blue: 209deg 100% 60%;
+  --dark-blue: 209deg 100% 33%;
+  --light-grey: 0deg 0% 94%;
+  --dark-grey: 0deg 0% 20%;
+  --error-color: 4deg 90% 75%;
 
-  --facebook-color: 221, 44%, 41%;
-  --twitter-color: 203, 89%, 53%;
-  --linkedin-color: 201, 100%, 35%;
+  --facebook-color: 221deg 44% 41%;
+  --twitter-color: 203deg 89% 53%;
+  --linkedin-color: 201deg 100% 35%;
 }
 
 @mixin theme-light {
@@ -25,10 +25,10 @@
   --article-bg: var(--white);
   --link-color: var(--dark-blue);
   --link-hover-color: var(--blue);
-  --section-even-bg: 0, 0%, 95%;
+  --section-even-bg: 0deg 0% 95%;
   --section-odd-bg: var(--white);
-  --text-color: 0, 0%, 16%;
-  --text-color-invert: 0, 0%, 100%;
+  --text-color: 0deg 0% 16%;
+  --text-color-invert: 0deg 0% 100%;
 
   --hero-image: url('~assets/images/chicago-light.jpg');
   --hero-opposite: url('~assets/images/chicago-dark.jpg');
@@ -45,10 +45,10 @@
   --article-bg: var(--dark-grey);
   --link-color: var(--white);
   --link-hover-color: var(--blue);
-  --section-even-bg: 0, 0%, 30%;
-  --section-odd-bg: 0, 0%, 25%;
-  --text-color: 0, 0%, 100%;
-  --text-color-invert: 0, 0%, 16%;
+  --section-even-bg: 0deg 0% 30%;
+  --section-odd-bg: 0deg 0% 25%;
+  --text-color: 0deg 0% 100%;
+  --text-color-invert: 0deg 0% 16%;
 
   --hero-image: url('~assets/images/chicago-dark.jpg');
   --hero-opposite: url('~assets/images/chicago-light.jpg');

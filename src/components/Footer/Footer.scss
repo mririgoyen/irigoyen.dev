@@ -1,7 +1,7 @@
 @import '../../style/variables.scss';
 
 .root {
-  background-color: hsla(var(--black), .9) !important;
+  background-color: hsl(var(--black) / 90%) !important; /* stylelint-disable-line declaration-no-important */
   color: hsl(var(--white));
   height: $footer-height;
   position: static;
@@ -19,7 +19,7 @@
 }
 
 .copyright {
-  color: hsla(var(--white), .75);
+  color: hsl(var(--white) / 75%);
   margin: 0;
 }
 
