@@ -12,6 +12,7 @@
     "color-named": "never",
     "color-no-hex": true,
     "declaration-no-important": [ true, { "severity": "warning" } ],
+    "import-notation": "string",
     "no-descending-specificity": null,
     "number-leading-zero": "never",
     "order/properties-alphabetical-order": true,
