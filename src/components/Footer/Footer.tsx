@@ -1,19 +1,14 @@
 import { FunctionComponent } from 'preact';
-import cx from 'clsx';
 import Icon from '@mdi/react';
 import { mdiGithub, mdiLinkedin } from '@mdi/js';
-
-import { FooterProps } from './FooterProps';
 
 import classes from './Footer.scss';
 
 import PolyworkSvg from '../../assets/images/polywork.svg';
 
-const Footer: FunctionComponent<FooterProps> = ({ footerVisible }) => {
+const Footer: FunctionComponent = () => {
   return (
-    <footer className={cx(classes.root, {
-      [classes.hide]: !footerVisible
-    })}>
+    <footer className={classes.root}>
       <div role='presentation'>
         <p className={classes.copyright}>&copy; {new Date().getFullYear()} Michael Irigoyen</p>
         <div className={classes.social}>
