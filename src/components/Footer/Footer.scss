@@ -18,6 +18,10 @@
   }
 }
 
+.visible {
+  display: none;
+}
+
 .copyright {
   color: hsl(var(--white) / 75%);
   margin: 0;

@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import Home from './routes/Home/Home';
+import ContactCard from './routes/ContactCard/ContactCard';
 import Blog from './routes/Blog/Blog';
 import Download from './routes/Download/Download';
 import ErrorPage from './routes/ErrorPage/ErrorPage';
@@ -13,6 +14,7 @@ import ErrorPage from './routes/ErrorPage/ErrorPage';
 const Router: FunctionComponent = () => {
   const [ headerScrollEnabled, setHeaderScrollEnabled ] = useState<boolean>(true);
   const [ activeSection, setActiveSection ] = useState({ id: 'home' });
+  const [ footerVisible, setFooterVisible ] = useState<boolean>(true);
 
   useEffect(() => {
     const initialUrl = getCurrentUrl();
@@ -29,6 +31,8 @@ const Router: FunctionComponent = () => {
     } else {
       setHeaderScrollEnabled(false);
     }
+
+    setFooterVisible(!e.current.props.disableFooter);
   };
 
   return (
@@ -45,6 +49,10 @@ const Router: FunctionComponent = () => {
           path='/'
           setActiveSection={setActiveSection}
           showHeaderScroll
+        />
+        <ContactCard
+          disableFooter
+          path='/card/'
         />
         <Blog
           activeHeader
@@ -89,7 +97,7 @@ const Router: FunctionComponent = () => {
 
         <ErrorPage default path='/404' />
       </PreactRouter>
-      <Footer />
+      <Footer footerVisible={footerVisible} />
     </Fragment>
   );
 };
