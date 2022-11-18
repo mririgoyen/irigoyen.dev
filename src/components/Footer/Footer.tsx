@@ -12,7 +12,7 @@ import PolyworkSvg from '../../assets/images/polywork.svg';
 const Footer: FunctionComponent<FooterProps> = ({ footerVisible }) => {
   return (
     <footer className={cx(classes.root, {
-      [classes.visible]: !footerVisible
+      [classes.hide]: !footerVisible
     })}>
       <div role='presentation'>
         <p className={classes.copyright}>&copy; {new Date().getFullYear()} Michael Irigoyen</p>
