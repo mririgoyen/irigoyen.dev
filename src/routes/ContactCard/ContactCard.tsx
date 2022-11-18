@@ -18,7 +18,6 @@ const ContactCard: FunctionComponent<ContactCardProps> = () => {
       <Button
         href='https://github.com/mririgoyen/mririgoyen/blob/main/michael-irigoyen.vcf?raw=true'
         startIcon={<Icon path={mdiAccountPlus} size={1} />}
-        variant='light'
       >
         Add to Contacts
       </Button>
