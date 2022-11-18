@@ -1,3 +1,4 @@
+import { FunctionComponent } from 'preact';
 import Icon from '@mdi/react';
 import { mdiGithub, mdiLinkedin } from '@mdi/js';
 
@@ -5,7 +6,7 @@ import classes from './Footer.scss';
 
 import PolyworkSvg from '../../assets/images/polywork.svg';
 
-const Footer = () => {
+const Footer: FunctionComponent = () => {
   return (
     <footer className={classes.root}>
       <div role='presentation'>

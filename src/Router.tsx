@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import Home from './routes/Home/Home';
+import ContactCard from './routes/ContactCard/ContactCard';
 import Blog from './routes/Blog/Blog';
 import Download from './routes/Download/Download';
 import ErrorPage from './routes/ErrorPage/ErrorPage';
@@ -45,6 +46,9 @@ const Router: FunctionComponent = () => {
           path='/'
           setActiveSection={setActiveSection}
           showHeaderScroll
+        />
+        <ContactCard
+          path='/card/'
         />
         <Blog
           activeHeader

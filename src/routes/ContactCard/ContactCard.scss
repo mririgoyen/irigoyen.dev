@@ -1,0 +1,21 @@
+.root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 137px);
+  padding-bottom: 2rem;
+
+  h2 {
+    font-size: clamp(1rem, 10vw, 2rem);
+    margin: 0;
+  }
+
+  p {
+    padding: 0 .5rem 1rem;
+    text-align: center;
+  }
+}
+
+.avatar {
+  margin: 7rem 0 3rem;
+}

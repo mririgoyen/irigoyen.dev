@@ -2,6 +2,7 @@ const { defaultMetadata, defaultTitle } = require('../defaults');
 
 module.exports = [
   { meta: defaultMetadata, title: defaultTitle, url: '/' },
+  { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/card' },
   { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/resume/download' },
   { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/presentations/1up-empowering-communities-with-apis' },
   { meta: { ...defaultMetadata, robots: 'noindex' }, omitSitemap: true, title: defaultTitle, url: '/presentations/design-your-api-for-humans' },
