@@ -4,7 +4,7 @@
   "private": true,
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "preact build --dest dist --prerenderUrls build/build.js --no-inline-css --verbose",
+    "build": "preact build --dest dist --prerenderUrls build/build.js --verbose",
     "dev": "preact watch --prerenderUrls build/build.js",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\"",
