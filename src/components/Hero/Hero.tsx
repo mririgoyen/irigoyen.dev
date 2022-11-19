@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import Icon from '@mdi/react';
-import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
+import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin, mdiMastodon } from '@mdi/js';
 
 import useIntersection from '../../hooks/useIntersection';
 
@@ -48,6 +48,14 @@ const Hero: FunctionComponent<HeroProps> = ({ setActiveSection }) => {
             href='https://github.com/mririgoyen'
           >
             <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
+          </a>
+          <a
+            aria-label='Mastodon Profile'
+            className={classes.mastodon}
+            href='https://fosstodon.org/@mririgoyen'
+            rel='me'
+          >
+            <Icon path={mdiMastodon} size={1.5} title='Mastodon Profile' />
           </a>
           <a
             aria-label='Polywork Profile'

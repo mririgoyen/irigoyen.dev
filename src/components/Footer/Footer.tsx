@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'preact';
 import Icon from '@mdi/react';
-import { mdiGithub, mdiLinkedin } from '@mdi/js';
+import { mdiGithub, mdiLinkedin, mdiMastodon } from '@mdi/js';
 
 import classes from './Footer.scss';
 
@@ -18,6 +18,14 @@ const Footer: FunctionComponent = () => {
             href='https://github.com/mririgoyen'
           >
             <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
+          </a>
+          <a
+            aria-label='Mastodon Profile'
+            className={classes.mastodon}
+            href='https://fosstodon.org/@mririgoyen'
+            rel='me'
+          >
+            <Icon path={mdiMastodon} size={1.5} title='Mastodon Profile' />
           </a>
           <a
             aria-label='Polywork Profile'
