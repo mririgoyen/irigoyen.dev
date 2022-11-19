@@ -9,6 +9,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   children,
   className,
   disabled = false,
+  download = false,
   href,
   native = false,
   onClick = () => {},
@@ -26,7 +27,9 @@ const Button: FunctionComponent<ButtonProps> = ({
       className={cx(classes.root, classes[variant], {
         [classes.disabled]: disabled
       }, className)}
+      data-native={!!(href && download)}
       disabled={!href && disabled || undefined}
+      download={href ? download : false}
       href={href}
       native={href && native || undefined}
       onClick={onClick}

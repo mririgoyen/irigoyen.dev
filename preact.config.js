@@ -19,7 +19,7 @@ export default (config) => {
   config.module.rules[4].use[1].options.modules.localIdentName = cssClassIdentName;
 
   // Handle loading SVGs as elements
-  config.module.rules[7].test = /\.(woff2?|ttf|eot|jpe?g|png|webp|gif|mp4|mov|ogg|webm)(\?.*)?$/i;
+  config.module.rules[7].test = /\.(woff2?|ttf|eot|jpe?g|png|webp|gif|mp4|mov|ogg|webm|vcf)(\?.*)?$/i;
   config.module.rules.push({
     exclude: /node_modules/,
     loader: 'react-svg-loader',
