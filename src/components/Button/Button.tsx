@@ -27,6 +27,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       className={cx(classes.root, classes[variant], {
         [classes.disabled]: disabled
       }, className)}
+      data-native={!!(href && download)}
       disabled={!href && disabled || undefined}
       download={href ? download : false}
       href={href}
