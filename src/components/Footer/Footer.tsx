@@ -22,7 +22,7 @@ const Footer: FunctionComponent = () => {
           <a
             aria-label='Mastodon Profile'
             className={classes.mastodon}
-            href='https://fosstodon.org/@mririgoyen'
+            href='https://hachyderm.io/@mririgoyen'
             rel='me'
           >
             <Icon path={mdiMastodon} size={1.5} title='Mastodon Profile' />

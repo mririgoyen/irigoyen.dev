@@ -113,7 +113,7 @@ const Article: FunctionComponent<ArticleProps> = ({ url }) => {
               </picture>
               <div className={classes.bio}>
                 <p className={classes.name}>Michael Irigoyen</p>
-                <p>Michael Irigoyen is a Chicago-based software engineer with a passion for front-end development and user experience. You can find him at <a href='https://www.irigoyen.dev'>irigoyen.dev</a> or on <a href='https://fosstodon.org/@mririgoyen' rel='me'>Mastodon</a>.</p>
+                <p>Michael Irigoyen is a Chicago-based software engineer with a passion for front-end development and user experience. You can find him at <a href='https://www.irigoyen.dev'>irigoyen.dev</a> or on <a href='https://hachyderm.io/@mririgoyen' rel='me'>Mastodon</a>.</p>
               </div>
             </div>
           </div>
