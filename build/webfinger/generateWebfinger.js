@@ -25,6 +25,7 @@ const generateWebfinger = () => {
     subject: 'acct:mririgoyen@hachyderm.io'
   };
 
+  fs.mkdirSync('./dist/.well-known', { recursive: true });
   fs.writeFileSync('./dist/.well-known/webfinger', JSON.stringify(webfinger));
 };
 
