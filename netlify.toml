@@ -15,3 +15,8 @@
   for = "/*"
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
+
+[[headers]]
+  for = "/.well-known/webfinger"
+  [headers.values]
+    Content-Type = "application/jrd+json"
