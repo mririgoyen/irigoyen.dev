@@ -31,7 +31,23 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>June 2021 - Current</span>
             </p>
-            <p>I am a senior member of the Lightning Web Components team. My responsibilities include designing, building, updating, and testing a variety of different components that our customers use when building their user interfaces. Utilizing web standards, each component has aspects such as accessibility, internationalization, and responsiveness concerns baked in, giving end-users the best possible experience out of the box.</p>
+            <p>I am a senior member of the Trailhead Community team. My responsibilities include building, updating, and testing a variety of different web components written in TypeScript that we use to build our community forums. Utilizing web standards, each component has aspects such as accessibility, internationalization, and responsiveness concerns baked in.</p>
+          </div>
+
+          <div className={classes.item}>
+            <h3>Pictogrammers</h3>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
+              <em>Co-Founder</em>
+              <span className={classes.bullet}>&bull;</span>
+              <span>February 2023 - Current</span>
+            </p>
+            <p>I am a co-founder of Pictogrammers, an open source collective that brings together developers and designers from all walks of life, to share their passion for iconography and font design.</p>
+            <p>As a founding member, I have designed and continue to develop and maintain our web presence in React, TypeScript, and Next.js. Additionally, I have contributed over 1400 unique icons to our various icon libraries. I also help maintain our server and build infrastructure, field issues on GitHub, and maintain social media accounts and public communication.
+            </p>
           </div>
 
           <div className={classes.item}>
