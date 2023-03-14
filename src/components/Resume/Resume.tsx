@@ -21,20 +21,6 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
         </div>
         <div className={classes.items}>
           <div className={classes.item}>
-            <h3>Salesforce</h3>
-            <p
-              aria-level='4'
-              className={classes.subheading}
-              role='heading'
-            >
-              <em>Senior Member of Technical Staff</em>
-              <span className={classes.bullet}>&bull;</span>
-              <span>June 2021 - Current</span>
-            </p>
-            <p>I am a senior member of the Trailhead Community team. My responsibilities include building, updating, and testing a variety of different web components written in TypeScript that we use to build our community forums. Utilizing web standards, each component has aspects such as accessibility, internationalization, and responsiveness concerns baked in.</p>
-          </div>
-
-          <div className={classes.item}>
             <h3>Pictogrammers</h3>
             <p
               aria-level='4'
@@ -48,6 +34,20 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
             <p>I am a co-founder of Pictogrammers, an open source collective that brings together developers and designers from all walks of life, to share their passion for iconography and font design.</p>
             <p>As a founding member, I have designed and continue to develop and maintain our web presence in React, TypeScript, and Next.js. Additionally, I have contributed over 1400 unique icons to our various icon libraries. I also help maintain our server and build infrastructure, field issues on GitHub, and maintain social media accounts and public communication.
             </p>
+          </div>
+          
+          <div className={classes.item}>
+            <h3>Salesforce</h3>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
+              <em>SMTS, Software Engineer</em>
+              <span className={classes.bullet}>&bull;</span>
+              <span>June 2021 - March 2023</span>
+            </p>
+            <p>As a senior member of the Trailhead Community team, my responsibilities included building, updating, and testing a variety of different web components written in TypeScript that we used to build our community forums. Utilizing web standards, each component had aspects such as accessibility, internationalization, and responsiveness concerns baked in.</p>
           </div>
 
           <div className={classes.item}>
