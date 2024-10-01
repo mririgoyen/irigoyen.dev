@@ -35,6 +35,20 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
             <p>As a founding member, I have designed and continue to develop and maintain our web presence in React, TypeScript, and Next.js. Additionally, I have contributed over 1400 unique icons to our various icon libraries. I also help maintain our server and build infrastructure, field issues on GitHub, and maintain social media accounts and public communication.
             </p>
           </div>
+
+          <div className={classes.item}>
+            <h3>MotorTrend Group</h3>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
+              <em>UX Engineer</em>
+              <span className={classes.bullet}>&bull;</span>
+              <span>April 2023 - Current</span>
+            </p>
+            <p>As a UX Engineer, I have been working with a small team that has moved the legacy MotorTrend.com codebase to Next.js. My responsibilities have been to work closely with the UX group to build out a React Server Components compatible UI library, called Ignition Design System, that will allow us to take advantage of Server-Side Rendering (SSR) and optimize the amount of required code to be sent to the client.</p>
+          </div>
           
           <div className={classes.item}>
             <h3>Salesforce</h3>
