@@ -47,7 +47,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>April 2023 - Current</span>
             </p>
-            <p>As a UX Engineer, I have been working with a small team that has moved the legacy MotorTrend.com codebase to Next.js. My responsibilities have been to work closely with the UX group to build out a React Server Components compatible UI library, called Ignition Design System, that will allow us to take advantage of Server-Side Rendering (SSR) and optimize the amount of required code to be sent to the client.</p>
+            <p>As a UX Engineer, I am the architect and lead engineer of our React component library, Ignition Design System. My responsibilities have been to work closely with the UX group, product management, and engineering to build and provide reusable, high quality components to make building our web presence easy and predictable. Our component library is built to be responsive, accessible, and to take advantage of features of Next.js, including Server-Side Rendering (SSR).</p>
           </div>
           
           <div className={classes.item}>
