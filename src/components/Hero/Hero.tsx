@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import Icon from '@mdi/react';
-import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin, mdiMastodon } from '@mdi/js';
+import { mdiArrowDownCircleOutline, mdiGithub, mdiLinkedin } from '@mdi/js';
 
 import useIntersection from '../../hooks/useIntersection';
 
