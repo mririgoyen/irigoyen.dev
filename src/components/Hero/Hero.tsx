@@ -50,14 +50,6 @@ const Hero: FunctionComponent<HeroProps> = ({ setActiveSection }) => {
             <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
           </a>
           <a
-            aria-label='Mastodon Profile'
-            className={classes.mastodon}
-            href='https://hachyderm.io/@mririgoyen'
-            rel='me'
-          >
-            <Icon path={mdiMastodon} size={1.5} title='Mastodon Profile' />
-          </a>
-          <a
             aria-label='Polywork Profile'
             className={classes.polywork}
             href='https://poly.irigoyen.dev'
