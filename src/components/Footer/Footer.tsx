@@ -4,8 +4,6 @@ import { mdiGithub, mdiLinkedin } from '@mdi/js';
 
 import classes from './Footer.scss';
 
-import PolyworkSvg from '../../assets/images/polywork.svg';
-
 const Footer: FunctionComponent = () => {
   return (
     <footer className={classes.root}>
@@ -18,13 +16,6 @@ const Footer: FunctionComponent = () => {
             href='https://github.com/mririgoyen'
           >
             <Icon path={mdiGithub} size={1.5} title='GitHub Profile' />
-          </a>
-          <a
-            aria-label='Polywork Profile'
-            className={classes.polywork}
-            href='https://poly.irigoyen.dev'
-          >
-            <PolyworkSvg />
           </a>
           <a
             aria-label='LinkedIn Profile'
