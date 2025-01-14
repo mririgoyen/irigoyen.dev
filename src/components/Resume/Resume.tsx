@@ -37,7 +37,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
           </div>
 
           <div className={classes.item}>
-            <h3>MotorTrend Group</h3>
+            <h3>Hearst Magazines (Formerly MotorTrend Group)</h3>
             <p
               aria-level='4'
               className={classes.subheading}
@@ -47,7 +47,7 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>April 2023 - Current</span>
             </p>
-            <p>As a UX Engineer, I am the architect and lead engineer of our React component library, Ignition Design System. My responsibilities have been to work closely with the UX group, product management, and engineering to build and provide reusable, high quality components to make building our web presence easy and predictable. Our component library is built to be responsive, accessible, and to take advantage of features of Next.js, including Server-Side Rendering (SSR).</p>
+            <p>As a UX Engineer, I am the architect and lead engineer of MotorTrend's React component library, Ignition Design System. My responsibilities have been to work closely with the UX group, product management, and engineering to build and provide reusable, high quality components to make building our web presence easy and predictable. Our component library is built to be responsive, accessible, and to take advantage of features of Next.js, including Server-Side Rendering (SSR).</p>
           </div>
           
           <div className={classes.item}>
