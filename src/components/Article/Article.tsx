@@ -3,7 +3,8 @@ import 'prismjs';
 import { FunctionComponent } from 'preact';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import Icon from '@mdi/react';
-import { mdiEmailOutline, mdiFacebook, mdiLinkedin, mdiTwitter } from '@mdi/js';
+import { mdiEmailOutline, mdiLinkedin } from '@mdi/js';
+import { siBluesky, siFacebook } from 'simple-icons';
 
 import { ArticleProps } from './ArticleProps';
 
@@ -63,16 +64,16 @@ const Article: FunctionComponent<ArticleProps> = ({ url }) => {
                 target='_blank'
                 title='Share on Facebook'
               >
-                <Icon path={mdiFacebook} size={1} title='Share on Facebook' />
+                <Icon path={siFacebook.path} size={1} title='Share on Facebook' />
               </a>
               <a
-                className={classes.twitter}
-                href={`https://twitter.com/share?url=${encodeURIComponent(`${shareUrl}`)}&text=${encodeURIComponent(`${article.title} by @mririgo`)}`}
+                className={classes.bluesky}
+                href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${article.title} ${shareUrl}`)}`}
                 rel='nofollow noreferrer'
                 target='_blank'
-                title='Share on Twitter'
+                title='Share on Bluesky'
               >
-                <Icon path={mdiTwitter} size={1} title='Share on Twitter' />
+                <Icon path={siBluesky.path} size={1} title='Share on Bluesky' />
               </a>
               <a
                 className={classes.linkedin}

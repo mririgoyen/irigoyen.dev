@@ -28,6 +28,10 @@
     margin: .5rem;
 
     &:hover {
+      &.bluesky {
+        color: hsl(var(--bluesky-color));
+      }
+
       &.linkedin {
         color: hsl(var(--linkedin-color));
       }

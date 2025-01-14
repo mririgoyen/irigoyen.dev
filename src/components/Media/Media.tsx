@@ -48,7 +48,7 @@ const Talks: FunctionComponent<MediaProps> = ({ setActiveSection }) => {
               <span className={classes.bullet}>&bull;</span>
               <span>December 18, 2021</span>
             </p>
-            <p>I sat down with <a href='https://twitter.com/philhawthorne' rel='noreferrer' target='_blank'>Phil Hawthorne</a> and <a href='https://twitter.com/rohank9' rel='noreferrer' target='_blank'>Rohan Karamandi</a> and we had a chat about <a href='https://pictogrammers.com/library/mdi/' rel='noreferrer' target='_blank'>Material Design Icons</a>, how they work with <a href='https://www.home-assistant.io/' rel='noreferrer' target='_blank'>Home Assistant</a>, and all things home automation.</p>
+            <p>I sat down with <a href='https://bsky.app/profile/philhawthorne.com' rel='noreferrer' target='_blank'>Phil Hawthorne</a> and Rohan Karamandi and we had a chat about <a href='https://pictogrammers.com/library/mdi/' rel='noreferrer' target='_blank'>Material Design Icons</a>, how they work with <a href='https://www.home-assistant.io/' rel='noreferrer' target='_blank'>Home Assistant</a>, and all things home automation.</p>
             <Button
               aria-describedby='home-assistant-podcast'
               href='https://hasspodcast.io/sp008/'
