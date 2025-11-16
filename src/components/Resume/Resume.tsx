@@ -21,6 +21,19 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
         </div>
         <div className={classes.items}>
           <div className={classes.item}>
+            <h3>MDCalc</h3>
+            <p
+              aria-level='4'
+              className={classes.subheading}
+              role='heading'
+            >
+              <em>Senior Front End Engineer</em>
+              <span className={classes.bullet}>&bull;</span>
+              <span>November 2025 - Current</span>
+            </p>
+          </div>
+
+          <div className={classes.item}>
             <h3>Pictogrammers</h3>
             <p
               aria-level='4'
@@ -32,12 +45,11 @@ const Resume: FunctionComponent<ResumeProps> = ({ setActiveSection }) => {
               <span>February 2023 - Current</span>
             </p>
             <p>I am a co-founder of Pictogrammers, an open source collective that brings together developers and designers from all walks of life, to share their passion for iconography and font design.</p>
-            <p>As a founding member, I have designed and continue to develop and maintain our web presence in React, TypeScript, and Next.js. Additionally, I have contributed over 1400 unique icons to our various icon libraries. I also help maintain our server and build infrastructure, field issues on GitHub, and maintain social media accounts and public communication.
-            </p>
+            <p>As a founding member, I have designed and continue to develop and maintain our web presence in React, TypeScript, and Next.js. Additionally, I have contributed over 1400 unique icons to our various icon libraries. I also help maintain our server and build infrastructure, field issues on GitHub, and maintain social media accounts and public communication.</p>
           </div>
 
           <div className={classes.item}>
-            <h3>MotorTrend Group</h3>
+            <h3>Hearst Autos</h3>
             <p
               aria-level='4'
               className={classes.subheading}
